@@ -1,0 +1,94 @@
+{
+	"common": {
+		"name": "miyo-connect",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "Miyo Connect",
+			"de": "Miyo Connect",
+			"ru": "Miyo Connect",
+			"pt": "Miyo Connect",
+			"nl": "Miyo Connect",
+			"fr": "Connexion Miyo",
+			"it": "Miyo Connect",
+			"es": "Miyo Connect",
+			"pl": "Miyo Połącz",
+			"zh-cn": "美有连接"
+		},
+		"desc": {
+			"en": "Connect to your Miyo Controller",
+			"de": "Verbinden Sie sich mit Ihrem Miyo-Controller",
+			"ru": "Подключитесь к контроллеру Miyo",
+			"pt": "Conecte-se ao seu controlador Miyo",
+			"nl": "Maak verbinding met je Miyo-controller",
+			"fr": "Connectez-vous à votre manette Miyo",
+			"it": "Connettiti al tuo controller Miyo",
+			"es": "Conéctese a su controlador Miyo",
+			"pl": "Połącz się z kontrolerem Miyo",
+			"zh-cn": "连接到您的 Miyo 控制器"
+		},
+		"authors": ["Suncrusher <schnupp@gmail.com>"],
+		"keywords": ["miyo smart gardening water"],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "build/main.js",
+		"icon": "miyo-connect.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/Suncrusher/ioBroker.miyo-connect/master/admin/miyo-connect.png",
+		"readme": "https://github.com/Suncrusher/ioBroker.miyo-connect/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "garden",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"materialize": true,
+		"supportCustoms": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Device or service connected",
+				"type": "boolean",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		}
+	]
+}
