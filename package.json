@@ -16,7 +16,7 @@
     "url": "https://github.com/Suncrusher/ioBroker.miyo-connect"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.5.1"
+    "@iobroker/adapter-core": "^2.6.0"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^2.2.1",
