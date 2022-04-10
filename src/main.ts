@@ -7,10 +7,8 @@
 import * as utils from "@iobroker/adapter-core";
 import Devices = require("./lib/services/devices");
 import Circuits = require("./lib/services/circuits");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const axios = require("axios").default;
-
-const host = "http://192.168.178.122";
-const apiKey = "apiKey=953c3e07-4a36-44f9-8da5-fd5a61fc569f&=";
 
 // Load your modules here, e.g.:
 // import * as fs from "fs";
@@ -39,15 +37,15 @@ class MiyoConnect extends utils.Adapter {
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
-		this.log.info("config option1: " + this.config.option1);
-		this.log.info("config option2: " + this.config.option2);
+		this.log.info("config host: " + this.config.host);
+		this.log.info("config apiKey: " + this.config.apiKey);
 
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
 		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
 		*/
-		await this.setObjectNotExistsAsync("testVariable", {
+		/*await this.setObjectNotExistsAsync("testVariable", {
 			type: "state",
 			common: {
 				name: "testVariable",
@@ -57,7 +55,7 @@ class MiyoConnect extends utils.Adapter {
 				write: true,
 			},
 			native: {},
-		});
+		});*/
 		await this.setObjectNotExistsAsync("miyo", {
 			type: "state",
 			common: {
@@ -93,7 +91,7 @@ class MiyoConnect extends utils.Adapter {
 		});
 
 		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		this.subscribeStates("testVariable");
+		///this.subscribeStates("testVariable");
 		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
 		// this.subscribeStates("lights.*");
 		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -125,7 +123,9 @@ class MiyoConnect extends utils.Adapter {
 	}
 
 	async getDeviceList() {
-		const url = host + "/api/device/all?" + apiKey;
+		// The adapters config (in the instance object everything under the attribute "native") is accessible via
+		// this.config:
+		const url = this.config.host + "/api/device/all?apiKey=" + this.config.apiKey;
 		this.log.info("Miyo devices URL: " + url);
 
 		axios
@@ -141,7 +141,7 @@ class MiyoConnect extends utils.Adapter {
 
 				this.log.info("All devices data: " + JSON.stringify(response.data, null, "  "));
 				this.setStateAsync("miyo", response.status);
-				const devices = new Devices(host);
+				const devices = new Devices(this.config.host);
 				devices.data = response.data;
 
 				for (const deviceId in response.data.params.devices) {
@@ -234,23 +234,16 @@ class MiyoConnect extends utils.Adapter {
 	}
 
 	async getCircuitList() {
-		const url = host + "/api/circuit/all?" + apiKey;
+		const url = this.config.host + "/api/circuit/all?apiKey=" + this.config.apiKey;
 		this.log.info("Miyo circuits URL: " + url);
 
 		axios
 			.get(url)
 			.then(async (response: any) => {
 				// handle success
-
-				//console.log(response.data);
-				//console.log(response.status);
-				//console.log(response.statusText);
-				//console.log(response.headers);
-				//console.log(response.config);
-
 				this.log.info("All circuits data: " + JSON.stringify(response.data, null, "  "));
 				this.setStateAsync("miyo", response.status);
-				const circuits = new Circuits(host);
+				const circuits = new Circuits(this.config.host);
 				circuits.data = response.data;
 
 				for (const circuitId in response.data.params.circuits) {
@@ -322,30 +315,6 @@ class MiyoConnect extends utils.Adapter {
 								}
 							}
 						}
-						/*
-						for (const paramsId in circuit.params) {
-							const param = circuit.params[paramsId];
-							this.setObjectNotExists("circuits." + id + ".params." + paramsId, {
-								type: "state",
-								common: {
-									name: paramsId,
-									type: "string",
-									role: "meta",
-									write: true,
-									read: true,
-								},
-								native: {},
-							});
-							try {
-								await this.setStateAsync("circuits." + id + ".params." + paramsId, {
-									val: param.value,
-									ack: true,
-								});
-							} catch (error: any) {
-								console.log("error" + error);
-								this.setStateAsync("miyo", false);
-							}
-						}*/
 					} catch (error: any) {
 						console.log("error" + error);
 						this.setStateAsync("miyo", false);
