@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-This prject is in an alpha state at the moment.
+This project is in an alpha state at the moment.
 
 | Version | Supported          |
 | ------- | ------------------ |
