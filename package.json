@@ -1,6 +1,6 @@
 {
   "name": "iobroker.miyo-connect",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Connect to your Miyo Controller",
   "author": {
     "name": "Suncrusher",
