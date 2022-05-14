@@ -1,8 +1,9 @@
 "use strict";
+/* eslint-disable prettier/prettier */
 const AbstractService = require("./abstractService");
 class Devices extends AbstractService {
-    constructor(host) {
-        super(host);
+    constructor() {
+        super();
         this.data = {};
     }
 }

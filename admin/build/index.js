@@ -39540,7 +39540,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./colorManipulator":"../../node_modules/@material-ui/core/esm/styles/colorManipulator.js","./createTheme":"../../node_modules/@material-ui/core/esm/styles/createTheme.js","./createMuiStrictModeTheme":"../../node_modules/@material-ui/core/esm/styles/createMuiStrictModeTheme.js","./createStyles":"../../node_modules/@material-ui/core/esm/styles/createStyles.js","./makeStyles":"../../node_modules/@material-ui/core/esm/styles/makeStyles.js","./responsiveFontSizes":"../../node_modules/@material-ui/core/esm/styles/responsiveFontSizes.js","./styled":"../../node_modules/@material-ui/core/esm/styles/styled.js","./transitions":"../../node_modules/@material-ui/core/esm/styles/transitions.js","./useTheme":"../../node_modules/@material-ui/core/esm/styles/useTheme.js","./withStyles":"../../node_modules/@material-ui/core/esm/styles/withStyles.js","./withTheme":"../../node_modules/@material-ui/core/esm/styles/withTheme.js","@material-ui/styles":"../../node_modules/@material-ui/styles/esm/index.js"}],"../../node_modules/@material-ui/core/colors/orange.js":[function(require,module,exports) {
+},{"./colorManipulator":"../../node_modules/@material-ui/core/esm/styles/colorManipulator.js","./createTheme":"../../node_modules/@material-ui/core/esm/styles/createTheme.js","./createMuiStrictModeTheme":"../../node_modules/@material-ui/core/esm/styles/createMuiStrictModeTheme.js","./createStyles":"../../node_modules/@material-ui/core/esm/styles/createStyles.js","./makeStyles":"../../node_modules/@material-ui/core/esm/styles/makeStyles.js","./responsiveFontSizes":"../../node_modules/@material-ui/core/esm/styles/responsiveFontSizes.js","./styled":"../../node_modules/@material-ui/core/esm/styles/styled.js","./transitions":"../../node_modules/@material-ui/core/esm/styles/transitions.js","./useTheme":"../../node_modules/@material-ui/core/esm/styles/useTheme.js","./withStyles":"../../node_modules/@material-ui/core/esm/styles/withStyles.js","./withTheme":"../../node_modules/@material-ui/core/esm/styles/withTheme.js","@material-ui/styles":"../../node_modules/@material-ui/styles/esm/index.js"}],"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js":[function(require,module,exports) {
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@material-ui/core/colors/orange.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39568,6 +39576,8 @@ exports.default = _default;
 },{}],"../../node_modules/@iobroker/adapter-react/Theme.js":[function(require,module,exports) {
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -39576,8 +39586,6 @@ exports["default"] = void 0;
 var _styles = require("@material-ui/core/styles");
 
 var _orange = _interopRequireDefault(require("@material-ui/core/colors/orange"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var step = (16 - 5) / 23 / 100;
 /**
@@ -39775,6 +39783,73 @@ var Theme = function Theme(type) {
         }
       }
     };
+  } else if (type === 'PT') {
+    theme = {
+      name: type,
+      palette: {
+        type: 'light',
+        primary: {
+          main: '#0F99DE'
+        },
+        secondary: {
+          main: '#88A536'
+        },
+        expert: '#BD1B24'
+      },
+      overrides: {
+        MuiAppBar: {
+          colorDefault: {
+            backgroundColor: '#0F99DE'
+          }
+        },
+        MuiLink: {
+          root: {
+            textTransform: 'uppercase',
+            transition: 'color .3s ease',
+            color: _orange["default"][400],
+            '&:hover': {
+              color: _orange["default"][300]
+            }
+          }
+        }
+      }
+    };
+  } else if (type === 'DX') {
+    theme = {
+      name: type,
+      palette: {
+        type: 'light',
+        primary: {
+          main: '#F5F5F7'
+        },
+        secondary: {
+          main: '#a9a9a9'
+        },
+        expert: '#BD1B24',
+        text: {
+          primary: '#007AFE',
+          secondary: '#007AFE',
+          disabled: '#007AFEAA'
+        }
+      },
+      overrides: {
+        MuiAppBar: {
+          colorDefault: {
+            backgroundColor: '#a9a9a9'
+          }
+        },
+        MuiLink: {
+          root: {
+            textTransform: 'uppercase',
+            transition: 'color .3s ease',
+            color: _orange["default"][400],
+            '&:hover': {
+              color: _orange["default"][300]
+            }
+          }
+        }
+      }
+    };
   } else {
     theme = {
       name: type,
@@ -39814,28 +39889,169 @@ var Theme = function Theme(type) {
       height: 32
     }
   };
-  return (0, _styles.createMuiTheme)(theme);
+  return (0, _styles.createTheme)(theme);
 };
 
 var _default = Theme;
 exports["default"] = _default;
 
 
-},{"@material-ui/core/styles":"../../node_modules/@material-ui/core/esm/styles/index.js","@material-ui/core/colors/orange":"../../node_modules/@material-ui/core/colors/orange.js"}],"../../node_modules/@iobroker/adapter-react/i18n.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@material-ui/core/styles":"../../node_modules/@material-ui/core/esm/styles/index.js","@material-ui/core/colors/orange":"../../node_modules/@material-ui/core/colors/orange.js"}],"../../node_modules/@babel/runtime/helpers/arrayWithHoles.js":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/arrayLikeToArray.js":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayLikeToArray.js":"../../node_modules/@babel/runtime/helpers/arrayLikeToArray.js"}],"../../node_modules/@babel/runtime/helpers/nonIterableRest.js":[function(require,module,exports) {
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/slicedToArray.js":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles.js");
+
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
+
+var nonIterableRest = require("./nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithHoles.js":"../../node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit.js":"../../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray.js":"../../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest.js":"../../node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"../../node_modules/@babel/runtime/helpers/typeof.js":[function(require,module,exports) {
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+}
+
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/classCallCheck.js":[function(require,module,exports) {
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/createClass.js":[function(require,module,exports) {
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+
+module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/defineProperty.js":[function(require,module,exports) {
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@iobroker/adapter-react/i18n.js":[function(require,module,exports) {
 "use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
 /***
  * Copyright 2018-2019 bluefox <dogafox@gmail.com>
@@ -39849,10 +40065,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  */
 var I18n = /*#__PURE__*/function () {
   function I18n() {
-    _classCallCheck(this, I18n);
+    (0, _classCallCheck2["default"])(this, I18n);
   }
 
-  _createClass(I18n, null, [{
+  (0, _createClass2["default"])(I18n, null, [{
     key: "setLanguage",
     value:
     /**
@@ -39974,7 +40190,6 @@ var I18n = /*#__PURE__*/function () {
       return word;
     }
   }]);
-
   return I18n;
 }();
 /*I18n.translations = {
@@ -39986,50 +40201,42 @@ I18n.fallbacks = true;
 I18n.t = function () {};*/
 
 
-_defineProperty(I18n, "translations", {});
-
-_defineProperty(I18n, "lang", window.sysLang || 'en');
-
+(0, _defineProperty2["default"])(I18n, "translations", {});
+(0, _defineProperty2["default"])(I18n, "lang", window.sysLang || 'en');
 var _default = I18n;
 exports["default"] = _default;
 
 
-},{}],"../../node_modules/@iobroker/adapter-react/Components/Utils.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/defineProperty":"../../node_modules/@babel/runtime/helpers/defineProperty.js"}],"../../node_modules/@iobroker/adapter-react/Components/Utils.js":[function(require,module,exports) {
 "use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _i18n = _interopRequireDefault(require("../i18n"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/**
+ * Copyright 2018-2022 bluefox <dogafox@gmail.com>
+ *
+ * MIT License
+ *
+ **/
 var NAMESPACE = 'material';
 var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -40053,10 +40260,10 @@ var QUALITY_BITS = {
 
 var Utils = /*#__PURE__*/function () {
   function Utils() {
-    _classCallCheck(this, Utils);
+    (0, _classCallCheck2["default"])(this, Utils);
   }
 
-  _createClass(Utils, null, [{
+  (0, _createClass2["default"])(Utils, null, [{
     key: "CapitalWords",
     value:
     /**
@@ -40138,7 +40345,7 @@ var Utils = /*#__PURE__*/function () {
       if (settings && settings.name) {
         text = settings.name;
 
-        if (_typeof(text) === 'object') {
+        if ((0, _typeof2["default"])(text) === 'object') {
           text = text[options.language] || text.en;
         }
       } else if (item && item.common && item.common[attr]) {
@@ -40148,7 +40355,7 @@ var Utils = /*#__PURE__*/function () {
           text = item.common.desc;
         }
 
-        if (_typeof(text) === 'object') {
+        if ((0, _typeof2["default"])(text) === 'object') {
           text = text[options.language] || text.en || text.de || text.ru || '';
         }
 
@@ -40193,7 +40400,7 @@ var Utils = /*#__PURE__*/function () {
       if (settings && settings.name) {
         text = settings.name;
 
-        if (_typeof(text) === 'object') {
+        if ((0, _typeof2["default"])(text) === 'object') {
           text = text[options.language] || text.en;
         }
       } else if (item && item.common && item.common[attr]) {
@@ -40203,7 +40410,7 @@ var Utils = /*#__PURE__*/function () {
           text = item.common.desc;
         }
 
-        if (_typeof(text) === 'object') {
+        if ((0, _typeof2["default"])(text) === 'object') {
           text = text[options.language] || text.en;
         }
 
@@ -40298,7 +40505,7 @@ var Utils = /*#__PURE__*/function () {
       var result = Array.from(list);
 
       var _result$splice = result.splice(source, 1),
-          _result$splice2 = _slicedToArray(_result$splice, 1),
+          _result$splice2 = (0, _slicedToArray2["default"])(_result$splice, 1),
           removed = _result$splice2[0];
 
       result.splice(dest, 0, removed);
@@ -40354,7 +40561,7 @@ var Utils = /*#__PURE__*/function () {
         }
       }
 
-      if (_typeof(settings.name) === 'object') {
+      if ((0, _typeof2["default"])(settings.name) === 'object') {
         settings.name = settings.name[options.language] || settings.name.en;
         settings.name = (settings.name || '').toString().replace(/_/g, ' ');
 
@@ -40400,7 +40607,7 @@ var Utils = /*#__PURE__*/function () {
           }
 
           if (s.name !== undefined) {
-            if (_typeof(obj.common.name) !== 'object') {
+            if ((0, _typeof2["default"])(obj.common.name) !== 'object') {
               obj.common.name = {};
               obj.common.name[options.language] = s.name;
             } else {
@@ -40461,7 +40668,7 @@ var Utils = /*#__PURE__*/function () {
     key: "getObjectIcon",
     value: function getObjectIcon(id, obj) {
       // If id is Object
-      if (_typeof(id) === 'object') {
+      if ((0, _typeof2["default"])(id) === 'object') {
         obj = id;
         id = obj._id;
       }
@@ -40776,30 +40983,38 @@ var Utils = /*#__PURE__*/function () {
   }, {
     key: "renderTextWithA",
     value: function renderTextWithA(text) {
-      var m = text.match(/<a [^<]+<\/a>/);
+      var m = text.match(/<a [^<]+<\/a>|<br\/?>/);
 
       if (m) {
         var result = [];
         var key = 1;
 
         do {
-          var href = m[0].match(/href="([^"]+)"/) || m[0].match(/href='([^']+)'/);
-          var target = m[0].match(/target="([^"]+)"/) || m[0].match(/target='([^']+)'/);
-          var rel = m[0].match(/rel="([^"]+)"/) || m[0].match(/rel='([^']+)'/);
-          var title = m[0].match(/>([^<]*)</);
           var p = text.split(m[0]);
           p[0] && result.push( /*#__PURE__*/_react["default"].createElement("span", {
             key: 'a' + key++
-          }, p[0])); // eslint-disable-next-line
+          }, p[0]));
 
-          result.push( /*#__PURE__*/_react["default"].createElement("a", {
-            key: 'a' + key++,
-            href: href ? href[1] : '',
-            target: target ? target[1] : '_blank',
-            rel: rel ? rel[1] : ''
-          }, title ? title[1] : ''));
+          if (m[0].startsWith('<br')) {
+            result.push( /*#__PURE__*/_react["default"].createElement("br", {
+              key: 'a' + key++
+            }));
+          } else {
+            var href = m[0].match(/href="([^"]+)"/) || m[0].match(/href='([^']+)'/);
+            var target = m[0].match(/target="([^"]+)"/) || m[0].match(/target='([^']+)'/);
+            var rel = m[0].match(/rel="([^"]+)"/) || m[0].match(/rel='([^']+)'/);
+            var title = m[0].match(/>([^<]*)</); // eslint-disable-next-line
+
+            result.push( /*#__PURE__*/_react["default"].createElement("a", {
+              key: 'a' + key++,
+              href: href ? href[1] : '',
+              target: target ? target[1] : '_blank',
+              rel: rel ? rel[1] : ''
+            }, title ? title[1] : ''));
+          }
+
           text = p[1];
-          m = text && text.match(/<a [^<]+<\/a>/);
+          m = text && text.match(/<a [^<]+<\/a>|<br\/?>/);
 
           if (!m) {
             p[1] && result.push( /*#__PURE__*/_react["default"].createElement("span", {
@@ -40939,7 +41154,7 @@ var Utils = /*#__PURE__*/function () {
         delete obj["native"].byON;
         var _smartName = obj.common.smartName;
 
-        if (!_smartName || _typeof(_smartName) !== 'object') {
+        if (!_smartName || (0, _typeof2["default"])(_smartName) !== 'object') {
           _smartName = {
             en: _smartName
           };
@@ -41143,15 +41358,13 @@ var Utils = /*#__PURE__*/function () {
 
         if (invertedColor === '#FFFFFF' && (themeType === 'dark' || invert && themeType === 'light')) {
           return '#DDD';
-        }
-
-        if (invertedColor === '#000000' && (themeType === 'light' || invert && themeType === 'dark')) {
+        } else if (invertedColor === '#000000' && (themeType === 'light' || invert && themeType === 'dark')) {
           return '#222';
+        } else {
+          return undefined;
         }
-
-        return undefined;
       }
-    } // Big thanks to : https://stackoverflow.com/questions/35969656/how-can-i-generate-the-opposite-color-according-to-current-color
+    } // Big thanks to: https://stackoverflow.com/questions/35969656/how-can-i-generate-the-opposite-color-according-to-current-color
 
     /**
      * Invert the given color
@@ -41167,7 +41380,19 @@ var Utils = /*#__PURE__*/function () {
         return '';
       }
 
-      if (hex.startsWith('#')) {
+      if (hex.startsWith('rgba')) {
+        var m = hex.match(/rgba?\((\d+),\s*(\d+),\s*(\d+),\s*([.\d]+)\)/);
+
+        if (m) {
+          hex = parseInt(m[1], 10).toString(16).padStart(2, '0') + parseInt(m[2], 10).toString(16).padStart(2, '0') + parseInt(m[2], 10).toString(16).padStart(2, '0');
+        }
+      } else if (hex.startsWith('rgba')) {
+        var _m = hex.match(/rgb?\((\d+),\s*(\d+),\s*(\d+)\)/);
+
+        if (_m) {
+          hex = parseInt(_m[1], 10).toString(16).padStart(2, '0') + parseInt(_m[2], 10).toString(16).padStart(2, '0') + parseInt(_m[2], 10).toString(16).padStart(2, '0');
+        }
+      } else if (hex.startsWith('#')) {
         hex = hex.slice(1);
       } // convert 3-digit hex to 6-digits.
 
@@ -41177,7 +41402,8 @@ var Utils = /*#__PURE__*/function () {
       }
 
       if (hex.length !== 6) {
-        throw new Error('Invalid HEX color.');
+        console.warn('Cannot invert color: ' + hex);
+        return hex;
       }
 
       var r = parseInt(hex.slice(0, 2), 16);
@@ -41214,7 +41440,7 @@ var Utils = /*#__PURE__*/function () {
 
       if (typeof mix === 'string' || typeof mix === 'number') {
         str += mix;
-      } else if (_typeof(mix) === 'object') {
+      } else if ((0, _typeof2["default"])(mix) === 'object') {
         if (Array.isArray(mix)) {
           for (k = 0; k < mix.length; k++) {
             if (mix[k]) {
@@ -41273,6 +41499,11 @@ var Utils = /*#__PURE__*/function () {
     key: "getThemeName",
     value: function getThemeName() {
       var themeName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      if (window.vendorPrefix && window.vendorPrefix !== '@@vendorPrefix@@') {
+        return window.vendorPrefix;
+      }
+
       return themeName ? themeName : window.localStorage && window.localStorage.getItem('App.themeName') ? window.localStorage.getItem('App.themeName') : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'colored';
     }
     /**
@@ -41285,6 +41516,11 @@ var Utils = /*#__PURE__*/function () {
     key: "getThemeType",
     value: function getThemeType() {
       var themeName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      if (window.vendorPrefix && window.vendorPrefix !== '@@vendorPrefix@@') {
+        return 'light';
+      }
+
       themeName = themeName || window.localStorage && window.localStorage.getItem('App.themeName');
       return themeName === 'dark' || themeName === 'blue' ? 'dark' : 'light';
     }
@@ -41296,6 +41532,10 @@ var Utils = /*#__PURE__*/function () {
   }, {
     key: "setThemeName",
     value: function setThemeName(themeName) {
+      if (window.vendorPrefix && window.vendorPrefix !== '@@vendorPrefix@@') {
+        return; // ignore
+      }
+
       window.localStorage.setItem('App.themeName', themeName);
       window.localStorage.setItem('App.theme', themeName === 'dark' || themeName === 'blue' ? 'dark' : 'light');
     }
@@ -41308,11 +41548,38 @@ var Utils = /*#__PURE__*/function () {
   }, {
     key: "toggleTheme",
     value: function toggleTheme(themeName) {
+      if (window.vendorPrefix && window.vendorPrefix !== '@@vendorPrefix@@') {
+        return window.vendorPrefix;
+      }
+
       themeName = themeName || window.localStorage && window.localStorage.getItem('App.themeName'); // dark => blue => colored => light => dark
 
-      var newThemeName = themeName === 'dark' ? 'blue' : themeName === 'blue' ? 'colored' : themeName === 'colored' ? 'light' : 'dark';
-      Utils.setThemeName(newThemeName);
-      return newThemeName;
+      var themes = Utils.getThemeNames();
+      var pos = themes.indexOf(themeName);
+      var newTheme;
+
+      if (pos !== -1) {
+        newTheme = themes[(pos + 1) % themes.length];
+      } else {
+        newTheme = themes[0];
+      }
+
+      Utils.setThemeName(newTheme);
+      return newTheme;
+    }
+    /**
+     * Get the list of themes
+     * @returns {array<string>} list of possible themes
+     */
+
+  }, {
+    key: "getThemeNames",
+    value: function getThemeNames() {
+      if (window.vendorPrefix && window.vendorPrefix !== '@@vendorPrefix@@') {
+        return [window.vendorPrefix];
+      }
+
+      return ['light', 'dark', 'blue', 'colored'];
     }
     /**
      * Parse a query string into its parts.
@@ -41472,6 +41739,9 @@ var Utils = /*#__PURE__*/function () {
   }, {
     key: "openLink",
     value: function openLink(url, target) {
+      // replace IPv6 Address with [ipv6]:port
+      url = url.replace(/\/\/([0-9a-f]*:[0-9a-f]*:[0-9a-f]*:[0-9a-f]*:[0-9a-f]*:[0-9a-f]*)(:\d+)?\//i, '//[$1]$2/');
+
       if (target === 'this') {
         window.location = url;
       } else {
@@ -41658,52 +41928,170 @@ var Utils = /*#__PURE__*/function () {
 
       return states;
     }
-  }]);
+    /**
+     * Get svg file as text
+     * @param {string} url URL of SVG file
+     * @returns {object} Promise with "data:image..."
+     */
 
+  }, {
+    key: "getSvg",
+    value: function getSvg(url) {
+      return fetch(url).then(function (response) {
+        return response.blob();
+      }).then(function (blob) {
+        return new Promise(function (resolve) {
+          var reader = new FileReader();
+
+          reader.onload = function () {
+            // do not optimize this function. "this" is important.
+            resolve(this.result);
+          };
+
+          reader.readAsDataURL(blob);
+        });
+      });
+    }
+  }]);
   return Utils;
 }();
 
-_defineProperty(Utils, "namespace", NAMESPACE);
-
-_defineProperty(Utils, "INSTANCES", 'instances');
-
-_defineProperty(Utils, "dateFormat", ['DD', 'MM']);
-
-_defineProperty(Utils, "FORBIDDEN_CHARS", /(?:(?![ !#-&\(\)\+\x2D-:=@-Z\^_a-~\xB5\xC0-\xD6\xD8-\xF6\xF8-\u01BA\u01BC-\u01BF\u01C4\u01C6\u01C7\u01C9\u01CA\u01CC-\u01F1\u01F3-\u0293\u0295-\u02AF\u0370-\u0373\u0376\u0377\u037B-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0560-\u0588\u0660-\u0669\u06F0-\u06F9\u07C0-\u07C9\u0966-\u096F\u09E6-\u09EF\u0A66-\u0A6F\u0AE6-\u0AEF\u0B66-\u0B6F\u0BE6-\u0BEF\u0C66-\u0C6F\u0CE6-\u0CEF\u0D66-\u0D6F\u0DE6-\u0DEF\u0E50-\u0E59\u0ED0-\u0ED9\u0F20-\u0F29\u1040-\u1049\u1090-\u1099\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FD-\u10FF\u13A0-\u13F5\u13F8-\u13FD\u17E0-\u17E9\u1810-\u1819\u1946-\u194F\u19D0-\u19D9\u1A80-\u1A89\u1A90-\u1A99\u1B50-\u1B59\u1BB0-\u1BB9\u1C40-\u1C49\u1C50-\u1C59\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6-\u1FBB\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCB\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFB\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2134\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2C7B\u2C7E-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA620-\uA629\uA640-\uA66D\uA680-\uA69B\uA722-\uA76F\uA771-\uA787\uA78B-\uA78E\uA790-\uA7BF\uA7C2-\uA7CA\uA7F5\uA7F6\uA7FA\uA8D0-\uA8D9\uA900-\uA909\uA9D0-\uA9D9\uA9F0-\uA9F9\uAA50-\uAA59\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uABF0-\uABF9\uFB00-\uFB06\uFB13-\uFB17\uFF10-\uFF19\uFF21-\uFF3A\uFF41-\uFF5A]|\uD801[\uDC00-\uDC4F\uDCA0-\uDCA9\uDCB0-\uDCD3\uDCD8-\uDCFB]|\uD803[\uDC80-\uDCB2\uDCC0-\uDCF2\uDD30-\uDD39]|\uD804[\uDC66-\uDC6F\uDCF0-\uDCF9\uDD36-\uDD3F\uDDD0-\uDDD9\uDEF0-\uDEF9]|\uD805[\uDC50-\uDC59\uDCD0-\uDCD9\uDE50-\uDE59\uDEC0-\uDEC9\uDF30-\uDF39]|\uD806[\uDCA0-\uDCE9\uDD50-\uDD59]|\uD807[\uDC50-\uDC59\uDD50-\uDD59\uDDA0-\uDDA9]|\uD81A[\uDE60-\uDE69\uDF50-\uDF59]|\uD81B[\uDE40-\uDE7F]|\uD835[\uDC00-\uDC54\uDC56-\uDC9C\uDC9E\uDC9F\uDCA2\uDCA5\uDCA6\uDCA9-\uDCAC\uDCAE-\uDCB9\uDCBB\uDCBD-\uDCC3\uDCC5-\uDD05\uDD07-\uDD0A\uDD0D-\uDD14\uDD16-\uDD1C\uDD1E-\uDD39\uDD3B-\uDD3E\uDD40-\uDD44\uDD46\uDD4A-\uDD50\uDD52-\uDEA5\uDEA8-\uDEC0\uDEC2-\uDEDA\uDEDC-\uDEFA\uDEFC-\uDF14\uDF16-\uDF34\uDF36-\uDF4E\uDF50-\uDF6E\uDF70-\uDF88\uDF8A-\uDFA8\uDFAA-\uDFC2\uDFC4-\uDFCB\uDFCE-\uDFFF]|\uD838[\uDD40-\uDD49\uDEF0-\uDEF9]|\uD83A[\uDD00-\uDD43\uDD50-\uDD59]|\uD83E[\uDFF0-\uDFF9])[\s\S])+/g);
-
+(0, _defineProperty2["default"])(Utils, "namespace", NAMESPACE);
+(0, _defineProperty2["default"])(Utils, "INSTANCES", 'instances');
+(0, _defineProperty2["default"])(Utils, "dateFormat", ['DD', 'MM']);
+(0, _defineProperty2["default"])(Utils, "FORBIDDEN_CHARS", /(?:(?![ !#-&\(\)\+\x2D-:=@-Z\^_a-~\xB5\xC0-\xD6\xD8-\xF6\xF8-\u01BA\u01BC-\u01BF\u01C4\u01C6\u01C7\u01C9\u01CA\u01CC-\u01F1\u01F3-\u0293\u0295-\u02AF\u0370-\u0373\u0376\u0377\u037B-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0560-\u0588\u0660-\u0669\u06F0-\u06F9\u07C0-\u07C9\u0966-\u096F\u09E6-\u09EF\u0A66-\u0A6F\u0AE6-\u0AEF\u0B66-\u0B6F\u0BE6-\u0BEF\u0C66-\u0C6F\u0CE6-\u0CEF\u0D66-\u0D6F\u0DE6-\u0DEF\u0E50-\u0E59\u0ED0-\u0ED9\u0F20-\u0F29\u1040-\u1049\u1090-\u1099\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FD-\u10FF\u13A0-\u13F5\u13F8-\u13FD\u17E0-\u17E9\u1810-\u1819\u1946-\u194F\u19D0-\u19D9\u1A80-\u1A89\u1A90-\u1A99\u1B50-\u1B59\u1BB0-\u1BB9\u1C40-\u1C49\u1C50-\u1C59\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6-\u1FBB\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCB\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFB\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2134\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2C7B\u2C7E-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA620-\uA629\uA640-\uA66D\uA680-\uA69B\uA722-\uA76F\uA771-\uA787\uA78B-\uA78E\uA790-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F5\uA7F6\uA7FA\uA8D0-\uA8D9\uA900-\uA909\uA9D0-\uA9D9\uA9F0-\uA9F9\uAA50-\uAA59\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uABF0-\uABF9\uFB00-\uFB06\uFB13-\uFB17\uFF10-\uFF19\uFF21-\uFF3A\uFF41-\uFF5A]|\uD801[\uDC00-\uDC4F\uDCA0-\uDCA9\uDCB0-\uDCD3\uDCD8-\uDCFB\uDD70-\uDD7A\uDD7C-\uDD8A\uDD8C-\uDD92\uDD94\uDD95\uDD97-\uDDA1\uDDA3-\uDDB1\uDDB3-\uDDB9\uDDBB\uDDBC]|\uD803[\uDC80-\uDCB2\uDCC0-\uDCF2\uDD30-\uDD39]|\uD804[\uDC66-\uDC6F\uDCF0-\uDCF9\uDD36-\uDD3F\uDDD0-\uDDD9\uDEF0-\uDEF9]|\uD805[\uDC50-\uDC59\uDCD0-\uDCD9\uDE50-\uDE59\uDEC0-\uDEC9\uDF30-\uDF39]|\uD806[\uDCA0-\uDCE9\uDD50-\uDD59]|\uD807[\uDC50-\uDC59\uDD50-\uDD59\uDDA0-\uDDA9]|\uD81A[\uDE60-\uDE69\uDEC0-\uDEC9\uDF50-\uDF59]|\uD81B[\uDE40-\uDE7F]|\uD835[\uDC00-\uDC54\uDC56-\uDC9C\uDC9E\uDC9F\uDCA2\uDCA5\uDCA6\uDCA9-\uDCAC\uDCAE-\uDCB9\uDCBB\uDCBD-\uDCC3\uDCC5-\uDD05\uDD07-\uDD0A\uDD0D-\uDD14\uDD16-\uDD1C\uDD1E-\uDD39\uDD3B-\uDD3E\uDD40-\uDD44\uDD46\uDD4A-\uDD50\uDD52-\uDEA5\uDEA8-\uDEC0\uDEC2-\uDEDA\uDEDC-\uDEFA\uDEFC-\uDF14\uDF16-\uDF34\uDF36-\uDF4E\uDF50-\uDF6E\uDF70-\uDF88\uDF8A-\uDFA8\uDFAA-\uDFC2\uDFC4-\uDFCB\uDFCE-\uDFFF]|\uD837[\uDF00-\uDF09\uDF0B-\uDF1E]|\uD838[\uDD40-\uDD49\uDEF0-\uDEF9]|\uD83A[\uDD00-\uDD43\uDD50-\uDD59]|\uD83E[\uDFF0-\uDFF9])[\s\S])+/g);
 var _default = Utils;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js"}],"../../node_modules/@iobroker/adapter-react/Connection.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/slicedToArray":"../../node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/helpers/typeof":"../../node_modules/@babel/runtime/helpers/typeof.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/defineProperty":"../../node_modules/@babel/runtime/helpers/defineProperty.js","react":"../../node_modules/react/index.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js"}],"../../node_modules/@babel/runtime/helpers/assertThisInitialized.js":[function(require,module,exports) {
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js":[function(require,module,exports) {
+function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _getPrototypeOf(o);
+}
+
+module.exports = _getPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/superPropBase.js":[function(require,module,exports) {
+var getPrototypeOf = require("./getPrototypeOf.js");
+
+function _superPropBase(object, property) {
+  while (!Object.prototype.hasOwnProperty.call(object, property)) {
+    object = getPrototypeOf(object);
+    if (object === null) break;
+  }
+
+  return object;
+}
+
+module.exports = _superPropBase, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./getPrototypeOf.js":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js"}],"../../node_modules/@babel/runtime/helpers/get.js":[function(require,module,exports) {
+var superPropBase = require("./superPropBase.js");
+
+function _get() {
+  if (typeof Reflect !== "undefined" && Reflect.get) {
+    module.exports = _get = Reflect.get, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  } else {
+    module.exports = _get = function _get(target, property, receiver) {
+      var base = superPropBase(target, property);
+      if (!base) return;
+      var desc = Object.getOwnPropertyDescriptor(base, property);
+
+      if (desc.get) {
+        return desc.get.call(arguments.length < 3 ? target : receiver);
+      }
+
+      return desc.value;
+    }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  }
+
+  return _get.apply(this, arguments);
+}
+
+module.exports = _get, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./superPropBase.js":"../../node_modules/@babel/runtime/helpers/superPropBase.js"}],"../../node_modules/@babel/runtime/helpers/setPrototypeOf.js":[function(require,module,exports) {
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../../node_modules/@babel/runtime/helpers/inherits.js":[function(require,module,exports) {
+var setPrototypeOf = require("./setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  Object.defineProperty(subClass, "prototype", {
+    writable: false
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./setPrototypeOf.js":"../../node_modules/@babel/runtime/helpers/setPrototypeOf.js"}],"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":[function(require,module,exports) {
+var _typeof = require("./typeof.js")["default"];
+
+var assertThisInitialized = require("./assertThisInitialized.js");
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+
+  return assertThisInitialized(self);
+}
+
+module.exports = _possibleConstructorReturn, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":"../../node_modules/@babel/runtime/helpers/typeof.js","./assertThisInitialized.js":"../../node_modules/@babel/runtime/helpers/assertThisInitialized.js"}],"../../node_modules/@iobroker/adapter-react/Connection.js":[function(require,module,exports) {
 "use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.ERRORS = exports.PROGRESS = void 0;
+exports["default"] = exports.PROGRESS = exports.ERRORS = void 0;
+
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+/**
+ * Copyright 2020-2021, bluefox <dogafox@gmail.com>
+ *
+ * MIT License
+ *
+ **/
 
 /** Possible progress states. */
 var PROGRESS = {
@@ -41722,19 +42110,59 @@ var PROGRESS = {
 exports.PROGRESS = PROGRESS;
 var PERMISSION_ERROR = 'permissionError';
 var NOT_CONNECTED = 'notConnectedError';
+var TIMEOUT_FOR_ADMIN4 = 1300;
 var ERRORS = {
   PERMISSION_ERROR: PERMISSION_ERROR,
   NOT_CONNECTED: NOT_CONNECTED
 };
 exports.ERRORS = ERRORS;
 
+function fixAdminUI(obj) {
+  if (obj && obj.common && !obj.common.adminUI) {
+    if (obj.common.noConfig) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.config = 'none';
+    } else if (obj.common.jsonConfig) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.config = 'json';
+    } else if (obj.common.materialize) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.config = 'materialize';
+    } else {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.config = 'html';
+    }
+
+    if (obj.common.jsonCustom) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.custom = 'json';
+    } else if (obj.common.supportCustoms) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.custom = 'json';
+    }
+
+    if (obj.common.materializeTab && obj.common.adminTab) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.tab = 'materialize';
+    } else if (obj.common.adminTab) {
+      obj.common.adminUI = obj.common.adminUI || {};
+      obj.common.adminUI.tab = 'html';
+    }
+
+    obj.common.adminUI && console.debug("Please add to \"".concat(obj._id.replace(/\.\d+$/, ''), "\" common.adminUI=").concat(JSON.stringify(obj.common.adminUI)));
+  }
+
+  return obj;
+}
+
 var Connection = /*#__PURE__*/function () {
   /**
    * @param {import('./types').ConnectionProps} props
    */
   function Connection(props) {
-    _classCallCheck(this, Connection);
+    var _this = this;
 
+    (0, _classCallCheck2["default"])(this, Connection);
     props = props || {
       protocol: window.location.protocol,
       host: window.location.hostname
@@ -41744,7 +42172,7 @@ var Connection = /*#__PURE__*/function () {
     this.autoSubscribeLog = this.props.autoSubscribeLog;
     this.props.protocol = this.props.protocol || window.location.protocol;
     this.props.host = this.props.host || window.location.hostname;
-    this.props.port = this.props.port || (window.location.port === '3000' ? 8081 : window.location.port);
+    this.props.port = this.props.port || (window.location.port === '3000' ? Connection.isWeb() ? 8082 : 8081 : window.location.port);
     this.props.ioTimeout = Math.max(this.props.ioTimeout || 20000, 20000);
     this.props.cmdTimeout = Math.max(this.props.cmdTimeout || 5000, 5000); // breaking change. Do not load all objects by default is true
 
@@ -41761,6 +42189,9 @@ var Connection = /*#__PURE__*/function () {
 
     this.systemLang = 'en';
     this.connected = false;
+    this._waitForFirstConnection = new Promise(function (resolve) {
+      _this._waitForFirstConnectionResolve = resolve;
+    });
     /** @type {Record<string, { reg: RegExp; cbs: ioBroker.StateChangeHandler[]}>} */
 
     this.statesSubscribes = {}; // subscribe for states
@@ -41778,7 +42209,7 @@ var Connection = /*#__PURE__*/function () {
     this.loaded = false;
     this.loadTimer = null;
     this.loadCounter = 0;
-    this.certPromise = null;
+    this.admin5only = this.props.admin5only || false;
     /** @type {((connected: boolean) => void)[]} */
 
     this.onConnectionHandlers = [];
@@ -41796,7 +42227,7 @@ var Connection = /*#__PURE__*/function () {
    */
 
 
-  _createClass(Connection, [{
+  (0, _createClass2["default"])(Connection, [{
     key: "startSocket",
     value:
     /**
@@ -41804,7 +42235,7 @@ var Connection = /*#__PURE__*/function () {
      * @returns {void}
      */
     function startSocket() {
-      var _this = this;
+      var _this2 = this;
 
       // if socket io is not yet loaded
       if (typeof window.io === 'undefined') {
@@ -41817,7 +42248,7 @@ var Connection = /*#__PURE__*/function () {
           if (this.scriptLoadCounter < 30) {
             // wait till the script loaded
             setTimeout(function () {
-              return _this.startSocket();
+              return _this2.startSocket();
             }, 100);
             return;
           } else {
@@ -41826,7 +42257,7 @@ var Connection = /*#__PURE__*/function () {
         } else {
           // register on load
           window.registerSocketOnLoad(function () {
-            return _this.startSocket();
+            return _this2.startSocket();
           });
         }
 
@@ -41854,7 +42285,7 @@ var Connection = /*#__PURE__*/function () {
         }
       }
 
-      var url = "".concat(protocol, "://").concat(host, ":").concat(port);
+      var url = port ? "".concat(protocol, "://").concat(host, ":").concat(port) : "".concat(protocol, "://").concat(host);
       this._socket = window.io.connect(url, {
         query: 'ws=true',
         name: this.props.name,
@@ -41865,9 +42296,9 @@ var Connection = /*#__PURE__*/function () {
         // If the user is not admin it takes some time to install the handlers, because all rights must be checked
         if (noTimeout !== true) {
           setTimeout(function () {
-            return _this.getVersion().then(function (info) {
+            return _this2.getVersion().then(function (info) {
               var _info$version$split = info.version.split('.'),
-                  _info$version$split2 = _slicedToArray(_info$version$split, 3),
+                  _info$version$split2 = (0, _slicedToArray2["default"])(_info$version$split, 3),
                   major = _info$version$split2[0],
                   minor = _info$version$split2[1],
                   patch = _info$version$split2[2];
@@ -41875,59 +42306,59 @@ var Connection = /*#__PURE__*/function () {
               var v = parseInt(major, 10) * 10000 + parseInt(minor, 10) * 100 + parseInt(patch, 10);
 
               if (v < 40102) {
-                _this._authTimer = null; // possible this is old version of admin
+                _this2._authTimer = null; // possible this is old version of admin
 
-                _this.onPreConnect(false, false);
+                _this2.onPreConnect(false, false);
               } else {
-                _this._socket.emit('authenticate', function (isOk, isSecure) {
-                  return _this.onPreConnect(isOk, isSecure);
+                _this2._socket.emit('authenticate', function (isOk, isSecure) {
+                  return _this2.onPreConnect(isOk, isSecure);
                 });
               }
             });
           }, 500);
         } else {
           // iobroker websocket waits, till all handlers are installed
-          _this._socket.emit('authenticate', function (isOk, isSecure) {
-            return _this.onPreConnect(isOk, isSecure);
+          _this2._socket.emit('authenticate', function (isOk, isSecure) {
+            return _this2.onPreConnect(isOk, isSecure);
           });
         }
       });
 
       this._socket.on('reconnect', function () {
-        _this.onProgress(PROGRESS.READY);
+        _this2.onProgress(PROGRESS.READY);
 
-        _this.connected = true;
+        _this2.connected = true;
 
-        if (_this.waitForRestart) {
+        if (_this2.waitForRestart) {
           window.location.reload(false);
         } else {
-          _this._subscribe(true);
+          _this2._subscribe(true);
 
-          _this.onConnectionHandlers.forEach(function (cb) {
+          _this2.onConnectionHandlers.forEach(function (cb) {
             return cb(true);
           });
         }
       });
 
       this._socket.on('disconnect', function () {
-        _this.connected = false;
-        _this.subscribed = false;
+        _this2.connected = false;
+        _this2.subscribed = false;
 
-        _this.onProgress(PROGRESS.CONNECTING);
+        _this2.onProgress(PROGRESS.CONNECTING);
 
-        _this.onConnectionHandlers.forEach(function (cb) {
+        _this2.onConnectionHandlers.forEach(function (cb) {
           return cb(false);
         });
       });
 
       this._socket.on('reauthenticate', function () {
-        return _this.authenticate();
+        return _this2.authenticate();
       });
 
       this._socket.on('log', function (message) {
-        _this.props.onLog && _this.props.onLog(message);
+        _this2.props.onLog && _this2.props.onLog(message);
 
-        _this.onLogHandlers.forEach(function (cb) {
+        _this2.onLogHandlers.forEach(function (cb) {
           return cb(message);
         });
       });
@@ -41943,7 +42374,7 @@ var Connection = /*#__PURE__*/function () {
         _err = _err.toString();
 
         if (_err.includes('User not authorized')) {
-          _this.authenticate();
+          _this2.authenticate();
         } else {
           window.alert("Socket Error: ".concat(err));
         }
@@ -41954,7 +42385,7 @@ var Connection = /*#__PURE__*/function () {
       });
 
       this._socket.on('permissionError', function (err) {
-        return _this.onError({
+        return _this2.onError({
           message: 'no permission',
           operation: err.operation,
           type: err.type,
@@ -41964,26 +42395,26 @@ var Connection = /*#__PURE__*/function () {
 
       this._socket.on('objectChange', function (id, obj) {
         return setTimeout(function () {
-          return _this.objectChange(id, obj);
+          return _this2.objectChange(id, obj);
         }, 0);
       });
 
       this._socket.on('stateChange', function (id, state) {
         return setTimeout(function () {
-          return _this.stateChange(id, state);
+          return _this2.stateChange(id, state);
         }, 0);
       });
 
       this._socket.on('cmdStdout', function (id, text) {
-        return _this.onCmdStdoutHandler && _this.onCmdStdoutHandler(id, text);
+        return _this2.onCmdStdoutHandler && _this2.onCmdStdoutHandler(id, text);
       });
 
       this._socket.on('cmdStderr', function (id, text) {
-        return _this.onCmdStderrHandler && _this.onCmdStderrHandler(id, text);
+        return _this2.onCmdStderrHandler && _this2.onCmdStderrHandler(id, text);
       });
 
       this._socket.on('cmdExit', function (id, exitCode) {
-        return _this.onCmdExitHandler && _this.onCmdExitHandler(id, exitCode);
+        return _this2.onCmdExitHandler && _this2.onCmdExitHandler(id, exitCode);
       });
     }
     /**
@@ -41996,7 +42427,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "onPreConnect",
     value: function onPreConnect(isOk, isSecure) {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this._authTimer) {
         clearTimeout(this._authTimer);
@@ -42012,11 +42443,11 @@ var Connection = /*#__PURE__*/function () {
         if (this.firstConnect) {
           // retry strategy
           this.loadTimer = setTimeout(function () {
-            _this2.loadTimer = null;
-            _this2.loadCounter++;
+            _this3.loadTimer = null;
+            _this3.loadCounter++;
 
-            if (_this2.loadCounter < 10) {
-              _this2.onConnect();
+            if (_this3.loadCounter < 10) {
+              _this3.onConnect();
             }
           }, 1000);
 
@@ -42033,6 +42464,12 @@ var Connection = /*#__PURE__*/function () {
           return cb(true);
         });
       }
+
+      if (this._waitForFirstConnectionResolve) {
+        this._waitForFirstConnectionResolve();
+
+        this._waitForFirstConnectionResolve = null;
+      }
     }
     /**
      * Checks if the socket is connected.
@@ -42043,6 +42480,16 @@ var Connection = /*#__PURE__*/function () {
     key: "isConnected",
     value: function isConnected() {
       return this.connected;
+    }
+    /**
+     * Checks if the socket is connected.
+     * @returns {Promise<void>} Promise resolves if once connected.
+     */
+
+  }, {
+    key: "waitForFirstConnection",
+    value: function waitForFirstConnection() {
+      return this._waitForFirstConnection;
     }
     /**
      * Called internally.
@@ -42066,74 +42513,76 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "onConnect",
     value: function onConnect() {
-      var _this3 = this;
+      var _this4 = this;
 
       this._getUserPermissions(function (err, acl) {
         if (err) {
-          return _this3.onError('Cannot read user permissions: ' + err);
-        } else if (!_this3.doNotLoadACL) {
-          if (_this3.loaded) {
+          return _this4.onError('Cannot read user permissions: ' + err);
+        } else if (!_this4.doNotLoadACL) {
+          if (_this4.loaded) {
             return;
           }
 
-          _this3.loaded = true;
-          clearTimeout(_this3.loadTimer);
-          _this3.loadTimer = null;
+          _this4.loaded = true;
+          clearTimeout(_this4.loadTimer);
+          _this4.loadTimer = null;
 
-          _this3.onProgress(PROGRESS.CONNECTED);
+          _this4.onProgress(PROGRESS.CONNECTED);
 
-          _this3.firstConnect = false;
-          _this3.acl = acl;
+          _this4.firstConnect = false;
+          _this4.acl = acl;
         } // Read system configuration
 
 
-        return _this3.getCompactSystemConfig().then(function (data) {
-          if (_this3.doNotLoadACL) {
-            if (_this3.loaded) {
-              return;
+        return (_this4.admin5only && !window.vendorPrefix ? _this4.getCompactSystemConfig() : _this4.getSystemConfig()).then(function (data) {
+          if (_this4.doNotLoadACL) {
+            if (_this4.loaded) {
+              return undefined;
             }
 
-            _this3.loaded = true;
-            clearTimeout(_this3.loadTimer);
-            _this3.loadTimer = null;
+            _this4.loaded = true;
+            clearTimeout(_this4.loadTimer);
+            _this4.loadTimer = null;
 
-            _this3.onProgress(PROGRESS.CONNECTED);
+            _this4.onProgress(PROGRESS.CONNECTED);
 
-            _this3.firstConnect = false;
+            _this4.firstConnect = false;
           }
 
-          _this3.systemConfig = data;
+          _this4.systemConfig = data;
 
-          if (_this3.systemConfig && _this3.systemConfig.common) {
-            _this3.systemLang = _this3.systemConfig.common.language;
+          if (_this4.systemConfig && _this4.systemConfig.common) {
+            _this4.systemLang = _this4.systemConfig.common.language;
           } else {
-            _this3.systemLang = window.navigator.userLanguage || window.navigator.language;
+            _this4.systemLang = window.navigator.userLanguage || window.navigator.language;
 
-            if (_this3.systemLang !== 'en' && _this3.systemLang !== 'de' && _this3.systemLang !== 'ru') {
-              _this3.systemConfig.common.language = 'en';
-              _this3.systemLang = 'en';
+            if (_this4.systemLang !== 'en' && _this4.systemLang !== 'de' && _this4.systemLang !== 'ru') {
+              _this4.systemConfig.common.language = 'en';
+              _this4.systemLang = 'en';
             }
           }
 
-          _this3.props.onLanguage && _this3.props.onLanguage(_this3.systemLang);
+          _this4.props.onLanguage && _this4.props.onLanguage(_this4.systemLang);
 
-          if (!_this3.doNotLoadAllObjects) {
-            return _this3.getObjects().then(function () {
-              _this3.onProgress(PROGRESS.READY);
+          if (!_this4.doNotLoadAllObjects) {
+            return _this4.getObjects().then(function () {
+              _this4.onProgress(PROGRESS.READY);
 
-              _this3.props.onReady && _this3.props.onReady(_this3.objects);
+              _this4.props.onReady && _this4.props.onReady(_this4.objects);
             });
           } else {
-            _this3.objects = {
+            _this4.objects = _this4.admin5only ? {} : {
               'system.config': data
             };
 
-            _this3.onProgress(PROGRESS.READY);
+            _this4.onProgress(PROGRESS.READY);
 
-            _this3.props.onReady && _this3.props.onReady(_this3.objects);
+            _this4.props.onReady && _this4.props.onReady(_this4.objects);
           }
+
+          return undefined;
         })["catch"](function (e) {
-          return _this3.onError('Cannot read system config: ' + e);
+          return _this4.onError('Cannot read system config: ' + e);
         });
       });
     }
@@ -42158,11 +42607,11 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Subscribe to changes of the given state.
-    * @param {string} id The ioBroker state ID.
-    * @param {boolean} binary Set to true if the given state is binary and requires Base64 decoding.
-    * @param {ioBroker.StateChangeHandler} cb The callback.
-    */
+     * Subscribe to changes of the given state.
+     * @param {string} id The ioBroker state ID.
+     * @param {boolean} binary Set to true if the given state is binary and requires Base64 decoding.
+     * @param {ioBroker.StateChangeHandler} cb The callback.
+     */
 
   }, {
     key: "subscribeState",
@@ -42200,12 +42649,21 @@ var Connection = /*#__PURE__*/function () {
             return console.error("Cannot getForeignStates \"".concat(id, "\": ").concat(JSON.stringify(e)));
           });
         } else {
-          this._socket.emit('getForeignStates', id, function (err, states) {
-            err && console.error("Cannot getForeignStates \"".concat(id, "\": ").concat(JSON.stringify(err)));
-            states && Object.keys(states).forEach(function (id) {
-              return cb(id, states[id]);
+          if (Connection.isWeb()) {
+            this._socket.emit('getStates', id, function (err, states) {
+              err && console.error("Cannot getForeignStates \"".concat(id, "\": ").concat(JSON.stringify(err)));
+              states && Object.keys(states).forEach(function (id) {
+                return cb(id, states[id]);
+              });
             });
-          });
+          } else {
+            this._socket.emit('getForeignStates', id, function (err, states) {
+              err && console.error("Cannot getForeignStates \"".concat(id, "\": ").concat(JSON.stringify(err)));
+              states && Object.keys(states).forEach(function (id) {
+                return cb(id, states[id]);
+              });
+            });
+          }
         }
       }
     }
@@ -42215,10 +42673,10 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Unsubscribes the given callback from changes of the given state.
-    * @param {string} id The ioBroker state ID.
-    * @param {ioBroker.StateChangeHandler} cb The callback.
-    */
+     * Unsubscribes the given callback from changes of the given state.
+     * @param {string} id The ioBroker state ID.
+     * @param {ioBroker.StateChangeHandler} cb The callback.
+     */
 
   }, {
     key: "unsubscribeState",
@@ -42250,7 +42708,7 @@ var Connection = /*#__PURE__*/function () {
       if (!this.objectsSubscribes[id]) {
         var reg = id.replace(/\./g, '\\.').replace(/\*/g, '.*');
 
-        if (reg.indexOf('*') === -1) {
+        if (!reg.includes('*')) {
           reg += '$';
         }
 
@@ -42273,11 +42731,11 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Unsubscribes the given callback from changes of the given object.
-    * @param {string} id The ioBroker object ID.
-    * @param {import('./types').ObjectChangeHandler} cb The callback.
-    * @returns {Promise<void>}
-    */
+     * Unsubscribes the given callback from changes of the given object.
+     * @param {string} id The ioBroker object ID.
+     * @param {import('./types').ObjectChangeHandler} cb The callback.
+     * @returns {Promise<void>}
+     */
 
   }, {
     key: "unsubscribeObject",
@@ -42308,7 +42766,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "objectChange",
     value: function objectChange(id, obj) {
-      var _this4 = this;
+      var _this5 = this;
 
       // update main.objects cache
       if (!this.objects) {
@@ -42346,8 +42804,9 @@ var Connection = /*#__PURE__*/function () {
       }
 
       Object.keys(this.objectsSubscribes).forEach(function (_id) {
-        if (_id === id || _this4.objectsSubscribes[_id].reg.test(id)) {
-          _this4.objectsSubscribes[_id].cbs.forEach(function (cb) {
+        if (_id === id || _this5.objectsSubscribes[_id].reg.test(id)) {
+          //@ts-ignore
+          _this5.objectsSubscribes[_id].cbs.forEach(function (cb) {
             return cb(id, obj, oldObj);
           });
         }
@@ -42384,17 +42843,18 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getStates",
     value: function getStates(disableProgressUpdate) {
-      var _this5 = this;
+      var _this6 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this5._socket.emit('getStates', function (err, res) {
-          _this5.states = res;
-          !disableProgressUpdate && _this5.onProgress(PROGRESS.STATES_LOADED);
-          return err ? reject(err) : resolve(_this5.states);
+        return _this6._socket.emit('getStates', function (err, res) {
+          _this6.states = res; //@ts-ignore
+
+          !disableProgressUpdate && _this6.onProgress(PROGRESS.STATES_LOADED);
+          return err ? reject(err) : resolve(_this6.states);
         });
       });
     }
@@ -42407,14 +42867,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getState",
     value: function getState(id) {
-      var _this6 = this;
+      var _this7 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this6._socket.emit('getState', id, function (err, state) {
+        return _this7._socket.emit('getState', id, function (err, state) {
           return err ? reject(err) : resolve(state);
         });
       });
@@ -42428,7 +42888,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getBinaryState",
     value: function getBinaryState(id) {
-      var _this7 = this;
+      var _this8 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -42436,7 +42896,7 @@ var Connection = /*#__PURE__*/function () {
 
 
       return new Promise(function (resolve, reject) {
-        return _this7._socket.emit('getBinaryState', id, function (err, state) {
+        return _this8._socket.emit('getBinaryState', id, function (err, state) {
           return err ? reject(err) : resolve(state);
         });
       });
@@ -42451,7 +42911,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "setBinaryState",
     value: function setBinaryState(id, base64) {
-      var _this8 = this;
+      var _this9 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -42459,7 +42919,7 @@ var Connection = /*#__PURE__*/function () {
 
 
       return new Promise(function (resolve, reject) {
-        return _this8._socket.emit('setBinaryState', id, base64, function (err) {
+        return _this9._socket.emit('setBinaryState', id, base64, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -42474,14 +42934,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "setState",
     value: function setState(id, val) {
-      var _this9 = this;
+      var _this10 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this9._socket.emit('setState', id, val, function (err) {
+        return _this10._socket.emit('setState', id, val, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -42493,52 +42953,31 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Gets all objects.
-    * @param {boolean} update Set to true to retrieve all objects from the server (instead of using the local cache).
-    * @param {boolean} disableProgressUpdate don't call onProgress() when done
-    * @returns {Promise<Record<string, ioBroker.Object>> | undefined}
-    */
+     * Gets all objects.
+     * @param {boolean} update Set to true to retrieve all objects from the server (instead of using the local cache).
+     * @param {boolean} disableProgressUpdate don't call onProgress() when done
+     * @returns {Promise<Record<string, ioBroker.Object>> | undefined}
+     */
 
   }, {
     key: "getObjects",
     value: function getObjects(update, disableProgressUpdate) {
-      var _this10 = this;
+      var _this11 = this;
 
-      if (typeof update === 'function') {
-        var callback = update; // BF(2020_06_01): old code, must be removed when adapter-react will be updated
-
-        if (!this.connected) {
-          console.error(NOT_CONNECTED);
-          callback();
-        } else {
-          if (this.objects && Object.keys(this.objects).length > 2) {
-            setTimeout(function () {
-              return callback(_this10.objects);
-            }, 100);
-          } else {
-            this._socket.emit('getAllObjects', function (err, res) {
-              _this10.objects = res || {};
-              disableProgressUpdate && _this10.onProgress(PROGRESS.OBJECTS_LOADED);
-              callback(_this10.objects);
-            });
-          }
-        }
+      if (!this.connected) {
+        return Promise.reject(NOT_CONNECTED);
       } else {
-        if (!this.connected) {
-          return Promise.reject(NOT_CONNECTED);
-        } else {
-          return new Promise(function (resolve, reject) {
-            if (!update && _this10.objects) {
-              return resolve(_this10.objects);
-            }
+        return new Promise(function (resolve, reject) {
+          if (!update && _this11.objects) {
+            return resolve(_this11.objects);
+          }
 
-            _this10._socket.emit('getAllObjects', function (err, res) {
-              _this10.objects = res;
-              disableProgressUpdate && _this10.onProgress(PROGRESS.OBJECTS_LOADED);
-              err ? reject(err) : resolve(_this10.objects);
-            });
+          _this11._socket.emit(Connection.isWeb() ? 'getObjects' : 'getAllObjects', function (err, res) {
+            _this11.objects = res;
+            disableProgressUpdate && _this11.onProgress(PROGRESS.OBJECTS_LOADED);
+            err ? reject(err) : resolve(_this11.objects);
           });
-        }
+        });
       }
     }
     /**
@@ -42550,37 +42989,37 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "_subscribe",
     value: function _subscribe(isEnable) {
-      var _this11 = this;
+      var _this12 = this;
 
       if (isEnable && !this.subscribed) {
         this.subscribed = true;
         this.autoSubscribes.forEach(function (id) {
-          return _this11._socket.emit('subscribeObjects', id);
+          return _this12._socket.emit('subscribeObjects', id);
         }); // re subscribe objects
 
         Object.keys(this.objectsSubscribes).forEach(function (id) {
-          return _this11._socket.emit('subscribeObjects', id);
+          return _this12._socket.emit('subscribeObjects', id);
         }); // re-subscribe logs
 
         this.autoSubscribeLog && this._socket.emit('requireLog', true); // re subscribe states
 
         Object.keys(this.statesSubscribes).forEach(function (id) {
-          return _this11._socket.emit('subscribe', id);
+          return _this12._socket.emit('subscribe', id);
         });
       } else if (!isEnable && this.subscribed) {
         this.subscribed = false; // un-subscribe objects
 
         this.autoSubscribes.forEach(function (id) {
-          return _this11._socket.emit('unsubscribeObjects', id);
+          return _this12._socket.emit('unsubscribeObjects', id);
         });
         Object.keys(this.objectsSubscribes).forEach(function (id) {
-          return _this11._socket.emit('unsubscribeObjects', id);
+          return _this12._socket.emit('unsubscribeObjects', id);
         }); // un-subscribe logs
 
         this.autoSubscribeLog && this._socket.emit('requireLog', false); // un-subscribe states
 
         Object.keys(this.statesSubscribes).forEach(function (id) {
-          return _this11._socket.emit('unsubscribe', id);
+          return _this12._socket.emit('unsubscribe', id);
         });
       }
     }
@@ -42593,14 +43032,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "requireLog",
     value: function requireLog(isEnabled) {
-      var _this12 = this;
+      var _this13 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this12._socket.emit('requireLog', isEnabled, function (err) {
+        return _this13._socket.emit('requireLog', isEnabled, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -42615,14 +43054,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "delObject",
     value: function delObject(id, maintenance) {
-      var _this13 = this;
+      var _this14 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this13._socket.emit('delObject', id, {
+        return _this14._socket.emit('delObject', id, {
           maintenance: !!maintenance
         }, function (err) {
           return err ? reject(err) : resolve();
@@ -42639,14 +43078,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "delObjects",
     value: function delObjects(id, maintenance) {
-      var _this14 = this;
+      var _this15 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this14._socket.emit('delObjects', id, {
+        return _this15._socket.emit('delObjects', id, {
           maintenance: !!maintenance
         }, function (err) {
           return err ? reject(err) : resolve();
@@ -42663,7 +43102,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "setObject",
     value: function setObject(id, obj) {
-      var _this15 = this;
+      var _this16 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -42688,7 +43127,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this15._socket.emit('setObject', id, obj, function (err) {
+        return _this16._socket.emit('setObject', id, obj, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -42702,14 +43141,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getObject",
     value: function getObject(id) {
-      var _this16 = this;
+      var _this17 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this16._socket.emit('getObject', id, function (err, obj) {
+        return _this17._socket.emit('getObject', id, function (err, obj) {
           return err ? reject(err) : resolve(obj);
         });
       });
@@ -42721,16 +43160,20 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Get all instances of the given adapter.
-    * @param {string} adapter The name of the adapter.
-    * @param {boolean} [update] Force update.
-    * @returns {Promise<ioBroker.Object[]>}
-    */
+     * Get all instances of the given adapter.
+     * @param {string} adapter The name of the adapter.
+     * @param {boolean} [update] Force update.
+     * @returns {Promise<ioBroker.Object[]>}
+     */
 
   }, {
     key: "getAdapterInstances",
     value: function getAdapterInstances(adapter, update) {
-      var _this17 = this;
+      var _this18 = this;
+
+      if (Connection.isWeb()) {
+        return Promise.reject('Allowed only in admin');
+      }
 
       if (typeof adapter === 'boolean') {
         update = adapter;
@@ -42748,8 +43191,24 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises['instances_' + adapter] = new Promise(function (resolve, reject) {
-        return _this17._socket.emit('getAdapterInstances', adapter, function (err, instances) {
-          return err ? reject(err) : resolve(instances);
+        var timeout = setTimeout(function () {
+          timeout = null;
+
+          _this18.getObjectView("system.adapter.".concat(adapter, "."), "system.adapter.".concat(adapter, ".\u9999"), 'instance').then(function (items) {
+            return resolve(Object.keys(items).map(function (id) {
+              return fixAdminUI(items[id]);
+            }));
+          })["catch"](function (e) {
+            return reject(e);
+          });
+        }, TIMEOUT_FOR_ADMIN4);
+
+        _this18._socket.emit('getAdapterInstances', adapter, function (err, instances) {
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+            return err ? reject(err) : resolve(instances);
+          }
         });
       });
       return this._promises['instances_' + adapter];
@@ -42761,16 +43220,20 @@ var Connection = /*#__PURE__*/function () {
      */
 
     /**
-    * Get adapters with the given name.
-    * @param {string} adapter The name of the adapter.
-    * @param {boolean} [update] Force update.
-    * @returns {Promise<ioBroker.Object[]>}
-    */
+     * Get adapters with the given name.
+     * @param {string} adapter The name of the adapter.
+     * @param {boolean} [update] Force update.
+     * @returns {Promise<ioBroker.Object[]>}
+     */
 
   }, {
     key: "getAdapters",
     value: function getAdapters(adapter, update) {
-      var _this18 = this;
+      var _this19 = this;
+
+      if (Connection.isWeb()) {
+        return Promise.reject('Allowed only in admin');
+      }
 
       if (typeof adapter === 'boolean') {
         update = adapter;
@@ -42788,8 +43251,24 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises['adapter_' + adapter] = new Promise(function (resolve, reject) {
-        return _this18._socket.emit('getAdapterInstances', adapter, function (err, instances) {
-          return err ? reject(err) : resolve(instances);
+        var timeout = setTimeout(function () {
+          timeout = null;
+
+          _this19.getObjectView("system.adapter.".concat(adapter, "."), "system.adapter.".concat(adapter, ".\u9999"), 'adapter').then(function (items) {
+            return resolve(Object.keys(items).map(function (id) {
+              return fixAdminUI(items[id]);
+            }));
+          })["catch"](function (e) {
+            return reject(e);
+          });
+        }, TIMEOUT_FOR_ADMIN4);
+
+        _this19._socket.emit('getAdapters', adapter, function (err, adapters) {
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+            return err ? reject(err) : resolve(adapters);
+          }
         });
       });
       return this._promises['adapter_' + adapter];
@@ -42804,19 +43283,20 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "_renameGroups",
     value: function _renameGroups(objs, cb) {
-      var _this19 = this;
+      var _this20 = this;
 
       if (!objs || !objs.length) {
         cb && cb();
       } else {
         var obj = objs.pop();
-        this.delObject(obj._id).then(function () {
-          obj._id = obj.newId;
-          delete obj.newId;
-          return _this19.setObject(obj._id, obj);
+        var oldId = obj._id;
+        obj._id = obj.newId;
+        delete obj.newId;
+        this.setObject(obj._id, obj).then(function () {
+          return _this20.delObject(oldId);
         }).then(function () {
           return setTimeout(function () {
-            return _this19._renameGroups(objs, cb);
+            return _this20._renameGroups(objs, cb);
           }, 0);
         })["catch"](function (err) {
           return cb && cb(err);
@@ -42833,18 +43313,23 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "renameGroup",
     value: function renameGroup(id, newId, newName) {
-      var _this20 = this;
+      var _this21 = this;
+
+      if (Connection.isWeb()) {
+        return Promise.reject('Allowed only in admin');
+      }
 
       return this.getGroups(true).then(function (groups) {
         if (groups.length) {
           // find all elements
           var groupsToRename = groups.filter(function (group) {
             return group._id.startsWith(id + '.');
-          }).forEach(function (group) {
+          });
+          groupsToRename.forEach(function (group) {
             return group.newId = newId + group._id.substring(id.length);
           });
           return new Promise(function (resolve, reject) {
-            return _this20._renameGroups(groupsToRename, function (err) {
+            return _this21._renameGroups(groupsToRename, function (err) {
               return err ? reject(err) : resolve();
             });
           }).then(function () {
@@ -42860,7 +43345,9 @@ var Connection = /*#__PURE__*/function () {
                 obj.common.name = newName;
               }
 
-              return _this20.setObject(obj._id, obj);
+              return _this21.setObject(obj._id, obj).then(function () {
+                return _this21.delObject(id);
+              });
             }
           });
         }
@@ -42877,14 +43364,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "sendTo",
     value: function sendTo(instance, command, data) {
-      var _this21 = this;
+      var _this22 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve) {
-        return _this21._socket.emit('sendTo', instance, command, data, function (result) {
+        return _this22._socket.emit('sendTo', instance, command, data, function (result) {
           return resolve(result);
         });
       });
@@ -42898,7 +43385,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "extendObject",
     value: function extendObject(id, obj) {
-      var _this22 = this;
+      var _this23 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -42919,7 +43406,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this22._socket.emit('extendObject', id, obj, function (err) {
+        return _this23._socket.emit('extendObject', id, obj, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -43036,7 +43523,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getEnums",
     value: function getEnums(_enum, update) {
-      var _this23 = this;
+      var _this24 = this;
 
       if (!update && this._promises['enums_' + (_enum || 'all')]) {
         return this._promises['enums_' + (_enum || 'all')];
@@ -43047,7 +43534,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises['enums_' + (_enum || 'all')] = new Promise(function (resolve, reject) {
-        _this23._socket.emit('getObjectView', 'system', 'enum', {
+        _this24._socket.emit('getObjectView', 'system', 'enum', {
           startkey: 'enum.' + (_enum || ''),
           endkey: 'enum.' + (_enum ? _enum + '.' : '') + "\u9999"
         }, function (err, res) {
@@ -43081,7 +43568,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getObjectView",
     value: function getObjectView(start, end, type) {
-      var _this24 = this;
+      var _this25 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -43090,7 +43577,7 @@ var Connection = /*#__PURE__*/function () {
       start = start || '';
       end = end || "\u9999";
       return new Promise(function (resolve, reject) {
-        _this24._socket.emit('getObjectView', 'system', type, {
+        _this25._socket.emit('getObjectView', 'system', type, {
           startkey: start,
           endkey: end
         }, function (err, res) {
@@ -43191,7 +43678,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getLogs",
     value: function getLogs(host, linesNumber) {
-      var _this25 = this;
+      var _this26 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43202,7 +43689,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve) {
-        return _this25._socket.emit('sendToHost', host, 'getLogs', linesNumber || 200, function (lines) {
+        return _this26._socket.emit('sendToHost', host, 'getLogs', linesNumber || 200, function (lines) {
           return resolve(lines);
         });
       });
@@ -43214,8 +43701,8 @@ var Connection = /*#__PURE__*/function () {
 
   }, {
     key: "getLogsFiles",
-    value: function getLogsFiles() {
-      var _this26 = this;
+    value: function getLogsFiles(host) {
+      var _this27 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43226,7 +43713,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this26._socket.emit('readLogs', function (err, files) {
+        return _this27._socket.emit('readLogs', host, function (err, files) {
           return err ? reject(err) : resolve(files);
         });
       });
@@ -43240,7 +43727,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "delLogs",
     value: function delLogs(host) {
-      var _this27 = this;
+      var _this28 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43251,7 +43738,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this27._socket.emit('sendToHost', host, 'delLogs', null, function (error) {
+        return _this28._socket.emit('sendToHost', host, 'delLogs', null, function (error) {
           return error ? reject(error) : resolve();
         });
       });
@@ -43264,14 +43751,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "readMetaItems",
     value: function readMetaItems() {
-      var _this28 = this;
+      var _this29 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this28._socket.emit('getObjectView', 'system', 'meta', {
+        return _this29._socket.emit('getObjectView', 'system', 'meta', {
           startkey: '',
           endkey: "\u9999"
         }, function (err, objs) {
@@ -43291,21 +43778,6 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "readDir",
     value: function readDir(adapter, fileName) {
-      var _this29 = this;
-
-      if (!this.connected) {
-        return Promise.reject(NOT_CONNECTED);
-      }
-
-      return new Promise(function (resolve, reject) {
-        return _this29._socket.emit('readDir', adapter, fileName, function (err, files) {
-          return err ? reject(err) : resolve(files);
-        });
-      });
-    }
-  }, {
-    key: "readFile",
-    value: function readFile(adapter, fileName, base64) {
       var _this30 = this;
 
       if (!this.connected) {
@@ -43313,17 +43785,39 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
+        return _this30._socket.emit('readDir', adapter, fileName, function (err, files) {
+          return err ? reject(err) : resolve(files);
+        });
+      });
+    }
+    /**
+     * Read a file of an adapter.
+     * @param {string} adapter The adapter name.
+     * @param {string} fileName The file name.
+     * @param {boolean} base64 If it must be a base64 format
+     * @returns {Promise<string>}
+     */
+
+  }, {
+    key: "readFile",
+    value: function readFile(adapter, fileName, base64) {
+      var _this31 = this;
+
+      if (!this.connected) {
+        return Promise.reject(NOT_CONNECTED);
+      }
+
+      return new Promise(function (resolve, reject) {
         if (!base64) {
-          _this30._socket.emit('readFile', adapter, fileName, function (err, data, type) {
+          _this31._socket.emit('readFile', adapter, fileName, function (err, data, type) {
+            //@ts-ignore
             err ? reject(err) : resolve(data, type);
           });
         } else {
-          _this30._socket.emit('readFile64', adapter, fileName, base64, function (err, data) {
+          _this31._socket.emit('readFile64', adapter, fileName, base64, function (err, data) {
             return err ? reject(err) : resolve(data);
           });
         }
-
-        ;
       });
     }
     /**
@@ -43337,7 +43831,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "writeFile64",
     value: function writeFile64(adapter, fileName, data) {
-      var _this31 = this;
+      var _this32 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
@@ -43345,7 +43839,7 @@ var Connection = /*#__PURE__*/function () {
 
       return new Promise(function (resolve, reject) {
         if (typeof data === 'string') {
-          _this31._socket.emit('writeFile', adapter, fileName, data, function (err) {
+          _this32._socket.emit('writeFile', adapter, fileName, data, function (err) {
             return err ? reject(err) : resolve();
           });
         } else {
@@ -43353,10 +43847,35 @@ var Connection = /*#__PURE__*/function () {
             return data + String.fromCharCode(_byte);
           }, ''));
 
-          _this31._socket.emit('writeFile64', adapter, fileName, base64, function (err) {
+          _this32._socket.emit('writeFile64', adapter, fileName, base64, function (err) {
             return err ? reject(err) : resolve();
           });
         }
+      });
+    }
+    /**
+     * Rename a file or folder of an adapter.
+     *
+     * All files in folder will be renamed too.
+     * @param {string} adapter The adapter name.
+     * @param {string} oldName The file name of the file to be renamed.
+     * @param {string} newName The new file name.
+     * @returns {Promise<void>}
+     */
+
+  }, {
+    key: "rename",
+    value: function rename(adapter, oldName, newName) {
+      var _this33 = this;
+
+      if (!this.connected) {
+        return Promise.reject(NOT_CONNECTED);
+      }
+
+      return new Promise(function (resolve, reject) {
+        return _this33._socket.emit('rename', adapter, oldName, newName, function (err) {
+          return err ? reject(err) : resolve();
+        });
       });
     }
     /**
@@ -43369,24 +43888,21 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "deleteFile",
     value: function deleteFile(adapter, fileName) {
-      var _this32 = this;
-
-      if (Connection.isWeb()) {
-        return Promise.reject('Allowed only in admin');
-      }
+      var _this34 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this32._socket.emit('deleteFile', adapter, fileName, function (err) {
+        return _this34._socket.emit('unlink', adapter, fileName, function (err) {
           return err ? reject(err) : resolve();
         });
       });
     }
     /**
      * Delete a folder of an adapter.
+     * All files in folder will be deleted.
      * @param {string} adapter The adapter name.
      * @param {string} folderName The folder name.
      * @returns {Promise<void>}
@@ -43395,18 +43911,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "deleteFolder",
     value: function deleteFolder(adapter, folderName) {
-      var _this33 = this;
-
-      if (Connection.isWeb()) {
-        return Promise.reject('Allowed only in admin');
-      }
+      var _this35 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this33._socket.emit('deleteFolder', adapter, folderName, function (err) {
+        return _this35._socket.emit('deleteFolder', adapter, folderName, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -43420,7 +43932,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHosts",
     value: function getHosts(update) {
-      var _this34 = this;
+      var _this36 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43435,7 +43947,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.hosts = new Promise(function (resolve, reject) {
-        return _this34._socket.emit('getObjectView', 'system', 'host', {
+        return _this36._socket.emit('getObjectView', 'system', 'host', {
           startkey: 'system.host.',
           endkey: "system.host.\u9999"
         }, function (err, doc) {
@@ -43459,7 +43971,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getUsers",
     value: function getUsers(update) {
-      var _this35 = this;
+      var _this37 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43474,7 +43986,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.users = new Promise(function (resolve, reject) {
-        return _this35._socket.emit('getObjectView', 'system', 'user', {
+        return _this37._socket.emit('getObjectView', 'system', 'user', {
           startkey: 'system.user.',
           endkey: "system.user.\u9999"
         }, function (err, doc) {
@@ -43498,11 +44010,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getGroups",
     value: function getGroups(update) {
-      var _this36 = this;
-
-      if (Connection.isWeb()) {
-        return Promise.reject('Allowed only in admin');
-      }
+      var _this38 = this;
 
       if (!update && this._promises.groups) {
         return this._promises.groups;
@@ -43513,7 +44021,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.groups = new Promise(function (resolve, reject) {
-        return _this36._socket.emit('getObjectView', 'system', 'group', {
+        return _this38._socket.emit('getObjectView', 'system', 'group', {
           startkey: 'system.group.',
           endkey: "system.group.\u9999"
         }, function (err, doc) {
@@ -43539,7 +44047,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHostInfo",
     value: function getHostInfo(host, update, timeoutMs) {
-      var _this37 = this;
+      var _this39 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43563,9 +44071,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('getHostInfo timeout');
           }
-        }, timeoutMs || _this37.props.cmdTimeout);
+        }, timeoutMs || _this39.props.cmdTimeout);
 
-        _this37._socket.emit('sendToHost', host, 'getHostInfo', null, function (data) {
+        _this39._socket.emit('sendToHost', host, 'getHostInfo', null, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -43593,7 +44101,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHostInfoShort",
     value: function getHostInfoShort(host, update, timeoutMs) {
-      var _this38 = this;
+      var _this40 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43617,9 +44125,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('hostInfoShort timeout');
           }
-        }, timeoutMs || _this38.props.cmdTimeout);
+        }, timeoutMs || _this40.props.cmdTimeout);
 
-        _this38._socket.emit('sendToHost', host, 'getHostInfoShort', null, function (data) {
+        _this40._socket.emit('sendToHost', host, 'getHostInfoShort', null, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -43648,7 +44156,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getRepository",
     value: function getRepository(host, args, update, timeoutMs) {
-      var _this39 = this;
+      var _this41 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43672,9 +44180,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('getRepository timeout');
           }
-        }, timeoutMs || _this39.props.cmdTimeout);
+        }, timeoutMs || _this41.props.cmdTimeout);
 
-        _this39._socket.emit('sendToHost', host, 'getRepository', args, function (data) {
+        _this41._socket.emit('sendToHost', host, 'getRepository', args, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -43702,7 +44210,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getInstalled",
     value: function getInstalled(host, update, cmdTimeout) {
-      var _this40 = this;
+      var _this42 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43728,9 +44236,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('getInstalled timeout');
           }
-        }, cmdTimeout || _this40.props.cmdTimeout);
+        }, cmdTimeout || _this42.props.cmdTimeout);
 
-        _this40._socket.emit('sendToHost', host, 'getInstalled', null, function (data) {
+        _this42._socket.emit('sendToHost', host, 'getInstalled', null, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -43752,13 +44260,14 @@ var Connection = /*#__PURE__*/function () {
      * @param {string} host The host name.
      * @param {string} cmd The command.
      * @param {string} cmdId The command ID.
+     * @param {number} cmdTimeout Timeout of command in ms
      * @returns {Promise<void>}
      */
 
   }, {
     key: "cmdExec",
-    value: function cmdExec(host, cmd, cmdId) {
-      var _this41 = this;
+    value: function cmdExec(host, cmd, cmdId, cmdTimeout) {
+      var _this43 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43773,16 +44282,16 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        var timeout = setTimeout(function () {
+        var timeout = cmdTimeout && setTimeout(function () {
           if (timeout) {
             timeout = null;
             reject('cmdExec timeout');
           }
-        }, _this41.props.cmdTimeout);
+        }, cmdTimeout);
 
-        _this41._socket.emit('cmdExec', host, cmdId, cmd, null, function (err) {
-          if (timeout) {
-            clearTimeout(timeout);
+        _this43._socket.emit('cmdExec', host, cmdId, cmd, null, function (err) {
+          if (!cmdTimeout || timeout) {
+            timeout && clearTimeout(timeout);
             timeout = null;
 
             if (err) {
@@ -43804,7 +44313,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "checkFeatureSupported",
     value: function checkFeatureSupported(feature, update) {
-      var _this42 = this;
+      var _this44 = this;
 
       if (!update && this._promises['supportedFeatures_' + feature]) {
         return this._promises['supportedFeatures_' + feature];
@@ -43815,7 +44324,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises['supportedFeatures_' + feature] = new Promise(function (resolve, reject) {
-        return _this42._socket.emit('checkFeatureSupported', feature, function (err, features) {
+        return _this44._socket.emit('checkFeatureSupported', feature, function (err, features) {
           err ? reject(err) : resolve(features);
         });
       });
@@ -43830,7 +44339,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "readBaseSettings",
     value: function readBaseSettings(host) {
-      var _this43 = this;
+      var _this45 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43838,7 +44347,7 @@ var Connection = /*#__PURE__*/function () {
 
       return this.checkFeatureSupported('CONTROLLER_READWRITE_BASE_SETTINGS').then(function (result) {
         if (result) {
-          if (!_this43.connected) {
+          if (!_this45.connected) {
             return Promise.reject(NOT_CONNECTED);
           }
 
@@ -43848,9 +44357,13 @@ var Connection = /*#__PURE__*/function () {
                 timeout = null;
                 reject('readBaseSettings timeout');
               }
-            }, _this43.props.cmdTimeout);
+            }, _this45.props.cmdTimeout);
 
-            _this43._socket.emit('sendToHost', host, 'readBaseSettings', null, function (data) {
+            if (host.startsWith('system.host.')) {
+              host = host.replace(/^system\.host\./, '');
+            }
+
+            _this45._socket.emit('sendToHost', host, 'readBaseSettings', null, function (data) {
               if (timeout) {
                 clearTimeout(timeout);
                 timeout = null;
@@ -43880,7 +44393,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "writeBaseSettings",
     value: function writeBaseSettings(host, config) {
-      var _this44 = this;
+      var _this46 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -43888,7 +44401,7 @@ var Connection = /*#__PURE__*/function () {
 
       return this.checkFeatureSupported('CONTROLLER_READWRITE_BASE_SETTINGS').then(function (result) {
         if (result) {
-          if (!_this44.connected) {
+          if (!_this46.connected) {
             return Promise.reject(NOT_CONNECTED);
           }
 
@@ -43898,9 +44411,9 @@ var Connection = /*#__PURE__*/function () {
                 timeout = null;
                 reject('writeBaseSettings timeout');
               }
-            }, _this44.props.cmdTimeout);
+            }, _this46.props.cmdTimeout);
 
-            _this44._socket.emit('sendToHost', host, 'writeBaseSettings', config, function (data) {
+            _this46._socket.emit('sendToHost', host, 'writeBaseSettings', config, function (data) {
               if (timeout) {
                 clearTimeout(timeout);
                 timeout = null;
@@ -43929,14 +44442,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "restartController",
     value: function restartController(host) {
-      var _this45 = this;
+      var _this47 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
       }
 
       return new Promise(function (resolve, reject) {
-        _this45._socket.emit('sendToHost', host, 'restartController', null, function (error) {
+        _this47._socket.emit('sendToHost', host, 'restartController', null, function (error) {
           error ? reject(error) : resolve(true);
         });
       });
@@ -43951,14 +44464,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getDiagData",
     value: function getDiagData(host, typeOfDiag) {
-      var _this46 = this;
+      var _this48 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
       }
 
       return new Promise(function (resolve) {
-        _this46._socket.emit('sendToHost', host, 'getDiagData', typeOfDiag, function (result) {
+        _this48._socket.emit('sendToHost', host, 'getDiagData', typeOfDiag, function (result) {
           return resolve(result);
         });
       });
@@ -43972,17 +44485,25 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getForeignStates",
     value: function getForeignStates(pattern) {
-      var _this47 = this;
+      var _this49 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
-      return new Promise(function (resolve, reject) {
-        return _this47._socket.emit('getForeignStates', pattern || '*', function (err, states) {
-          return err ? reject(err) : resolve(states);
+      if (Connection.isWeb()) {
+        return new Promise(function (resolve, reject) {
+          return _this49._socket.emit('getStates', pattern || '*', function (err, states) {
+            return err ? reject(err) : resolve(states);
+          });
         });
-      });
+      } else {
+        return new Promise(function (resolve, reject) {
+          return _this49._socket.emit('getForeignStates', pattern || '*', function (err, states) {
+            return err ? reject(err) : resolve(states);
+          });
+        });
+      }
     }
     /**
      * Get foreign objects by pattern, by specific type and resolve their enums.
@@ -43994,14 +44515,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getForeignObjects",
     value: function getForeignObjects(pattern, type) {
-      var _this48 = this;
+      var _this50 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this48._socket.emit('getForeignObjects', pattern || '*', type, function (err, states) {
+        return _this50._socket.emit('getForeignObjects', pattern || '*', type, function (err, states) {
           return err ? reject(err) : resolve(states);
         });
       });
@@ -44024,8 +44545,11 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.systemConfig = this.getObject('system.config').then(function (systemConfig) {
-        systemConfig = systemConfig || {};
-        systemConfig.common = systemConfig.common || {};
+        //@ts-ignore
+        systemConfig = systemConfig || {}; //@ts-ignore
+
+        systemConfig.common = systemConfig.common || {}; //@ts-ignore
+
         systemConfig["native"] = systemConfig["native"] || {};
         return systemConfig;
       });
@@ -44040,10 +44564,10 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "setSystemConfig",
     value: function setSystemConfig(obj) {
-      var _this49 = this;
+      var _this51 = this;
 
       return this.setObject('system.config', obj).then(function () {
-        return _this49._promises.systemConfig = Promise.resolve(obj);
+        return _this51._promises.systemConfig = Promise.resolve(obj);
       });
     }
     /**
@@ -44066,14 +44590,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHistory",
     value: function getHistory(id, options) {
-      var _this50 = this;
+      var _this52 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this50._socket.emit('getHistory', id, options, function (err, values) {
+        return _this52._socket.emit('getHistory', id, options, function (err, values) {
           return err ? reject(err) : resolve(values);
         });
       });
@@ -44088,14 +44612,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHistoryEx",
     value: function getHistoryEx(id, options) {
-      var _this51 = this;
+      var _this53 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this51._socket.emit('getHistory', id, options, function (err, values, stepIgnore, sessionId) {
+        return _this53._socket.emit('getHistory', id, options, function (err, values, stepIgnore, sessionId) {
           return err ? reject(err) : resolve({
             values: values,
             sessionId: sessionId,
@@ -44114,14 +44638,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "changePassword",
     value: function changePassword(user, password) {
-      var _this52 = this;
+      var _this54 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
       }
 
       return new Promise(function (resolve, reject) {
-        return _this52._socket.emit('changePassword', user, password, function (err) {
+        return _this54._socket.emit('changePassword', user, password, function (err) {
           return err ? reject(err) : resolve();
         });
       });
@@ -44163,7 +44687,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getHostByIp",
     value: function getHostByIp(ipOrHostName, update) {
-      var _this53 = this;
+      var _this55 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44178,7 +44702,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises['rIPs_' + ipOrHostName] = new Promise(function (resolve) {
-        return _this53._socket.emit('getHostByIp', ipOrHostName, function (ip, host) {
+        return _this55._socket.emit('getHostByIp', ipOrHostName, function (ip, host) {
           var _host$native, _host$native$hardware;
 
           var IPs4 = [{
@@ -44234,14 +44758,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "encrypt",
     value: function encrypt(text) {
-      var _this54 = this;
+      var _this56 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
       }
 
       return new Promise(function (resolve, reject) {
-        return _this54._socket.emit('encrypt', text, function (err, text) {
+        return _this56._socket.emit('encrypt', text, function (err, text) {
           return err ? reject(err) : resolve(text);
         });
       });
@@ -44255,14 +44779,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "decrypt",
     value: function decrypt(encryptedText) {
-      var _this55 = this;
+      var _this57 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
       }
 
       return new Promise(function (resolve, reject) {
-        return _this55._socket.emit('decrypt', encryptedText, function (err, text) {
+        return _this57._socket.emit('decrypt', encryptedText, function (err, text) {
           return err ? reject(err) : resolve(text);
         });
       });
@@ -44275,10 +44799,10 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getVersion",
     value: function getVersion() {
-      var _this56 = this;
+      var _this58 = this;
 
       this._promises.version = this._promises.version || new Promise(function (resolve, reject) {
-        return _this56._socket.emit('getVersion', function (err, version, serverName) {
+        return _this58._socket.emit('getVersion', function (err, version, serverName) {
           // support of old socket.io
           if (err && !version && typeof err === 'string' && err.match(/\d+\.\d+\.\d+/)) {
             resolve({
@@ -44303,10 +44827,10 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getWebServerName",
     value: function getWebServerName() {
-      var _this57 = this;
+      var _this59 = this;
 
       this._promises.webName = this._promises.webName || new Promise(function (resolve, reject) {
-        return _this57._socket.emit('getAdapterName', function (err, name) {
+        return _this59._socket.emit('getAdapterName', function (err, name) {
           return err ? reject(err) : resolve(name);
         });
       });
@@ -44335,7 +44859,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "chmodFile",
     value: function chmodFile(adapter, filename, options) {
-      var _this58 = this;
+      var _this60 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44346,7 +44870,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this58._socket.emit('chmodFile', adapter, filename, options, function (err, entries, id) {
+        return _this60._socket.emit('chmodFile', adapter, filename, options, function (err, entries, id) {
           return err ? reject(err) : resolve({
             entries: entries,
             id: id
@@ -44365,7 +44889,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "chownFile",
     value: function chownFile(adapter, filename, options) {
-      var _this59 = this;
+      var _this61 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44376,7 +44900,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this59._socket.emit('chownFile', adapter, filename, options, function (err, entries, id) {
+        return _this61._socket.emit('chownFile', adapter, filename, options, function (err, entries, id) {
           return err ? reject(err) : resolve({
             entries: entries,
             id: id
@@ -44394,14 +44918,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "fileExists",
     value: function fileExists(adapter, filename) {
-      var _this60 = this;
+      var _this62 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve, reject) {
-        return _this60._socket.emit('fileExists', adapter, filename, function (err, exists) {
+        return _this62._socket.emit('fileExists', adapter, filename, function (err, exists) {
           return err ? reject(err) : resolve(exists);
         });
       });
@@ -44416,7 +44940,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getNotifications",
     value: function getNotifications(host, category) {
-      var _this61 = this;
+      var _this63 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44427,7 +44951,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve) {
-        return _this61._socket.emit('sendToHost', host, 'getNotifications', {
+        return _this63._socket.emit('sendToHost', host, 'getNotifications', {
           category: category
         }, function (notifications) {
           return resolve(notifications);
@@ -44444,7 +44968,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "clearNotifications",
     value: function clearNotifications(host, category) {
-      var _this62 = this;
+      var _this64 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44455,7 +44979,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve) {
-        return _this62._socket.emit('sendToHost', host, 'clearNotifications', {
+        return _this64._socket.emit('sendToHost', host, 'clearNotifications', {
           category: category
         }, function (notifications) {
           return resolve(notifications);
@@ -44470,7 +44994,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getIsEasyModeStrict",
     value: function getIsEasyModeStrict() {
-      var _this63 = this;
+      var _this65 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44481,7 +45005,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this63._socket.emit('getIsEasyModeStrict', function (error, isStrict) {
+        return _this65._socket.emit('getIsEasyModeStrict', function (error, isStrict) {
           return error ? reject(error) : resolve(isStrict);
         });
       });
@@ -44494,7 +45018,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getEasyMode",
     value: function getEasyMode() {
-      var _this64 = this;
+      var _this66 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44505,7 +45029,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this64._socket.emit('getEasyMode', function (error, config) {
+        return _this66._socket.emit('getEasyMode', function (error, config) {
           return error ? reject(error) : resolve(config);
         });
       });
@@ -44518,14 +45042,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCurrentUser",
     value: function getCurrentUser() {
-      var _this65 = this;
+      var _this67 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       return new Promise(function (resolve) {
-        return _this65._socket.emit('authEnabled', function (isSecure, user) {
+        return _this67._socket.emit('authEnabled', function (isSecure, user) {
           return resolve(user);
         });
       });
@@ -44569,7 +45093,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getRatings",
     value: function getRatings(update) {
-      var _this66 = this;
+      var _this68 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44580,7 +45104,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       return new Promise(function (resolve, reject) {
-        return _this66._socket.emit('getRatings', update, function (err, ratings) {
+        return _this68._socket.emit('getRatings', update, function (err, ratings) {
           return err ? reject(err) : resolve(ratings);
         });
       });
@@ -44593,14 +45117,14 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCurrentInstance",
     value: function getCurrentInstance() {
-      var _this67 = this;
+      var _this69 = this;
 
       if (!this.connected) {
         return Promise.reject(NOT_CONNECTED);
       }
 
       this._promises.currentInstance = this._promises.currentInstance || new Promise(function (resolve, reject) {
-        return _this67._socket.emit('getCurrentInstance', function (err, namespace) {
+        return _this69._socket.emit('getCurrentInstance', function (err, namespace) {
           return err ? reject(err) : resolve(namespace);
         });
       });
@@ -44610,7 +45134,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactAdapters",
     value: function getCompactAdapters(update) {
-      var _this68 = this;
+      var _this70 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44625,8 +45149,8 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.compactAdapters = new Promise(function (resolve, reject) {
-        return _this68._socket.emit('getCompactAdapters', function (err, systemConfig) {
-          return err ? reject(err) : resolve(systemConfig);
+        return _this70._socket.emit('getCompactAdapters', function (err, adapters) {
+          return err ? reject(err) : resolve(adapters);
         });
       });
       return this._promises.compactAdapters;
@@ -44635,7 +45159,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactInstances",
     value: function getCompactInstances(update) {
-      var _this69 = this;
+      var _this71 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44650,8 +45174,8 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.compactInstances = new Promise(function (resolve, reject) {
-        return _this69._socket.emit('getCompactInstances', function (err, systemConfig) {
-          return err ? reject(err) : resolve(systemConfig);
+        return _this71._socket.emit('getCompactInstances', function (err, instances) {
+          return err ? reject(err) : resolve(instances);
         });
       });
       return this._promises.compactInstances;
@@ -44661,7 +45185,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactInstalled",
     value: function getCompactInstalled(host, update, cmdTimeout) {
-      var _this70 = this;
+      var _this72 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44687,9 +45211,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('getCompactInstalled timeout');
           }
-        }, cmdTimeout || _this70.props.cmdTimeout);
+        }, cmdTimeout || _this72.props.cmdTimeout);
 
-        _this70._socket.emit('getCompactInstalled', host, function (data) {
+        _this72._socket.emit('getCompactInstalled', host, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -44710,7 +45234,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactSystemConfig",
     value: function getCompactSystemConfig(update) {
-      var _this71 = this;
+      var _this73 = this;
 
       if (!update && this._promises.systemConfigCommon) {
         return this._promises.systemConfigCommon;
@@ -44721,7 +45245,7 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.systemConfigCommon = new Promise(function (resolve, reject) {
-        return _this71._socket.emit('getCompactSystemConfig', function (err, systemConfig) {
+        return _this73._socket.emit('getCompactSystemConfig', function (err, systemConfig) {
           return err ? reject(err) : resolve(systemConfig);
         });
       });
@@ -44738,7 +45262,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactRepository",
     value: function getCompactRepository(host, update, timeoutMs) {
-      var _this72 = this;
+      var _this74 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44762,9 +45286,9 @@ var Connection = /*#__PURE__*/function () {
             timeout = null;
             reject('getCompactRepository timeout');
           }
-        }, timeoutMs || _this72.props.cmdTimeout);
+        }, timeoutMs || _this74.props.cmdTimeout);
 
-        _this72._socket.emit('getCompactRepository', host, function (data) {
+        _this74._socket.emit('getCompactRepository', host, function (data) {
           if (timeout) {
             clearTimeout(timeout);
             timeout = null;
@@ -44790,7 +45314,7 @@ var Connection = /*#__PURE__*/function () {
   }, {
     key: "getCompactHosts",
     value: function getCompactHosts(update) {
-      var _this73 = this;
+      var _this75 = this;
 
       if (Connection.isWeb()) {
         return Promise.reject('Allowed only in admin');
@@ -44805,8 +45329,8 @@ var Connection = /*#__PURE__*/function () {
       }
 
       this._promises.hostsCompact = new Promise(function (resolve, reject) {
-        return _this73._socket.emit('getCompactHosts', function (err, systemConfig) {
-          return err ? reject(err) : resolve(systemConfig);
+        return _this75._socket.emit('getCompactHosts', function (err, hosts) {
+          return err ? reject(err) : resolve(hosts);
         });
       });
       return this._promises.hostsCompact;
@@ -44827,20 +45351,40 @@ var Connection = /*#__PURE__*/function () {
         return Promise.reject(NOT_CONNECTED);
       }
 
-      this._promises.uuid = this.getObject('system.meta.uuid').then(function (obj) {
+      this._promises.uuid = this.getObject('system.meta.uuid') //@ts-ignore
+      .then(function (obj) {
         var _obj$native;
 
         return obj === null || obj === void 0 ? void 0 : (_obj$native = obj["native"]) === null || _obj$native === void 0 ? void 0 : _obj$native.uuid;
       });
       return this._promises.uuid;
     }
+    /**
+     * Logout current user
+     * @returns {Promise<null>}
+     */
+
+  }, {
+    key: "logout",
+    value: function logout() {
+      var _this76 = this;
+
+      if (!this.connected) {
+        return Promise.reject(NOT_CONNECTED);
+      }
+
+      return new Promise(function (resolve, reject) {
+        return _this76._socket.emit('logout', function (err) {
+          return err ? reject(err) : resolve(null);
+        });
+      });
+    }
   }], [{
     key: "isWeb",
     value: function isWeb() {
-      return window.socketUrl !== undefined;
+      return window.adapterName === 'material' || window.adapterName === 'vis' || window.socketUrl !== undefined;
     }
   }]);
-
   return Connection;
 }();
 
@@ -44853,7 +45397,7 @@ var _default = Connection;
 exports["default"] = _default;
 
 
-},{"prop-types":"../../node_modules/prop-types/index.js"}],"../../node_modules/tslib/tslib.es6.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/slicedToArray":"../../node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","prop-types":"../../node_modules/prop-types/index.js"}],"../../node_modules/tslib/tslib.es6.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -57291,15 +57835,4737 @@ if (_window.Sentry && _window.Sentry.Integrations) {
 
 var INTEGRATIONS = (0, _tslib.__assign)((0, _tslib.__assign)((0, _tslib.__assign)({}, windowIntegrations), _core.Integrations), BrowserIntegrations);
 exports.Integrations = INTEGRATIONS;
-},{"tslib":"../../node_modules/tslib/tslib.es6.js","./exports":"../../node_modules/@sentry/browser/esm/exports.js","@sentry/core":"../../node_modules/@sentry/core/esm/index.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./integrations":"../../node_modules/@sentry/browser/esm/integrations/index.js","./transports":"../../node_modules/@sentry/browser/esm/transports/index.js"}],"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js":[function(require,module,exports) {
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","./exports":"../../node_modules/@sentry/browser/esm/exports.js","@sentry/core":"../../node_modules/@sentry/core/esm/index.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./integrations":"../../node_modules/@sentry/browser/esm/integrations/index.js","./transports":"../../node_modules/@sentry/browser/esm/transports/index.js"}],"../../node_modules/@sentry/integrations/esm/flags.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.IS_DEBUG_BUILD = void 0;
+
+/*
+ * This file defines flags and constants that can be modified during compile time in order to facilitate tree shaking
+ * for users.
+ *
+ * Debug flags need to be declared in each package individually and must not be imported across package boundaries,
+ * because some build tools have trouble tree-shaking imported guards.
+ *
+ * As a convention, we define debug flags in a `flags.ts` file in the root of a package's `src` folder.
+ *
+ * Debug flag files will contain "magic strings" like `__SENTRY_DEBUG__` that may get replaced with actual values during
+ * our, or the user's build process. Take care when introducing new flags - they must not throw if they are not
+ * replaced.
+ */
+
+/** Flag that is true for debug builds, false otherwise. */
+var IS_DEBUG_BUILD = typeof __SENTRY_DEBUG__ === 'undefined' ? true : __SENTRY_DEBUG__;
+exports.IS_DEBUG_BUILD = IS_DEBUG_BUILD;
+},{}],"../../node_modules/@sentry/integrations/esm/angular.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Angular = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+var _flags = require("./flags");
+
+// See https://github.com/angular/angular.js/blob/v1.4.7/src/minErr.js
+var angularPattern = /^\[((?:[$a-zA-Z0-9]+:)?(?:[$a-zA-Z0-9]+))\] (.*?)\n?(\S+)$/;
+/**
+ * AngularJS integration
+ *
+ * Provides an $exceptionHandler for AngularJS
+ */
+
+var Angular =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function Angular(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = Angular.id;
+    _flags.IS_DEBUG_BUILD && _utils.logger.log('You are still using the Angular integration, consider moving to @sentry/angular'); // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+
+    this._angular = options.angular || (0, _utils.getGlobalObject)().angular;
+
+    if (!this._angular) {
+      _flags.IS_DEBUG_BUILD && _utils.logger.error('AngularIntegration is missing an Angular instance');
+      return;
+    } // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+
+
+    this._module = this._angular.module(Angular.moduleName, []);
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Angular.prototype.setupOnce = function (_, getCurrentHub) {
+    var _this = this;
+
+    if (!this._module) {
+      return;
+    }
+
+    this._getCurrentHub = getCurrentHub; // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+
+    this._module.config(['$provide', // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function ($provide) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      $provide.decorator('$exceptionHandler', ['$delegate', _this._$exceptionHandlerDecorator.bind(_this)]);
+    }]);
   };
+  /**
+   * Angular's exceptionHandler for Sentry integration
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+  Angular.prototype._$exceptionHandlerDecorator = function ($delegate) {
+    var _this = this;
+
+    return function (exception, cause) {
+      var hub = _this._getCurrentHub && _this._getCurrentHub();
+
+      if (hub && hub.getIntegration(Angular)) {
+        hub.withScope(function (scope) {
+          if (cause) {
+            scope.setExtra('cause', cause);
+          }
+
+          scope.addEventProcessor(function (event) {
+            var ex = event.exception && event.exception.values && event.exception.values[0];
+
+            if (ex) {
+              var matches = angularPattern.exec(ex.value || '');
+
+              if (matches) {
+                // This type now becomes something like: $rootScope:inprog
+                ex.type = matches[1];
+                ex.value = matches[2];
+                event.message = ex.type + ": " + ex.value; // auto set a new tag specifically for the angular error url
+
+                event.extra = (0, _tslib.__assign)((0, _tslib.__assign)({}, event.extra), {
+                  angularDocs: matches[3].substr(0, 250)
+                });
+              }
+            }
+
+            return event;
+          });
+          hub.captureException(exception);
+        });
+      }
+
+      $delegate(exception, cause);
+    };
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Angular.id = 'AngularJS';
+  /**
+   * moduleName used in Angular's DI resolution algorithm
+   */
+
+  Angular.moduleName = 'ngSentry';
+  return Angular;
+}();
+
+exports.Angular = Angular;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/@sentry/integrations/esm/captureconsole.js":[function(require,module,exports) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CaptureConsole = void 0;
+
+var _utils = require("@sentry/utils");
+
+var global = (0, _utils.getGlobalObject)();
+/** Send Console API calls as Sentry Events */
+
+var CaptureConsole =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function CaptureConsole(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = CaptureConsole.id;
+    /**
+     * @inheritDoc
+     */
+
+    this._levels = _utils.CONSOLE_LEVELS;
+
+    if (options.levels) {
+      this._levels = options.levels;
+    }
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  CaptureConsole.prototype.setupOnce = function (_, getCurrentHub) {
+    if (!('console' in global)) {
+      return;
+    }
+
+    this._levels.forEach(function (level) {
+      if (!(level in global.console)) {
+        return;
+      } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+      (0, _utils.fill)(global.console, level, function (originalConsoleMethod) {
+        return function () {
+          var args = [];
+
+          for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+          }
+
+          var hub = getCurrentHub();
+
+          if (hub.getIntegration(CaptureConsole)) {
+            hub.withScope(function (scope) {
+              scope.setLevel((0, _utils.severityFromString)(level));
+              scope.setExtra('arguments', args);
+              scope.addEventProcessor(function (event) {
+                event.logger = 'console';
+                return event;
+              });
+              var message = (0, _utils.safeJoin)(args, ' ');
+
+              if (level === 'assert') {
+                if (args[0] === false) {
+                  message = "Assertion failed: " + ((0, _utils.safeJoin)(args.slice(1), ' ') || 'console.assert');
+                  scope.setExtra('arguments', args.slice(1));
+                  hub.captureMessage(message);
+                }
+              } else if (level === 'error' && args[0] instanceof Error) {
+                hub.captureException(args[0]);
+              } else {
+                hub.captureMessage(message);
+              }
+            });
+          } // this fails for some browsers. :(
+
+
+          if (originalConsoleMethod) {
+            originalConsoleMethod.apply(global.console, args);
+          }
+        };
+      });
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  CaptureConsole.id = 'CaptureConsole';
+  return CaptureConsole;
+}();
+
+exports.CaptureConsole = CaptureConsole;
+},{"@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js"}],"../../node_modules/@sentry/integrations/esm/debug.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Debug = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+/**
+ * Integration to debug sent Sentry events.
+ * This integration should not be used in production
+ */
+var Debug =
+/** @class */
+function () {
+  function Debug(options) {
+    /**
+     * @inheritDoc
+     */
+    this.name = Debug.id;
+    this._options = (0, _tslib.__assign)({
+      debugger: false,
+      stringify: false
+    }, options);
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Debug.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (event, hint) {
+      var self = getCurrentHub().getIntegration(Debug);
+
+      if (self) {
+        if (self._options.debugger) {
+          // eslint-disable-next-line no-debugger
+          debugger;
+        }
+        /* eslint-disable no-console */
+
+
+        (0, _utils.consoleSandbox)(function () {
+          if (self._options.stringify) {
+            console.log(JSON.stringify(event, null, 2));
+
+            if (hint) {
+              console.log(JSON.stringify(hint, null, 2));
+            }
+          } else {
+            console.log(event);
+
+            if (hint) {
+              console.log(hint);
+            }
+          }
+        });
+        /* eslint-enable no-console */
+      }
+
+      return event;
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Debug.id = 'Debug';
+  return Debug;
+}();
+
+exports.Debug = Debug;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js"}],"../../node_modules/@sentry/integrations/esm/dedupe.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Dedupe = void 0;
+exports._shouldDropEvent = _shouldDropEvent;
+
+var _utils = require("@sentry/utils");
+
+var _flags = require("./flags");
+
+/** Deduplication filter */
+var Dedupe =
+/** @class */
+function () {
+  function Dedupe() {
+    /**
+     * @inheritDoc
+     */
+    this.name = Dedupe.id;
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Dedupe.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (currentEvent) {
+      var self = getCurrentHub().getIntegration(Dedupe);
+
+      if (self) {
+        // Juuust in case something goes wrong
+        try {
+          if (_shouldDropEvent(currentEvent, self._previousEvent)) {
+            _flags.IS_DEBUG_BUILD && _utils.logger.warn('Event dropped due to being a duplicate of previously captured event.');
+            return null;
+          }
+        } catch (_oO) {
+          return self._previousEvent = currentEvent;
+        }
+
+        return self._previousEvent = currentEvent;
+      }
+
+      return currentEvent;
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Dedupe.id = 'Dedupe';
+  return Dedupe;
+}();
+
+exports.Dedupe = Dedupe;
+
+/** JSDoc */
+function _shouldDropEvent(currentEvent, previousEvent) {
+  if (!previousEvent) {
+    return false;
+  }
+
+  if (_isSameMessageEvent(currentEvent, previousEvent)) {
+    return true;
+  }
+
+  if (_isSameExceptionEvent(currentEvent, previousEvent)) {
+    return true;
+  }
+
+  return false;
+}
+/** JSDoc */
+
+
+function _isSameMessageEvent(currentEvent, previousEvent) {
+  var currentMessage = currentEvent.message;
+  var previousMessage = previousEvent.message; // If neither event has a message property, they were both exceptions, so bail out
+
+  if (!currentMessage && !previousMessage) {
+    return false;
+  } // If only one event has a stacktrace, but not the other one, they are not the same
+
+
+  if (currentMessage && !previousMessage || !currentMessage && previousMessage) {
+    return false;
+  }
+
+  if (currentMessage !== previousMessage) {
+    return false;
+  }
+
+  if (!_isSameFingerprint(currentEvent, previousEvent)) {
+    return false;
+  }
+
+  if (!_isSameStacktrace(currentEvent, previousEvent)) {
+    return false;
+  }
+
+  return true;
+}
+/** JSDoc */
+
+
+function _isSameExceptionEvent(currentEvent, previousEvent) {
+  var previousException = _getExceptionFromEvent(previousEvent);
+
+  var currentException = _getExceptionFromEvent(currentEvent);
+
+  if (!previousException || !currentException) {
+    return false;
+  }
+
+  if (previousException.type !== currentException.type || previousException.value !== currentException.value) {
+    return false;
+  }
+
+  if (!_isSameFingerprint(currentEvent, previousEvent)) {
+    return false;
+  }
+
+  if (!_isSameStacktrace(currentEvent, previousEvent)) {
+    return false;
+  }
+
+  return true;
+}
+/** JSDoc */
+
+
+function _isSameStacktrace(currentEvent, previousEvent) {
+  var currentFrames = _getFramesFromEvent(currentEvent);
+
+  var previousFrames = _getFramesFromEvent(previousEvent); // If neither event has a stacktrace, they are assumed to be the same
+
+
+  if (!currentFrames && !previousFrames) {
+    return true;
+  } // If only one event has a stacktrace, but not the other one, they are not the same
+
+
+  if (currentFrames && !previousFrames || !currentFrames && previousFrames) {
+    return false;
+  }
+
+  currentFrames = currentFrames;
+  previousFrames = previousFrames; // If number of frames differ, they are not the same
+
+  if (previousFrames.length !== currentFrames.length) {
+    return false;
+  } // Otherwise, compare the two
+
+
+  for (var i = 0; i < previousFrames.length; i++) {
+    var frameA = previousFrames[i];
+    var frameB = currentFrames[i];
+
+    if (frameA.filename !== frameB.filename || frameA.lineno !== frameB.lineno || frameA.colno !== frameB.colno || frameA.function !== frameB.function) {
+      return false;
+    }
+  }
+
+  return true;
+}
+/** JSDoc */
+
+
+function _isSameFingerprint(currentEvent, previousEvent) {
+  var currentFingerprint = currentEvent.fingerprint;
+  var previousFingerprint = previousEvent.fingerprint; // If neither event has a fingerprint, they are assumed to be the same
+
+  if (!currentFingerprint && !previousFingerprint) {
+    return true;
+  } // If only one event has a fingerprint, but not the other one, they are not the same
+
+
+  if (currentFingerprint && !previousFingerprint || !currentFingerprint && previousFingerprint) {
+    return false;
+  }
+
+  currentFingerprint = currentFingerprint;
+  previousFingerprint = previousFingerprint; // Otherwise, compare the two
+
+  try {
+    return !!(currentFingerprint.join('') === previousFingerprint.join(''));
+  } catch (_oO) {
+    return false;
+  }
+}
+/** JSDoc */
+
+
+function _getExceptionFromEvent(event) {
+  return event.exception && event.exception.values && event.exception.values[0];
+}
+/** JSDoc */
+
+
+function _getFramesFromEvent(event) {
+  var exception = event.exception;
+
+  if (exception) {
+    try {
+      // @ts-ignore Object could be undefined
+      return exception.values[0].stacktrace.frames;
+    } catch (_oO) {
+      return undefined;
+    }
+  } else if (event.stacktrace) {
+    return event.stacktrace.frames;
+  }
+
+  return undefined;
+}
+},{"@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/@sentry/integrations/esm/ember.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Ember = void 0;
+
+var _utils = require("@sentry/utils");
+
+var _flags = require("./flags");
+
+/** JSDoc */
+var Ember =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function Ember(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = Ember.id; // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+
+    this._Ember = options.Ember || (0, _utils.getGlobalObject)().Ember;
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Ember.prototype.setupOnce = function (_, getCurrentHub) {
+    var _this = this;
+
+    if (!this._Ember) {
+      _flags.IS_DEBUG_BUILD && _utils.logger.error('EmberIntegration is missing an Ember instance');
+      return;
+    }
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+
+    var oldOnError = this._Ember.onerror;
+
+    this._Ember.onerror = function (error) {
+      if (getCurrentHub().getIntegration(Ember)) {
+        getCurrentHub().captureException(error, {
+          originalException: error
+        });
+      }
+
+      if (typeof oldOnError === 'function') {
+        oldOnError.call(_this._Ember, error);
+      } else if (_this._Ember.testing) {
+        throw error;
+      }
+    }; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+    this._Ember.RSVP.on('error', function (reason) {
+      if (getCurrentHub().getIntegration(Ember)) {
+        getCurrentHub().withScope(function (scope) {
+          if ((0, _utils.isInstanceOf)(reason, Error)) {
+            scope.setExtra('context', 'Unhandled Promise error detected');
+            getCurrentHub().captureException(reason, {
+              originalException: reason
+            });
+          } else {
+            scope.setExtra('reason', reason);
+            getCurrentHub().captureMessage('Unhandled Promise error detected');
+          }
+        });
+      }
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Ember.id = 'Ember';
+  return Ember;
+}();
+
+exports.Ember = Ember;
+},{"@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/@sentry/integrations/esm/extraerrordata.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ExtraErrorData = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+var _flags = require("./flags");
+
+/** Patch toString calls to return proper name for wrapped functions */
+var ExtraErrorData =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function ExtraErrorData(options) {
+    /**
+     * @inheritDoc
+     */
+    this.name = ExtraErrorData.id;
+    this._options = (0, _tslib.__assign)({
+      depth: 3
+    }, options);
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  ExtraErrorData.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (event, hint) {
+      var self = getCurrentHub().getIntegration(ExtraErrorData);
+
+      if (!self) {
+        return event;
+      }
+
+      return self.enhanceEventWithErrorData(event, hint);
+    });
+  };
+  /**
+   * Attaches extracted information from the Error object to extra field in the Event
+   */
+
+
+  ExtraErrorData.prototype.enhanceEventWithErrorData = function (event, hint) {
+    var _a;
+
+    if (!hint || !hint.originalException || !(0, _utils.isError)(hint.originalException)) {
+      return event;
+    }
+
+    var name = hint.originalException.name || hint.originalException.constructor.name;
+
+    var errorData = this._extractErrorData(hint.originalException);
+
+    if (errorData) {
+      var contexts = (0, _tslib.__assign)({}, event.contexts);
+      var normalizedErrorData = (0, _utils.normalize)(errorData, this._options.depth);
+
+      if ((0, _utils.isPlainObject)(normalizedErrorData)) {
+        contexts = (0, _tslib.__assign)((0, _tslib.__assign)({}, event.contexts), (_a = {}, _a[name] = (0, _tslib.__assign)({}, normalizedErrorData), _a));
+      }
+
+      return (0, _tslib.__assign)((0, _tslib.__assign)({}, event), {
+        contexts: contexts
+      });
+    }
+
+    return event;
+  };
+  /**
+   * Extract extra information from the Error object
+   */
+
+
+  ExtraErrorData.prototype._extractErrorData = function (error) {
+    var e_1, _a, e_2, _b; // We are trying to enhance already existing event, so no harm done if it won't succeed
+
+
+    try {
+      var nativeKeys = ['name', 'message', 'stack', 'line', 'column', 'fileName', 'lineNumber', 'columnNumber', 'toJSON'];
+      var extraErrorInfo = {};
+
+      try {
+        // We want only enumerable properties, thus `getOwnPropertyNames` is redundant here, as we filter keys anyway.
+        for (var _c = (0, _tslib.__values)(Object.keys(error)), _d = _c.next(); !_d.done; _d = _c.next()) {
+          var key = _d.value;
+
+          if (nativeKeys.indexOf(key) !== -1) {
+            continue;
+          }
+
+          var value = error[key];
+          extraErrorInfo[key] = (0, _utils.isError)(value) ? value.toString() : value;
+        }
+      } catch (e_1_1) {
+        e_1 = {
+          error: e_1_1
+        };
+      } finally {
+        try {
+          if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+        } finally {
+          if (e_1) throw e_1.error;
+        }
+      } // Check if someone attached `toJSON` method to grab even more properties (eg. axios is doing that)
+
+
+      if (typeof error.toJSON === 'function') {
+        var serializedError = error.toJSON();
+
+        try {
+          for (var _e = (0, _tslib.__values)(Object.keys(serializedError)), _f = _e.next(); !_f.done; _f = _e.next()) {
+            var key = _f.value;
+            var value = serializedError[key];
+            extraErrorInfo[key] = (0, _utils.isError)(value) ? value.toString() : value;
+          }
+        } catch (e_2_1) {
+          e_2 = {
+            error: e_2_1
+          };
+        } finally {
+          try {
+            if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
+          } finally {
+            if (e_2) throw e_2.error;
+          }
+        }
+      }
+
+      return extraErrorInfo;
+    } catch (oO) {
+      _flags.IS_DEBUG_BUILD && _utils.logger.error('Unable to extract extra data from the Error object:', oO);
+    }
+
+    return null;
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  ExtraErrorData.id = 'ExtraErrorData';
+  return ExtraErrorData;
+}();
+
+exports.ExtraErrorData = ExtraErrorData;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/localforage/dist/localforage.js":[function(require,module,exports) {
+var define;
+var global = arguments[3];
+/*!
+    localForage -- Offline Storage, Improved
+    Version 1.10.0
+    https://localforage.github.io/localForage
+    (c) 2013-2017 Mozilla, Apache License 2.0
+*/
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.localforage = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw (f.code="MODULE_NOT_FOUND", f)}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+(function (global){
+'use strict';
+var Mutation = global.MutationObserver || global.WebKitMutationObserver;
+
+var scheduleDrain;
+
+{
+  if (Mutation) {
+    var called = 0;
+    var observer = new Mutation(nextTick);
+    var element = global.document.createTextNode('');
+    observer.observe(element, {
+      characterData: true
+    });
+    scheduleDrain = function () {
+      element.data = (called = ++called % 2);
+    };
+  } else if (!global.setImmediate && typeof global.MessageChannel !== 'undefined') {
+    var channel = new global.MessageChannel();
+    channel.port1.onmessage = nextTick;
+    scheduleDrain = function () {
+      channel.port2.postMessage(0);
+    };
+  } else if ('document' in global && 'onreadystatechange' in global.document.createElement('script')) {
+    scheduleDrain = function () {
+
+      // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+      // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+      var scriptEl = global.document.createElement('script');
+      scriptEl.onreadystatechange = function () {
+        nextTick();
+
+        scriptEl.onreadystatechange = null;
+        scriptEl.parentNode.removeChild(scriptEl);
+        scriptEl = null;
+      };
+      global.document.documentElement.appendChild(scriptEl);
+    };
+  } else {
+    scheduleDrain = function () {
+      setTimeout(nextTick, 0);
+    };
+  }
 }
 
-module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-},{}],"../../node_modules/@babel/runtime/helpers/extends.js":[function(require,module,exports) {
+var draining;
+var queue = [];
+//named nextTick for less confusing stack traces
+function nextTick() {
+  draining = true;
+  var i, oldQueue;
+  var len = queue.length;
+  while (len) {
+    oldQueue = queue;
+    queue = [];
+    i = -1;
+    while (++i < len) {
+      oldQueue[i]();
+    }
+    len = queue.length;
+  }
+  draining = false;
+}
+
+module.exports = immediate;
+function immediate(task) {
+  if (queue.push(task) === 1 && !draining) {
+    scheduleDrain();
+  }
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],2:[function(_dereq_,module,exports){
+'use strict';
+var immediate = _dereq_(1);
+
+/* istanbul ignore next */
+function INTERNAL() {}
+
+var handlers = {};
+
+var REJECTED = ['REJECTED'];
+var FULFILLED = ['FULFILLED'];
+var PENDING = ['PENDING'];
+
+module.exports = Promise;
+
+function Promise(resolver) {
+  if (typeof resolver !== 'function') {
+    throw new TypeError('resolver must be a function');
+  }
+  this.state = PENDING;
+  this.queue = [];
+  this.outcome = void 0;
+  if (resolver !== INTERNAL) {
+    safelyResolveThenable(this, resolver);
+  }
+}
+
+Promise.prototype["catch"] = function (onRejected) {
+  return this.then(null, onRejected);
+};
+Promise.prototype.then = function (onFulfilled, onRejected) {
+  if (typeof onFulfilled !== 'function' && this.state === FULFILLED ||
+    typeof onRejected !== 'function' && this.state === REJECTED) {
+    return this;
+  }
+  var promise = new this.constructor(INTERNAL);
+  if (this.state !== PENDING) {
+    var resolver = this.state === FULFILLED ? onFulfilled : onRejected;
+    unwrap(promise, resolver, this.outcome);
+  } else {
+    this.queue.push(new QueueItem(promise, onFulfilled, onRejected));
+  }
+
+  return promise;
+};
+function QueueItem(promise, onFulfilled, onRejected) {
+  this.promise = promise;
+  if (typeof onFulfilled === 'function') {
+    this.onFulfilled = onFulfilled;
+    this.callFulfilled = this.otherCallFulfilled;
+  }
+  if (typeof onRejected === 'function') {
+    this.onRejected = onRejected;
+    this.callRejected = this.otherCallRejected;
+  }
+}
+QueueItem.prototype.callFulfilled = function (value) {
+  handlers.resolve(this.promise, value);
+};
+QueueItem.prototype.otherCallFulfilled = function (value) {
+  unwrap(this.promise, this.onFulfilled, value);
+};
+QueueItem.prototype.callRejected = function (value) {
+  handlers.reject(this.promise, value);
+};
+QueueItem.prototype.otherCallRejected = function (value) {
+  unwrap(this.promise, this.onRejected, value);
+};
+
+function unwrap(promise, func, value) {
+  immediate(function () {
+    var returnValue;
+    try {
+      returnValue = func(value);
+    } catch (e) {
+      return handlers.reject(promise, e);
+    }
+    if (returnValue === promise) {
+      handlers.reject(promise, new TypeError('Cannot resolve promise with itself'));
+    } else {
+      handlers.resolve(promise, returnValue);
+    }
+  });
+}
+
+handlers.resolve = function (self, value) {
+  var result = tryCatch(getThen, value);
+  if (result.status === 'error') {
+    return handlers.reject(self, result.value);
+  }
+  var thenable = result.value;
+
+  if (thenable) {
+    safelyResolveThenable(self, thenable);
+  } else {
+    self.state = FULFILLED;
+    self.outcome = value;
+    var i = -1;
+    var len = self.queue.length;
+    while (++i < len) {
+      self.queue[i].callFulfilled(value);
+    }
+  }
+  return self;
+};
+handlers.reject = function (self, error) {
+  self.state = REJECTED;
+  self.outcome = error;
+  var i = -1;
+  var len = self.queue.length;
+  while (++i < len) {
+    self.queue[i].callRejected(error);
+  }
+  return self;
+};
+
+function getThen(obj) {
+  // Make sure we only access the accessor once as required by the spec
+  var then = obj && obj.then;
+  if (obj && (typeof obj === 'object' || typeof obj === 'function') && typeof then === 'function') {
+    return function appyThen() {
+      then.apply(obj, arguments);
+    };
+  }
+}
+
+function safelyResolveThenable(self, thenable) {
+  // Either fulfill, reject or reject with error
+  var called = false;
+  function onError(value) {
+    if (called) {
+      return;
+    }
+    called = true;
+    handlers.reject(self, value);
+  }
+
+  function onSuccess(value) {
+    if (called) {
+      return;
+    }
+    called = true;
+    handlers.resolve(self, value);
+  }
+
+  function tryToUnwrap() {
+    thenable(onSuccess, onError);
+  }
+
+  var result = tryCatch(tryToUnwrap);
+  if (result.status === 'error') {
+    onError(result.value);
+  }
+}
+
+function tryCatch(func, value) {
+  var out = {};
+  try {
+    out.value = func(value);
+    out.status = 'success';
+  } catch (e) {
+    out.status = 'error';
+    out.value = e;
+  }
+  return out;
+}
+
+Promise.resolve = resolve;
+function resolve(value) {
+  if (value instanceof this) {
+    return value;
+  }
+  return handlers.resolve(new this(INTERNAL), value);
+}
+
+Promise.reject = reject;
+function reject(reason) {
+  var promise = new this(INTERNAL);
+  return handlers.reject(promise, reason);
+}
+
+Promise.all = all;
+function all(iterable) {
+  var self = this;
+  if (Object.prototype.toString.call(iterable) !== '[object Array]') {
+    return this.reject(new TypeError('must be an array'));
+  }
+
+  var len = iterable.length;
+  var called = false;
+  if (!len) {
+    return this.resolve([]);
+  }
+
+  var values = new Array(len);
+  var resolved = 0;
+  var i = -1;
+  var promise = new this(INTERNAL);
+
+  while (++i < len) {
+    allResolver(iterable[i], i);
+  }
+  return promise;
+  function allResolver(value, i) {
+    self.resolve(value).then(resolveFromAll, function (error) {
+      if (!called) {
+        called = true;
+        handlers.reject(promise, error);
+      }
+    });
+    function resolveFromAll(outValue) {
+      values[i] = outValue;
+      if (++resolved === len && !called) {
+        called = true;
+        handlers.resolve(promise, values);
+      }
+    }
+  }
+}
+
+Promise.race = race;
+function race(iterable) {
+  var self = this;
+  if (Object.prototype.toString.call(iterable) !== '[object Array]') {
+    return this.reject(new TypeError('must be an array'));
+  }
+
+  var len = iterable.length;
+  var called = false;
+  if (!len) {
+    return this.resolve([]);
+  }
+
+  var i = -1;
+  var promise = new this(INTERNAL);
+
+  while (++i < len) {
+    resolver(iterable[i]);
+  }
+  return promise;
+  function resolver(value) {
+    self.resolve(value).then(function (response) {
+      if (!called) {
+        called = true;
+        handlers.resolve(promise, response);
+      }
+    }, function (error) {
+      if (!called) {
+        called = true;
+        handlers.reject(promise, error);
+      }
+    });
+  }
+}
+
+},{"1":1}],3:[function(_dereq_,module,exports){
+(function (global){
+'use strict';
+if (typeof global.Promise !== 'function') {
+  global.Promise = _dereq_(2);
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"2":2}],4:[function(_dereq_,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function getIDB() {
+    /* global indexedDB,webkitIndexedDB,mozIndexedDB,OIndexedDB,msIndexedDB */
+    try {
+        if (typeof indexedDB !== 'undefined') {
+            return indexedDB;
+        }
+        if (typeof webkitIndexedDB !== 'undefined') {
+            return webkitIndexedDB;
+        }
+        if (typeof mozIndexedDB !== 'undefined') {
+            return mozIndexedDB;
+        }
+        if (typeof OIndexedDB !== 'undefined') {
+            return OIndexedDB;
+        }
+        if (typeof msIndexedDB !== 'undefined') {
+            return msIndexedDB;
+        }
+    } catch (e) {
+        return;
+    }
+}
+
+var idb = getIDB();
+
+function isIndexedDBValid() {
+    try {
+        // Initialize IndexedDB; fall back to vendor-prefixed versions
+        // if needed.
+        if (!idb || !idb.open) {
+            return false;
+        }
+        // We mimic PouchDB here;
+        //
+        // We test for openDatabase because IE Mobile identifies itself
+        // as Safari. Oh the lulz...
+        var isSafari = typeof openDatabase !== 'undefined' && /(Safari|iPhone|iPad|iPod)/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent) && !/BlackBerry/.test(navigator.platform);
+
+        var hasFetch = typeof fetch === 'function' && fetch.toString().indexOf('[native code') !== -1;
+
+        // Safari <10.1 does not meet our requirements for IDB support
+        // (see: https://github.com/pouchdb/pouchdb/issues/5572).
+        // Safari 10.1 shipped with fetch, we can use that to detect it.
+        // Note: this creates issues with `window.fetch` polyfills and
+        // overrides; see:
+        // https://github.com/localForage/localForage/issues/856
+        return (!isSafari || hasFetch) && typeof indexedDB !== 'undefined' &&
+        // some outdated implementations of IDB that appear on Samsung
+        // and HTC Android devices <4.4 are missing IDBKeyRange
+        // See: https://github.com/mozilla/localForage/issues/128
+        // See: https://github.com/mozilla/localForage/issues/272
+        typeof IDBKeyRange !== 'undefined';
+    } catch (e) {
+        return false;
+    }
+}
+
+// Abstracts constructing a Blob object, so it also works in older
+// browsers that don't support the native Blob constructor. (i.e.
+// old QtWebKit versions, at least).
+// Abstracts constructing a Blob object, so it also works in older
+// browsers that don't support the native Blob constructor. (i.e.
+// old QtWebKit versions, at least).
+function createBlob(parts, properties) {
+    /* global BlobBuilder,MSBlobBuilder,MozBlobBuilder,WebKitBlobBuilder */
+    parts = parts || [];
+    properties = properties || {};
+    try {
+        return new Blob(parts, properties);
+    } catch (e) {
+        if (e.name !== 'TypeError') {
+            throw e;
+        }
+        var Builder = typeof BlobBuilder !== 'undefined' ? BlobBuilder : typeof MSBlobBuilder !== 'undefined' ? MSBlobBuilder : typeof MozBlobBuilder !== 'undefined' ? MozBlobBuilder : WebKitBlobBuilder;
+        var builder = new Builder();
+        for (var i = 0; i < parts.length; i += 1) {
+            builder.append(parts[i]);
+        }
+        return builder.getBlob(properties.type);
+    }
+}
+
+// This is CommonJS because lie is an external dependency, so Rollup
+// can just ignore it.
+if (typeof Promise === 'undefined') {
+    // In the "nopromises" build this will just throw if you don't have
+    // a global promise object, but it would throw anyway later.
+    _dereq_(3);
+}
+var Promise$1 = Promise;
+
+function executeCallback(promise, callback) {
+    if (callback) {
+        promise.then(function (result) {
+            callback(null, result);
+        }, function (error) {
+            callback(error);
+        });
+    }
+}
+
+function executeTwoCallbacks(promise, callback, errorCallback) {
+    if (typeof callback === 'function') {
+        promise.then(callback);
+    }
+
+    if (typeof errorCallback === 'function') {
+        promise["catch"](errorCallback);
+    }
+}
+
+function normalizeKey(key) {
+    // Cast the key to a string, as that's all we can set as a key.
+    if (typeof key !== 'string') {
+        console.warn(key + ' used as a key, but it is not a string.');
+        key = String(key);
+    }
+
+    return key;
+}
+
+function getCallback() {
+    if (arguments.length && typeof arguments[arguments.length - 1] === 'function') {
+        return arguments[arguments.length - 1];
+    }
+}
+
+// Some code originally from async_storage.js in
+// [Gaia](https://github.com/mozilla-b2g/gaia).
+
+var DETECT_BLOB_SUPPORT_STORE = 'local-forage-detect-blob-support';
+var supportsBlobs = void 0;
+var dbContexts = {};
+var toString = Object.prototype.toString;
+
+// Transaction Modes
+var READ_ONLY = 'readonly';
+var READ_WRITE = 'readwrite';
+
+// Transform a binary string to an array buffer, because otherwise
+// weird stuff happens when you try to work with the binary string directly.
+// It is known.
+// From http://stackoverflow.com/questions/14967647/ (continues on next line)
+// encode-decode-image-with-base64-breaks-image (2013-04-21)
+function _binStringToArrayBuffer(bin) {
+    var length = bin.length;
+    var buf = new ArrayBuffer(length);
+    var arr = new Uint8Array(buf);
+    for (var i = 0; i < length; i++) {
+        arr[i] = bin.charCodeAt(i);
+    }
+    return buf;
+}
+
+//
+// Blobs are not supported in all versions of IndexedDB, notably
+// Chrome <37 and Android <5. In those versions, storing a blob will throw.
+//
+// Various other blob bugs exist in Chrome v37-42 (inclusive).
+// Detecting them is expensive and confusing to users, and Chrome 37-42
+// is at very low usage worldwide, so we do a hacky userAgent check instead.
+//
+// content-type bug: https://code.google.com/p/chromium/issues/detail?id=408120
+// 404 bug: https://code.google.com/p/chromium/issues/detail?id=447916
+// FileReader bug: https://code.google.com/p/chromium/issues/detail?id=447836
+//
+// Code borrowed from PouchDB. See:
+// https://github.com/pouchdb/pouchdb/blob/master/packages/node_modules/pouchdb-adapter-idb/src/blobSupport.js
+//
+function _checkBlobSupportWithoutCaching(idb) {
+    return new Promise$1(function (resolve) {
+        var txn = idb.transaction(DETECT_BLOB_SUPPORT_STORE, READ_WRITE);
+        var blob = createBlob(['']);
+        txn.objectStore(DETECT_BLOB_SUPPORT_STORE).put(blob, 'key');
+
+        txn.onabort = function (e) {
+            // If the transaction aborts now its due to not being able to
+            // write to the database, likely due to the disk being full
+            e.preventDefault();
+            e.stopPropagation();
+            resolve(false);
+        };
+
+        txn.oncomplete = function () {
+            var matchedChrome = navigator.userAgent.match(/Chrome\/(\d+)/);
+            var matchedEdge = navigator.userAgent.match(/Edge\//);
+            // MS Edge pretends to be Chrome 42:
+            // https://msdn.microsoft.com/en-us/library/hh869301%28v=vs.85%29.aspx
+            resolve(matchedEdge || !matchedChrome || parseInt(matchedChrome[1], 10) >= 43);
+        };
+    })["catch"](function () {
+        return false; // error, so assume unsupported
+    });
+}
+
+function _checkBlobSupport(idb) {
+    if (typeof supportsBlobs === 'boolean') {
+        return Promise$1.resolve(supportsBlobs);
+    }
+    return _checkBlobSupportWithoutCaching(idb).then(function (value) {
+        supportsBlobs = value;
+        return supportsBlobs;
+    });
+}
+
+function _deferReadiness(dbInfo) {
+    var dbContext = dbContexts[dbInfo.name];
+
+    // Create a deferred object representing the current database operation.
+    var deferredOperation = {};
+
+    deferredOperation.promise = new Promise$1(function (resolve, reject) {
+        deferredOperation.resolve = resolve;
+        deferredOperation.reject = reject;
+    });
+
+    // Enqueue the deferred operation.
+    dbContext.deferredOperations.push(deferredOperation);
+
+    // Chain its promise to the database readiness.
+    if (!dbContext.dbReady) {
+        dbContext.dbReady = deferredOperation.promise;
+    } else {
+        dbContext.dbReady = dbContext.dbReady.then(function () {
+            return deferredOperation.promise;
+        });
+    }
+}
+
+function _advanceReadiness(dbInfo) {
+    var dbContext = dbContexts[dbInfo.name];
+
+    // Dequeue a deferred operation.
+    var deferredOperation = dbContext.deferredOperations.pop();
+
+    // Resolve its promise (which is part of the database readiness
+    // chain of promises).
+    if (deferredOperation) {
+        deferredOperation.resolve();
+        return deferredOperation.promise;
+    }
+}
+
+function _rejectReadiness(dbInfo, err) {
+    var dbContext = dbContexts[dbInfo.name];
+
+    // Dequeue a deferred operation.
+    var deferredOperation = dbContext.deferredOperations.pop();
+
+    // Reject its promise (which is part of the database readiness
+    // chain of promises).
+    if (deferredOperation) {
+        deferredOperation.reject(err);
+        return deferredOperation.promise;
+    }
+}
+
+function _getConnection(dbInfo, upgradeNeeded) {
+    return new Promise$1(function (resolve, reject) {
+        dbContexts[dbInfo.name] = dbContexts[dbInfo.name] || createDbContext();
+
+        if (dbInfo.db) {
+            if (upgradeNeeded) {
+                _deferReadiness(dbInfo);
+                dbInfo.db.close();
+            } else {
+                return resolve(dbInfo.db);
+            }
+        }
+
+        var dbArgs = [dbInfo.name];
+
+        if (upgradeNeeded) {
+            dbArgs.push(dbInfo.version);
+        }
+
+        var openreq = idb.open.apply(idb, dbArgs);
+
+        if (upgradeNeeded) {
+            openreq.onupgradeneeded = function (e) {
+                var db = openreq.result;
+                try {
+                    db.createObjectStore(dbInfo.storeName);
+                    if (e.oldVersion <= 1) {
+                        // Added when support for blob shims was added
+                        db.createObjectStore(DETECT_BLOB_SUPPORT_STORE);
+                    }
+                } catch (ex) {
+                    if (ex.name === 'ConstraintError') {
+                        console.warn('The database "' + dbInfo.name + '"' + ' has been upgraded from version ' + e.oldVersion + ' to version ' + e.newVersion + ', but the storage "' + dbInfo.storeName + '" already exists.');
+                    } else {
+                        throw ex;
+                    }
+                }
+            };
+        }
+
+        openreq.onerror = function (e) {
+            e.preventDefault();
+            reject(openreq.error);
+        };
+
+        openreq.onsuccess = function () {
+            var db = openreq.result;
+            db.onversionchange = function (e) {
+                // Triggered when the database is modified (e.g. adding an objectStore) or
+                // deleted (even when initiated by other sessions in different tabs).
+                // Closing the connection here prevents those operations from being blocked.
+                // If the database is accessed again later by this instance, the connection
+                // will be reopened or the database recreated as needed.
+                e.target.close();
+            };
+            resolve(db);
+            _advanceReadiness(dbInfo);
+        };
+    });
+}
+
+function _getOriginalConnection(dbInfo) {
+    return _getConnection(dbInfo, false);
+}
+
+function _getUpgradedConnection(dbInfo) {
+    return _getConnection(dbInfo, true);
+}
+
+function _isUpgradeNeeded(dbInfo, defaultVersion) {
+    if (!dbInfo.db) {
+        return true;
+    }
+
+    var isNewStore = !dbInfo.db.objectStoreNames.contains(dbInfo.storeName);
+    var isDowngrade = dbInfo.version < dbInfo.db.version;
+    var isUpgrade = dbInfo.version > dbInfo.db.version;
+
+    if (isDowngrade) {
+        // If the version is not the default one
+        // then warn for impossible downgrade.
+        if (dbInfo.version !== defaultVersion) {
+            console.warn('The database "' + dbInfo.name + '"' + " can't be downgraded from version " + dbInfo.db.version + ' to version ' + dbInfo.version + '.');
+        }
+        // Align the versions to prevent errors.
+        dbInfo.version = dbInfo.db.version;
+    }
+
+    if (isUpgrade || isNewStore) {
+        // If the store is new then increment the version (if needed).
+        // This will trigger an "upgradeneeded" event which is required
+        // for creating a store.
+        if (isNewStore) {
+            var incVersion = dbInfo.db.version + 1;
+            if (incVersion > dbInfo.version) {
+                dbInfo.version = incVersion;
+            }
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+// encode a blob for indexeddb engines that don't support blobs
+function _encodeBlob(blob) {
+    return new Promise$1(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onerror = reject;
+        reader.onloadend = function (e) {
+            var base64 = btoa(e.target.result || '');
+            resolve({
+                __local_forage_encoded_blob: true,
+                data: base64,
+                type: blob.type
+            });
+        };
+        reader.readAsBinaryString(blob);
+    });
+}
+
+// decode an encoded blob
+function _decodeBlob(encodedBlob) {
+    var arrayBuff = _binStringToArrayBuffer(atob(encodedBlob.data));
+    return createBlob([arrayBuff], { type: encodedBlob.type });
+}
+
+// is this one of our fancy encoded blobs?
+function _isEncodedBlob(value) {
+    return value && value.__local_forage_encoded_blob;
+}
+
+// Specialize the default `ready()` function by making it dependent
+// on the current database operations. Thus, the driver will be actually
+// ready when it's been initialized (default) *and* there are no pending
+// operations on the database (initiated by some other instances).
+function _fullyReady(callback) {
+    var self = this;
+
+    var promise = self._initReady().then(function () {
+        var dbContext = dbContexts[self._dbInfo.name];
+
+        if (dbContext && dbContext.dbReady) {
+            return dbContext.dbReady;
+        }
+    });
+
+    executeTwoCallbacks(promise, callback, callback);
+    return promise;
+}
+
+// Try to establish a new db connection to replace the
+// current one which is broken (i.e. experiencing
+// InvalidStateError while creating a transaction).
+function _tryReconnect(dbInfo) {
+    _deferReadiness(dbInfo);
+
+    var dbContext = dbContexts[dbInfo.name];
+    var forages = dbContext.forages;
+
+    for (var i = 0; i < forages.length; i++) {
+        var forage = forages[i];
+        if (forage._dbInfo.db) {
+            forage._dbInfo.db.close();
+            forage._dbInfo.db = null;
+        }
+    }
+    dbInfo.db = null;
+
+    return _getOriginalConnection(dbInfo).then(function (db) {
+        dbInfo.db = db;
+        if (_isUpgradeNeeded(dbInfo)) {
+            // Reopen the database for upgrading.
+            return _getUpgradedConnection(dbInfo);
+        }
+        return db;
+    }).then(function (db) {
+        // store the latest db reference
+        // in case the db was upgraded
+        dbInfo.db = dbContext.db = db;
+        for (var i = 0; i < forages.length; i++) {
+            forages[i]._dbInfo.db = db;
+        }
+    })["catch"](function (err) {
+        _rejectReadiness(dbInfo, err);
+        throw err;
+    });
+}
+
+// FF doesn't like Promises (micro-tasks) and IDDB store operations,
+// so we have to do it with callbacks
+function createTransaction(dbInfo, mode, callback, retries) {
+    if (retries === undefined) {
+        retries = 1;
+    }
+
+    try {
+        var tx = dbInfo.db.transaction(dbInfo.storeName, mode);
+        callback(null, tx);
+    } catch (err) {
+        if (retries > 0 && (!dbInfo.db || err.name === 'InvalidStateError' || err.name === 'NotFoundError')) {
+            return Promise$1.resolve().then(function () {
+                if (!dbInfo.db || err.name === 'NotFoundError' && !dbInfo.db.objectStoreNames.contains(dbInfo.storeName) && dbInfo.version <= dbInfo.db.version) {
+                    // increase the db version, to create the new ObjectStore
+                    if (dbInfo.db) {
+                        dbInfo.version = dbInfo.db.version + 1;
+                    }
+                    // Reopen the database for upgrading.
+                    return _getUpgradedConnection(dbInfo);
+                }
+            }).then(function () {
+                return _tryReconnect(dbInfo).then(function () {
+                    createTransaction(dbInfo, mode, callback, retries - 1);
+                });
+            })["catch"](callback);
+        }
+
+        callback(err);
+    }
+}
+
+function createDbContext() {
+    return {
+        // Running localForages sharing a database.
+        forages: [],
+        // Shared database.
+        db: null,
+        // Database readiness (promise).
+        dbReady: null,
+        // Deferred operations on the database.
+        deferredOperations: []
+    };
+}
+
+// Open the IndexedDB database (automatically creates one if one didn't
+// previously exist), using any options set in the config.
+function _initStorage(options) {
+    var self = this;
+    var dbInfo = {
+        db: null
+    };
+
+    if (options) {
+        for (var i in options) {
+            dbInfo[i] = options[i];
+        }
+    }
+
+    // Get the current context of the database;
+    var dbContext = dbContexts[dbInfo.name];
+
+    // ...or create a new context.
+    if (!dbContext) {
+        dbContext = createDbContext();
+        // Register the new context in the global container.
+        dbContexts[dbInfo.name] = dbContext;
+    }
+
+    // Register itself as a running localForage in the current context.
+    dbContext.forages.push(self);
+
+    // Replace the default `ready()` function with the specialized one.
+    if (!self._initReady) {
+        self._initReady = self.ready;
+        self.ready = _fullyReady;
+    }
+
+    // Create an array of initialization states of the related localForages.
+    var initPromises = [];
+
+    function ignoreErrors() {
+        // Don't handle errors here,
+        // just makes sure related localForages aren't pending.
+        return Promise$1.resolve();
+    }
+
+    for (var j = 0; j < dbContext.forages.length; j++) {
+        var forage = dbContext.forages[j];
+        if (forage !== self) {
+            // Don't wait for itself...
+            initPromises.push(forage._initReady()["catch"](ignoreErrors));
+        }
+    }
+
+    // Take a snapshot of the related localForages.
+    var forages = dbContext.forages.slice(0);
+
+    // Initialize the connection process only when
+    // all the related localForages aren't pending.
+    return Promise$1.all(initPromises).then(function () {
+        dbInfo.db = dbContext.db;
+        // Get the connection or open a new one without upgrade.
+        return _getOriginalConnection(dbInfo);
+    }).then(function (db) {
+        dbInfo.db = db;
+        if (_isUpgradeNeeded(dbInfo, self._defaultConfig.version)) {
+            // Reopen the database for upgrading.
+            return _getUpgradedConnection(dbInfo);
+        }
+        return db;
+    }).then(function (db) {
+        dbInfo.db = dbContext.db = db;
+        self._dbInfo = dbInfo;
+        // Share the final connection amongst related localForages.
+        for (var k = 0; k < forages.length; k++) {
+            var forage = forages[k];
+            if (forage !== self) {
+                // Self is already up-to-date.
+                forage._dbInfo.db = dbInfo.db;
+                forage._dbInfo.version = dbInfo.version;
+            }
+        }
+    });
+}
+
+function getItem(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_ONLY, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var req = store.get(key);
+
+                    req.onsuccess = function () {
+                        var value = req.result;
+                        if (value === undefined) {
+                            value = null;
+                        }
+                        if (_isEncodedBlob(value)) {
+                            value = _decodeBlob(value);
+                        }
+                        resolve(value);
+                    };
+
+                    req.onerror = function () {
+                        reject(req.error);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Iterate over all items stored in database.
+function iterate(iterator, callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_ONLY, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var req = store.openCursor();
+                    var iterationNumber = 1;
+
+                    req.onsuccess = function () {
+                        var cursor = req.result;
+
+                        if (cursor) {
+                            var value = cursor.value;
+                            if (_isEncodedBlob(value)) {
+                                value = _decodeBlob(value);
+                            }
+                            var result = iterator(value, cursor.key, iterationNumber++);
+
+                            // when the iterator callback returns any
+                            // (non-`undefined`) value, then we stop
+                            // the iteration immediately
+                            if (result !== void 0) {
+                                resolve(result);
+                            } else {
+                                cursor["continue"]();
+                            }
+                        } else {
+                            resolve();
+                        }
+                    };
+
+                    req.onerror = function () {
+                        reject(req.error);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+
+    return promise;
+}
+
+function setItem(key, value, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        var dbInfo;
+        self.ready().then(function () {
+            dbInfo = self._dbInfo;
+            if (toString.call(value) === '[object Blob]') {
+                return _checkBlobSupport(dbInfo.db).then(function (blobSupport) {
+                    if (blobSupport) {
+                        return value;
+                    }
+                    return _encodeBlob(value);
+                });
+            }
+            return value;
+        }).then(function (value) {
+            createTransaction(self._dbInfo, READ_WRITE, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+
+                    // The reason we don't _save_ null is because IE 10 does
+                    // not support saving the `null` type in IndexedDB. How
+                    // ironic, given the bug below!
+                    // See: https://github.com/mozilla/localForage/issues/161
+                    if (value === null) {
+                        value = undefined;
+                    }
+
+                    var req = store.put(value, key);
+
+                    transaction.oncomplete = function () {
+                        // Cast to undefined so the value passed to
+                        // callback/promise is the same as what one would get out
+                        // of `getItem()` later. This leads to some weirdness
+                        // (setItem('foo', undefined) will return `null`), but
+                        // it's not my fault localStorage is our baseline and that
+                        // it's weird.
+                        if (value === undefined) {
+                            value = null;
+                        }
+
+                        resolve(value);
+                    };
+                    transaction.onabort = transaction.onerror = function () {
+                        var err = req.error ? req.error : req.transaction.error;
+                        reject(err);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function removeItem(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_WRITE, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    // We use a Grunt task to make this safe for IE and some
+                    // versions of Android (including those used by Cordova).
+                    // Normally IE won't like `.delete()` and will insist on
+                    // using `['delete']()`, but we have a build step that
+                    // fixes this for us now.
+                    var req = store["delete"](key);
+                    transaction.oncomplete = function () {
+                        resolve();
+                    };
+
+                    transaction.onerror = function () {
+                        reject(req.error);
+                    };
+
+                    // The request will be also be aborted if we've exceeded our storage
+                    // space.
+                    transaction.onabort = function () {
+                        var err = req.error ? req.error : req.transaction.error;
+                        reject(err);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function clear(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_WRITE, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var req = store.clear();
+
+                    transaction.oncomplete = function () {
+                        resolve();
+                    };
+
+                    transaction.onabort = transaction.onerror = function () {
+                        var err = req.error ? req.error : req.transaction.error;
+                        reject(err);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function length(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_ONLY, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var req = store.count();
+
+                    req.onsuccess = function () {
+                        resolve(req.result);
+                    };
+
+                    req.onerror = function () {
+                        reject(req.error);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function key(n, callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        if (n < 0) {
+            resolve(null);
+
+            return;
+        }
+
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_ONLY, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var advanced = false;
+                    var req = store.openKeyCursor();
+
+                    req.onsuccess = function () {
+                        var cursor = req.result;
+                        if (!cursor) {
+                            // this means there weren't enough keys
+                            resolve(null);
+
+                            return;
+                        }
+
+                        if (n === 0) {
+                            // We have the first key, return it if that's what they
+                            // wanted.
+                            resolve(cursor.key);
+                        } else {
+                            if (!advanced) {
+                                // Otherwise, ask the cursor to skip ahead n
+                                // records.
+                                advanced = true;
+                                cursor.advance(n);
+                            } else {
+                                // When we get here, we've got the nth key.
+                                resolve(cursor.key);
+                            }
+                        }
+                    };
+
+                    req.onerror = function () {
+                        reject(req.error);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function keys(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            createTransaction(self._dbInfo, READ_ONLY, function (err, transaction) {
+                if (err) {
+                    return reject(err);
+                }
+
+                try {
+                    var store = transaction.objectStore(self._dbInfo.storeName);
+                    var req = store.openKeyCursor();
+                    var keys = [];
+
+                    req.onsuccess = function () {
+                        var cursor = req.result;
+
+                        if (!cursor) {
+                            resolve(keys);
+                            return;
+                        }
+
+                        keys.push(cursor.key);
+                        cursor["continue"]();
+                    };
+
+                    req.onerror = function () {
+                        reject(req.error);
+                    };
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function dropInstance(options, callback) {
+    callback = getCallback.apply(this, arguments);
+
+    var currentConfig = this.config();
+    options = typeof options !== 'function' && options || {};
+    if (!options.name) {
+        options.name = options.name || currentConfig.name;
+        options.storeName = options.storeName || currentConfig.storeName;
+    }
+
+    var self = this;
+    var promise;
+    if (!options.name) {
+        promise = Promise$1.reject('Invalid arguments');
+    } else {
+        var isCurrentDb = options.name === currentConfig.name && self._dbInfo.db;
+
+        var dbPromise = isCurrentDb ? Promise$1.resolve(self._dbInfo.db) : _getOriginalConnection(options).then(function (db) {
+            var dbContext = dbContexts[options.name];
+            var forages = dbContext.forages;
+            dbContext.db = db;
+            for (var i = 0; i < forages.length; i++) {
+                forages[i]._dbInfo.db = db;
+            }
+            return db;
+        });
+
+        if (!options.storeName) {
+            promise = dbPromise.then(function (db) {
+                _deferReadiness(options);
+
+                var dbContext = dbContexts[options.name];
+                var forages = dbContext.forages;
+
+                db.close();
+                for (var i = 0; i < forages.length; i++) {
+                    var forage = forages[i];
+                    forage._dbInfo.db = null;
+                }
+
+                var dropDBPromise = new Promise$1(function (resolve, reject) {
+                    var req = idb.deleteDatabase(options.name);
+
+                    req.onerror = function () {
+                        var db = req.result;
+                        if (db) {
+                            db.close();
+                        }
+                        reject(req.error);
+                    };
+
+                    req.onblocked = function () {
+                        // Closing all open connections in onversionchange handler should prevent this situation, but if
+                        // we do get here, it just means the request remains pending - eventually it will succeed or error
+                        console.warn('dropInstance blocked for database "' + options.name + '" until all open connections are closed');
+                    };
+
+                    req.onsuccess = function () {
+                        var db = req.result;
+                        if (db) {
+                            db.close();
+                        }
+                        resolve(db);
+                    };
+                });
+
+                return dropDBPromise.then(function (db) {
+                    dbContext.db = db;
+                    for (var i = 0; i < forages.length; i++) {
+                        var _forage = forages[i];
+                        _advanceReadiness(_forage._dbInfo);
+                    }
+                })["catch"](function (err) {
+                    (_rejectReadiness(options, err) || Promise$1.resolve())["catch"](function () {});
+                    throw err;
+                });
+            });
+        } else {
+            promise = dbPromise.then(function (db) {
+                if (!db.objectStoreNames.contains(options.storeName)) {
+                    return;
+                }
+
+                var newVersion = db.version + 1;
+
+                _deferReadiness(options);
+
+                var dbContext = dbContexts[options.name];
+                var forages = dbContext.forages;
+
+                db.close();
+                for (var i = 0; i < forages.length; i++) {
+                    var forage = forages[i];
+                    forage._dbInfo.db = null;
+                    forage._dbInfo.version = newVersion;
+                }
+
+                var dropObjectPromise = new Promise$1(function (resolve, reject) {
+                    var req = idb.open(options.name, newVersion);
+
+                    req.onerror = function (err) {
+                        var db = req.result;
+                        db.close();
+                        reject(err);
+                    };
+
+                    req.onupgradeneeded = function () {
+                        var db = req.result;
+                        db.deleteObjectStore(options.storeName);
+                    };
+
+                    req.onsuccess = function () {
+                        var db = req.result;
+                        db.close();
+                        resolve(db);
+                    };
+                });
+
+                return dropObjectPromise.then(function (db) {
+                    dbContext.db = db;
+                    for (var j = 0; j < forages.length; j++) {
+                        var _forage2 = forages[j];
+                        _forage2._dbInfo.db = db;
+                        _advanceReadiness(_forage2._dbInfo);
+                    }
+                })["catch"](function (err) {
+                    (_rejectReadiness(options, err) || Promise$1.resolve())["catch"](function () {});
+                    throw err;
+                });
+            });
+        }
+    }
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+var asyncStorage = {
+    _driver: 'asyncStorage',
+    _initStorage: _initStorage,
+    _support: isIndexedDBValid(),
+    iterate: iterate,
+    getItem: getItem,
+    setItem: setItem,
+    removeItem: removeItem,
+    clear: clear,
+    length: length,
+    key: key,
+    keys: keys,
+    dropInstance: dropInstance
+};
+
+function isWebSQLValid() {
+    return typeof openDatabase === 'function';
+}
+
+// Sadly, the best way to save binary data in WebSQL/localStorage is serializing
+// it to Base64, so this is how we store it to prevent very strange errors with less
+// verbose ways of binary <-> string data storage.
+var BASE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+var BLOB_TYPE_PREFIX = '~~local_forage_type~';
+var BLOB_TYPE_PREFIX_REGEX = /^~~local_forage_type~([^~]+)~/;
+
+var SERIALIZED_MARKER = '__lfsc__:';
+var SERIALIZED_MARKER_LENGTH = SERIALIZED_MARKER.length;
+
+// OMG the serializations!
+var TYPE_ARRAYBUFFER = 'arbf';
+var TYPE_BLOB = 'blob';
+var TYPE_INT8ARRAY = 'si08';
+var TYPE_UINT8ARRAY = 'ui08';
+var TYPE_UINT8CLAMPEDARRAY = 'uic8';
+var TYPE_INT16ARRAY = 'si16';
+var TYPE_INT32ARRAY = 'si32';
+var TYPE_UINT16ARRAY = 'ur16';
+var TYPE_UINT32ARRAY = 'ui32';
+var TYPE_FLOAT32ARRAY = 'fl32';
+var TYPE_FLOAT64ARRAY = 'fl64';
+var TYPE_SERIALIZED_MARKER_LENGTH = SERIALIZED_MARKER_LENGTH + TYPE_ARRAYBUFFER.length;
+
+var toString$1 = Object.prototype.toString;
+
+function stringToBuffer(serializedString) {
+    // Fill the string into a ArrayBuffer.
+    var bufferLength = serializedString.length * 0.75;
+    var len = serializedString.length;
+    var i;
+    var p = 0;
+    var encoded1, encoded2, encoded3, encoded4;
+
+    if (serializedString[serializedString.length - 1] === '=') {
+        bufferLength--;
+        if (serializedString[serializedString.length - 2] === '=') {
+            bufferLength--;
+        }
+    }
+
+    var buffer = new ArrayBuffer(bufferLength);
+    var bytes = new Uint8Array(buffer);
+
+    for (i = 0; i < len; i += 4) {
+        encoded1 = BASE_CHARS.indexOf(serializedString[i]);
+        encoded2 = BASE_CHARS.indexOf(serializedString[i + 1]);
+        encoded3 = BASE_CHARS.indexOf(serializedString[i + 2]);
+        encoded4 = BASE_CHARS.indexOf(serializedString[i + 3]);
+
+        /*jslint bitwise: true */
+        bytes[p++] = encoded1 << 2 | encoded2 >> 4;
+        bytes[p++] = (encoded2 & 15) << 4 | encoded3 >> 2;
+        bytes[p++] = (encoded3 & 3) << 6 | encoded4 & 63;
+    }
+    return buffer;
+}
+
+// Converts a buffer to a string to store, serialized, in the backend
+// storage library.
+function bufferToString(buffer) {
+    // base64-arraybuffer
+    var bytes = new Uint8Array(buffer);
+    var base64String = '';
+    var i;
+
+    for (i = 0; i < bytes.length; i += 3) {
+        /*jslint bitwise: true */
+        base64String += BASE_CHARS[bytes[i] >> 2];
+        base64String += BASE_CHARS[(bytes[i] & 3) << 4 | bytes[i + 1] >> 4];
+        base64String += BASE_CHARS[(bytes[i + 1] & 15) << 2 | bytes[i + 2] >> 6];
+        base64String += BASE_CHARS[bytes[i + 2] & 63];
+    }
+
+    if (bytes.length % 3 === 2) {
+        base64String = base64String.substring(0, base64String.length - 1) + '=';
+    } else if (bytes.length % 3 === 1) {
+        base64String = base64String.substring(0, base64String.length - 2) + '==';
+    }
+
+    return base64String;
+}
+
+// Serialize a value, afterwards executing a callback (which usually
+// instructs the `setItem()` callback/promise to be executed). This is how
+// we store binary data with localStorage.
+function serialize(value, callback) {
+    var valueType = '';
+    if (value) {
+        valueType = toString$1.call(value);
+    }
+
+    // Cannot use `value instanceof ArrayBuffer` or such here, as these
+    // checks fail when running the tests using casper.js...
+    //
+    // TODO: See why those tests fail and use a better solution.
+    if (value && (valueType === '[object ArrayBuffer]' || value.buffer && toString$1.call(value.buffer) === '[object ArrayBuffer]')) {
+        // Convert binary arrays to a string and prefix the string with
+        // a special marker.
+        var buffer;
+        var marker = SERIALIZED_MARKER;
+
+        if (value instanceof ArrayBuffer) {
+            buffer = value;
+            marker += TYPE_ARRAYBUFFER;
+        } else {
+            buffer = value.buffer;
+
+            if (valueType === '[object Int8Array]') {
+                marker += TYPE_INT8ARRAY;
+            } else if (valueType === '[object Uint8Array]') {
+                marker += TYPE_UINT8ARRAY;
+            } else if (valueType === '[object Uint8ClampedArray]') {
+                marker += TYPE_UINT8CLAMPEDARRAY;
+            } else if (valueType === '[object Int16Array]') {
+                marker += TYPE_INT16ARRAY;
+            } else if (valueType === '[object Uint16Array]') {
+                marker += TYPE_UINT16ARRAY;
+            } else if (valueType === '[object Int32Array]') {
+                marker += TYPE_INT32ARRAY;
+            } else if (valueType === '[object Uint32Array]') {
+                marker += TYPE_UINT32ARRAY;
+            } else if (valueType === '[object Float32Array]') {
+                marker += TYPE_FLOAT32ARRAY;
+            } else if (valueType === '[object Float64Array]') {
+                marker += TYPE_FLOAT64ARRAY;
+            } else {
+                callback(new Error('Failed to get type for BinaryArray'));
+            }
+        }
+
+        callback(marker + bufferToString(buffer));
+    } else if (valueType === '[object Blob]') {
+        // Conver the blob to a binaryArray and then to a string.
+        var fileReader = new FileReader();
+
+        fileReader.onload = function () {
+            // Backwards-compatible prefix for the blob type.
+            var str = BLOB_TYPE_PREFIX + value.type + '~' + bufferToString(this.result);
+
+            callback(SERIALIZED_MARKER + TYPE_BLOB + str);
+        };
+
+        fileReader.readAsArrayBuffer(value);
+    } else {
+        try {
+            callback(JSON.stringify(value));
+        } catch (e) {
+            console.error("Couldn't convert value into a JSON string: ", value);
+
+            callback(null, e);
+        }
+    }
+}
+
+// Deserialize data we've inserted into a value column/field. We place
+// special markers into our strings to mark them as encoded; this isn't
+// as nice as a meta field, but it's the only sane thing we can do whilst
+// keeping localStorage support intact.
+//
+// Oftentimes this will just deserialize JSON content, but if we have a
+// special marker (SERIALIZED_MARKER, defined above), we will extract
+// some kind of arraybuffer/binary data/typed array out of the string.
+function deserialize(value) {
+    // If we haven't marked this string as being specially serialized (i.e.
+    // something other than serialized JSON), we can just return it and be
+    // done with it.
+    if (value.substring(0, SERIALIZED_MARKER_LENGTH) !== SERIALIZED_MARKER) {
+        return JSON.parse(value);
+    }
+
+    // The following code deals with deserializing some kind of Blob or
+    // TypedArray. First we separate out the type of data we're dealing
+    // with from the data itself.
+    var serializedString = value.substring(TYPE_SERIALIZED_MARKER_LENGTH);
+    var type = value.substring(SERIALIZED_MARKER_LENGTH, TYPE_SERIALIZED_MARKER_LENGTH);
+
+    var blobType;
+    // Backwards-compatible blob type serialization strategy.
+    // DBs created with older versions of localForage will simply not have the blob type.
+    if (type === TYPE_BLOB && BLOB_TYPE_PREFIX_REGEX.test(serializedString)) {
+        var matcher = serializedString.match(BLOB_TYPE_PREFIX_REGEX);
+        blobType = matcher[1];
+        serializedString = serializedString.substring(matcher[0].length);
+    }
+    var buffer = stringToBuffer(serializedString);
+
+    // Return the right type based on the code/type set during
+    // serialization.
+    switch (type) {
+        case TYPE_ARRAYBUFFER:
+            return buffer;
+        case TYPE_BLOB:
+            return createBlob([buffer], { type: blobType });
+        case TYPE_INT8ARRAY:
+            return new Int8Array(buffer);
+        case TYPE_UINT8ARRAY:
+            return new Uint8Array(buffer);
+        case TYPE_UINT8CLAMPEDARRAY:
+            return new Uint8ClampedArray(buffer);
+        case TYPE_INT16ARRAY:
+            return new Int16Array(buffer);
+        case TYPE_UINT16ARRAY:
+            return new Uint16Array(buffer);
+        case TYPE_INT32ARRAY:
+            return new Int32Array(buffer);
+        case TYPE_UINT32ARRAY:
+            return new Uint32Array(buffer);
+        case TYPE_FLOAT32ARRAY:
+            return new Float32Array(buffer);
+        case TYPE_FLOAT64ARRAY:
+            return new Float64Array(buffer);
+        default:
+            throw new Error('Unkown type: ' + type);
+    }
+}
+
+var localforageSerializer = {
+    serialize: serialize,
+    deserialize: deserialize,
+    stringToBuffer: stringToBuffer,
+    bufferToString: bufferToString
+};
+
+/*
+ * Includes code from:
+ *
+ * base64-arraybuffer
+ * https://github.com/niklasvh/base64-arraybuffer
+ *
+ * Copyright (c) 2012 Niklas von Hertzen
+ * Licensed under the MIT license.
+ */
+
+function createDbTable(t, dbInfo, callback, errorCallback) {
+    t.executeSql('CREATE TABLE IF NOT EXISTS ' + dbInfo.storeName + ' ' + '(id INTEGER PRIMARY KEY, key unique, value)', [], callback, errorCallback);
+}
+
+// Open the WebSQL database (automatically creates one if one didn't
+// previously exist), using any options set in the config.
+function _initStorage$1(options) {
+    var self = this;
+    var dbInfo = {
+        db: null
+    };
+
+    if (options) {
+        for (var i in options) {
+            dbInfo[i] = typeof options[i] !== 'string' ? options[i].toString() : options[i];
+        }
+    }
+
+    var dbInfoPromise = new Promise$1(function (resolve, reject) {
+        // Open the database; the openDatabase API will automatically
+        // create it for us if it doesn't exist.
+        try {
+            dbInfo.db = openDatabase(dbInfo.name, String(dbInfo.version), dbInfo.description, dbInfo.size);
+        } catch (e) {
+            return reject(e);
+        }
+
+        // Create our key/value table if it doesn't exist.
+        dbInfo.db.transaction(function (t) {
+            createDbTable(t, dbInfo, function () {
+                self._dbInfo = dbInfo;
+                resolve();
+            }, function (t, error) {
+                reject(error);
+            });
+        }, reject);
+    });
+
+    dbInfo.serializer = localforageSerializer;
+    return dbInfoPromise;
+}
+
+function tryExecuteSql(t, dbInfo, sqlStatement, args, callback, errorCallback) {
+    t.executeSql(sqlStatement, args, callback, function (t, error) {
+        if (error.code === error.SYNTAX_ERR) {
+            t.executeSql('SELECT name FROM sqlite_master ' + "WHERE type='table' AND name = ?", [dbInfo.storeName], function (t, results) {
+                if (!results.rows.length) {
+                    // if the table is missing (was deleted)
+                    // re-create it table and retry
+                    createDbTable(t, dbInfo, function () {
+                        t.executeSql(sqlStatement, args, callback, errorCallback);
+                    }, errorCallback);
+                } else {
+                    errorCallback(t, error);
+                }
+            }, errorCallback);
+        } else {
+            errorCallback(t, error);
+        }
+    }, errorCallback);
+}
+
+function getItem$1(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'SELECT * FROM ' + dbInfo.storeName + ' WHERE key = ? LIMIT 1', [key], function (t, results) {
+                    var result = results.rows.length ? results.rows.item(0).value : null;
+
+                    // Check to see if this is serialized content we need to
+                    // unpack.
+                    if (result) {
+                        result = dbInfo.serializer.deserialize(result);
+                    }
+
+                    resolve(result);
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function iterate$1(iterator, callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'SELECT * FROM ' + dbInfo.storeName, [], function (t, results) {
+                    var rows = results.rows;
+                    var length = rows.length;
+
+                    for (var i = 0; i < length; i++) {
+                        var item = rows.item(i);
+                        var result = item.value;
+
+                        // Check to see if this is serialized content
+                        // we need to unpack.
+                        if (result) {
+                            result = dbInfo.serializer.deserialize(result);
+                        }
+
+                        result = iterator(result, item.key, i + 1);
+
+                        // void(0) prevents problems with redefinition
+                        // of `undefined`.
+                        if (result !== void 0) {
+                            resolve(result);
+                            return;
+                        }
+                    }
+
+                    resolve();
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function _setItem(key, value, callback, retriesLeft) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            // The localStorage API doesn't return undefined values in an
+            // "expected" way, so undefined is always cast to null in all
+            // drivers. See: https://github.com/mozilla/localForage/pull/42
+            if (value === undefined) {
+                value = null;
+            }
+
+            // Save the original value to pass to the callback.
+            var originalValue = value;
+
+            var dbInfo = self._dbInfo;
+            dbInfo.serializer.serialize(value, function (value, error) {
+                if (error) {
+                    reject(error);
+                } else {
+                    dbInfo.db.transaction(function (t) {
+                        tryExecuteSql(t, dbInfo, 'INSERT OR REPLACE INTO ' + dbInfo.storeName + ' ' + '(key, value) VALUES (?, ?)', [key, value], function () {
+                            resolve(originalValue);
+                        }, function (t, error) {
+                            reject(error);
+                        });
+                    }, function (sqlError) {
+                        // The transaction failed; check
+                        // to see if it's a quota error.
+                        if (sqlError.code === sqlError.QUOTA_ERR) {
+                            // We reject the callback outright for now, but
+                            // it's worth trying to re-run the transaction.
+                            // Even if the user accepts the prompt to use
+                            // more storage on Safari, this error will
+                            // be called.
+                            //
+                            // Try to re-run the transaction.
+                            if (retriesLeft > 0) {
+                                resolve(_setItem.apply(self, [key, originalValue, callback, retriesLeft - 1]));
+                                return;
+                            }
+                            reject(sqlError);
+                        }
+                    });
+                }
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function setItem$1(key, value, callback) {
+    return _setItem.apply(this, [key, value, callback, 1]);
+}
+
+function removeItem$1(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'DELETE FROM ' + dbInfo.storeName + ' WHERE key = ?', [key], function () {
+                    resolve();
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Deletes every item in the table.
+// TODO: Find out if this resets the AUTO_INCREMENT number.
+function clear$1(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'DELETE FROM ' + dbInfo.storeName, [], function () {
+                    resolve();
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Does a simple `COUNT(key)` to get the number of items stored in
+// localForage.
+function length$1(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                // Ahhh, SQL makes this one soooooo easy.
+                tryExecuteSql(t, dbInfo, 'SELECT COUNT(key) as c FROM ' + dbInfo.storeName, [], function (t, results) {
+                    var result = results.rows.item(0).c;
+                    resolve(result);
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Return the key located at key index X; essentially gets the key from a
+// `WHERE id = ?`. This is the most efficient way I can think to implement
+// this rarely-used (in my experience) part of the API, but it can seem
+// inconsistent, because we do `INSERT OR REPLACE INTO` on `setItem()`, so
+// the ID of each key will change every time it's updated. Perhaps a stored
+// procedure for the `setItem()` SQL would solve this problem?
+// TODO: Don't change ID on `setItem()`.
+function key$1(n, callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'SELECT key FROM ' + dbInfo.storeName + ' WHERE id = ? LIMIT 1', [n + 1], function (t, results) {
+                    var result = results.rows.length ? results.rows.item(0).key : null;
+                    resolve(result);
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function keys$1(callback) {
+    var self = this;
+
+    var promise = new Promise$1(function (resolve, reject) {
+        self.ready().then(function () {
+            var dbInfo = self._dbInfo;
+            dbInfo.db.transaction(function (t) {
+                tryExecuteSql(t, dbInfo, 'SELECT key FROM ' + dbInfo.storeName, [], function (t, results) {
+                    var keys = [];
+
+                    for (var i = 0; i < results.rows.length; i++) {
+                        keys.push(results.rows.item(i).key);
+                    }
+
+                    resolve(keys);
+                }, function (t, error) {
+                    reject(error);
+                });
+            });
+        })["catch"](reject);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// https://www.w3.org/TR/webdatabase/#databases
+// > There is no way to enumerate or delete the databases available for an origin from this API.
+function getAllStoreNames(db) {
+    return new Promise$1(function (resolve, reject) {
+        db.transaction(function (t) {
+            t.executeSql('SELECT name FROM sqlite_master ' + "WHERE type='table' AND name <> '__WebKitDatabaseInfoTable__'", [], function (t, results) {
+                var storeNames = [];
+
+                for (var i = 0; i < results.rows.length; i++) {
+                    storeNames.push(results.rows.item(i).name);
+                }
+
+                resolve({
+                    db: db,
+                    storeNames: storeNames
+                });
+            }, function (t, error) {
+                reject(error);
+            });
+        }, function (sqlError) {
+            reject(sqlError);
+        });
+    });
+}
+
+function dropInstance$1(options, callback) {
+    callback = getCallback.apply(this, arguments);
+
+    var currentConfig = this.config();
+    options = typeof options !== 'function' && options || {};
+    if (!options.name) {
+        options.name = options.name || currentConfig.name;
+        options.storeName = options.storeName || currentConfig.storeName;
+    }
+
+    var self = this;
+    var promise;
+    if (!options.name) {
+        promise = Promise$1.reject('Invalid arguments');
+    } else {
+        promise = new Promise$1(function (resolve) {
+            var db;
+            if (options.name === currentConfig.name) {
+                // use the db reference of the current instance
+                db = self._dbInfo.db;
+            } else {
+                db = openDatabase(options.name, '', '', 0);
+            }
+
+            if (!options.storeName) {
+                // drop all database tables
+                resolve(getAllStoreNames(db));
+            } else {
+                resolve({
+                    db: db,
+                    storeNames: [options.storeName]
+                });
+            }
+        }).then(function (operationInfo) {
+            return new Promise$1(function (resolve, reject) {
+                operationInfo.db.transaction(function (t) {
+                    function dropTable(storeName) {
+                        return new Promise$1(function (resolve, reject) {
+                            t.executeSql('DROP TABLE IF EXISTS ' + storeName, [], function () {
+                                resolve();
+                            }, function (t, error) {
+                                reject(error);
+                            });
+                        });
+                    }
+
+                    var operations = [];
+                    for (var i = 0, len = operationInfo.storeNames.length; i < len; i++) {
+                        operations.push(dropTable(operationInfo.storeNames[i]));
+                    }
+
+                    Promise$1.all(operations).then(function () {
+                        resolve();
+                    })["catch"](function (e) {
+                        reject(e);
+                    });
+                }, function (sqlError) {
+                    reject(sqlError);
+                });
+            });
+        });
+    }
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+var webSQLStorage = {
+    _driver: 'webSQLStorage',
+    _initStorage: _initStorage$1,
+    _support: isWebSQLValid(),
+    iterate: iterate$1,
+    getItem: getItem$1,
+    setItem: setItem$1,
+    removeItem: removeItem$1,
+    clear: clear$1,
+    length: length$1,
+    key: key$1,
+    keys: keys$1,
+    dropInstance: dropInstance$1
+};
+
+function isLocalStorageValid() {
+    try {
+        return typeof localStorage !== 'undefined' && 'setItem' in localStorage &&
+        // in IE8 typeof localStorage.setItem === 'object'
+        !!localStorage.setItem;
+    } catch (e) {
+        return false;
+    }
+}
+
+function _getKeyPrefix(options, defaultConfig) {
+    var keyPrefix = options.name + '/';
+
+    if (options.storeName !== defaultConfig.storeName) {
+        keyPrefix += options.storeName + '/';
+    }
+    return keyPrefix;
+}
+
+// Check if localStorage throws when saving an item
+function checkIfLocalStorageThrows() {
+    var localStorageTestKey = '_localforage_support_test';
+
+    try {
+        localStorage.setItem(localStorageTestKey, true);
+        localStorage.removeItem(localStorageTestKey);
+
+        return false;
+    } catch (e) {
+        return true;
+    }
+}
+
+// Check if localStorage is usable and allows to save an item
+// This method checks if localStorage is usable in Safari Private Browsing
+// mode, or in any other case where the available quota for localStorage
+// is 0 and there wasn't any saved items yet.
+function _isLocalStorageUsable() {
+    return !checkIfLocalStorageThrows() || localStorage.length > 0;
+}
+
+// Config the localStorage backend, using options set in the config.
+function _initStorage$2(options) {
+    var self = this;
+    var dbInfo = {};
+    if (options) {
+        for (var i in options) {
+            dbInfo[i] = options[i];
+        }
+    }
+
+    dbInfo.keyPrefix = _getKeyPrefix(options, self._defaultConfig);
+
+    if (!_isLocalStorageUsable()) {
+        return Promise$1.reject();
+    }
+
+    self._dbInfo = dbInfo;
+    dbInfo.serializer = localforageSerializer;
+
+    return Promise$1.resolve();
+}
+
+// Remove all keys from the datastore, effectively destroying all data in
+// the app's key/value store!
+function clear$2(callback) {
+    var self = this;
+    var promise = self.ready().then(function () {
+        var keyPrefix = self._dbInfo.keyPrefix;
+
+        for (var i = localStorage.length - 1; i >= 0; i--) {
+            var key = localStorage.key(i);
+
+            if (key.indexOf(keyPrefix) === 0) {
+                localStorage.removeItem(key);
+            }
+        }
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Retrieve an item from the store. Unlike the original async_storage
+// library in Gaia, we don't modify return values at all. If a key's value
+// is `undefined`, we pass that value to the callback function.
+function getItem$2(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = self.ready().then(function () {
+        var dbInfo = self._dbInfo;
+        var result = localStorage.getItem(dbInfo.keyPrefix + key);
+
+        // If a result was found, parse it from the serialized
+        // string into a JS object. If result isn't truthy, the key
+        // is likely undefined and we'll pass it straight to the
+        // callback.
+        if (result) {
+            result = dbInfo.serializer.deserialize(result);
+        }
+
+        return result;
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Iterate over all items in the store.
+function iterate$2(iterator, callback) {
+    var self = this;
+
+    var promise = self.ready().then(function () {
+        var dbInfo = self._dbInfo;
+        var keyPrefix = dbInfo.keyPrefix;
+        var keyPrefixLength = keyPrefix.length;
+        var length = localStorage.length;
+
+        // We use a dedicated iterator instead of the `i` variable below
+        // so other keys we fetch in localStorage aren't counted in
+        // the `iterationNumber` argument passed to the `iterate()`
+        // callback.
+        //
+        // See: github.com/mozilla/localForage/pull/435#discussion_r38061530
+        var iterationNumber = 1;
+
+        for (var i = 0; i < length; i++) {
+            var key = localStorage.key(i);
+            if (key.indexOf(keyPrefix) !== 0) {
+                continue;
+            }
+            var value = localStorage.getItem(key);
+
+            // If a result was found, parse it from the serialized
+            // string into a JS object. If result isn't truthy, the
+            // key is likely undefined and we'll pass it straight
+            // to the iterator.
+            if (value) {
+                value = dbInfo.serializer.deserialize(value);
+            }
+
+            value = iterator(value, key.substring(keyPrefixLength), iterationNumber++);
+
+            if (value !== void 0) {
+                return value;
+            }
+        }
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Same as localStorage's key() method, except takes a callback.
+function key$2(n, callback) {
+    var self = this;
+    var promise = self.ready().then(function () {
+        var dbInfo = self._dbInfo;
+        var result;
+        try {
+            result = localStorage.key(n);
+        } catch (error) {
+            result = null;
+        }
+
+        // Remove the prefix from the key, if a key is found.
+        if (result) {
+            result = result.substring(dbInfo.keyPrefix.length);
+        }
+
+        return result;
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function keys$2(callback) {
+    var self = this;
+    var promise = self.ready().then(function () {
+        var dbInfo = self._dbInfo;
+        var length = localStorage.length;
+        var keys = [];
+
+        for (var i = 0; i < length; i++) {
+            var itemKey = localStorage.key(i);
+            if (itemKey.indexOf(dbInfo.keyPrefix) === 0) {
+                keys.push(itemKey.substring(dbInfo.keyPrefix.length));
+            }
+        }
+
+        return keys;
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Supply the number of keys in the datastore to the callback function.
+function length$2(callback) {
+    var self = this;
+    var promise = self.keys().then(function (keys) {
+        return keys.length;
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Remove an item from the store, nice and simple.
+function removeItem$2(key, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = self.ready().then(function () {
+        var dbInfo = self._dbInfo;
+        localStorage.removeItem(dbInfo.keyPrefix + key);
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+// Set a key's value and run an optional callback once the value is set.
+// Unlike Gaia's implementation, the callback function is passed the value,
+// in case you want to operate on that value only after you're sure it
+// saved, or something like that.
+function setItem$2(key, value, callback) {
+    var self = this;
+
+    key = normalizeKey(key);
+
+    var promise = self.ready().then(function () {
+        // Convert undefined values to null.
+        // https://github.com/mozilla/localForage/pull/42
+        if (value === undefined) {
+            value = null;
+        }
+
+        // Save the original value to pass to the callback.
+        var originalValue = value;
+
+        return new Promise$1(function (resolve, reject) {
+            var dbInfo = self._dbInfo;
+            dbInfo.serializer.serialize(value, function (value, error) {
+                if (error) {
+                    reject(error);
+                } else {
+                    try {
+                        localStorage.setItem(dbInfo.keyPrefix + key, value);
+                        resolve(originalValue);
+                    } catch (e) {
+                        // localStorage capacity exceeded.
+                        // TODO: Make this a specific error/event.
+                        if (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+                            reject(e);
+                        }
+                        reject(e);
+                    }
+                }
+            });
+        });
+    });
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+function dropInstance$2(options, callback) {
+    callback = getCallback.apply(this, arguments);
+
+    options = typeof options !== 'function' && options || {};
+    if (!options.name) {
+        var currentConfig = this.config();
+        options.name = options.name || currentConfig.name;
+        options.storeName = options.storeName || currentConfig.storeName;
+    }
+
+    var self = this;
+    var promise;
+    if (!options.name) {
+        promise = Promise$1.reject('Invalid arguments');
+    } else {
+        promise = new Promise$1(function (resolve) {
+            if (!options.storeName) {
+                resolve(options.name + '/');
+            } else {
+                resolve(_getKeyPrefix(options, self._defaultConfig));
+            }
+        }).then(function (keyPrefix) {
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+                var key = localStorage.key(i);
+
+                if (key.indexOf(keyPrefix) === 0) {
+                    localStorage.removeItem(key);
+                }
+            }
+        });
+    }
+
+    executeCallback(promise, callback);
+    return promise;
+}
+
+var localStorageWrapper = {
+    _driver: 'localStorageWrapper',
+    _initStorage: _initStorage$2,
+    _support: isLocalStorageValid(),
+    iterate: iterate$2,
+    getItem: getItem$2,
+    setItem: setItem$2,
+    removeItem: removeItem$2,
+    clear: clear$2,
+    length: length$2,
+    key: key$2,
+    keys: keys$2,
+    dropInstance: dropInstance$2
+};
+
+var sameValue = function sameValue(x, y) {
+    return x === y || typeof x === 'number' && typeof y === 'number' && isNaN(x) && isNaN(y);
+};
+
+var includes = function includes(array, searchElement) {
+    var len = array.length;
+    var i = 0;
+    while (i < len) {
+        if (sameValue(array[i], searchElement)) {
+            return true;
+        }
+        i++;
+    }
+
+    return false;
+};
+
+var isArray = Array.isArray || function (arg) {
+    return Object.prototype.toString.call(arg) === '[object Array]';
+};
+
+// Drivers are stored here when `defineDriver()` is called.
+// They are shared across all instances of localForage.
+var DefinedDrivers = {};
+
+var DriverSupport = {};
+
+var DefaultDrivers = {
+    INDEXEDDB: asyncStorage,
+    WEBSQL: webSQLStorage,
+    LOCALSTORAGE: localStorageWrapper
+};
+
+var DefaultDriverOrder = [DefaultDrivers.INDEXEDDB._driver, DefaultDrivers.WEBSQL._driver, DefaultDrivers.LOCALSTORAGE._driver];
+
+var OptionalDriverMethods = ['dropInstance'];
+
+var LibraryMethods = ['clear', 'getItem', 'iterate', 'key', 'keys', 'length', 'removeItem', 'setItem'].concat(OptionalDriverMethods);
+
+var DefaultConfig = {
+    description: '',
+    driver: DefaultDriverOrder.slice(),
+    name: 'localforage',
+    // Default DB size is _JUST UNDER_ 5MB, as it's the highest size
+    // we can use without a prompt.
+    size: 4980736,
+    storeName: 'keyvaluepairs',
+    version: 1.0
+};
+
+function callWhenReady(localForageInstance, libraryMethod) {
+    localForageInstance[libraryMethod] = function () {
+        var _args = arguments;
+        return localForageInstance.ready().then(function () {
+            return localForageInstance[libraryMethod].apply(localForageInstance, _args);
+        });
+    };
+}
+
+function extend() {
+    for (var i = 1; i < arguments.length; i++) {
+        var arg = arguments[i];
+
+        if (arg) {
+            for (var _key in arg) {
+                if (arg.hasOwnProperty(_key)) {
+                    if (isArray(arg[_key])) {
+                        arguments[0][_key] = arg[_key].slice();
+                    } else {
+                        arguments[0][_key] = arg[_key];
+                    }
+                }
+            }
+        }
+    }
+
+    return arguments[0];
+}
+
+var LocalForage = function () {
+    function LocalForage(options) {
+        _classCallCheck(this, LocalForage);
+
+        for (var driverTypeKey in DefaultDrivers) {
+            if (DefaultDrivers.hasOwnProperty(driverTypeKey)) {
+                var driver = DefaultDrivers[driverTypeKey];
+                var driverName = driver._driver;
+                this[driverTypeKey] = driverName;
+
+                if (!DefinedDrivers[driverName]) {
+                    // we don't need to wait for the promise,
+                    // since the default drivers can be defined
+                    // in a blocking manner
+                    this.defineDriver(driver);
+                }
+            }
+        }
+
+        this._defaultConfig = extend({}, DefaultConfig);
+        this._config = extend({}, this._defaultConfig, options);
+        this._driverSet = null;
+        this._initDriver = null;
+        this._ready = false;
+        this._dbInfo = null;
+
+        this._wrapLibraryMethodsWithReady();
+        this.setDriver(this._config.driver)["catch"](function () {});
+    }
+
+    // Set any config values for localForage; can be called anytime before
+    // the first API call (e.g. `getItem`, `setItem`).
+    // We loop through options so we don't overwrite existing config
+    // values.
+
+
+    LocalForage.prototype.config = function config(options) {
+        // If the options argument is an object, we use it to set values.
+        // Otherwise, we return either a specified config value or all
+        // config values.
+        if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object') {
+            // If localforage is ready and fully initialized, we can't set
+            // any new configuration values. Instead, we return an error.
+            if (this._ready) {
+                return new Error("Can't call config() after localforage " + 'has been used.');
+            }
+
+            for (var i in options) {
+                if (i === 'storeName') {
+                    options[i] = options[i].replace(/\W/g, '_');
+                }
+
+                if (i === 'version' && typeof options[i] !== 'number') {
+                    return new Error('Database version must be a number.');
+                }
+
+                this._config[i] = options[i];
+            }
+
+            // after all config options are set and
+            // the driver option is used, try setting it
+            if ('driver' in options && options.driver) {
+                return this.setDriver(this._config.driver);
+            }
+
+            return true;
+        } else if (typeof options === 'string') {
+            return this._config[options];
+        } else {
+            return this._config;
+        }
+    };
+
+    // Used to define a custom driver, shared across all instances of
+    // localForage.
+
+
+    LocalForage.prototype.defineDriver = function defineDriver(driverObject, callback, errorCallback) {
+        var promise = new Promise$1(function (resolve, reject) {
+            try {
+                var driverName = driverObject._driver;
+                var complianceError = new Error('Custom driver not compliant; see ' + 'https://mozilla.github.io/localForage/#definedriver');
+
+                // A driver name should be defined and not overlap with the
+                // library-defined, default drivers.
+                if (!driverObject._driver) {
+                    reject(complianceError);
+                    return;
+                }
+
+                var driverMethods = LibraryMethods.concat('_initStorage');
+                for (var i = 0, len = driverMethods.length; i < len; i++) {
+                    var driverMethodName = driverMethods[i];
+
+                    // when the property is there,
+                    // it should be a method even when optional
+                    var isRequired = !includes(OptionalDriverMethods, driverMethodName);
+                    if ((isRequired || driverObject[driverMethodName]) && typeof driverObject[driverMethodName] !== 'function') {
+                        reject(complianceError);
+                        return;
+                    }
+                }
+
+                var configureMissingMethods = function configureMissingMethods() {
+                    var methodNotImplementedFactory = function methodNotImplementedFactory(methodName) {
+                        return function () {
+                            var error = new Error('Method ' + methodName + ' is not implemented by the current driver');
+                            var promise = Promise$1.reject(error);
+                            executeCallback(promise, arguments[arguments.length - 1]);
+                            return promise;
+                        };
+                    };
+
+                    for (var _i = 0, _len = OptionalDriverMethods.length; _i < _len; _i++) {
+                        var optionalDriverMethod = OptionalDriverMethods[_i];
+                        if (!driverObject[optionalDriverMethod]) {
+                            driverObject[optionalDriverMethod] = methodNotImplementedFactory(optionalDriverMethod);
+                        }
+                    }
+                };
+
+                configureMissingMethods();
+
+                var setDriverSupport = function setDriverSupport(support) {
+                    if (DefinedDrivers[driverName]) {
+                        console.info('Redefining LocalForage driver: ' + driverName);
+                    }
+                    DefinedDrivers[driverName] = driverObject;
+                    DriverSupport[driverName] = support;
+                    // don't use a then, so that we can define
+                    // drivers that have simple _support methods
+                    // in a blocking manner
+                    resolve();
+                };
+
+                if ('_support' in driverObject) {
+                    if (driverObject._support && typeof driverObject._support === 'function') {
+                        driverObject._support().then(setDriverSupport, reject);
+                    } else {
+                        setDriverSupport(!!driverObject._support);
+                    }
+                } else {
+                    setDriverSupport(true);
+                }
+            } catch (e) {
+                reject(e);
+            }
+        });
+
+        executeTwoCallbacks(promise, callback, errorCallback);
+        return promise;
+    };
+
+    LocalForage.prototype.driver = function driver() {
+        return this._driver || null;
+    };
+
+    LocalForage.prototype.getDriver = function getDriver(driverName, callback, errorCallback) {
+        var getDriverPromise = DefinedDrivers[driverName] ? Promise$1.resolve(DefinedDrivers[driverName]) : Promise$1.reject(new Error('Driver not found.'));
+
+        executeTwoCallbacks(getDriverPromise, callback, errorCallback);
+        return getDriverPromise;
+    };
+
+    LocalForage.prototype.getSerializer = function getSerializer(callback) {
+        var serializerPromise = Promise$1.resolve(localforageSerializer);
+        executeTwoCallbacks(serializerPromise, callback);
+        return serializerPromise;
+    };
+
+    LocalForage.prototype.ready = function ready(callback) {
+        var self = this;
+
+        var promise = self._driverSet.then(function () {
+            if (self._ready === null) {
+                self._ready = self._initDriver();
+            }
+
+            return self._ready;
+        });
+
+        executeTwoCallbacks(promise, callback, callback);
+        return promise;
+    };
+
+    LocalForage.prototype.setDriver = function setDriver(drivers, callback, errorCallback) {
+        var self = this;
+
+        if (!isArray(drivers)) {
+            drivers = [drivers];
+        }
+
+        var supportedDrivers = this._getSupportedDrivers(drivers);
+
+        function setDriverToConfig() {
+            self._config.driver = self.driver();
+        }
+
+        function extendSelfWithDriver(driver) {
+            self._extend(driver);
+            setDriverToConfig();
+
+            self._ready = self._initStorage(self._config);
+            return self._ready;
+        }
+
+        function initDriver(supportedDrivers) {
+            return function () {
+                var currentDriverIndex = 0;
+
+                function driverPromiseLoop() {
+                    while (currentDriverIndex < supportedDrivers.length) {
+                        var driverName = supportedDrivers[currentDriverIndex];
+                        currentDriverIndex++;
+
+                        self._dbInfo = null;
+                        self._ready = null;
+
+                        return self.getDriver(driverName).then(extendSelfWithDriver)["catch"](driverPromiseLoop);
+                    }
+
+                    setDriverToConfig();
+                    var error = new Error('No available storage method found.');
+                    self._driverSet = Promise$1.reject(error);
+                    return self._driverSet;
+                }
+
+                return driverPromiseLoop();
+            };
+        }
+
+        // There might be a driver initialization in progress
+        // so wait for it to finish in order to avoid a possible
+        // race condition to set _dbInfo
+        var oldDriverSetDone = this._driverSet !== null ? this._driverSet["catch"](function () {
+            return Promise$1.resolve();
+        }) : Promise$1.resolve();
+
+        this._driverSet = oldDriverSetDone.then(function () {
+            var driverName = supportedDrivers[0];
+            self._dbInfo = null;
+            self._ready = null;
+
+            return self.getDriver(driverName).then(function (driver) {
+                self._driver = driver._driver;
+                setDriverToConfig();
+                self._wrapLibraryMethodsWithReady();
+                self._initDriver = initDriver(supportedDrivers);
+            });
+        })["catch"](function () {
+            setDriverToConfig();
+            var error = new Error('No available storage method found.');
+            self._driverSet = Promise$1.reject(error);
+            return self._driverSet;
+        });
+
+        executeTwoCallbacks(this._driverSet, callback, errorCallback);
+        return this._driverSet;
+    };
+
+    LocalForage.prototype.supports = function supports(driverName) {
+        return !!DriverSupport[driverName];
+    };
+
+    LocalForage.prototype._extend = function _extend(libraryMethodsAndProperties) {
+        extend(this, libraryMethodsAndProperties);
+    };
+
+    LocalForage.prototype._getSupportedDrivers = function _getSupportedDrivers(drivers) {
+        var supportedDrivers = [];
+        for (var i = 0, len = drivers.length; i < len; i++) {
+            var driverName = drivers[i];
+            if (this.supports(driverName)) {
+                supportedDrivers.push(driverName);
+            }
+        }
+        return supportedDrivers;
+    };
+
+    LocalForage.prototype._wrapLibraryMethodsWithReady = function _wrapLibraryMethodsWithReady() {
+        // Add a stub for each driver API method that delays the call to the
+        // corresponding driver method until localForage is ready. These stubs
+        // will be replaced by the driver methods as soon as the driver is
+        // loaded, so there is no performance impact.
+        for (var i = 0, len = LibraryMethods.length; i < len; i++) {
+            callWhenReady(this, LibraryMethods[i]);
+        }
+    };
+
+    LocalForage.prototype.createInstance = function createInstance(options) {
+        return new LocalForage(options);
+    };
+
+    return LocalForage;
+}();
+
+// The actual localForage object that we expose as a module or via a
+// global. It's extended by pulling in one of our other libraries.
+
+
+var localforage_js = new LocalForage();
+
+module.exports = localforage_js;
+
+},{"3":3}]},{},[4])(4)
+});
+
+},{}],"../../node_modules/@sentry/integrations/esm/offline.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Offline = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+var _localforage = _interopRequireDefault(require("localforage"));
+
+var _flags = require("./flags");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * cache offline errors and send when connected
+ */
+var Offline =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function Offline(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = Offline.id; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    this.global = (0, _utils.getGlobalObject)();
+    this.maxStoredEvents = options.maxStoredEvents || 30; // set a reasonable default
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+
+    this.offlineEventStore = _localforage.default.createInstance({
+      name: 'sentry/offlineEventStore'
+    });
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Offline.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    var _this = this;
+
+    this.hub = getCurrentHub();
+
+    if ('addEventListener' in this.global) {
+      this.global.addEventListener('online', function () {
+        void _this._sendEvents().catch(function () {
+          _flags.IS_DEBUG_BUILD && _utils.logger.warn('could not send cached events');
+        });
+      });
+    }
+
+    addGlobalEventProcessor(function (event) {
+      if (_this.hub && _this.hub.getIntegration(Offline)) {
+        // cache if we are positively offline
+        if ('navigator' in _this.global && 'onLine' in _this.global.navigator && !_this.global.navigator.onLine) {
+          void _this._cacheEvent(event).then(function (_event) {
+            return _this._enforceMaxEvents();
+          }).catch(function (_error) {
+            _flags.IS_DEBUG_BUILD && _utils.logger.warn('could not cache event while offline');
+          }); // return null on success or failure, because being offline will still result in an error
+
+          return null;
+        }
+      }
+
+      return event;
+    }); // if online now, send any events stored in a previous offline session
+
+    if ('navigator' in this.global && 'onLine' in this.global.navigator && this.global.navigator.onLine) {
+      void this._sendEvents().catch(function () {
+        _flags.IS_DEBUG_BUILD && _utils.logger.warn('could not send cached events');
+      });
+    }
+  };
+  /**
+   * cache an event to send later
+   * @param event an event
+   */
+
+
+  Offline.prototype._cacheEvent = function (event) {
+    return (0, _tslib.__awaiter)(this, void 0, void 0, function () {
+      return (0, _tslib.__generator)(this, function (_a) {
+        return [2
+        /*return*/
+        , this.offlineEventStore.setItem((0, _utils.uuid4)(), (0, _utils.normalize)(event))];
+      });
+    });
+  };
+  /**
+   * purge excess events if necessary
+   */
+
+
+  Offline.prototype._enforceMaxEvents = function () {
+    return (0, _tslib.__awaiter)(this, void 0, void 0, function () {
+      var events;
+
+      var _this = this;
+
+      return (0, _tslib.__generator)(this, function (_a) {
+        events = [];
+        return [2
+        /*return*/
+        , this.offlineEventStore.iterate(function (event, cacheKey, _index) {
+          // aggregate events
+          events.push({
+            cacheKey: cacheKey,
+            event: event
+          });
+        }).then(function () {
+          // this promise resolves when the iteration is finished
+          return _this._purgeEvents( // purge all events past maxStoredEvents in reverse chronological order
+          events.sort(function (a, b) {
+            return (b.event.timestamp || 0) - (a.event.timestamp || 0);
+          }).slice(_this.maxStoredEvents < events.length ? _this.maxStoredEvents : events.length).map(function (event) {
+            return event.cacheKey;
+          }));
+        }).catch(function (_error) {
+          _flags.IS_DEBUG_BUILD && _utils.logger.warn('could not enforce max events');
+        })];
+      });
+    });
+  };
+  /**
+   * purge event from cache
+   */
+
+
+  Offline.prototype._purgeEvent = function (cacheKey) {
+    return (0, _tslib.__awaiter)(this, void 0, void 0, function () {
+      return (0, _tslib.__generator)(this, function (_a) {
+        return [2
+        /*return*/
+        , this.offlineEventStore.removeItem(cacheKey)];
+      });
+    });
+  };
+  /**
+   * purge events from cache
+   */
+
+
+  Offline.prototype._purgeEvents = function (cacheKeys) {
+    return (0, _tslib.__awaiter)(this, void 0, void 0, function () {
+      var _this = this;
+
+      return (0, _tslib.__generator)(this, function (_a) {
+        // trail with .then to ensure the return type as void and not void|void[]
+        return [2
+        /*return*/
+        , Promise.all(cacheKeys.map(function (cacheKey) {
+          return _this._purgeEvent(cacheKey);
+        })).then()];
+      });
+    });
+  };
+  /**
+   * send all events
+   */
+
+
+  Offline.prototype._sendEvents = function () {
+    return (0, _tslib.__awaiter)(this, void 0, void 0, function () {
+      var _this = this;
+
+      return (0, _tslib.__generator)(this, function (_a) {
+        return [2
+        /*return*/
+        , this.offlineEventStore.iterate(function (event, cacheKey, _index) {
+          if (_this.hub) {
+            _this.hub.captureEvent(event);
+
+            void _this._purgeEvent(cacheKey).catch(function (_error) {
+              _flags.IS_DEBUG_BUILD && _utils.logger.warn('could not purge event from cache');
+            });
+          } else {
+            _flags.IS_DEBUG_BUILD && _utils.logger.warn('no hub found - could not send cached event');
+          }
+        })];
+      });
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Offline.id = 'Offline';
+  return Offline;
+}();
+
+exports.Offline = Offline;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","localforage":"../../node_modules/localforage/dist/localforage.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/@sentry/integrations/esm/reportingobserver.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ReportingObserver = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+/** Reporting API integration - https://w3c.github.io/reporting/ */
+var ReportingObserver =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function ReportingObserver(_options) {
+    if (_options === void 0) {
+      _options = {
+        types: ['crash', 'deprecation', 'intervention']
+      };
+    }
+
+    this._options = _options;
+    /**
+     * @inheritDoc
+     */
+
+    this.name = ReportingObserver.id;
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  ReportingObserver.prototype.setupOnce = function (_, getCurrentHub) {
+    if (!(0, _utils.supportsReportingObserver)()) {
+      return;
+    }
+
+    this._getCurrentHub = getCurrentHub; // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+
+    var observer = new ((0, _utils.getGlobalObject)().ReportingObserver)(this.handler.bind(this), {
+      buffered: true,
+      types: this._options.types
+    }); // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+
+    observer.observe();
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  ReportingObserver.prototype.handler = function (reports) {
+    var e_1, _a;
+
+    var hub = this._getCurrentHub && this._getCurrentHub();
+
+    if (!hub || !hub.getIntegration(ReportingObserver)) {
+      return;
+    }
+
+    var _loop_1 = function (report) {
+      hub.withScope(function (scope) {
+        scope.setExtra('url', report.url);
+        var label = "ReportingObserver [" + report.type + "]";
+        var details = 'No details available';
+
+        if (report.body) {
+          // Object.keys doesn't work on ReportBody, as all properties are inheirted
+          var plainBody = {}; // eslint-disable-next-line guard-for-in
+
+          for (var prop in report.body) {
+            plainBody[prop] = report.body[prop];
+          }
+
+          scope.setExtra('body', plainBody);
+
+          if (report.type === 'crash') {
+            var body = report.body; // A fancy way to create a message out of crashId OR reason OR both OR fallback
+
+            details = [body.crashId || '', body.reason || ''].join(' ').trim() || details;
+          } else {
+            var body = report.body;
+            details = body.message || details;
+          }
+        }
+
+        hub.captureMessage(label + ": " + details);
+      });
+    };
+
+    try {
+      for (var reports_1 = (0, _tslib.__values)(reports), reports_1_1 = reports_1.next(); !reports_1_1.done; reports_1_1 = reports_1.next()) {
+        var report = reports_1_1.value;
+
+        _loop_1(report);
+      }
+    } catch (e_1_1) {
+      e_1 = {
+        error: e_1_1
+      };
+    } finally {
+      try {
+        if (reports_1_1 && !reports_1_1.done && (_a = reports_1.return)) _a.call(reports_1);
+      } finally {
+        if (e_1) throw e_1.error;
+      }
+    }
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  ReportingObserver.id = 'ReportingObserver';
+  return ReportingObserver;
+}();
+
+exports.ReportingObserver = ReportingObserver;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js"}],"../../node_modules/@sentry/integrations/esm/rewriteframes.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RewriteFrames = void 0;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+/** Rewrite event frames paths */
+var RewriteFrames =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function RewriteFrames(options) {
+    var _this = this;
+
+    if (options === void 0) {
+      options = {};
+    }
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = RewriteFrames.id;
+    /**
+     * @inheritDoc
+     */
+
+    this._prefix = 'app:///';
+    /**
+     * @inheritDoc
+     */
+
+    this._iteratee = function (frame) {
+      if (!frame.filename) {
+        return frame;
+      } // Check if the frame filename begins with `/` or a Windows-style prefix such as `C:\`
+
+
+      var isWindowsFrame = /^[A-Z]:\\/.test(frame.filename);
+      var startsWithSlash = /^\//.test(frame.filename);
+
+      if (isWindowsFrame || startsWithSlash) {
+        var filename = isWindowsFrame ? frame.filename.replace(/^[A-Z]:/, '') // remove Windows-style prefix
+        .replace(/\\/g, '/') // replace all `\\` instances with `/`
+        : frame.filename;
+        var base = _this._root ? (0, _utils.relative)(_this._root, filename) : (0, _utils.basename)(filename);
+        frame.filename = "" + _this._prefix + base;
+      }
+
+      return frame;
+    };
+
+    if (options.root) {
+      this._root = options.root;
+    }
+
+    if (options.prefix) {
+      this._prefix = options.prefix;
+    }
+
+    if (options.iteratee) {
+      this._iteratee = options.iteratee;
+    }
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  RewriteFrames.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (event) {
+      var self = getCurrentHub().getIntegration(RewriteFrames);
+
+      if (self) {
+        return self.process(event);
+      }
+
+      return event;
+    });
+  };
+  /** JSDoc */
+
+
+  RewriteFrames.prototype.process = function (originalEvent) {
+    var processedEvent = originalEvent;
+
+    if (originalEvent.exception && Array.isArray(originalEvent.exception.values)) {
+      processedEvent = this._processExceptionsEvent(processedEvent);
+    }
+
+    if (originalEvent.stacktrace) {
+      processedEvent = this._processStacktraceEvent(processedEvent);
+    }
+
+    return processedEvent;
+  };
+  /** JSDoc */
+
+
+  RewriteFrames.prototype._processExceptionsEvent = function (event) {
+    var _this = this;
+
+    try {
+      return (0, _tslib.__assign)((0, _tslib.__assign)({}, event), {
+        exception: (0, _tslib.__assign)((0, _tslib.__assign)({}, event.exception), {
+          // The check for this is performed inside `process` call itself, safe to skip here
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          values: event.exception.values.map(function (value) {
+            return (0, _tslib.__assign)((0, _tslib.__assign)({}, value), {
+              stacktrace: _this._processStacktrace(value.stacktrace)
+            });
+          })
+        })
+      });
+    } catch (_oO) {
+      return event;
+    }
+  };
+  /** JSDoc */
+
+
+  RewriteFrames.prototype._processStacktraceEvent = function (event) {
+    try {
+      return (0, _tslib.__assign)((0, _tslib.__assign)({}, event), {
+        stacktrace: this._processStacktrace(event.stacktrace)
+      });
+    } catch (_oO) {
+      return event;
+    }
+  };
+  /** JSDoc */
+
+
+  RewriteFrames.prototype._processStacktrace = function (stacktrace) {
+    var _this = this;
+
+    return (0, _tslib.__assign)((0, _tslib.__assign)({}, stacktrace), {
+      frames: stacktrace && stacktrace.frames && stacktrace.frames.map(function (f) {
+        return _this._iteratee(f);
+      })
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  RewriteFrames.id = 'RewriteFrames';
+  return RewriteFrames;
+}();
+
+exports.RewriteFrames = RewriteFrames;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js"}],"../../node_modules/@sentry/integrations/esm/sessiontiming.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SessionTiming = void 0;
+
+var _tslib = require("tslib");
+
+/** This function adds duration since Sentry was initialized till the time event was sent */
+var SessionTiming =
+/** @class */
+function () {
+  function SessionTiming() {
+    /**
+     * @inheritDoc
+     */
+    this.name = SessionTiming.id;
+    /** Exact time Client was initialized expressed in milliseconds since Unix Epoch. */
+
+    this._startTime = Date.now();
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  SessionTiming.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (event) {
+      var self = getCurrentHub().getIntegration(SessionTiming);
+
+      if (self) {
+        return self.process(event);
+      }
+
+      return event;
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  SessionTiming.prototype.process = function (event) {
+    var _a;
+
+    var now = Date.now();
+    return (0, _tslib.__assign)((0, _tslib.__assign)({}, event), {
+      extra: (0, _tslib.__assign)((0, _tslib.__assign)({}, event.extra), (_a = {}, _a['session:start'] = this._startTime, _a['session:duration'] = now - this._startTime, _a['session:end'] = now, _a))
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  SessionTiming.id = 'SessionTiming';
+  return SessionTiming;
+}();
+
+exports.SessionTiming = SessionTiming;
+},{"tslib":"../../node_modules/tslib/tslib.es6.js"}],"../../node_modules/@sentry/integrations/esm/transaction.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Transaction = void 0;
+
+/** Add node transaction to the event */
+var Transaction =
+/** @class */
+function () {
+  function Transaction() {
+    /**
+     * @inheritDoc
+     */
+    this.name = Transaction.id;
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Transaction.prototype.setupOnce = function (addGlobalEventProcessor, getCurrentHub) {
+    addGlobalEventProcessor(function (event) {
+      var self = getCurrentHub().getIntegration(Transaction);
+
+      if (self) {
+        return self.process(event);
+      }
+
+      return event;
+    });
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Transaction.prototype.process = function (event) {
+    var frames = this._getFramesFromEvent(event); // use for loop so we don't have to reverse whole frames array
+
+
+    for (var i = frames.length - 1; i >= 0; i--) {
+      var frame = frames[i];
+
+      if (frame.in_app === true) {
+        event.transaction = this._getTransaction(frame);
+        break;
+      }
+    }
+
+    return event;
+  };
+  /** JSDoc */
+
+
+  Transaction.prototype._getFramesFromEvent = function (event) {
+    var exception = event.exception && event.exception.values && event.exception.values[0];
+    return exception && exception.stacktrace && exception.stacktrace.frames || [];
+  };
+  /** JSDoc */
+
+
+  Transaction.prototype._getTransaction = function (frame) {
+    return frame.module || frame.function ? (frame.module || '?') + "/" + (frame.function || '?') : '<unknown>';
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Transaction.id = 'Transaction';
+  return Transaction;
+}();
+
+exports.Transaction = Transaction;
+},{}],"../../node_modules/@sentry/integrations/esm/vue.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Vue = void 0;
+exports.getActiveTransaction = getActiveTransaction;
+
+var _tslib = require("tslib");
+
+var _utils = require("@sentry/utils");
+
+var _flags = require("./flags");
+
+/**
+ * Used to extract Tracing integration from the current client,
+ * without the need to import `Tracing` itself from the @sentry/apm package.
+ * @deprecated as @sentry/tracing should be used over @sentry/apm.
+ */
+var TRACING_GETTER = {
+  id: 'Tracing'
+};
+/**
+ * Used to extract BrowserTracing integration from @sentry/tracing
+ */
+
+var BROWSER_TRACING_GETTER = {
+  id: 'BrowserTracing'
+};
+var VUE_OP = 'ui.vue'; // Mappings from operation to corresponding lifecycle hook.
+
+var HOOKS = {
+  activate: ['activated', 'deactivated'],
+  create: ['beforeCreate', 'created'],
+  destroy: ['beforeDestroy', 'destroyed'],
+  mount: ['beforeMount', 'mounted'],
+  update: ['beforeUpdate', 'updated']
+};
+var COMPONENT_NAME_REGEXP = /(?:^|[-_/])(\w)/g;
+var ROOT_COMPONENT_NAME = 'root';
+var ANONYMOUS_COMPONENT_NAME = 'anonymous component';
+/** JSDoc */
+
+var Vue =
+/** @class */
+function () {
+  /**
+   * @inheritDoc
+   */
+  function Vue(options) {
+    var _this = this;
+    /**
+     * @inheritDoc
+     */
+
+
+    this.name = Vue.id;
+    /**
+     * Cache holding already processed component names
+     */
+
+    this._componentsCache = {};
+    /** Keep it as attribute function, to keep correct `this` binding inside the hooks callbacks  */
+    // eslint-disable-next-line @typescript-eslint/typedef
+
+    this._applyTracingHooks = function (vm, getCurrentHub) {
+      // Don't attach twice, just in case
+      if (vm.$options.$_sentryPerfHook) {
+        return;
+      }
+
+      vm.$options.$_sentryPerfHook = true;
+
+      var name = _this._getComponentName(vm);
+
+      var rootMount = name === ROOT_COMPONENT_NAME;
+      var spans = {}; // Render hook starts after once event is emitted,
+      // but it ends before the second event of the same type.
+      //
+      // Because of this, we start measuring inside the first event,
+      // but finish it before it triggers, to skip the event emitter timing itself.
+
+      var rootHandler = function (hook) {
+        var now = (0, _utils.timestampWithMs)(); // On the first handler call (before), it'll be undefined, as `$once` will add it in the future.
+        // However, on the second call (after), it'll be already in place.
+
+        if (_this._rootSpan) {
+          _this._finishRootSpan(now, getCurrentHub);
+        } else {
+          vm.$once("hook:" + hook, function () {
+            // Create an activity on the first event call. There'll be no second call, as rootSpan will be in place,
+            // thus new event handler won't be attached.
+            // We do this whole dance with `TRACING_GETTER` to prevent `@sentry/apm` from becoming a peerDependency.
+            // We also need to ask for the `.constructor`, as `pushActivity` and `popActivity` are static, not instance methods.
+
+            /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+            // eslint-disable-next-line deprecation/deprecation
+            var tracingIntegration = getCurrentHub().getIntegration(TRACING_GETTER);
+
+            if (tracingIntegration) {
+              _this._tracingActivity = tracingIntegration.constructor.pushActivity('Vue Application Render');
+              var transaction = tracingIntegration.constructor.getTransaction();
+
+              if (transaction) {
+                _this._rootSpan = transaction.startChild({
+                  description: 'Application Render',
+                  op: VUE_OP
+                });
+              } // Use functionality from @sentry/tracing
+
+            } else {
+              var activeTransaction = getActiveTransaction(getCurrentHub());
+
+              if (activeTransaction) {
+                _this._rootSpan = activeTransaction.startChild({
+                  description: 'Application Render',
+                  op: VUE_OP
+                });
+              }
+            }
+            /* eslint-enable @typescript-eslint/no-unsafe-member-access */
+
+          });
+        }
+      };
+
+      var childHandler = function (hook, operation) {
+        // Skip components that we don't want to track to minimize the noise and give a more granular control to the user
+        var shouldTrack = Array.isArray(_this._options.tracingOptions.trackComponents) ? _this._options.tracingOptions.trackComponents.indexOf(name) > -1 : _this._options.tracingOptions.trackComponents;
+
+        if (!_this._rootSpan || !shouldTrack) {
+          return;
+        }
+
+        var now = (0, _utils.timestampWithMs)();
+        var span = spans[operation]; // On the first handler call (before), it'll be undefined, as `$once` will add it in the future.
+        // However, on the second call (after), it'll be already in place.
+
+        if (span) {
+          span.finish();
+
+          _this._finishRootSpan(now, getCurrentHub);
+        } else {
+          vm.$once("hook:" + hook, function () {
+            if (_this._rootSpan) {
+              spans[operation] = _this._rootSpan.startChild({
+                description: "Vue <" + name + ">",
+                op: VUE_OP + "." + operation
+              });
+            }
+          });
+        }
+      }; // Each component has it's own scope, so all activities are only related to one of them
+
+
+      _this._options.tracingOptions.hooks.forEach(function (operation) {
+        // Retrieve corresponding hooks from Vue lifecycle.
+        // eg. mount => ['beforeMount', 'mounted']
+        var internalHooks = HOOKS[operation];
+
+        if (!internalHooks) {
+          _flags.IS_DEBUG_BUILD && _utils.logger.warn("Unknown hook: " + operation);
+          return;
+        }
+
+        internalHooks.forEach(function (internalHook) {
+          var handler = rootMount ? rootHandler.bind(_this, internalHook) : childHandler.bind(_this, internalHook, operation);
+          var currentValue = vm.$options[internalHook];
+
+          if (Array.isArray(currentValue)) {
+            vm.$options[internalHook] = (0, _tslib.__spread)([handler], currentValue);
+          } else if (typeof currentValue === 'function') {
+            vm.$options[internalHook] = [handler, currentValue];
+          } else {
+            vm.$options[internalHook] = [handler];
+          }
+        });
+      });
+    };
+
+    _flags.IS_DEBUG_BUILD && _utils.logger.log('You are still using the Vue.js integration, consider moving to @sentry/vue');
+    this._options = (0, _tslib.__assign)((0, _tslib.__assign)({
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      Vue: (0, _utils.getGlobalObject)().Vue,
+      attachProps: true,
+      logErrors: false,
+      tracing: false
+    }, options), {
+      tracingOptions: (0, _tslib.__assign)({
+        hooks: ['mount', 'update'],
+        timeout: 2000,
+        trackComponents: false
+      }, options.tracingOptions)
+    });
+  }
+  /**
+   * @inheritDoc
+   */
+
+
+  Vue.prototype.setupOnce = function (_, getCurrentHub) {
+    if (!this._options.Vue) {
+      _flags.IS_DEBUG_BUILD && _utils.logger.error('Vue integration is missing a Vue instance');
+      return;
+    }
+
+    this._attachErrorHandler(getCurrentHub);
+
+    if (this._options.tracing) {
+      this._startTracing(getCurrentHub);
+    }
+  };
+  /**
+   * Extract component name from the ViewModel
+   */
+
+
+  Vue.prototype._getComponentName = function (vm) {
+    // Such level of granularity is most likely not necessary, but better safe than sorry. — Kamil
+    if (!vm) {
+      return ANONYMOUS_COMPONENT_NAME;
+    }
+
+    if (vm.$root === vm) {
+      return ROOT_COMPONENT_NAME;
+    }
+
+    if (!vm.$options) {
+      return ANONYMOUS_COMPONENT_NAME;
+    }
+
+    if (vm.$options.name) {
+      return vm.$options.name;
+    }
+
+    if (vm.$options._componentTag) {
+      return vm.$options._componentTag;
+    } // injected by vue-loader
+
+
+    if (vm.$options.__file) {
+      var unifiedFile = vm.$options.__file.replace(/^[a-zA-Z]:/, '').replace(/\\/g, '/');
+
+      var filename = (0, _utils.basename)(unifiedFile, '.vue');
+      return this._componentsCache[filename] || (this._componentsCache[filename] = filename.replace(COMPONENT_NAME_REGEXP, function (_, c) {
+        return c ? c.toUpperCase() : '';
+      }));
+    }
+
+    return ANONYMOUS_COMPONENT_NAME;
+  };
+  /** Finish top-level span and activity with a debounce configured using `timeout` option */
+
+
+  Vue.prototype._finishRootSpan = function (timestamp, getCurrentHub) {
+    var _this = this;
+
+    if (this._rootSpanTimer) {
+      clearTimeout(this._rootSpanTimer);
+    }
+
+    this._rootSpanTimer = setTimeout(function () {
+      if (_this._tracingActivity) {
+        // We do this whole dance with `TRACING_GETTER` to prevent `@sentry/apm` from becoming a peerDependency.
+        // We also need to ask for the `.constructor`, as `pushActivity` and `popActivity` are static, not instance methods.
+        // eslint-disable-next-line deprecation/deprecation
+        var tracingIntegration = getCurrentHub().getIntegration(TRACING_GETTER);
+
+        if (tracingIntegration) {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          tracingIntegration.constructor.popActivity(_this._tracingActivity);
+        }
+      } // We should always finish the span, only should pop activity if using @sentry/apm
+
+
+      if (_this._rootSpan) {
+        _this._rootSpan.finish(timestamp);
+      }
+    }, this._options.tracingOptions.timeout);
+  };
+  /** Inject configured tracing hooks into Vue's component lifecycles */
+
+
+  Vue.prototype._startTracing = function (getCurrentHub) {
+    var applyTracingHooks = this._applyTracingHooks;
+
+    this._options.Vue.mixin({
+      beforeCreate: function () {
+        // eslint-disable-next-line deprecation/deprecation
+        if (getCurrentHub().getIntegration(TRACING_GETTER) || getCurrentHub().getIntegration(BROWSER_TRACING_GETTER)) {
+          // `this` points to currently rendered component
+          applyTracingHooks(this, getCurrentHub);
+        } else {
+          _flags.IS_DEBUG_BUILD && _utils.logger.error('Vue integration has tracing enabled, but Tracing integration is not configured');
+        }
+      }
+    });
+  };
+  /** Inject Sentry's handler into owns Vue's error handler  */
+
+
+  Vue.prototype._attachErrorHandler = function (getCurrentHub) {
+    var _this = this; // eslint-disable-next-line @typescript-eslint/unbound-method
+
+
+    var currentErrorHandler = this._options.Vue.config.errorHandler;
+
+    this._options.Vue.config.errorHandler = function (error, vm, info) {
+      var metadata = {};
+
+      if (vm) {
+        try {
+          metadata.componentName = _this._getComponentName(vm);
+
+          if (_this._options.attachProps) {
+            metadata.propsData = vm.$options.propsData;
+          }
+        } catch (_oO) {
+          _flags.IS_DEBUG_BUILD && _utils.logger.warn('Unable to extract metadata from Vue component.');
+        }
+      }
+
+      if (info) {
+        metadata.lifecycleHook = info;
+      }
+
+      if (getCurrentHub().getIntegration(Vue)) {
+        // Capture exception in the next event loop, to make sure that all breadcrumbs are recorded in time.
+        setTimeout(function () {
+          getCurrentHub().withScope(function (scope) {
+            scope.setContext('vue', metadata);
+            getCurrentHub().captureException(error);
+          });
+        });
+      }
+
+      if (typeof currentErrorHandler === 'function') {
+        currentErrorHandler.call(_this._options.Vue, error, vm, info);
+      }
+
+      if (_this._options.logErrors) {
+        if (_this._options.Vue.util) {
+          _this._options.Vue.util.warn("Error in " + info + ": \"" + (error && error.toString()) + "\"", vm);
+        } // eslint-disable-next-line no-console
+
+
+        console.error(error);
+      }
+    };
+  };
+  /**
+   * @inheritDoc
+   */
+
+
+  Vue.id = 'Vue';
+  return Vue;
+}();
+
+exports.Vue = Vue;
+
+/** Grabs active transaction off scope */
+function getActiveTransaction(hub) {
+  if (hub && hub.getScope) {
+    var scope = hub.getScope();
+
+    if (scope) {
+      return scope.getTransaction();
+    }
+  }
+
+  return undefined;
+}
+},{"tslib":"../../node_modules/tslib/tslib.es6.js","@sentry/utils":"../../node_modules/@sentry/utils/esm/index.js","./flags":"../../node_modules/@sentry/integrations/esm/flags.js"}],"../../node_modules/@sentry/integrations/esm/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Angular", {
+  enumerable: true,
+  get: function () {
+    return _angular.Angular;
+  }
+});
+Object.defineProperty(exports, "CaptureConsole", {
+  enumerable: true,
+  get: function () {
+    return _captureconsole.CaptureConsole;
+  }
+});
+Object.defineProperty(exports, "Debug", {
+  enumerable: true,
+  get: function () {
+    return _debug.Debug;
+  }
+});
+Object.defineProperty(exports, "Dedupe", {
+  enumerable: true,
+  get: function () {
+    return _dedupe.Dedupe;
+  }
+});
+Object.defineProperty(exports, "Ember", {
+  enumerable: true,
+  get: function () {
+    return _ember.Ember;
+  }
+});
+Object.defineProperty(exports, "ExtraErrorData", {
+  enumerable: true,
+  get: function () {
+    return _extraerrordata.ExtraErrorData;
+  }
+});
+Object.defineProperty(exports, "Offline", {
+  enumerable: true,
+  get: function () {
+    return _offline.Offline;
+  }
+});
+Object.defineProperty(exports, "ReportingObserver", {
+  enumerable: true,
+  get: function () {
+    return _reportingobserver.ReportingObserver;
+  }
+});
+Object.defineProperty(exports, "RewriteFrames", {
+  enumerable: true,
+  get: function () {
+    return _rewriteframes.RewriteFrames;
+  }
+});
+Object.defineProperty(exports, "SessionTiming", {
+  enumerable: true,
+  get: function () {
+    return _sessiontiming.SessionTiming;
+  }
+});
+Object.defineProperty(exports, "Transaction", {
+  enumerable: true,
+  get: function () {
+    return _transaction.Transaction;
+  }
+});
+Object.defineProperty(exports, "Vue", {
+  enumerable: true,
+  get: function () {
+    return _vue.Vue;
+  }
+});
+
+var _angular = require("./angular");
+
+var _captureconsole = require("./captureconsole");
+
+var _debug = require("./debug");
+
+var _dedupe = require("./dedupe");
+
+var _ember = require("./ember");
+
+var _extraerrordata = require("./extraerrordata");
+
+var _offline = require("./offline");
+
+var _reportingobserver = require("./reportingobserver");
+
+var _rewriteframes = require("./rewriteframes");
+
+var _sessiontiming = require("./sessiontiming");
+
+var _transaction = require("./transaction");
+
+var _vue = require("./vue");
+},{"./angular":"../../node_modules/@sentry/integrations/esm/angular.js","./captureconsole":"../../node_modules/@sentry/integrations/esm/captureconsole.js","./debug":"../../node_modules/@sentry/integrations/esm/debug.js","./dedupe":"../../node_modules/@sentry/integrations/esm/dedupe.js","./ember":"../../node_modules/@sentry/integrations/esm/ember.js","./extraerrordata":"../../node_modules/@sentry/integrations/esm/extraerrordata.js","./offline":"../../node_modules/@sentry/integrations/esm/offline.js","./reportingobserver":"../../node_modules/@sentry/integrations/esm/reportingobserver.js","./rewriteframes":"../../node_modules/@sentry/integrations/esm/rewriteframes.js","./sessiontiming":"../../node_modules/@sentry/integrations/esm/sessiontiming.js","./transaction":"../../node_modules/@sentry/integrations/esm/transaction.js","./vue":"../../node_modules/@sentry/integrations/esm/vue.js"}],"../../node_modules/@babel/runtime/helpers/extends.js":[function(require,module,exports) {
 function _extends() {
   module.exports = _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -57318,23 +62584,6 @@ function _extends() {
 }
 
 module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
-},{}],"../../node_modules/@babel/runtime/helpers/defineProperty.js":[function(require,module,exports) {
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],"../../node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -65578,15 +70827,689 @@ Object.defineProperty(exports, "default", {
 var _DialogTitle = _interopRequireDefault(require("./DialogTitle"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./DialogTitle":"../../node_modules/@material-ui/core/esm/DialogTitle/DialogTitle.js"}],"../../node_modules/@iobroker/adapter-react/Dialogs/Error.js":[function(require,module,exports) {
+},{"./DialogTitle":"../../node_modules/@material-ui/core/esm/DialogTitle/DialogTitle.js"}],"../../node_modules/@babel/runtime/helpers/interopRequireWildcard.js":[function(require,module,exports) {
+var _typeof = require("./typeof.js")["default"];
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":"../../node_modules/@babel/runtime/helpers/typeof.js"}],"../../node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js":[function(require,module,exports) {
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.styles = exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutProperties"));
+
+var React = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _clsx = _interopRequireDefault(require("clsx"));
+
+var _utils = require("@material-ui/utils");
+
+var _withStyles = _interopRequireDefault(require("../styles/withStyles"));
+
+var _capitalize = _interopRequireDefault(require("../utils/capitalize"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      userSelect: 'none',
+      width: '1em',
+      height: '1em',
+      display: 'inline-block',
+      fill: 'currentColor',
+      flexShrink: 0,
+      fontSize: theme.typography.pxToRem(24),
+      transition: theme.transitions.create('fill', {
+        duration: theme.transitions.duration.shorter
+      })
+    },
+
+    /* Styles applied to the root element if `color="primary"`. */
+    colorPrimary: {
+      color: theme.palette.primary.main
+    },
+
+    /* Styles applied to the root element if `color="secondary"`. */
+    colorSecondary: {
+      color: theme.palette.secondary.main
+    },
+
+    /* Styles applied to the root element if `color="action"`. */
+    colorAction: {
+      color: theme.palette.action.active
+    },
+
+    /* Styles applied to the root element if `color="error"`. */
+    colorError: {
+      color: theme.palette.error.main
+    },
+
+    /* Styles applied to the root element if `color="disabled"`. */
+    colorDisabled: {
+      color: theme.palette.action.disabled
+    },
+
+    /* Styles applied to the root element if `fontSize="inherit"`. */
+    fontSizeInherit: {
+      fontSize: 'inherit'
+    },
+
+    /* Styles applied to the root element if `fontSize="small"`. */
+    fontSizeSmall: {
+      fontSize: theme.typography.pxToRem(20)
+    },
+
+    /* Styles applied to the root element if `fontSize="large"`. */
+    fontSizeLarge: {
+      fontSize: theme.typography.pxToRem(35)
+    }
+  };
+};
+
+exports.styles = styles;
+var SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$color = props.color,
+      color = _props$color === void 0 ? 'inherit' : _props$color,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'svg' : _props$component,
+      _props$fontSize = props.fontSize,
+      fontSize = _props$fontSize === void 0 ? 'medium' : _props$fontSize,
+      htmlColor = props.htmlColor,
+      titleAccess = props.titleAccess,
+      _props$viewBox = props.viewBox,
+      viewBox = _props$viewBox === void 0 ? '0 0 24 24' : _props$viewBox,
+      other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
+  return /*#__PURE__*/React.createElement(Component, (0, _extends2.default)({
+    className: (0, _clsx.default)(classes.root, className, color !== 'inherit' && classes["color".concat((0, _capitalize.default)(color))], fontSize !== 'default' && fontSize !== 'medium' && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
+    focusable: "false",
+    viewBox: viewBox,
+    color: htmlColor,
+    "aria-hidden": titleAccess ? undefined : true,
+    role: titleAccess ? 'img' : undefined,
+    ref: ref
+  }, other), children, titleAccess ? /*#__PURE__*/React.createElement("title", null, titleAccess) : null);
+});
+"development" !== "production" ? SvgIcon.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Node passed into the SVG element.
+   */
+  children: _propTypes.default.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: _propTypes.default.object,
+
+  /**
+   * @ignore
+   */
+  className: _propTypes.default.string,
+
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
+   */
+  color: _propTypes.default.oneOf(['action', 'disabled', 'error', 'inherit', 'primary', 'secondary']),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: _propTypes.default
+  /* @typescript-to-proptypes-ignore */
+  .elementType,
+
+  /**
+   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
+   */
+  fontSize: (0, _utils.chainPropTypes)(_propTypes.default.oneOf(['default', 'inherit', 'large', 'medium', 'small']), function (props) {
+    var fontSize = props.fontSize;
+
+    if (fontSize === 'default') {
+      throw new Error('Material-UI: `fontSize="default"` is deprecated. Use `fontSize="medium"` instead.');
+    }
+
+    return null;
+  }),
+
+  /**
+   * Applies a color attribute to the SVG element.
+   */
+  htmlColor: _propTypes.default.string,
+
+  /**
+   * The shape-rendering attribute. The behavior of the different options is described on the
+   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
+   * If you are having issues with blurry icons you should investigate this property.
+   */
+  shapeRendering: _propTypes.default.string,
+
+  /**
+   * Provides a human-readable title for the element that contains it.
+   * https://www.w3.org/TR/SVG-access/#Equivalent
+   */
+  titleAccess: _propTypes.default.string,
+
+  /**
+   * Allows you to redefine what the coordinates without units mean inside an SVG element.
+   * For example, if the SVG element is 500 (width) by 200 (height),
+   * and you pass viewBox="0 0 50 20",
+   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
+   * to bottom right (50,20) and each unit will be worth 10px.
+   */
+  viewBox: _propTypes.default.string
+} : void 0;
+SvgIcon.muiName = 'SvgIcon';
+
+var _default = (0, _withStyles.default)(styles, {
+  name: 'MuiSvgIcon'
+})(SvgIcon);
+
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutProperties":"../../node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js","react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","clsx":"../../node_modules/clsx/dist/clsx.m.js","@material-ui/utils":"../../node_modules/@material-ui/utils/esm/index.js","../styles/withStyles":"../../node_modules/@material-ui/core/esm/styles/withStyles.js","../utils/capitalize":"../../node_modules/@material-ui/core/esm/utils/capitalize.js"}],"../../node_modules/@material-ui/core/esm/SvgIcon/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _SvgIcon.default;
+  }
+});
+
+var _SvgIcon = _interopRequireDefault(require("./SvgIcon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./SvgIcon":"../../node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js"}],"../../node_modules/@material-ui/core/esm/utils/createSvgIcon.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = createSvgIcon;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _SvgIcon = _interopRequireDefault(require("../SvgIcon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Private module reserved for @material-ui/x packages.
+ */
+function createSvgIcon(path, displayName) {
+  var Component = function Component(props, ref) {
+    return /*#__PURE__*/_react.default.createElement(_SvgIcon.default, (0, _extends2.default)({
+      ref: ref
+    }, props), path);
+  };
+
+  if ("development" !== 'production') {
+    // Need to set `displayName` on the inner component for React.memo.
+    // React prior to 16.14 ignores `displayName` on the wrapper.
+    Component.displayName = "".concat(displayName, "Icon");
+  }
+
+  Component.muiName = _SvgIcon.default.muiName;
+  return /*#__PURE__*/_react.default.memo( /*#__PURE__*/_react.default.forwardRef(Component));
+}
+},{"@babel/runtime/helpers/esm/extends":"../../node_modules/@babel/runtime/helpers/esm/extends.js","react":"../../node_modules/react/index.js","../SvgIcon":"../../node_modules/@material-ui/core/esm/SvgIcon/index.js"}],"../../node_modules/@material-ui/core/esm/utils/debounce.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = debounce;
+
+// Corresponds to 10 frames at 60 Hz.
+// A few bytes payload overhead when lodash/debounce is ~3 kB and debounce ~300 B.
+function debounce(func) {
+  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 166;
+  var timeout;
+
+  function debounced() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    } // eslint-disable-next-line consistent-this
+
+
+    var that = this;
+
+    var later = function later() {
+      func.apply(that, args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  }
+
+  debounced.clear = function () {
+    clearTimeout(timeout);
+  };
+
+  return debounced;
+}
+},{}],"../../node_modules/@material-ui/core/esm/utils/isMuiElement.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isMuiElement;
+
+var React = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function isMuiElement(element, muiNames) {
+  return /*#__PURE__*/React.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+}
+},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/requirePropFactory.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = requirePropFactory;
+
+function requirePropFactory(componentNameInError) {
+  if ("development" === 'production') {
+    return function () {
+      return null;
+    };
+  }
+
+  var requireProp = function requireProp(requiredProp) {
+    return function (props, propName, componentName, location, propFullName) {
+      var propFullNameSafe = propFullName || propName;
+
+      if (typeof props[propName] !== 'undefined' && !props[requiredProp]) {
+        return new Error("The prop `".concat(propFullNameSafe, "` of ") + "`".concat(componentNameInError, "` must be used on `").concat(requiredProp, "`."));
+      }
+
+      return null;
+    };
+  };
+
+  return requireProp;
+}
+},{}],"../../node_modules/@material-ui/core/esm/utils/unsupportedProp.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = unsupportedProp;
+
+function unsupportedProp(props, propName, componentName, location, propFullName) {
+  if ("development" === 'production') {
+    return null;
+  }
+
+  var propFullNameSafe = propFullName || propName;
+
+  if (typeof props[propName] !== 'undefined') {
+    return new Error("The prop `".concat(propFullNameSafe, "` is not supported. Please remove it."));
+  }
+
+  return null;
+}
+},{}],"../../node_modules/@material-ui/core/esm/utils/useControlled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useControlled;
+
+var React = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+/* eslint-disable react-hooks/rules-of-hooks, react-hooks/exhaustive-deps */
+function useControlled(_ref) {
+  var controlled = _ref.controlled,
+      defaultProp = _ref.default,
+      name = _ref.name,
+      _ref$state = _ref.state,
+      state = _ref$state === void 0 ? 'value' : _ref$state;
+
+  var _React$useRef = React.useRef(controlled !== undefined),
+      isControlled = _React$useRef.current;
+
+  var _React$useState = React.useState(defaultProp),
+      valueState = _React$useState[0],
+      setValue = _React$useState[1];
+
+  var value = isControlled ? controlled : valueState;
+
+  if ("development" !== 'production') {
+    React.useEffect(function () {
+      if (isControlled !== (controlled !== undefined)) {
+        console.error(["Material-UI: A component is changing the ".concat(isControlled ? '' : 'un', "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? 'un' : '', "controlled."), 'Elements should not switch from uncontrolled to controlled (or vice versa).', "Decide between using a controlled or uncontrolled ".concat(name, " ") + 'element for the lifetime of the component.', "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
+      }
+    }, [controlled]);
+
+    var _React$useRef2 = React.useRef(defaultProp),
+        defaultValue = _React$useRef2.current;
+
+    React.useEffect(function () {
+      if (!isControlled && defaultValue !== defaultProp) {
+        console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join('\n'));
+      }
+    }, [JSON.stringify(defaultProp)]);
+  }
+
+  var setValueIfUncontrolled = React.useCallback(function (newValue) {
+    if (!isControlled) {
+      setValue(newValue);
+    }
+  }, []);
+  return [value, setValueIfUncontrolled];
+}
+},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/unstable_useId.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useId;
+
+var React = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+/**
+ * Private module reserved for @material-ui/x packages.
+ */
+function useId(idOverride) {
+  var _React$useState = React.useState(idOverride),
+      defaultId = _React$useState[0],
+      setDefaultId = _React$useState[1];
+
+  var id = idOverride || defaultId;
+  React.useEffect(function () {
+    if (defaultId == null) {
+      // Fallback to this default id when possible.
+      // Use the random value for client-side rendering only.
+      // We can't use it server-side.
+      setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
+    }
+  }, [defaultId]);
+  return id;
+}
+},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "capitalize", {
+  enumerable: true,
+  get: function () {
+    return _capitalize.default;
+  }
+});
+Object.defineProperty(exports, "createChainedFunction", {
+  enumerable: true,
+  get: function () {
+    return _createChainedFunction.default;
+  }
+});
+Object.defineProperty(exports, "createSvgIcon", {
+  enumerable: true,
+  get: function () {
+    return _createSvgIcon.default;
+  }
+});
+Object.defineProperty(exports, "debounce", {
+  enumerable: true,
+  get: function () {
+    return _debounce.default;
+  }
+});
+Object.defineProperty(exports, "deprecatedPropType", {
+  enumerable: true,
+  get: function () {
+    return _deprecatedPropType.default;
+  }
+});
+Object.defineProperty(exports, "isMuiElement", {
+  enumerable: true,
+  get: function () {
+    return _isMuiElement.default;
+  }
+});
+Object.defineProperty(exports, "ownerDocument", {
+  enumerable: true,
+  get: function () {
+    return _ownerDocument.default;
+  }
+});
+Object.defineProperty(exports, "ownerWindow", {
+  enumerable: true,
+  get: function () {
+    return _ownerWindow.default;
+  }
+});
+Object.defineProperty(exports, "requirePropFactory", {
+  enumerable: true,
+  get: function () {
+    return _requirePropFactory.default;
+  }
+});
+Object.defineProperty(exports, "setRef", {
+  enumerable: true,
+  get: function () {
+    return _setRef.default;
+  }
+});
+Object.defineProperty(exports, "unstable_useId", {
+  enumerable: true,
+  get: function () {
+    return _unstable_useId.default;
+  }
+});
+Object.defineProperty(exports, "unsupportedProp", {
+  enumerable: true,
+  get: function () {
+    return _unsupportedProp.default;
+  }
+});
+Object.defineProperty(exports, "useControlled", {
+  enumerable: true,
+  get: function () {
+    return _useControlled.default;
+  }
+});
+Object.defineProperty(exports, "useEventCallback", {
+  enumerable: true,
+  get: function () {
+    return _useEventCallback.default;
+  }
+});
+Object.defineProperty(exports, "useForkRef", {
+  enumerable: true,
+  get: function () {
+    return _useForkRef.default;
+  }
+});
+Object.defineProperty(exports, "useIsFocusVisible", {
+  enumerable: true,
+  get: function () {
+    return _useIsFocusVisible.default;
+  }
+});
+
+var _capitalize = _interopRequireDefault(require("./capitalize"));
+
+var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
+
+var _createSvgIcon = _interopRequireDefault(require("./createSvgIcon"));
+
+var _debounce = _interopRequireDefault(require("./debounce"));
+
+var _deprecatedPropType = _interopRequireDefault(require("./deprecatedPropType"));
+
+var _isMuiElement = _interopRequireDefault(require("./isMuiElement"));
+
+var _ownerDocument = _interopRequireDefault(require("./ownerDocument"));
+
+var _ownerWindow = _interopRequireDefault(require("./ownerWindow"));
+
+var _requirePropFactory = _interopRequireDefault(require("./requirePropFactory"));
+
+var _setRef = _interopRequireDefault(require("./setRef"));
+
+var _unsupportedProp = _interopRequireDefault(require("./unsupportedProp"));
+
+var _useControlled = _interopRequireDefault(require("./useControlled"));
+
+var _useEventCallback = _interopRequireDefault(require("./useEventCallback"));
+
+var _useForkRef = _interopRequireDefault(require("./useForkRef"));
+
+var _unstable_useId = _interopRequireDefault(require("./unstable_useId"));
+
+var _useIsFocusVisible = _interopRequireDefault(require("./useIsFocusVisible"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./capitalize":"../../node_modules/@material-ui/core/esm/utils/capitalize.js","./createChainedFunction":"../../node_modules/@material-ui/core/esm/utils/createChainedFunction.js","./createSvgIcon":"../../node_modules/@material-ui/core/esm/utils/createSvgIcon.js","./debounce":"../../node_modules/@material-ui/core/esm/utils/debounce.js","./deprecatedPropType":"../../node_modules/@material-ui/core/esm/utils/deprecatedPropType.js","./isMuiElement":"../../node_modules/@material-ui/core/esm/utils/isMuiElement.js","./ownerDocument":"../../node_modules/@material-ui/core/esm/utils/ownerDocument.js","./ownerWindow":"../../node_modules/@material-ui/core/esm/utils/ownerWindow.js","./requirePropFactory":"../../node_modules/@material-ui/core/esm/utils/requirePropFactory.js","./setRef":"../../node_modules/@material-ui/core/esm/utils/setRef.js","./unsupportedProp":"../../node_modules/@material-ui/core/esm/utils/unsupportedProp.js","./useControlled":"../../node_modules/@material-ui/core/esm/utils/useControlled.js","./useEventCallback":"../../node_modules/@material-ui/core/esm/utils/useEventCallback.js","./useForkRef":"../../node_modules/@material-ui/core/esm/utils/useForkRef.js","./unstable_useId":"../../node_modules/@material-ui/core/esm/utils/unstable_useId.js","./useIsFocusVisible":"../../node_modules/@material-ui/core/esm/utils/useIsFocusVisible.js"}],"../../node_modules/@material-ui/icons/utils/createSvgIcon.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _utils.createSvgIcon;
+  }
+});
+
+var _utils = require("@material-ui/core/utils");
+},{"@material-ui/core/utils":"../../node_modules/@material-ui/core/esm/utils/index.js"}],"../../node_modules/@material-ui/icons/Check.js":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+}), 'Check');
+
+exports.default = _default;
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/interopRequireWildcard":"../../node_modules/@babel/runtime/helpers/interopRequireWildcard.js","react":"../../node_modules/react/index.js","./utils/createSvgIcon":"../../node_modules/@material-ui/icons/utils/createSvgIcon.js"}],"../../node_modules/@iobroker/adapter-react/Dialogs/Error.js":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -65606,29 +71529,13 @@ var _DialogContentText = _interopRequireDefault(require("@material-ui/core/Dialo
 
 var _DialogTitle = _interopRequireDefault(require("@material-ui/core/DialogTitle"));
 
+var _Check = _interopRequireDefault(require("@material-ui/icons/Check"));
+
 var _i18n = _interopRequireDefault(require("../i18n"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var styles = function styles(theme) {
   return {
@@ -65649,17 +71556,16 @@ var styles = function styles(theme) {
 
 
 var DialogError = /*#__PURE__*/function (_React$Component) {
-  _inherits(DialogError, _React$Component);
+  (0, _inherits2["default"])(DialogError, _React$Component);
 
   var _super = _createSuper(DialogError);
 
   function DialogError() {
-    _classCallCheck(this, DialogError);
-
+    (0, _classCallCheck2["default"])(this, DialogError);
     return _super.apply(this, arguments);
   }
 
-  _createClass(DialogError, [{
+  (0, _createClass2["default"])(DialogError, [{
     key: "handleOk",
     value: function handleOk() {
       this.props.onClose && this.props.onClose();
@@ -65670,7 +71576,6 @@ var DialogError = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       return /*#__PURE__*/_react["default"].createElement(_Dialog["default"], {
-        key: this.props.key,
         open: true,
         maxWidth: "sm",
         fullWidth: true,
@@ -65693,16 +71598,15 @@ var DialogError = /*#__PURE__*/function (_React$Component) {
           return _this.handleOk();
         },
         color: "primary",
-        autoFocus: true
+        autoFocus: true,
+        startIcon: /*#__PURE__*/_react["default"].createElement(_Check["default"], null)
       }, _i18n["default"].t('ra_Ok'))));
     }
   }]);
-
   return DialogError;
 }(_react["default"].Component);
 
 DialogError.propTypes = {
-  key: _propTypes["default"].string,
   onClose: _propTypes["default"].func,
   title: _propTypes["default"].string,
   text: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element]),
@@ -65716,7 +71620,7 @@ var _default = _export;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","@material-ui/core/Button":"../../node_modules/@material-ui/core/esm/Button/index.js","@material-ui/core/Dialog":"../../node_modules/@material-ui/core/esm/Dialog/index.js","@material-ui/core/DialogActions":"../../node_modules/@material-ui/core/esm/DialogActions/index.js","@material-ui/core/DialogContent":"../../node_modules/@material-ui/core/esm/DialogContent/index.js","@material-ui/core/DialogContentText":"../../node_modules/@material-ui/core/esm/DialogContentText/index.js","@material-ui/core/DialogTitle":"../../node_modules/@material-ui/core/esm/DialogTitle/index.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js"}],"../../node_modules/@material-ui/core/esm/ClickAwayListener/ClickAwayListener.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/inherits":"../../node_modules/@babel/runtime/helpers/inherits.js","@babel/runtime/helpers/possibleConstructorReturn":"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js","@babel/runtime/helpers/getPrototypeOf":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js","react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","@material-ui/core/Button":"../../node_modules/@material-ui/core/esm/Button/index.js","@material-ui/core/Dialog":"../../node_modules/@material-ui/core/esm/Dialog/index.js","@material-ui/core/DialogActions":"../../node_modules/@material-ui/core/esm/DialogActions/index.js","@material-ui/core/DialogContent":"../../node_modules/@material-ui/core/esm/DialogContent/index.js","@material-ui/core/DialogContentText":"../../node_modules/@material-ui/core/esm/DialogContentText/index.js","@material-ui/core/DialogTitle":"../../node_modules/@material-ui/core/esm/DialogTitle/index.js","@material-ui/icons/Check":"../../node_modules/@material-ui/icons/Check.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js"}],"../../node_modules/@material-ui/core/esm/ClickAwayListener/ClickAwayListener.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67069,662 +72973,7 @@ Object.defineProperty(exports, "default", {
 var _IconButton = _interopRequireDefault(require("./IconButton"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./IconButton":"../../node_modules/@material-ui/core/esm/IconButton/IconButton.js"}],"../../node_modules/@babel/runtime/helpers/typeof.js":[function(require,module,exports) {
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
-}
-
-module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
-},{}],"../../node_modules/@babel/runtime/helpers/interopRequireWildcard.js":[function(require,module,exports) {
-var _typeof = require("./typeof.js")["default"];
-
-function _getRequireWildcardCache(nodeInterop) {
-  if (typeof WeakMap !== "function") return null;
-  var cacheBabelInterop = new WeakMap();
-  var cacheNodeInterop = new WeakMap();
-  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-  })(nodeInterop);
-}
-
-function _interopRequireWildcard(obj, nodeInterop) {
-  if (!nodeInterop && obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache(nodeInterop);
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
-
-module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
-},{"./typeof.js":"../../node_modules/@babel/runtime/helpers/typeof.js"}],"../../node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.styles = exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
-
-var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutProperties"));
-
-var React = _interopRequireWildcard(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _clsx = _interopRequireDefault(require("clsx"));
-
-var _utils = require("@material-ui/utils");
-
-var _withStyles = _interopRequireDefault(require("../styles/withStyles"));
-
-var _capitalize = _interopRequireDefault(require("../utils/capitalize"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var styles = function styles(theme) {
-  return {
-    /* Styles applied to the root element. */
-    root: {
-      userSelect: 'none',
-      width: '1em',
-      height: '1em',
-      display: 'inline-block',
-      fill: 'currentColor',
-      flexShrink: 0,
-      fontSize: theme.typography.pxToRem(24),
-      transition: theme.transitions.create('fill', {
-        duration: theme.transitions.duration.shorter
-      })
-    },
-
-    /* Styles applied to the root element if `color="primary"`. */
-    colorPrimary: {
-      color: theme.palette.primary.main
-    },
-
-    /* Styles applied to the root element if `color="secondary"`. */
-    colorSecondary: {
-      color: theme.palette.secondary.main
-    },
-
-    /* Styles applied to the root element if `color="action"`. */
-    colorAction: {
-      color: theme.palette.action.active
-    },
-
-    /* Styles applied to the root element if `color="error"`. */
-    colorError: {
-      color: theme.palette.error.main
-    },
-
-    /* Styles applied to the root element if `color="disabled"`. */
-    colorDisabled: {
-      color: theme.palette.action.disabled
-    },
-
-    /* Styles applied to the root element if `fontSize="inherit"`. */
-    fontSizeInherit: {
-      fontSize: 'inherit'
-    },
-
-    /* Styles applied to the root element if `fontSize="small"`. */
-    fontSizeSmall: {
-      fontSize: theme.typography.pxToRem(20)
-    },
-
-    /* Styles applied to the root element if `fontSize="large"`. */
-    fontSizeLarge: {
-      fontSize: theme.typography.pxToRem(35)
-    }
-  };
-};
-
-exports.styles = styles;
-var SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(props, ref) {
-  var children = props.children,
-      classes = props.classes,
-      className = props.className,
-      _props$color = props.color,
-      color = _props$color === void 0 ? 'inherit' : _props$color,
-      _props$component = props.component,
-      Component = _props$component === void 0 ? 'svg' : _props$component,
-      _props$fontSize = props.fontSize,
-      fontSize = _props$fontSize === void 0 ? 'medium' : _props$fontSize,
-      htmlColor = props.htmlColor,
-      titleAccess = props.titleAccess,
-      _props$viewBox = props.viewBox,
-      viewBox = _props$viewBox === void 0 ? '0 0 24 24' : _props$viewBox,
-      other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "htmlColor", "titleAccess", "viewBox"]);
-  return /*#__PURE__*/React.createElement(Component, (0, _extends2.default)({
-    className: (0, _clsx.default)(classes.root, className, color !== 'inherit' && classes["color".concat((0, _capitalize.default)(color))], fontSize !== 'default' && fontSize !== 'medium' && classes["fontSize".concat((0, _capitalize.default)(fontSize))]),
-    focusable: "false",
-    viewBox: viewBox,
-    color: htmlColor,
-    "aria-hidden": titleAccess ? undefined : true,
-    role: titleAccess ? 'img' : undefined,
-    ref: ref
-  }, other), children, titleAccess ? /*#__PURE__*/React.createElement("title", null, titleAccess) : null);
-});
-"development" !== "production" ? SvgIcon.propTypes = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * Node passed into the SVG element.
-   */
-  children: _propTypes.default.node,
-
-  /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css) below for more details.
-   */
-  classes: _propTypes.default.object,
-
-  /**
-   * @ignore
-   */
-  className: _propTypes.default.string,
-
-  /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
-   */
-  color: _propTypes.default.oneOf(['action', 'disabled', 'error', 'inherit', 'primary', 'secondary']),
-
-  /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */
-  component: _propTypes.default
-  /* @typescript-to-proptypes-ignore */
-  .elementType,
-
-  /**
-   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
-   */
-  fontSize: (0, _utils.chainPropTypes)(_propTypes.default.oneOf(['default', 'inherit', 'large', 'medium', 'small']), function (props) {
-    var fontSize = props.fontSize;
-
-    if (fontSize === 'default') {
-      throw new Error('Material-UI: `fontSize="default"` is deprecated. Use `fontSize="medium"` instead.');
-    }
-
-    return null;
-  }),
-
-  /**
-   * Applies a color attribute to the SVG element.
-   */
-  htmlColor: _propTypes.default.string,
-
-  /**
-   * The shape-rendering attribute. The behavior of the different options is described on the
-   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
-   * If you are having issues with blurry icons you should investigate this property.
-   */
-  shapeRendering: _propTypes.default.string,
-
-  /**
-   * Provides a human-readable title for the element that contains it.
-   * https://www.w3.org/TR/SVG-access/#Equivalent
-   */
-  titleAccess: _propTypes.default.string,
-
-  /**
-   * Allows you to redefine what the coordinates without units mean inside an SVG element.
-   * For example, if the SVG element is 500 (width) by 200 (height),
-   * and you pass viewBox="0 0 50 20",
-   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
-   * to bottom right (50,20) and each unit will be worth 10px.
-   */
-  viewBox: _propTypes.default.string
-} : void 0;
-SvgIcon.muiName = 'SvgIcon';
-
-var _default = (0, _withStyles.default)(styles, {
-  name: 'MuiSvgIcon'
-})(SvgIcon);
-
-exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutProperties":"../../node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js","react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","clsx":"../../node_modules/clsx/dist/clsx.m.js","@material-ui/utils":"../../node_modules/@material-ui/utils/esm/index.js","../styles/withStyles":"../../node_modules/@material-ui/core/esm/styles/withStyles.js","../utils/capitalize":"../../node_modules/@material-ui/core/esm/utils/capitalize.js"}],"../../node_modules/@material-ui/core/esm/SvgIcon/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "default", {
-  enumerable: true,
-  get: function () {
-    return _SvgIcon.default;
-  }
-});
-
-var _SvgIcon = _interopRequireDefault(require("./SvgIcon"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./SvgIcon":"../../node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js"}],"../../node_modules/@material-ui/core/esm/utils/createSvgIcon.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = createSvgIcon;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _SvgIcon = _interopRequireDefault(require("../SvgIcon"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Private module reserved for @material-ui/x packages.
- */
-function createSvgIcon(path, displayName) {
-  var Component = function Component(props, ref) {
-    return /*#__PURE__*/_react.default.createElement(_SvgIcon.default, (0, _extends2.default)({
-      ref: ref
-    }, props), path);
-  };
-
-  if ("development" !== 'production') {
-    // Need to set `displayName` on the inner component for React.memo.
-    // React prior to 16.14 ignores `displayName` on the wrapper.
-    Component.displayName = "".concat(displayName, "Icon");
-  }
-
-  Component.muiName = _SvgIcon.default.muiName;
-  return /*#__PURE__*/_react.default.memo( /*#__PURE__*/_react.default.forwardRef(Component));
-}
-},{"@babel/runtime/helpers/esm/extends":"../../node_modules/@babel/runtime/helpers/esm/extends.js","react":"../../node_modules/react/index.js","../SvgIcon":"../../node_modules/@material-ui/core/esm/SvgIcon/index.js"}],"../../node_modules/@material-ui/core/esm/utils/debounce.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = debounce;
-
-// Corresponds to 10 frames at 60 Hz.
-// A few bytes payload overhead when lodash/debounce is ~3 kB and debounce ~300 B.
-function debounce(func) {
-  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 166;
-  var timeout;
-
-  function debounced() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    } // eslint-disable-next-line consistent-this
-
-
-    var that = this;
-
-    var later = function later() {
-      func.apply(that, args);
-    };
-
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  }
-
-  debounced.clear = function () {
-    clearTimeout(timeout);
-  };
-
-  return debounced;
-}
-},{}],"../../node_modules/@material-ui/core/esm/utils/isMuiElement.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = isMuiElement;
-
-var React = _interopRequireWildcard(require("react"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function isMuiElement(element, muiNames) {
-  return /*#__PURE__*/React.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
-}
-},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/requirePropFactory.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = requirePropFactory;
-
-function requirePropFactory(componentNameInError) {
-  if ("development" === 'production') {
-    return function () {
-      return null;
-    };
-  }
-
-  var requireProp = function requireProp(requiredProp) {
-    return function (props, propName, componentName, location, propFullName) {
-      var propFullNameSafe = propFullName || propName;
-
-      if (typeof props[propName] !== 'undefined' && !props[requiredProp]) {
-        return new Error("The prop `".concat(propFullNameSafe, "` of ") + "`".concat(componentNameInError, "` must be used on `").concat(requiredProp, "`."));
-      }
-
-      return null;
-    };
-  };
-
-  return requireProp;
-}
-},{}],"../../node_modules/@material-ui/core/esm/utils/unsupportedProp.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = unsupportedProp;
-
-function unsupportedProp(props, propName, componentName, location, propFullName) {
-  if ("development" === 'production') {
-    return null;
-  }
-
-  var propFullNameSafe = propFullName || propName;
-
-  if (typeof props[propName] !== 'undefined') {
-    return new Error("The prop `".concat(propFullNameSafe, "` is not supported. Please remove it."));
-  }
-
-  return null;
-}
-},{}],"../../node_modules/@material-ui/core/esm/utils/useControlled.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = useControlled;
-
-var React = _interopRequireWildcard(require("react"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-/* eslint-disable react-hooks/rules-of-hooks, react-hooks/exhaustive-deps */
-function useControlled(_ref) {
-  var controlled = _ref.controlled,
-      defaultProp = _ref.default,
-      name = _ref.name,
-      _ref$state = _ref.state,
-      state = _ref$state === void 0 ? 'value' : _ref$state;
-
-  var _React$useRef = React.useRef(controlled !== undefined),
-      isControlled = _React$useRef.current;
-
-  var _React$useState = React.useState(defaultProp),
-      valueState = _React$useState[0],
-      setValue = _React$useState[1];
-
-  var value = isControlled ? controlled : valueState;
-
-  if ("development" !== 'production') {
-    React.useEffect(function () {
-      if (isControlled !== (controlled !== undefined)) {
-        console.error(["Material-UI: A component is changing the ".concat(isControlled ? '' : 'un', "controlled ").concat(state, " state of ").concat(name, " to be ").concat(isControlled ? 'un' : '', "controlled."), 'Elements should not switch from uncontrolled to controlled (or vice versa).', "Decide between using a controlled or uncontrolled ".concat(name, " ") + 'element for the lifetime of the component.', "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
-      }
-    }, [controlled]);
-
-    var _React$useRef2 = React.useRef(defaultProp),
-        defaultValue = _React$useRef2.current;
-
-    React.useEffect(function () {
-      if (!isControlled && defaultValue !== defaultProp) {
-        console.error(["Material-UI: A component is changing the default ".concat(state, " state of an uncontrolled ").concat(name, " after being initialized. ") + "To suppress this warning opt to use a controlled ".concat(name, ".")].join('\n'));
-      }
-    }, [JSON.stringify(defaultProp)]);
-  }
-
-  var setValueIfUncontrolled = React.useCallback(function (newValue) {
-    if (!isControlled) {
-      setValue(newValue);
-    }
-  }, []);
-  return [value, setValueIfUncontrolled];
-}
-},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/unstable_useId.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = useId;
-
-var React = _interopRequireWildcard(require("react"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-/**
- * Private module reserved for @material-ui/x packages.
- */
-function useId(idOverride) {
-  var _React$useState = React.useState(idOverride),
-      defaultId = _React$useState[0],
-      setDefaultId = _React$useState[1];
-
-  var id = idOverride || defaultId;
-  React.useEffect(function () {
-    if (defaultId == null) {
-      // Fallback to this default id when possible.
-      // Use the random value for client-side rendering only.
-      // We can't use it server-side.
-      setDefaultId("mui-".concat(Math.round(Math.random() * 1e5)));
-    }
-  }, [defaultId]);
-  return id;
-}
-},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/utils/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "capitalize", {
-  enumerable: true,
-  get: function () {
-    return _capitalize.default;
-  }
-});
-Object.defineProperty(exports, "createChainedFunction", {
-  enumerable: true,
-  get: function () {
-    return _createChainedFunction.default;
-  }
-});
-Object.defineProperty(exports, "createSvgIcon", {
-  enumerable: true,
-  get: function () {
-    return _createSvgIcon.default;
-  }
-});
-Object.defineProperty(exports, "debounce", {
-  enumerable: true,
-  get: function () {
-    return _debounce.default;
-  }
-});
-Object.defineProperty(exports, "deprecatedPropType", {
-  enumerable: true,
-  get: function () {
-    return _deprecatedPropType.default;
-  }
-});
-Object.defineProperty(exports, "isMuiElement", {
-  enumerable: true,
-  get: function () {
-    return _isMuiElement.default;
-  }
-});
-Object.defineProperty(exports, "ownerDocument", {
-  enumerable: true,
-  get: function () {
-    return _ownerDocument.default;
-  }
-});
-Object.defineProperty(exports, "ownerWindow", {
-  enumerable: true,
-  get: function () {
-    return _ownerWindow.default;
-  }
-});
-Object.defineProperty(exports, "requirePropFactory", {
-  enumerable: true,
-  get: function () {
-    return _requirePropFactory.default;
-  }
-});
-Object.defineProperty(exports, "setRef", {
-  enumerable: true,
-  get: function () {
-    return _setRef.default;
-  }
-});
-Object.defineProperty(exports, "unstable_useId", {
-  enumerable: true,
-  get: function () {
-    return _unstable_useId.default;
-  }
-});
-Object.defineProperty(exports, "unsupportedProp", {
-  enumerable: true,
-  get: function () {
-    return _unsupportedProp.default;
-  }
-});
-Object.defineProperty(exports, "useControlled", {
-  enumerable: true,
-  get: function () {
-    return _useControlled.default;
-  }
-});
-Object.defineProperty(exports, "useEventCallback", {
-  enumerable: true,
-  get: function () {
-    return _useEventCallback.default;
-  }
-});
-Object.defineProperty(exports, "useForkRef", {
-  enumerable: true,
-  get: function () {
-    return _useForkRef.default;
-  }
-});
-Object.defineProperty(exports, "useIsFocusVisible", {
-  enumerable: true,
-  get: function () {
-    return _useIsFocusVisible.default;
-  }
-});
-
-var _capitalize = _interopRequireDefault(require("./capitalize"));
-
-var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
-
-var _createSvgIcon = _interopRequireDefault(require("./createSvgIcon"));
-
-var _debounce = _interopRequireDefault(require("./debounce"));
-
-var _deprecatedPropType = _interopRequireDefault(require("./deprecatedPropType"));
-
-var _isMuiElement = _interopRequireDefault(require("./isMuiElement"));
-
-var _ownerDocument = _interopRequireDefault(require("./ownerDocument"));
-
-var _ownerWindow = _interopRequireDefault(require("./ownerWindow"));
-
-var _requirePropFactory = _interopRequireDefault(require("./requirePropFactory"));
-
-var _setRef = _interopRequireDefault(require("./setRef"));
-
-var _unsupportedProp = _interopRequireDefault(require("./unsupportedProp"));
-
-var _useControlled = _interopRequireDefault(require("./useControlled"));
-
-var _useEventCallback = _interopRequireDefault(require("./useEventCallback"));
-
-var _useForkRef = _interopRequireDefault(require("./useForkRef"));
-
-var _unstable_useId = _interopRequireDefault(require("./unstable_useId"));
-
-var _useIsFocusVisible = _interopRequireDefault(require("./useIsFocusVisible"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./capitalize":"../../node_modules/@material-ui/core/esm/utils/capitalize.js","./createChainedFunction":"../../node_modules/@material-ui/core/esm/utils/createChainedFunction.js","./createSvgIcon":"../../node_modules/@material-ui/core/esm/utils/createSvgIcon.js","./debounce":"../../node_modules/@material-ui/core/esm/utils/debounce.js","./deprecatedPropType":"../../node_modules/@material-ui/core/esm/utils/deprecatedPropType.js","./isMuiElement":"../../node_modules/@material-ui/core/esm/utils/isMuiElement.js","./ownerDocument":"../../node_modules/@material-ui/core/esm/utils/ownerDocument.js","./ownerWindow":"../../node_modules/@material-ui/core/esm/utils/ownerWindow.js","./requirePropFactory":"../../node_modules/@material-ui/core/esm/utils/requirePropFactory.js","./setRef":"../../node_modules/@material-ui/core/esm/utils/setRef.js","./unsupportedProp":"../../node_modules/@material-ui/core/esm/utils/unsupportedProp.js","./useControlled":"../../node_modules/@material-ui/core/esm/utils/useControlled.js","./useEventCallback":"../../node_modules/@material-ui/core/esm/utils/useEventCallback.js","./useForkRef":"../../node_modules/@material-ui/core/esm/utils/useForkRef.js","./unstable_useId":"../../node_modules/@material-ui/core/esm/utils/unstable_useId.js","./useIsFocusVisible":"../../node_modules/@material-ui/core/esm/utils/useIsFocusVisible.js"}],"../../node_modules/@material-ui/icons/utils/createSvgIcon.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "default", {
-  enumerable: true,
-  get: function get() {
-    return _utils.createSvgIcon;
-  }
-});
-
-var _utils = require("@material-ui/core/utils");
-},{"@material-ui/core/utils":"../../node_modules/@material-ui/core/esm/utils/index.js"}],"../../node_modules/@material-ui/icons/Close.js":[function(require,module,exports) {
+},{"./IconButton":"../../node_modules/@material-ui/core/esm/IconButton/IconButton.js"}],"../../node_modules/@material-ui/icons/Close.js":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -67844,12 +73093,22 @@ module.exports = reloadCSS;
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/@iobroker/adapter-react/Components/Loader.js":[function(require,module,exports) {
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -67859,27 +73118,9 @@ var _withStyles = _interopRequireDefault(require("@material-ui/core/styles/withS
 
 require("./loader.css");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var styles = function styles(theme) {
   return {};
@@ -67890,13 +73131,13 @@ var styles = function styles(theme) {
  * @property {number} [size] The size in pixels of this loader.
  * @property {string} [themeType] The chosen theme type.
  * @property {string} [theme] The chosen theme.
- * 
+ *
  * @extends {React.Component<LoaderProps>}
  */
 
 
 var Loader = /*#__PURE__*/function (_React$Component) {
-  _inherits(Loader, _React$Component);
+  (0, _inherits2["default"])(Loader, _React$Component);
 
   var _super = _createSuper(Loader);
 
@@ -67906,19 +73147,17 @@ var Loader = /*#__PURE__*/function (_React$Component) {
   function Loader(props) {
     var _this;
 
-    _classCallCheck(this, Loader);
-
+    (0, _classCallCheck2["default"])(this, Loader);
     _this = _super.call(this, props);
     _this.size = _this.props.size || 234;
     return _this;
   }
 
-  _createClass(Loader, [{
+  (0, _createClass2["default"])(Loader, [{
     key: "render",
     value: function render() {
       var theme = this.props.themeType || this.props.theme || 'light';
       return /*#__PURE__*/_react["default"].createElement("div", {
-        key: this.props.key,
         className: 'logo-back logo-background-' + theme
       }, /*#__PURE__*/_react["default"].createElement("div", {
         className: "logo-div",
@@ -67962,12 +73201,10 @@ var Loader = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }]);
-
   return Loader;
 }(_react["default"].Component);
 
 Loader.propTypes = {
-  key: _propTypes["default"].string,
   size: _propTypes["default"].number,
   themeType: _propTypes["default"].string
 };
@@ -67979,39 +73216,33 @@ var _default = _export;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","./loader.css":"../../node_modules/@iobroker/adapter-react/Components/loader.css"}],"../../node_modules/@iobroker/adapter-react/Components/Router.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/inherits":"../../node_modules/@babel/runtime/helpers/inherits.js","@babel/runtime/helpers/possibleConstructorReturn":"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js","@babel/runtime/helpers/getPrototypeOf":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js","react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","./loader.css":"../../node_modules/@iobroker/adapter-react/Components/loader.css"}],"../../node_modules/@iobroker/adapter-react/Components/Router.js":[function(require,module,exports) {
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 /**
  * @template P Type of the properties object.
@@ -68019,7 +73250,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
  * @extends {React.Component<P, S>}
  */
 var Router = /*#__PURE__*/function (_React$Component) {
-  _inherits(Router, _React$Component);
+  (0, _inherits2["default"])(Router, _React$Component);
 
   var _super = _createSuper(Router);
 
@@ -68029,14 +73260,13 @@ var Router = /*#__PURE__*/function (_React$Component) {
   function Router(props) {
     var _this;
 
-    _classCallCheck(this, Router);
-
+    (0, _classCallCheck2["default"])(this, Router);
     _this = _super.call(this, props);
-    _this.onHashChangedBound = _this.onHashChanged.bind(_assertThisInitialized(_this));
+    _this.onHashChangedBound = _this.onHashChanged.bind((0, _assertThisInitialized2["default"])(_this));
     return _this;
   }
 
-  _createClass(Router, [{
+  (0, _createClass2["default"])(Router, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       window.addEventListener('hashchange', this.onHashChangedBound);
@@ -68125,7 +73355,6 @@ var Router = /*#__PURE__*/function (_React$Component) {
       }
     }
   }]);
-
   return Router;
 }(_react["default"].Component);
 
@@ -68133,7 +73362,7 @@ var _default = Router;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/Fab/Fab.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/assertThisInitialized":"../../node_modules/@babel/runtime/helpers/assertThisInitialized.js","@babel/runtime/helpers/inherits":"../../node_modules/@babel/runtime/helpers/inherits.js","@babel/runtime/helpers/possibleConstructorReturn":"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js","@babel/runtime/helpers/getPrototypeOf":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js","react":"../../node_modules/react/index.js"}],"../../node_modules/@material-ui/core/esm/Fab/Fab.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -68580,12 +73809,22 @@ exports.default = _default;
 },{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/interopRequireWildcard":"../../node_modules/@babel/runtime/helpers/interopRequireWildcard.js","react":"../../node_modules/react/index.js","./utils/createSvgIcon":"../../node_modules/@material-ui/icons/utils/createSvgIcon.js"}],"../../node_modules/@iobroker/adapter-react/Components/SaveCloseButtons.js":[function(require,module,exports) {
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -68603,27 +73842,9 @@ var _Save = _interopRequireDefault(require("@material-ui/icons/Save"));
 
 var _Close = _interopRequireDefault(require("@material-ui/icons/Close"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var styles = function styles(theme) {
   return {
@@ -68645,27 +73866,26 @@ var styles = function styles(theme) {
 
 
 var SaveCloseButtons = /*#__PURE__*/function (_React$Component) {
-  _inherits(SaveCloseButtons, _React$Component);
+  (0, _inherits2["default"])(SaveCloseButtons, _React$Component);
 
   var _super = _createSuper(SaveCloseButtons);
 
   function SaveCloseButtons(props) {
     var _this;
 
-    _classCallCheck(this, SaveCloseButtons);
-
+    (0, _classCallCheck2["default"])(this, SaveCloseButtons);
     _this = _super.call(this, props);
 
     try {
-      _this.isIFrame = window.self !== window.top;
+      _this.isIFrame = !props.newReact && window.self !== window.top;
     } catch (e) {
-      _this.isIFrame = true;
+      _this.isIFrame = !props.newReact;
     }
 
     return _this;
   }
 
-  _createClass(SaveCloseButtons, [{
+  (0, _createClass2["default"])(SaveCloseButtons, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -68732,7 +73952,6 @@ var SaveCloseButtons = /*#__PURE__*/function (_React$Component) {
       }), !noTextOnButtons && _i18n["default"].t('ra_Close')));
     }
   }]);
-
   return SaveCloseButtons;
 }(_react["default"].Component);
 
@@ -68745,7 +73964,8 @@ SaveCloseButtons.propTypes = {
   changed: _propTypes["default"].bool.isRequired,
   error: _propTypes["default"].bool,
   onSave: _propTypes["default"].func.isRequired,
-  onClose: _propTypes["default"].func.isRequired
+  onClose: _propTypes["default"].func.isRequired,
+  newReact: _propTypes["default"].bool
 };
 /** @type {typeof SaveCloseButtons} */
 
@@ -68755,7 +73975,7 @@ var _default = _export;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","@material-ui/core/Fab":"../../node_modules/@material-ui/core/esm/Fab/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/Toolbar":"../../node_modules/@material-ui/core/esm/Toolbar/index.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js","@material-ui/icons/Save":"../../node_modules/@material-ui/icons/Save.js","@material-ui/icons/Close":"../../node_modules/@material-ui/icons/Close.js"}],"../../node_modules/@iobroker/adapter-react/index.css":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/inherits":"../../node_modules/@babel/runtime/helpers/inherits.js","@babel/runtime/helpers/possibleConstructorReturn":"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js","@babel/runtime/helpers/getPrototypeOf":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js","react":"../../node_modules/react/index.js","@material-ui/core/styles/withStyles":"../../node_modules/@material-ui/core/styles/withStyles.js","@material-ui/core/Fab":"../../node_modules/@material-ui/core/esm/Fab/index.js","prop-types":"../../node_modules/prop-types/index.js","@material-ui/core/Toolbar":"../../node_modules/@material-ui/core/esm/Toolbar/index.js","../i18n":"../../node_modules/@iobroker/adapter-react/i18n.js","@material-ui/icons/Save":"../../node_modules/@material-ui/icons/Save.js","@material-ui/icons/Close":"../../node_modules/@material-ui/icons/Close.js"}],"../../node_modules/@iobroker/adapter-react/index.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -68763,275 +73983,284 @@ exports["default"] = _default;
       
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/@iobroker/adapter-react/i18n/en.json":[function(require,module,exports) {
 module.exports = {
-    "ra_Are you sure?": "Are you sure?",
-    "ra_Cancel": "Cancel",
-    "ra_Copied": "Copied",
-    "ra_Copied %s": "Copied %s",
-    "ra_Error": "Error",
-    "ra_Define functions": "Define functions",
-    "ra_Define rooms": "Define rooms",
-    "ra_Message": "Message",
-    "ra_Please select object ID...": "Please select object ID...",
-    "ra_Selected": "Selected",
-    "ra_Value": "Value",
-    "ra_Ok": "Ok",
-    "ra_dow_Su": "Su",
-    "ra_dow_Mo": "Mo",
-    "ra_dow_Tu": "Tu",
-    "ra_dow_We": "We",
-    "ra_dow_Th": "Th",
-    "ra_dow_Fr": "Fr",
-    "ra_dow_Sa": "Sa",
-    "ra_months_Jan": "Jan",
-    "ra_months_Feb": "Feb",
-    "ra_months_Mar": "Mar",
-    "ra_months_Apr": "Apr",
-    "ra_months_Mai": "Mai",
-    "ra_months_Jun": "Jun",
-    "ra_months_Jul": "Jul",
-    "ra_months_Aug": "Aug",
-    "ra_months_Sep": "Sep",
-    "ra_months_Oct": "Oct",
-    "ra_months_Nov": "Nov",
-    "ra_months_Dec": "Dec",
-    "ra_Unknown error!": "Unknown error!",
-    "ra_filter_customs": "Settings",
-    "ra_filter_func": "Function",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Name",
-    "ra_filter_role": "Role",
-    "ra_filter_room": "Room",
-    "ra_filter_type": "Type",
-    "ra_invalidConfig": "Invalid settings",
-    "ra_otherConfig": "Settings from other adapter %s",
-    "ra_tooltip_ack": "Acknowledged",
-    "ra_tooltip_from": "From",
-    "ra_tooltip_lc": "Last changed",
-    "ra_tooltip_quality": "Quality",
-    "ra_tooltip_ts": "Time stamp",
-    "ra_tooltip_user": "User",
-    "ra_tooltip_value": "Value",
-    "ra_tooltip_editObject": "Edit object",
-    "ra_tooltip_deleteObject": "Delete object",
-    "ra_tooltip_customConfig": "Custom settings",
-    "ra_tooltip_copyState": "Copy the state value",
-    "ra_tooltip_editState": "Edit the state value",
-    "ra_Listen on all IPs": "Listen on all IPs",
-    "ra_Save": "Save",
-    "ra_Save and close": "Save and close",
-    "ra_Close": "Close",
-    "ra_Auto (no custom columns)": "Auto (no custom columns)",
-    "ra_Transparent dialog": "Transparent dialog",
-    "ra_Width": "Width",
-    "ra_val": "Value",
-    "ra_buttons": "Buttons",
-    "ra_Configure visible columns": "Configure visible columns",
-    "ra_Cannot update attribute, because not found in the object": "Cannot update attribute, because not found in the object",
-    "ra_Edit object field": "Edit object field",
-    "ra_Hide empty folders": "Hide empty folders",
-    "ra_Reload files": "Reload files",
-    "ra_Create folder": "Create folder",
-    "ra_Upload file": "Upload file",
-    "ra_User files": "User files",
-    "ra_Confirm deletion of %s": "Confirm deletion of %s",
-    "ra_Delete (no confirm for 5 mins)": "Delete (no confirm for 5 mins)",
-    "ra_Delete": "Delete",
-    "ra_Toggle expert mode": "Toggle expert mode",
-    "ra_Toggle view mode": "Toggle view mode",
-    "re_Root": "Root",
-    "re_Back to %s": "Back to %s",
-    "ra_Place your files here or click here to open the browse dialog": "Place your files here or click here to open the browse dialog",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "If no file will be created in the folder, it will disappear after the browser closed",
-    "ra_Folder name": "Folder name",
-    "ra_Create new folder in %s": "Create new folder in %s",
-    "ra_Duplicate name": "Duplicate name",
-    "ra_Invalid parent folder!": "Invalid parent folder!",
-    "ra_Drop file here": "Drop file here",
-    "ra_Suppress question for next %s minutes": "Suppress question for next %s minutes",
-    "ra_Clear filter": "Clear filter",
-    "ra_Update": "Update",
-    "ra_Load configuration from file": "Load configuration from file",
-    "ra_Save configuration to file": "Save configuration to file",
-    "sc_cron": "CRON",
-    "sc_date": "Date",
-    "sc_dates": "Dates",
-    "sc_dows": "Day of week",
-    "sc_every": "Every",
-    "sc_everyN_dates": "every N days",
-    "sc_everyN_dows": "every N day of week",
-    "sc_everyN_hours": "every N hours",
-    "sc_everyN_minutes": "every N minutes",
-    "sc_everyN_months": "every N months",
-    "sc_everyN_seconds": "every N seconds",
-    "sc_every_dates": "every day",
-    "sc_every_dows": "every day of the week",
-    "sc_every_hours": "every hour",
-    "sc_every_minutes": "every minute",
-    "sc_every_months": "every month",
-    "sc_every_seconds": "every second",
-    "sc_from": "From",
-    "sc_hours": "Hours",
-    "sc_interval": "Interval",
-    "sc_intervalBetween": "Interval between",
-    "sc_minutes": "Minutes",
-    "sc_months": "months",
-    "sc_once": "Once",
-    "sc_period": "Period",
-    "sc_seconds": "Seconds",
-    "sc_simple": "Simple",
-    "sc_specific": "Specific time",
-    "sc_specific_dates": "specific dates",
-    "sc_specific_dows": "specific day of weeks",
-    "sc_specific_hours": "specific hours",
-    "sc_specific_minutes": "specific minutes",
-    "sc_specific_months": "specific months",
-    "sc_specific_seconds": "specific seconds",
-    "sc_time": "Time",
-    "sc_to": "To",
-    "sc_wizard": "Wizard",
-    "sch_all": "all",
-    "sch_astroDay": "Astro day",
-    "sch_astroNight": "Astro night",
-    "sch_astro_dawn": "Dawn",
-    "sch_astro_dusk": "Dusk",
-    "sch_astro_goldenHour": "Golden hour",
-    "sch_astro_goldenHourEnd": "Golden hour end",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Nautical dawn",
-    "sch_astro_nauticalDusk": "Nautical dusk",
-    "sch_astro_night": "Night",
-    "sch_astro_nightEnd": "Night end",
-    "sch_astro_solarNoon": "Solar noon",
-    "sch_astro_sunrise": "Sunrise",
-    "sch_astro_sunriseEnd": "Sunrise end",
-    "sch_astro_sunset": "Sunset",
-    "sch_astro_sunsetStart": "Sunset start",
-    "sch_at": "at",
-    "sch_desc_atTime": "at %s",
-    "sch_desc_everyDay": "every day",
-    "sch_desc_everyHour": "every hour",
-    "sch_desc_everyMinute": "every minute",
-    "sch_desc_everyMonth": "every month",
-    "sch_desc_everyNDay": "every %s day",
-    "sch_desc_everyNHours": "every %s hours",
-    "sch_desc_everyNMinutes": "every %s minutes",
-    "sch_desc_everyNMonths": "every %s months",
-    "sch_desc_everyNWeeks": "every %s weeks",
-    "sch_desc_everyNYears": "every %s years",
-    "sch_desc_everyWeek": "every week",
-    "sch_desc_everyYear": "every year",
-    "sch_desc_intervalFromTo": "from %s to %s",
-    "sch_desc_never": "never",
-    "sch_desc_onDate": "on %s of %s",
-    "sch_desc_onDates": "on %s and %s of",
-    "sch_desc_onEveryDate": "on every date of",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s and %s",
-    "sch_desc_onWeekday": "on %s",
-    "sch_desc_onWeekdays": "on %s and %s",
-    "sch_desc_onWeekends": "on weekends",
-    "sch_desc_onWorkdays": "on working days",
-    "sch_desc_onceInPast": "will ne be not executed any more, because start is in the past",
-    "sch_desc_once_on": "on %s",
-    "sch_desc_validFrom": "from %s",
-    "sch_desc_validFromTo": "Execute from to",
-    "sch_desc_validTo": "to %s",
-    "sch_every": "every",
-    "sch_exactTime": "Specific time",
-    "sch_from": "from",
-    "sch_fromTo": "From-to",
-    "sch_intervalTime": "Interval time",
-    "sch_invert": "invert",
-    "sch_no_one": "none",
-    "sch_on": "on",
-    "sch_period": "Period",
-    "sch_periodDaily": "Daily",
-    "sch_periodDates": "Dates",
-    "sch_periodDay": "Day",
-    "sch_periodEvery": "Every",
-    "sch_periodEveryDay": "Every day",
-    "sch_periodEveryMonth": "Every month",
-    "sch_periodEveryWeek": "Every week",
-    "sch_periodEveryYear": "Every year",
-    "sch_periodHours": "Hours",
-    "sch_periodMinutes": "Minutes",
-    "sch_periodMonth": "month",
-    "sch_periodMonthly": "Monthly",
-    "sch_periodOnce": "Once",
-    "sch_periodSpecificMonths": "Specific months",
-    "sch_periodWeek": "Week",
-    "sch_periodWeekdays": "Weekdays",
-    "sch_periodWeekend": "Weekend",
-    "sch_periodWeekly": "Weekly",
-    "sch_periodWorkdays": "Workdays",
-    "sch_periodYear": "Year",
-    "sch_periodYearly": "Yearly",
-    "sch_specificTime": "Specific time",
-    "sch_time": "Time",
-    "sch_to": "to",
-    "sch_valid": "Valid",
-    "sch_validFrom": "from",
-    "sch_validTo": "to",
-    "sch_wholeDay": "Whole day",
-    "sch_yearEveryMonth": "every month",
-    "ra_Define schedule...": "Define schedule...",
-    "ra_Repeat": "Repeat",
-    "ra_use seconds": "use seconds",
-    "ra_close": "close",
-    "ra_Toggle the states view": "Toggle the states view",
-    "ra_Add new child object to selected parent": "Add new child object to selected parent",
-    "ra_Add objects tree from JSON file": "Add objects tree from JSON file",
-    "ra_Save objects tree as JSON file": "Save objects tree as JSON file",
-    "ra_Objects": "Objects",
-    "ra_States": "States",
-    "ra_object_changed_by_user": "Object last changed at",
-    "ra_object_changed_by": "Object changed by",
-    "ra_state_changed_from": "Object changed from",
-    "ra_state_changed_by": "State changed by",
-    "ra_aclOwner_read_object": "Owner can read object",
-    "ra_aclOwner_read_state": "Owner can read state",
-    "ra_aclOwner_write_object": "Owner can write object",
-    "ra_aclOwner_write_state": "Owner can write state",
-    "ra_aclGroup_read_object": "Group can read object",
-    "ra_aclGroup_read_state": "Group can read state",
-    "ra_aclGroup_write_object": "Group can write object",
-    "ra_aclGroup_write_state": "Group can write state",
-    "ra_aclEveryone_read_object": "Everyone can read object",
-    "ra_aclEveryone_read_state": "Everyone can read state",
-    "ra_aclEveryone_write_object": "Everyone can write object",
-    "ra_aclEveryone_write_state": "Everyone can write state",
-    "ra_Folders always first": "Folders always first",
-    "ra_changedFrom": "Changed from",
-    "ra_qualityCode": "Quality code",
-    "ra_timestamp": "Timestamp",
-    "ra_lastChange": "Last change",
-    "ra_Owner group": "Owner group",
-    "ra_Owner user": "Owner user",
-    "ra_Create": "Create",
-    "ra_Changed from": "Changed from",
-    "ra_Quality code": "Quality",
-    "ra_Timestamp": "Timestamp",
-    "ra_Last change": "Last change",
-    "ra_Collapse all nodes": "Collapse all nodes",
-    "ra_Edit custom config": "Edit custom config",
-    "ra_Collapse one step node": "Collapse one level",
-    "ra_Expand one step node": "Expand one level",
-    "ra_Refresh tree": "Refresh tree",
-    "ra_Expand all nodes": "Expand all nodes",
-    "ra_Deselect all": "Unselect all",
-    "ra_Select all": "Select all",
-    "ra_%s object(s) processed": "%s object(s) processed",
-    "ra_Invalid structure": "Invalid structure",
-    "ra_%s was imported": "%s was imported",
-    "ra_Failed to open JSON File": "Failed to open JSON File",
-    "ra_Only following structures of objects are available:": "Only following structures of objects are available:",
-    "ra_Folder → State": "Folder → State",
-    "ra_Folder → Channel → State": "Folder → Channel → State",
-    "ra_Folder → Device → Channel → State": "Folder → Device → Channel → State",
-    "ra_Device → Channel → State": "Device → Channel → State",
-    "ra_Channel → State": "Channel → State",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\")."
+  "ra_Are you sure?": "Are you sure?",
+  "ra_Cancel": "Cancel",
+  "ra_Copied": "Copied",
+  "ra_Copied %s": "Copied \"%s\"",
+  "ra_Error": "Error",
+  "ra_Define functions": "Define functions",
+  "ra_Define rooms": "Define rooms",
+  "ra_Message": "Message",
+  "ra_Please select object ID...": "Please select object ID...",
+  "ra_Selected": "Selected",
+  "ra_Value": "Value",
+  "ra_Ok": "Ok",
+  "ra_dow_Su": "Su",
+  "ra_dow_Mo": "Mo",
+  "ra_dow_Tu": "Tu",
+  "ra_dow_We": "We",
+  "ra_dow_Th": "Th",
+  "ra_dow_Fr": "Fr",
+  "ra_dow_Sa": "Sa",
+  "ra_months_Jan": "Jan",
+  "ra_months_Feb": "Feb",
+  "ra_months_Mar": "Mar",
+  "ra_months_Apr": "Apr",
+  "ra_months_Mai": "Mai",
+  "ra_months_Jun": "Jun",
+  "ra_months_Jul": "Jul",
+  "ra_months_Aug": "Aug",
+  "ra_months_Sep": "Sep",
+  "ra_months_Oct": "Oct",
+  "ra_months_Nov": "Nov",
+  "ra_months_Dec": "Dec",
+  "ra_Unknown error!": "Unknown error!",
+  "ra_filter_customs": "Settings",
+  "ra_filter_func": "Function",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Name",
+  "ra_filter_role": "Role",
+  "ra_filter_room": "Room",
+  "ra_filter_type": "Type",
+  "ra_invalidConfig": "Invalid settings",
+  "ra_otherConfig": "Settings from other adapter %s",
+  "ra_tooltip_ack": "Acknowledged",
+  "ra_tooltip_from": "From",
+  "ra_tooltip_lc": "Last changed",
+  "ra_tooltip_quality": "Quality",
+  "ra_tooltip_ts": "Time stamp",
+  "ra_tooltip_user": "User",
+  "ra_tooltip_value": "Value",
+  "ra_tooltip_editObject": "Edit object",
+  "ra_tooltip_deleteObject": "Delete object",
+  "ra_tooltip_customConfig": "Custom settings",
+  "ra_tooltip_copyState": "Copy the state value",
+  "ra_tooltip_editState": "Edit the state value",
+  "ra_Listen on all IPs": "Listen on all IPs",
+  "ra_Save": "Save",
+  "ra_Save and close": "Save and close",
+  "ra_Close": "Close",
+  "ra_Auto (no custom columns)": "Auto (no custom columns)",
+  "ra_Transparent dialog": "Transparent dialog",
+  "ra_Width": "Width",
+  "ra_val": "Value",
+  "ra_buttons": "Buttons",
+  "ra_Configure visible columns": "Configure visible columns",
+  "ra_Cannot update attribute, because not found in the object": "Cannot update attribute, because not found in the object",
+  "ra_Edit object field": "Edit object field",
+  "ra_Hide empty folders": "Hide empty folders",
+  "ra_Reload files": "Reload files",
+  "ra_Create folder": "Create folder",
+  "ra_Upload file": "Upload file",
+  "ra_User files": "User files",
+  "ra_Confirm deletion of %s": "Confirm deletion of %s",
+  "ra_Delete (no confirm for 5 mins)": "Delete (no confirm for 5 mins)",
+  "ra_Delete": "Delete",
+  "ra_Toggle expert mode": "Toggle expert mode",
+  "ra_Toggle view mode": "Toggle view mode",
+  "re_Root": "Root",
+  "re_Back to %s": "Back to %s",
+  "ra_Place your files here or click here to open the browse dialog": "Place your files here or click here to open the browse dialog",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "If no file will be created in the folder, it will disappear after the browser closed",
+  "ra_Folder name": "Folder name",
+  "ra_Create new folder in %s": "Create new folder in %s",
+  "ra_Duplicate name": "Duplicate name",
+  "ra_Invalid parent folder!": "Invalid parent folder!",
+  "ra_Drop file here": "Drop file here",
+  "ra_Suppress question for next %s minutes": "Suppress question for next %s minutes",
+  "ra_Clear filter": "Clear filter",
+  "ra_Update": "Update",
+  "ra_Load configuration from file": "Load configuration from file",
+  "ra_Save configuration to file": "Save configuration to file",
+  "sc_cron": "CRON",
+  "sc_date": "Date",
+  "sc_dates": "Dates",
+  "sc_dows": "Day of week",
+  "sc_every": "Every",
+  "sc_everyN_dates": "every N days",
+  "sc_everyN_dows": "every N day of week",
+  "sc_everyN_hours": "every N hours",
+  "sc_everyN_minutes": "every N minutes",
+  "sc_everyN_months": "every N months",
+  "sc_everyN_seconds": "every N seconds",
+  "sc_every_dates": "every day",
+  "sc_every_dows": "every day of the week",
+  "sc_every_hours": "every hour",
+  "sc_every_minutes": "every minute",
+  "sc_every_months": "every month",
+  "sc_every_seconds": "every second",
+  "sc_from": "From",
+  "sc_hours": "Hours",
+  "sc_interval": "Interval",
+  "sc_intervalBetween": "Interval between",
+  "sc_minutes": "Minutes",
+  "sc_months": "months",
+  "sc_once": "Once",
+  "sc_period": "Period",
+  "sc_seconds": "Seconds",
+  "sc_simple": "Simple",
+  "sc_specific": "Specific time",
+  "sc_specific_dates": "specific dates",
+  "sc_specific_dows": "specific day of weeks",
+  "sc_specific_hours": "specific hours",
+  "sc_specific_minutes": "specific minutes",
+  "sc_specific_months": "specific months",
+  "sc_specific_seconds": "specific seconds",
+  "sc_time": "Time",
+  "sc_to": "To",
+  "sc_wizard": "Wizard",
+  "sch_all": "all",
+  "sch_astroDay": "Astro day",
+  "sch_astroNight": "Astro night",
+  "sch_astro_dawn": "Dawn",
+  "sch_astro_dusk": "Dusk",
+  "sch_astro_goldenHour": "Golden hour",
+  "sch_astro_goldenHourEnd": "Golden hour end",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Nautical dawn",
+  "sch_astro_nauticalDusk": "Nautical dusk",
+  "sch_astro_night": "Night",
+  "sch_astro_nightEnd": "Night end",
+  "sch_astro_solarNoon": "Solar noon",
+  "sch_astro_sunrise": "Sunrise",
+  "sch_astro_sunriseEnd": "Sunrise end",
+  "sch_astro_sunset": "Sunset",
+  "sch_astro_sunsetStart": "Sunset start",
+  "sch_at": "at",
+  "sch_desc_atTime": "at %s",
+  "sch_desc_everyDay": "every day",
+  "sch_desc_everyHour": "every hour",
+  "sch_desc_everyMinute": "every minute",
+  "sch_desc_everyMonth": "every month",
+  "sch_desc_everyNDay": "every %s day",
+  "sch_desc_everyNHours": "every %s hours",
+  "sch_desc_everyNMinutes": "every %s minutes",
+  "sch_desc_everyNMonths": "every %s months",
+  "sch_desc_everyNWeeks": "every %s weeks",
+  "sch_desc_everyNYears": "every %s years",
+  "sch_desc_everyWeek": "every week",
+  "sch_desc_everyYear": "every year",
+  "sch_desc_intervalFromTo": "from %s to %s",
+  "sch_desc_never": "never",
+  "sch_desc_onDate": "on %s of %s",
+  "sch_desc_onDates": "on %s and %s of",
+  "sch_desc_onEveryDate": "on every date of",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s and %s",
+  "sch_desc_onWeekday": "on %s",
+  "sch_desc_onWeekdays": "on %s and %s",
+  "sch_desc_onWeekends": "on weekends",
+  "sch_desc_onWorkdays": "on working days",
+  "sch_desc_onceInPast": "will ne be not executed any more, because start is in the past",
+  "sch_desc_once_on": "on %s",
+  "sch_desc_validFrom": "from %s",
+  "sch_desc_validFromTo": "Execute from to",
+  "sch_desc_validTo": "to %s",
+  "sch_every": "every",
+  "sch_exactTime": "Specific time",
+  "sch_from": "from",
+  "sch_fromTo": "From-to",
+  "sch_intervalTime": "Interval time",
+  "sch_invert": "invert",
+  "sch_no_one": "none",
+  "sch_on": "on",
+  "sch_period": "Period",
+  "sch_periodDaily": "Daily",
+  "sch_periodDates": "Dates",
+  "sch_periodDay": "Day",
+  "sch_periodEvery": "Every",
+  "sch_periodEveryDay": "Every day",
+  "sch_periodEveryMonth": "Every month",
+  "sch_periodEveryWeek": "Every week",
+  "sch_periodEveryYear": "Every year",
+  "sch_periodHours": "Hours",
+  "sch_periodMinutes": "Minutes",
+  "sch_periodMonth": "month",
+  "sch_periodMonthly": "Monthly",
+  "sch_periodOnce": "Once",
+  "sch_periodSpecificMonths": "Specific months",
+  "sch_periodWeek": "Week",
+  "sch_periodWeekdays": "Weekdays",
+  "sch_periodWeekend": "Weekend",
+  "sch_periodWeekly": "Weekly",
+  "sch_periodWorkdays": "Workdays",
+  "sch_periodYear": "Year",
+  "sch_periodYearly": "Yearly",
+  "sch_specificTime": "Specific time",
+  "sch_time": "Time",
+  "sch_to": "to",
+  "sch_valid": "Valid",
+  "sch_validFrom": "from",
+  "sch_validTo": "to",
+  "sch_wholeDay": "Whole day",
+  "sch_yearEveryMonth": "every month",
+  "ra_Define schedule...": "Define schedule...",
+  "ra_Repeat": "Repeat",
+  "ra_use seconds": "use seconds",
+  "ra_close": "close",
+  "ra_Toggle the states view": "Toggle the states view",
+  "ra_Add new child object to selected parent": "Add new child object to selected parent",
+  "ra_Add objects tree from JSON file": "Add objects tree from JSON file",
+  "ra_Save objects tree as JSON file": "Save objects tree as JSON file",
+  "ra_Objects": "Objects",
+  "ra_States": "States",
+  "ra_object_changed_by_user": "Object last changed at",
+  "ra_object_changed_by": "Object changed by",
+  "ra_state_changed_from": "Object changed from",
+  "ra_state_changed_by": "State changed by",
+  "ra_aclOwner_read_object": "Owner can read object",
+  "ra_aclOwner_read_state": "Owner can read state",
+  "ra_aclOwner_write_object": "Owner can write object",
+  "ra_aclOwner_write_state": "Owner can write state",
+  "ra_aclGroup_read_object": "Group can read object",
+  "ra_aclGroup_read_state": "Group can read state",
+  "ra_aclGroup_write_object": "Group can write object",
+  "ra_aclGroup_write_state": "Group can write state",
+  "ra_aclEveryone_read_object": "Everyone can read object",
+  "ra_aclEveryone_read_state": "Everyone can read state",
+  "ra_aclEveryone_write_object": "Everyone can write object",
+  "ra_aclEveryone_write_state": "Everyone can write state",
+  "ra_Folders always first": "Folders always first",
+  "ra_changedFrom": "Changed from",
+  "ra_qualityCode": "Quality code",
+  "ra_timestamp": "Timestamp",
+  "ra_lastChange": "Last change",
+  "ra_Owner group": "Owner group",
+  "ra_Owner user": "Owner user",
+  "ra_Create": "Create",
+  "ra_Changed from": "Changed from",
+  "ra_Quality code": "Quality",
+  "ra_Timestamp": "Timestamp",
+  "ra_Last change": "Last change",
+  "ra_Collapse all nodes": "Collapse all nodes",
+  "ra_Edit custom config": "Edit custom config",
+  "ra_Collapse one step node": "Collapse one level",
+  "ra_Expand one step node": "Expand one level",
+  "ra_Refresh tree": "Refresh tree",
+  "ra_Expand all nodes": "Expand all nodes",
+  "ra_Deselect all": "Unselect all",
+  "ra_Select all": "Select all",
+  "ra_%s object(s) processed": "%s object(s) processed",
+  "ra_Invalid structure": "Invalid structure",
+  "ra_%s was imported": "%s was imported",
+  "ra_Failed to open JSON File": "Failed to open JSON File",
+  "ra_Only following structures of objects are available:": "Only following structures of objects are available:",
+  "ra_Folder → State": "Folder → State",
+  "ra_Folder → Channel → State": "Folder → Channel → State",
+  "ra_Folder → Device → Channel → State": "Folder → Device → Channel → State",
+  "ra_Device → Channel → State": "Device → Channel → State",
+  "ra_Channel → State": "Channel → State",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").",
+  "ra_expertMode": "Expert mode",
+  "ra_On weekdays": "On weekdays",
+  "ra_Drop the files here...": "Drop the file here...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Drag 'n' drop some files here, or click to select files",
+  "ra_Clear": "Delete",
+  "ra_Clear icon": "Clear icon",
+  "ra_none": "none",
+  "ra_Select predefined icon": "Select predefined icon",
+  "ra_Show lines between rows": "Show lines between rows"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/de.json":[function(require,module,exports) {
 module.exports = {
@@ -69041,21 +74270,21 @@ module.exports = {
     "ra_filter_type": "Typ",
     "ra_filter_customs": "Einstellungen",
     "ra_filter_role": "Rolle",
-    "ra_filter_room": "Zimmer",
+    "ra_filter_room": "Raum",
     "ra_tooltip_ack": "Bestätigt",
     "ra_tooltip_from": "Von",
     "ra_tooltip_lc": "Zuletzt geändert",
     "ra_tooltip_quality": "Qualität",
     "ra_tooltip_ts": "Zeitstempel",
-    "ra_tooltip_user": "Nutzer",
+    "ra_tooltip_user": "Benutzer",
     "ra_tooltip_value": "Wert",
     "ra_Are you sure?": "Bist du sicher?",
     "ra_Cancel": "Abbrechen",
     "ra_Copied": "Kopiert",
-    "ra_Copied %s": "%s kopiert",
+    "ra_Copied %s": "\"%s\" kopiert",
     "ra_Define functions": "Funktionen definieren",
     "ra_Define rooms": "Räume definieren",
-    "ra_Error": "Error",
+    "ra_Error": "Fehler",
     "ra_Message": "Meldung",
     "ra_Ok": "OK",
     "ra_Please select object ID...": "Bitte Objekt-ID auswählen...",
@@ -69076,7 +74305,7 @@ module.exports = {
     "ra_dow_Th": "Do",
     "ra_dow_Tu": "Di",
     "ra_dow_We": "Mi",
-    "ra_Listen on all IPs": "Hören Sie auf alle IPs",
+    "ra_Listen on all IPs": "Zugriff von allen IPs zulassen",
     "ra_Save": "Speichern",
     "ra_Save and close": "Speichern und schließen",
     "ra_Close": "Schließen",
@@ -69104,7 +74333,7 @@ module.exports = {
     "ra_Place your files here or click here to open the browse dialog": "Platzieren Sie Ihre Dateien hier oder klicken Sie hier, um den Suchdialog zu öffnen",
     "ra_If no file will be created in the folder, it will disappear after the browser closed": "Wenn im Ordner keine Datei erstellt wird, verschwindet dieser nach dem Schließen des Browsers",
     "ra_Folder name": "Ordnernamen",
-    "ra_Create new folder in %s": "Einen neuen Ordner in \"%s\" erstellen",
+    "ra_Create new folder in %s": "Neuen Ordner in \"%s\" erstellen",
     "ra_Duplicate name": "Doppelter Name",
     "ra_Invalid parent folder!": "Ungültiger übergeordneter Ordner!",
     "ra_Drop file here": "Datei hier ablegen",
@@ -69125,7 +74354,7 @@ module.exports = {
     "sc_everyN_months": "alle N Monate",
     "sc_everyN_seconds": "alle N Sekunden",
     "sc_every_dates": "jeden Tag",
-    "sc_every_dows": "jeden tag der woche",
+    "sc_every_dows": "jeden Tag der Woche",
     "sc_every_hours": "jede Stunde",
     "sc_every_minutes": "jede Minute",
     "sc_every_months": "jeden Monat",
@@ -69151,17 +74380,17 @@ module.exports = {
     "sc_to": "Bis",
     "sc_wizard": "Wizard",
     "sch_all": "alle",
-    "sch_astroDay": "Tag",
-    "sch_astroNight": "Nachts",
+    "sch_astroDay": "Astronomisch Tag",
+    "sch_astroNight": "Astronomisch Nacht",
     "sch_astro_dawn": "Morgendämmerung",
     "sch_astro_dusk": "Abenddämmerung",
     "sch_astro_goldenHour": "Goldene Stunde",
-    "sch_astro_goldenHourEnd": "Goldenes Stundenende",
+    "sch_astro_goldenHourEnd": "Goldene Stundenende",
     "sch_astro_nadir": "Nadir",
     "sch_astro_nauticalDawn": "Nautische Morgendämmerung",
     "sch_astro_nauticalDusk": "Nautische Abenddämmerung",
     "sch_astro_night": "Nacht",
-    "sch_astro_nightEnd": "Nachtsende",
+    "sch_astro_nightEnd": "Nachtende",
     "sch_astro_solarNoon": "Sonnenmittag",
     "sch_astro_sunrise": "Sonnenaufgang",
     "sch_astro_sunriseEnd": "Sonnenaufgangende",
@@ -69192,7 +74421,7 @@ module.exports = {
     "sch_desc_onWeekdays": "auf %s und %s",
     "sch_desc_onWeekends": "an Wochenenden",
     "sch_desc_onWorkdays": "an Werktagen",
-    "sch_desc_onceInPast": "wird ne nicht mehr ausgeführt, weil start in der vergangenheit ist",
+    "sch_desc_onceInPast": "wird nicht mehr ausgeführt, weil der Start in der Vergangenheit ist",
     "sch_desc_once_on": "auf %s",
     "sch_desc_validFrom": "von %s",
     "sch_desc_validFromTo": "Ausführen von bis",
@@ -69214,8 +74443,8 @@ module.exports = {
     "sch_periodEveryMonth": "Jeden Monat",
     "sch_periodEveryWeek": "Jede Woche",
     "sch_periodEveryYear": "Jedes Jahr",
-    "sch_periodHours": "Std",
-    "sch_periodMinutes": "Protokoll",
+    "sch_periodHours": "Stunden",
+    "sch_periodMinutes": "Minuten",
     "sch_periodMonth": "Monat",
     "sch_periodMonthly": "Monatlich",
     "sch_periodOnce": "Einmal",
@@ -69248,12 +74477,12 @@ module.exports = {
     "ra_months_Mai": "Mai",
     "ra_months_Mar": "Mär",
     "ra_months_Nov": "Nov",
-    "ra_months_Oct": "Oct",
+    "ra_months_Oct": "Okt",
     "ra_months_Sep": "Sep",
-    "ra_Toggle the states view": "Statusansicht umschalten ",
+    "ra_Toggle the states view": "Statusansicht umschalten",
     "ra_Add new child object to selected parent": "Dem ausgewählten übergeordneten Objekt ein neues untergeordnetes Objekt hinzufügen",
-    "ra_Add objects tree from JSON file": "Einen Objektbaum aus der JSON-Datei hinzufügen",
-    "ra_Save objects tree as JSON file": "Den Objektbaum als JSON-Datei speichern ",
+    "ra_Add objects tree from JSON file": "Objektbaum aus JSON-Datei hinzufügen",
+    "ra_Save objects tree as JSON file": "Objektbaum als JSON-Datei speichern",
     "ra_Objects": "Objekte",
     "ra_States": "Zustände",
     "ra_object_changed_by_user": "Objekt zuletzt geändert um",
@@ -69273,7 +74502,7 @@ module.exports = {
     "ra_aclEveryone_write_object": "Jeder kann ein Objekt schreiben",
     "ra_aclEveryone_write_state": "Jeder kann Zustand schreiben",
     "ra_Folders always first": "Ordner immer zuerst",
-    "ra_changedFrom": "Gewechselt von",
+    "ra_changedFrom": "Geändert von",
     "ra_qualityCode": "Qualitätscode",
     "ra_timestamp": "Zeitstempel",
     "ra_lastChange": "Letzte Änderung",
@@ -69285,13 +74514,13 @@ module.exports = {
     "ra_Timestamp": "Zeitstempel",
     "ra_Last change": "Letzte Änderung",
     "ra_Collapse all nodes": "Alle Knoten zuklappen",
-    "ra_Edit custom config": "Benutzerdefinierte Konfiguration bearbeiten",
+    "ra_Edit custom config": "Bearbeite Benutzerdefinierte Konfiguration",
     "ra_Collapse one step node": "Eine Ebene zuklappen",
     "ra_Expand one step node": "Eine Ebene aufklappen",
     "ra_Refresh tree": "Baum aktualisieren",
     "ra_Expand all nodes": "Alle Knoten aufklappen",
     "ra_Deselect all": "Alles abwählen",
-    "ra_Select all": "Alle auswählen ",
+    "ra_Select all": "Alle auswählen",
     "ra_%s object(s) processed": "%s Objekt(e) verarbeitet",
     "ra_Invalid structure": "Ungültige Struktur",
     "ra_%s was imported": "%s wurde importiert",
@@ -69303,2108 +74532,2214 @@ module.exports = {
     "ra_Device → Channel → State": "Gerät → Kanal → Status",
     "ra_Channel → State": "Kanal → Status",
     "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Nicht-Experten dürfen neue Objekte nur in \"0_userdata.0\" oder \"alias.0\" erstellen.",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Die Experten können Objekte überall erstellen, außer auf der zweiten Ebene (z. B. \"vis.0\" oder \"javascript.0\")."
-};
+    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Die Experten können Objekte überall erstellen, außer auf der zweiten Ebene (z. B. \"vis.0\" oder \"javascript.0\").",
+    "ra_expertMode": "Expertenmodus",
+    "ra_On weekdays": "An Wochentagen",
+    "ra_Drop the files here...": "Datei hier ablegen...",
+    "ra_Drag 'n' drop some files here, or click to select files": "Die Datei hierher ziehen und ablegen, oder klicken, um die Datei auszuwählen",
+    "ra_Clear": "Löschen",
+    "ra_Clear icon": "Symbol löschen",
+    "ra_none": "kein",
+    "ra_Select predefined icon": "Vordefiniertes Symbol auswählen",
+    "ra_Show lines between rows": "Zeilen zwischen Zeilen anzeigen"
+}
+;
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/ru.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "функция",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Имя",
-    "ra_filter_role": "роль",
-    "ra_filter_room": "комната",
-    "ra_tooltip_ack": "Подтверждено",
-    "ra_tooltip_from": "От",
-    "ra_tooltip_lc": "Последнее изменение",
-    "ra_tooltip_quality": "Качество",
-    "ra_tooltip_ts": "Отметка времени",
-    "ra_tooltip_user": "пользователь",
-    "ra_tooltip_value": "Значение",
-    "ra_Are you sure?": "Вы уверены?",
-    "ra_Cancel": "Отмена",
-    "ra_Copied": "скопировано",
-    "ra_Copied %s": "Скопировано %s",
-    "ra_Define functions": "Задать функции",
-    "ra_Define rooms": "Задать комнаты",
-    "ra_Error": "Ошибка",
-    "ra_Message": "Сообщение",
-    "ra_Ok": "Ok",
-    "ra_Please select object ID...": "Пожалуйста, выберите идентификатор объекта ...",
-    "ra_Selected": "выбранный",
-    "ra_Unknown error!": "Неизвестная ошибка!",
-    "ra_Value": "Значение",
-    "ra_filter_type": "Тип",
-    "ra_invalidConfig": "Неверные настройки",
-    "ra_otherConfig": "Настройки из другого адаптера %s",
-    "ra_tooltip_copyState": "Скопируйте значение состояния",
-    "ra_tooltip_customConfig": "Пользовательские настройки",
-    "ra_tooltip_deleteObject": "Удалить объект",
-    "ra_tooltip_editObject": "Редактировать объект",
-    "ra_tooltip_editState": "Изменить значение состояния",
-    "ra_filter_customs": "настройки",
-    "ra_dow_Fr": "Пт",
-    "ra_dow_Mo": "Пн",
-    "ra_dow_Sa": "Сб",
-    "ra_dow_Su": "Вс",
-    "ra_dow_Th": "Чт",
-    "ra_dow_Tu": "Вт",
-    "ra_dow_We": "Ср",
-    "ra_Listen on all IPs": "Слушай на всех IP",
-    "ra_Save": "Сохранить",
-    "ra_Save and close": "Сохранить и закрыть",
-    "ra_Close": "Закрыть",
-    "ra_Auto (no custom columns)": "Авто (без настраиваемых столбцов)",
-    "ra_Transparent dialog": "Прозрачный диалог",
-    "ra_Width": "Ширина",
-    "ra_val": "Значение",
-    "ra_buttons": "Кнопки",
-    "ra_Configure visible columns": "Настроить видимые столбцы",
-    "ra_Cannot update attribute, because not found in the object": "Невозможно обновить атрибут, потому что он не найден в объекте",
-    "ra_Edit object field": "Поле редактирования объекта",
-    "ra_Hide empty folders": "Скрыть пустые папки",
-    "ra_Reload files": "Обновить",
-    "ra_Create folder": "Создать папку",
-    "ra_Upload file": "Загрузить файл",
-    "ra_User files": "Файлы пользователя",
-    "ra_Confirm deletion of %s": "Подтвердите удаление %s",
-    "ra_Delete (no confirm for 5 mins)": "Удалить (без подтверждения в течение 5 минут)",
-    "ra_Delete": "Удалить",
-    "ra_Toggle expert mode": "Переключить экспертный режим",
-    "ra_Toggle view mode": "Переключить режим просмотра",
-    "re_Root": "Начало",
-    "re_Back to %s": "Вернуться к %s",
-    "ra_Place your files here or click here to open the browse dialog": "Поместите свои файлы сюда или щелкните здесь, чтобы открыть диалоговое окно выбора",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Если в папке не будет создан файл, он исчезнет после закрытия браузера.",
-    "ra_Folder name": "Имя папки",
-    "ra_Create new folder in %s": "Создать новую папку в %s",
-    "ra_Duplicate name": "Повторяющееся имя",
-    "ra_Invalid parent folder!": "Неверная родительская папка!",
-    "ra_Drop file here": "Перетащите файл сюда",
-    "ra_Suppress question for next %s minutes": "Скрыть вопрос на следующие %s минут(ы)",
-    "ra_Clear filter": "Очистить фильтр",
-    "ra_Update": "Обновить",
-    "ra_Load configuration from file": "Загрузить конфигурацию из файла",
-    "ra_Save configuration to file": "Сохранить конфигурацию в файл",
-    "sc_cron": "CRON",
-    "sc_date": "Дата",
-    "sc_dates": "Даты",
-    "sc_dows": "День недели",
-    "sc_every": "каждый(ую/ые)",
-    "sc_everyN_dates": "каждый N день",
-    "sc_everyN_dows": "каждый N день недели",
-    "sc_everyN_hours": "каждые N часов",
-    "sc_everyN_minutes": "каждые N минут",
-    "sc_everyN_months": "каждые N месяцев",
-    "sc_everyN_seconds": "каждые N секунд",
-    "sc_every_dates": "каждый день",
-    "sc_every_dows": "каждый день недели",
-    "sc_every_hours": "каждый час",
-    "sc_every_minutes": "каждую минуту",
-    "sc_every_months": "каждый месяц",
-    "sc_every_seconds": "каждую секунду",
-    "sc_from": "От",
-    "sc_hours": "часы",
-    "sc_interval": "Интервал",
-    "sc_intervalBetween": "Интервал между",
-    "sc_minutes": "минуты",
-    "sc_months": "Месяцы",
-    "sc_once": "один раз",
-    "sc_period": "Период",
-    "sc_seconds": "секунды",
-    "sc_simple": "Просто",
-    "sc_specific": "Конкретное время",
-    "sc_specific_dates": "конкретные даты",
-    "sc_specific_dows": "конкретный день недели",
-    "sc_specific_hours": "конкретные часы",
-    "sc_specific_minutes": "конкретные минуты",
-    "sc_specific_months": "конкретные месяцы",
-    "sc_specific_seconds": "конкретные секунды",
-    "sc_time": "Время",
-    "sc_to": "До",
-    "sc_wizard": "Форма",
-    "sch_all": "все",
-    "sch_astroDay": "днём",
-    "sch_astroNight": "ночью",
-    "sch_astro_dawn": "Рассвет",
-    "sch_astro_dusk": "Сумерки",
-    "sch_astro_goldenHour": "Золотой час",
-    "sch_astro_goldenHourEnd": "Конец золотого часа",
-    "sch_astro_nadir": "Надир",
-    "sch_astro_nauticalDawn": "Морской рассвет",
-    "sch_astro_nauticalDusk": "Морские сумерки",
-    "sch_astro_night": "Ночь",
-    "sch_astro_nightEnd": "Конец ночи",
-    "sch_astro_solarNoon": "Солнечный полдень",
-    "sch_astro_sunrise": "Восход",
-    "sch_astro_sunriseEnd": "Восход солнца",
-    "sch_astro_sunset": "Заход солнца",
-    "sch_astro_sunsetStart": "Начало заката",
-    "sch_at": "дата",
-    "sch_desc_atTime": "в %s",
-    "sch_desc_everyDay": "каждый день",
-    "sch_desc_everyHour": "каждый час",
-    "sch_desc_everyMinute": "каждую минуту",
-    "sch_desc_everyMonth": "каждый месяц",
-    "sch_desc_everyNDay": "каждый %s день",
-    "sch_desc_everyNHours": "каждый %s часов",
-    "sch_desc_everyNMinutes": "каждые %s минут",
-    "sch_desc_everyNMonths": "каждые %s месяцев",
-    "sch_desc_everyNWeeks": "каждые %s недель",
-    "sch_desc_everyNYears": "каждые %s лет",
-    "sch_desc_everyWeek": "каждую неделю",
-    "sch_desc_everyYear": "каждый год",
-    "sch_desc_intervalFromTo": "от %s до %s",
-    "sch_desc_never": "никогда",
-    "sch_desc_onDate": "%s %s",
-    "sch_desc_onDates": "%s и %s",
-    "sch_desc_onEveryDate": "в каждый день",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s и %s",
-    "sch_desc_onWeekday": "%s",
-    "sch_desc_onWeekdays": "%s и %s",
-    "sch_desc_onWeekends": "на выходных",
-    "sch_desc_onWorkdays": "в рабочие дни",
-    "sch_desc_onceInPast": "не будет больше выполняться, потому что начало в прошлом",
-    "sch_desc_once_on": "%s",
-    "sch_desc_validFrom": "%s",
-    "sch_desc_validFromTo": "Выполнить с",
-    "sch_desc_validTo": "%s",
-    "sch_every": "каждый",
-    "sch_exactTime": "Конкретное время",
-    "sch_from": "от",
-    "sch_fromTo": "От и до",
-    "sch_intervalTime": "Интервал времени",
-    "sch_invert": "инвертировать",
-    "sch_no_one": "никакой",
-    "sch_on": "на",
-    "sch_period": "период",
-    "sch_periodDaily": "Ежедневно",
-    "sch_periodDates": "Даты",
-    "sch_periodDay": "День",
-    "sch_periodEvery": "каждый",
-    "sch_periodEveryDay": "Каждый день",
-    "sch_periodEveryMonth": "Каждый месяц",
-    "sch_periodEveryWeek": "Каждую неделю",
-    "sch_periodEveryYear": "Каждый год",
-    "sch_periodHours": "часов",
-    "sch_periodMinutes": "минут",
-    "sch_periodMonth": "месяц",
-    "sch_periodMonthly": "ежемесячно",
-    "sch_periodOnce": "однажды",
-    "sch_periodSpecificMonths": "Конкретные месяцы",
-    "sch_periodWeek": "Неделю",
-    "sch_periodWeekdays": "Будние дни",
-    "sch_periodWeekend": "выходные",
-    "sch_periodWeekly": "еженедельно",
-    "sch_periodWorkdays": "Рабочие дни",
-    "sch_periodYear": "Год",
-    "sch_periodYearly": "каждый год",
-    "sch_specificTime": "Конкретное время",
-    "sch_time": "Время",
-    "sch_to": "в",
-    "sch_valid": "действительный",
-    "sch_validFrom": "от",
-    "sch_validTo": "в",
-    "sch_wholeDay": "Весь день",
-    "sch_yearEveryMonth": "каждый месяц",
-    "ra_Define schedule...": "Определить расписание ...",
-    "ra_Repeat": "Повторение",
-    "ra_use seconds": "секунды",
-    "ra_close": "Закрыть",
-    "ra_months_Sep": "Сен",
-    "ra_months_Oct": "Окт",
-    "ra_months_Nov": "Ноя",
-    "ra_months_Mar": "Март",
-    "ra_months_Mai": "Май",
-    "ra_months_Jun": "Июль",
-    "ra_months_Jul": "Июнь",
-    "ra_months_Jan": "Янв",
-    "ra_months_Feb": "Фев",
-    "ra_months_Dec": "Дек",
-    "ra_months_Aug": "Авг",
-    "ra_months_Apr": "Апр",
-    "ra_Toggle the states view": "Переключить режим просмотра состояний",
-    "ra_Add new child object to selected parent": "Добавить новый дочерний объект к выбранному родительскому объекту",
-    "ra_Add objects tree from JSON file": "Добавить дерево объектов из файла JSON",
-    "ra_Save objects tree as JSON file": "Сохранить дерево объектов как файл JSON",
-    "ra_Objects": "Объекты",
-    "ra_States": "Состояния",
-    "ra_object_changed_by_user": "Последний раз объект изменен в",
-    "ra_object_changed_by": "Объект изменен",
-    "ra_state_changed_from": "Объект изменен с",
-    "ra_state_changed_by": "Состояние изменено",
-    "ra_aclOwner_read_object": "Владелец может читать объект",
-    "ra_aclOwner_read_state": "Владелец может читать состояние",
-    "ra_aclOwner_write_object": "Владелец может писать объект",
-    "ra_aclOwner_write_state": "Владелец может писать состояние",
-    "ra_aclGroup_read_object": "Группа может читать объект",
-    "ra_aclGroup_read_state": "Группа может читать состояние",
-    "ra_aclGroup_write_object": "Группа может писать объект",
-    "ra_aclGroup_write_state": "Группа может записывать состояние",
-    "ra_aclEveryone_read_object": "Каждый может читать объект",
-    "ra_aclEveryone_read_state": "Каждый может читать состояние",
-    "ra_aclEveryone_write_object": "Каждый может написать объект",
-    "ra_aclEveryone_write_state": "Каждый может написать состояние",
-    "ra_Folders always first": "Папки всегда на первом месте",
-    "ra_changedFrom": "Изменено с",
-    "ra_qualityCode": "Код качества",
-    "ra_timestamp": "Отметка времени",
-    "ra_lastChange": "Последнее изменение",
-    "ra_Owner group": "Группа владельцев",
-    "ra_Owner user": "Пользователь-владелец",
-    "ra_Create": "Создать",
-    "ra_Changed from": "Изменено",
-    "ra_Quality code": "Валидность",
-    "ra_Timestamp": "Времени",
-    "ra_Last change": "Последнее изменение",
-    "ra_Collapse all nodes": "Свернуть все узлы",
-    "ra_Edit custom config": "Редактировать настраиваемую конфигурацию",
-    "ra_Collapse one step node": "Свернуть один уровень",
-    "ra_Expand one step node": "Открыть один уровень",
-    "ra_Refresh tree": "Обновить дерево",
-    "ra_Expand all nodes": "Развернуть все узлы",
-    "ra_Deselect all": "Убрать выбор везде",
-    "ra_Select all": "Выбрать все",
-    "ra_%s object(s) processed": "Объектов обработано: %s",
-    "ra_Invalid structure": "Неверная структура",
-    "ra_%s was imported": "%s был импортирован",
-    "ra_Failed to open JSON File": "Не удалось открыть файл JSON",
-    "ra_Only following structures of objects are available:": "Доступны только следующие структуры объектов:",
-    "ra_Folder → State": "Папка → Состояние",
-    "ra_Folder → Channel → State": "Папка → Канал → Состояние",
-    "ra_Folder → Device → Channel → State": "Папка → Устройство → Канал → Состояние",
-    "ra_Device → Channel → State": "Устройство → Канал → Состояние",
-    "ra_Channel → State": "Канал → Состояние",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Не-эксперты могут создавать новые объекты только в «0_userdata.0» или «alias.0».",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Эксперты могут создавать объекты везде, кроме второго уровня (например, «vis.0» или «javascript.0»)."
+  "ra_filter_func": "функция",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Имя",
+  "ra_filter_role": "роль",
+  "ra_filter_room": "комната",
+  "ra_tooltip_ack": "Подтверждено",
+  "ra_tooltip_from": "От",
+  "ra_tooltip_lc": "Последнее изменение",
+  "ra_tooltip_quality": "Качество",
+  "ra_tooltip_ts": "Отметка времени",
+  "ra_tooltip_user": "пользователь",
+  "ra_tooltip_value": "Значение",
+  "ra_Are you sure?": "Вы уверены?",
+  "ra_Cancel": "Отмена",
+  "ra_Copied": "скопировано",
+  "ra_Copied %s": "Скопировано \"%s\"",
+  "ra_Define functions": "Задать функции",
+  "ra_Define rooms": "Задать комнаты",
+  "ra_Error": "Ошибка",
+  "ra_Message": "Сообщение",
+  "ra_Ok": "Ok",
+  "ra_Please select object ID...": "Пожалуйста, выберите идентификатор объекта ...",
+  "ra_Selected": "выбранный",
+  "ra_Unknown error!": "Неизвестная ошибка!",
+  "ra_Value": "Значение",
+  "ra_filter_type": "Тип",
+  "ra_invalidConfig": "Неверные настройки",
+  "ra_otherConfig": "Настройки из другого адаптера %s",
+  "ra_tooltip_copyState": "Скопируйте значение состояния",
+  "ra_tooltip_customConfig": "Пользовательские настройки",
+  "ra_tooltip_deleteObject": "Удалить объект",
+  "ra_tooltip_editObject": "Редактировать объект",
+  "ra_tooltip_editState": "Изменить значение состояния",
+  "ra_filter_customs": "настройки",
+  "ra_dow_Fr": "Пт",
+  "ra_dow_Mo": "Пн",
+  "ra_dow_Sa": "Сб",
+  "ra_dow_Su": "Вс",
+  "ra_dow_Th": "Чт",
+  "ra_dow_Tu": "Вт",
+  "ra_dow_We": "Ср",
+  "ra_Listen on all IPs": "Слушай на всех IP",
+  "ra_Save": "Сохранить",
+  "ra_Save and close": "Сохранить и закрыть",
+  "ra_Close": "Закрыть",
+  "ra_Auto (no custom columns)": "Авто (без настраиваемых столбцов)",
+  "ra_Transparent dialog": "Прозрачный диалог",
+  "ra_Width": "Ширина",
+  "ra_val": "Значение",
+  "ra_buttons": "Кнопки",
+  "ra_Configure visible columns": "Настроить видимые столбцы",
+  "ra_Cannot update attribute, because not found in the object": "Невозможно обновить атрибут, потому что он не найден в объекте",
+  "ra_Edit object field": "Поле редактирования объекта",
+  "ra_Hide empty folders": "Скрыть пустые папки",
+  "ra_Reload files": "Обновить",
+  "ra_Create folder": "Создать папку",
+  "ra_Upload file": "Загрузить файл",
+  "ra_User files": "Файлы пользователя",
+  "ra_Confirm deletion of %s": "Подтвердите удаление %s",
+  "ra_Delete (no confirm for 5 mins)": "Удалить (без подтверждения в течение 5 минут)",
+  "ra_Delete": "Удалить",
+  "ra_Toggle expert mode": "Переключить экспертный режим",
+  "ra_Toggle view mode": "Переключить режим просмотра",
+  "re_Root": "Начало",
+  "re_Back to %s": "Вернуться к %s",
+  "ra_Place your files here or click here to open the browse dialog": "Поместите свои файлы сюда или щелкните здесь, чтобы открыть диалоговое окно выбора",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Если в папке не будет создан файл, он исчезнет после закрытия браузера.",
+  "ra_Folder name": "Имя папки",
+  "ra_Create new folder in %s": "Создать новую папку в %s",
+  "ra_Duplicate name": "Повторяющееся имя",
+  "ra_Invalid parent folder!": "Неверная родительская папка!",
+  "ra_Drop file here": "Перетащите файл сюда",
+  "ra_Suppress question for next %s minutes": "Скрыть вопрос на следующие %s минут(ы)",
+  "ra_Clear filter": "Очистить фильтр",
+  "ra_Update": "Обновить",
+  "ra_Load configuration from file": "Загрузить конфигурацию из файла",
+  "ra_Save configuration to file": "Сохранить конфигурацию в файл",
+  "sc_cron": "CRON",
+  "sc_date": "Дата",
+  "sc_dates": "Даты",
+  "sc_dows": "День недели",
+  "sc_every": "каждый(ую/ые)",
+  "sc_everyN_dates": "каждый N день",
+  "sc_everyN_dows": "каждый N день недели",
+  "sc_everyN_hours": "каждые N часов",
+  "sc_everyN_minutes": "каждые N минут",
+  "sc_everyN_months": "каждые N месяцев",
+  "sc_everyN_seconds": "каждые N секунд",
+  "sc_every_dates": "каждый день",
+  "sc_every_dows": "каждый день недели",
+  "sc_every_hours": "каждый час",
+  "sc_every_minutes": "каждую минуту",
+  "sc_every_months": "каждый месяц",
+  "sc_every_seconds": "каждую секунду",
+  "sc_from": "От",
+  "sc_hours": "часы",
+  "sc_interval": "Интервал",
+  "sc_intervalBetween": "Интервал между",
+  "sc_minutes": "минуты",
+  "sc_months": "Месяцы",
+  "sc_once": "один раз",
+  "sc_period": "Период",
+  "sc_seconds": "секунды",
+  "sc_simple": "Просто",
+  "sc_specific": "Конкретное время",
+  "sc_specific_dates": "конкретные даты",
+  "sc_specific_dows": "конкретный день недели",
+  "sc_specific_hours": "конкретные часы",
+  "sc_specific_minutes": "конкретные минуты",
+  "sc_specific_months": "конкретные месяцы",
+  "sc_specific_seconds": "конкретные секунды",
+  "sc_time": "Время",
+  "sc_to": "До",
+  "sc_wizard": "Форма",
+  "sch_all": "все",
+  "sch_astroDay": "днём",
+  "sch_astroNight": "ночью",
+  "sch_astro_dawn": "Рассвет",
+  "sch_astro_dusk": "Сумерки",
+  "sch_astro_goldenHour": "Золотой час",
+  "sch_astro_goldenHourEnd": "Конец золотого часа",
+  "sch_astro_nadir": "Надир",
+  "sch_astro_nauticalDawn": "Морской рассвет",
+  "sch_astro_nauticalDusk": "Морские сумерки",
+  "sch_astro_night": "Ночь",
+  "sch_astro_nightEnd": "Конец ночи",
+  "sch_astro_solarNoon": "Солнечный полдень",
+  "sch_astro_sunrise": "Восход",
+  "sch_astro_sunriseEnd": "Восход солнца",
+  "sch_astro_sunset": "Заход солнца",
+  "sch_astro_sunsetStart": "Начало заката",
+  "sch_at": "дата",
+  "sch_desc_atTime": "в %s",
+  "sch_desc_everyDay": "каждый день",
+  "sch_desc_everyHour": "каждый час",
+  "sch_desc_everyMinute": "каждую минуту",
+  "sch_desc_everyMonth": "каждый месяц",
+  "sch_desc_everyNDay": "каждый %s день",
+  "sch_desc_everyNHours": "каждый %s часов",
+  "sch_desc_everyNMinutes": "каждые %s минут",
+  "sch_desc_everyNMonths": "каждые %s месяцев",
+  "sch_desc_everyNWeeks": "каждые %s недель",
+  "sch_desc_everyNYears": "каждые %s лет",
+  "sch_desc_everyWeek": "каждую неделю",
+  "sch_desc_everyYear": "каждый год",
+  "sch_desc_intervalFromTo": "от %s до %s",
+  "sch_desc_never": "никогда",
+  "sch_desc_onDate": "%s %s",
+  "sch_desc_onDates": "%s и %s",
+  "sch_desc_onEveryDate": "в каждый день",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s и %s",
+  "sch_desc_onWeekday": "%s",
+  "sch_desc_onWeekdays": "%s и %s",
+  "sch_desc_onWeekends": "на выходных",
+  "sch_desc_onWorkdays": "в рабочие дни",
+  "sch_desc_onceInPast": "не будет больше выполняться, потому что начало в прошлом",
+  "sch_desc_once_on": "%s",
+  "sch_desc_validFrom": "%s",
+  "sch_desc_validFromTo": "Выполнить с",
+  "sch_desc_validTo": "%s",
+  "sch_every": "каждый",
+  "sch_exactTime": "Конкретное время",
+  "sch_from": "от",
+  "sch_fromTo": "От и до",
+  "sch_intervalTime": "Интервал времени",
+  "sch_invert": "инвертировать",
+  "sch_no_one": "никакой",
+  "sch_on": "на",
+  "sch_period": "период",
+  "sch_periodDaily": "Ежедневно",
+  "sch_periodDates": "Даты",
+  "sch_periodDay": "День",
+  "sch_periodEvery": "каждый",
+  "sch_periodEveryDay": "Каждый день",
+  "sch_periodEveryMonth": "Каждый месяц",
+  "sch_periodEveryWeek": "Каждую неделю",
+  "sch_periodEveryYear": "Каждый год",
+  "sch_periodHours": "часов",
+  "sch_periodMinutes": "минут",
+  "sch_periodMonth": "месяц",
+  "sch_periodMonthly": "ежемесячно",
+  "sch_periodOnce": "однажды",
+  "sch_periodSpecificMonths": "Конкретные месяцы",
+  "sch_periodWeek": "Неделю",
+  "sch_periodWeekdays": "Будние дни",
+  "sch_periodWeekend": "выходные",
+  "sch_periodWeekly": "еженедельно",
+  "sch_periodWorkdays": "Рабочие дни",
+  "sch_periodYear": "Год",
+  "sch_periodYearly": "каждый год",
+  "sch_specificTime": "Конкретное время",
+  "sch_time": "Время",
+  "sch_to": "в",
+  "sch_valid": "действительный",
+  "sch_validFrom": "от",
+  "sch_validTo": "в",
+  "sch_wholeDay": "Весь день",
+  "sch_yearEveryMonth": "каждый месяц",
+  "ra_Define schedule...": "Определить расписание ...",
+  "ra_Repeat": "Повторение",
+  "ra_use seconds": "секунды",
+  "ra_close": "Закрыть",
+  "ra_months_Sep": "Сен",
+  "ra_months_Oct": "Окт",
+  "ra_months_Nov": "Ноя",
+  "ra_months_Mar": "Март",
+  "ra_months_Mai": "Май",
+  "ra_months_Jun": "Июль",
+  "ra_months_Jul": "Июнь",
+  "ra_months_Jan": "Янв",
+  "ra_months_Feb": "Фев",
+  "ra_months_Dec": "Дек",
+  "ra_months_Aug": "Авг",
+  "ra_months_Apr": "Апр",
+  "ra_Toggle the states view": "Переключить режим просмотра состояний",
+  "ra_Add new child object to selected parent": "Добавить новый дочерний объект к выбранному родительскому объекту",
+  "ra_Add objects tree from JSON file": "Добавить дерево объектов из файла JSON",
+  "ra_Save objects tree as JSON file": "Сохранить дерево объектов как файл JSON",
+  "ra_Objects": "Объекты",
+  "ra_States": "Состояния",
+  "ra_object_changed_by_user": "Последний раз объект изменен в",
+  "ra_object_changed_by": "Объект изменен",
+  "ra_state_changed_from": "Объект изменен с",
+  "ra_state_changed_by": "Состояние изменено",
+  "ra_aclOwner_read_object": "Владелец может читать объект",
+  "ra_aclOwner_read_state": "Владелец может читать состояние",
+  "ra_aclOwner_write_object": "Владелец может писать объект",
+  "ra_aclOwner_write_state": "Владелец может писать состояние",
+  "ra_aclGroup_read_object": "Группа может читать объект",
+  "ra_aclGroup_read_state": "Группа может читать состояние",
+  "ra_aclGroup_write_object": "Группа может писать объект",
+  "ra_aclGroup_write_state": "Группа может записывать состояние",
+  "ra_aclEveryone_read_object": "Каждый может читать объект",
+  "ra_aclEveryone_read_state": "Каждый может читать состояние",
+  "ra_aclEveryone_write_object": "Каждый может написать объект",
+  "ra_aclEveryone_write_state": "Каждый может написать состояние",
+  "ra_Folders always first": "Папки всегда на первом месте",
+  "ra_changedFrom": "Изменено с",
+  "ra_qualityCode": "Код качества",
+  "ra_timestamp": "Отметка времени",
+  "ra_lastChange": "Последнее изменение",
+  "ra_Owner group": "Группа владельцев",
+  "ra_Owner user": "Пользователь-владелец",
+  "ra_Create": "Создать",
+  "ra_Changed from": "Изменено",
+  "ra_Quality code": "Валидность",
+  "ra_Timestamp": "Времени",
+  "ra_Last change": "Последнее изменение",
+  "ra_Collapse all nodes": "Свернуть все узлы",
+  "ra_Edit custom config": "Редактировать настраиваемую конфигурацию",
+  "ra_Collapse one step node": "Свернуть один уровень",
+  "ra_Expand one step node": "Открыть один уровень",
+  "ra_Refresh tree": "Обновить дерево",
+  "ra_Expand all nodes": "Развернуть все узлы",
+  "ra_Deselect all": "Убрать выбор везде",
+  "ra_Select all": "Выбрать все",
+  "ra_%s object(s) processed": "Объектов обработано: %s",
+  "ra_Invalid structure": "Неверная структура",
+  "ra_%s was imported": "%s был импортирован",
+  "ra_Failed to open JSON File": "Не удалось открыть файл JSON",
+  "ra_Only following structures of objects are available:": "Доступны только следующие структуры объектов:",
+  "ra_Folder → State": "Папка → Состояние",
+  "ra_Folder → Channel → State": "Папка → Канал → Состояние",
+  "ra_Folder → Device → Channel → State": "Папка → Устройство → Канал → Состояние",
+  "ra_Device → Channel → State": "Устройство → Канал → Состояние",
+  "ra_Channel → State": "Канал → Состояние",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Не-эксперты могут создавать новые объекты только в «0_userdata.0» или «alias.0».",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Эксперты могут создавать объекты везде, кроме второго уровня (например, «vis.0» или «javascript.0»).",
+  "ra_expertMode": "Экспертный режим",
+  "ra_On weekdays": "На выходных",
+  "ra_Drop the files here...": "Перетащите файл сюда ...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Перетащите сюда несколько файлов или щелкните, чтобы выбрать файлы",
+  "ra_Clear": "Удалить",
+  "ra_Clear icon": "Очистить значок",
+  "ra_none": "ничего",
+  "ra_Select predefined icon": "Выберите предопределенный значок",
+  "ra_Show lines between rows": "Показать линии между строками"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/pt.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Função",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Nome",
-    "ra_filter_role": "Papel (Função)",
-    "ra_filter_room": "Quarto",
-    "ra_tooltip_ack": "Confirmado",
-    "ra_tooltip_from": "De",
-    "ra_tooltip_lc": "Última alteração",
-    "ra_tooltip_quality": "Qualidade",
-    "ra_tooltip_ts": "Timestamp",
-    "ra_tooltip_user": "Usuário",
-    "ra_tooltip_value": "Valor",
-    "ra_Are you sure?": "Você tem certeza?",
-    "ra_Cancel": "Cancelar",
-    "ra_Copied": "Copiado",
-    "ra_Copied %s": "%s copiado",
-    "ra_Define functions": "Definir funções",
-    "ra_Define rooms": "Definir quartos",
-    "ra_Error": "Erro",
-    "ra_Message": "mensagem",
-    "ra_Ok": "Está bem",
-    "ra_Please select object ID...": "Selecione o ID do objeto ...",
-    "ra_Selected": "Selecionado",
-    "ra_Unknown error!": "Erro desconhecido!",
-    "ra_Value": "Valor",
-    "ra_filter_type": "Tipo",
-    "ra_invalidConfig": "Configurações inválidas",
-    "ra_otherConfig": "Configurações de outro adaptador %s",
-    "ra_tooltip_copyState": "Copie o valor do estado",
-    "ra_tooltip_customConfig": "Opções customizadas",
-    "ra_tooltip_deleteObject": "Excluir objeto",
-    "ra_tooltip_editObject": "Editar objeto",
-    "ra_tooltip_editState": "Edite o valor do estado",
-    "ra_filter_customs": "Configurações",
-    "ra_Listen on all IPs": "Ouça em todos os IPs",
-    "ra_dow_Fr": "Fr",
-    "ra_dow_Mo": "Mo",
-    "ra_dow_Sa": "Sa",
-    "ra_dow_Su": "Su",
-    "ra_dow_Th": "º",
-    "ra_Save": "Salve ",
-    "ra_Save and close": "Salvar e fechar",
-    "ra_Close": "Perto",
-    "ra_Auto (no custom columns)": "Auto (sem colunas personalizadas)",
-    "ra_Transparent dialog": "Diálogo transparente",
-    "ra_Width": "Largura",
-    "ra_val": "Valor",
-    "ra_buttons": "Botões",
-    "ra_Configure visible columns": "Configurar colunas visíveis",
-    "ra_Cannot update attribute, because not found in the object": "Não é possível atualizar o atributo, porque não foi encontrado no objeto",
-    "ra_Edit object field": "Editar campo de objeto",
-    "ra_Hide empty folders": "Esconder pastas vazias",
-    "ra_Reload files": "Recarregar arquivos",
-    "ra_Create folder": "Criar pasta",
-    "ra_Upload file": "Subir arquivo",
-    "ra_User files": "Arquivos do usuário",
-    "ra_Confirm deletion of %s": "Confirme a exclusão de %s",
-    "ra_Delete (no confirm for 5 mins)": "Excluir (sem confirmação por 5 minutos)",
-    "ra_Delete": "Excluir",
-    "ra_Toggle expert mode": "Alternar modo especialista",
-    "ra_Toggle view mode": "Alternar modo de visualização",
-    "re_Root": "Raiz",
-    "re_Back to %s": "Voltar para %s",
-    "ra_Place your files here or click here to open the browse dialog": "Coloque seus arquivos aqui ou clique aqui para abrir a janela de navegação",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Se nenhum arquivo for criado na pasta, ele desaparecerá depois que o navegador for fechado",
-    "ra_Folder name": "Nome da pasta",
-    "ra_Create new folder in %s": "Crie uma nova pasta em %s",
-    "ra_Duplicate name": "Nome duplicado",
-    "ra_Invalid parent folder!": "Pasta pai inválida!",
-    "ra_Drop file here": "Solte o arquivo aqui",
-    "ra_Suppress question for next %s minutes": "Suprimir pergunta nos próximos %s minutos",
-    "ra_Clear filter": "Filtro limpo",
-    "ra_Update": "Atualizar",
-    "ra_Load configuration from file": "Carregar configuração do arquivo",
-    "ra_Save configuration to file": "Salvar configuração em arquivo",
-    "sc_cron": "CRON",
-    "sc_date": "Data",
-    "sc_dates": "Dias",
-    "sc_dows": "Dia da semana",
-    "sc_every": "todos",
-    "sc_everyN_dates": "a cada N dias",
-    "sc_everyN_dows": "todos os N dias da semana",
-    "sc_everyN_hours": "a cada N horas",
-    "sc_everyN_minutes": "a cada N minutos",
-    "sc_everyN_months": "a cada N meses",
-    "sc_everyN_seconds": "a cada N segundos",
-    "sc_every_dates": "todo dia",
-    "sc_every_dows": "todos os dias da semana",
-    "sc_every_hours": "toda hora",
-    "sc_every_minutes": "todo minuto",
-    "sc_every_months": "todo mês",
-    "sc_every_seconds": "todo segundo",
-    "sc_from": "de",
-    "sc_hours": "horas",
-    "sc_interval": "intervalo",
-    "sc_intervalBetween": "intervalo entre",
-    "sc_minutes": "minutos",
-    "sc_months": "meses",
-    "sc_once": "uma vez",
-    "sc_period": "período",
-    "sc_seconds": "segundos",
-    "sc_simple": "simples",
-    "sc_specific": "tempo específico",
-    "sc_specific_dates": "datas específicas",
-    "sc_specific_dows": "dia específico de semanas",
-    "sc_specific_hours": "horas específicas",
-    "sc_specific_minutes": "minutos específicos",
-    "sc_specific_months": "meses específicos",
-    "sc_specific_seconds": "segundos específicos",
-    "sc_time": "tempo",
-    "sc_to": "para",
-    "sc_wizard": "assistente",
-    "sch_all": "tudo",
-    "sch_astroDay": "dia astral",
-    "sch_astroNight": "noite astral",
-    "sch_astro_dawn": "amanhecer",
-    "sch_astro_dusk": "anoitecer",
-    "sch_astro_goldenHour": "hora dourada",
-    "sch_astro_goldenHourEnd": "Fim da hora dourada",
-    "sch_astro_nadir": "nadir",
-    "sch_astro_nauticalDawn": "Amanhecer náutico",
-    "sch_astro_nauticalDusk": "Anoitecer náutico",
-    "sch_astro_night": "noite",
-    "sch_astro_nightEnd": "fim da noite",
-    "sch_astro_solarNoon": "meio-dia solar",
-    "sch_astro_sunrise": "nascer do sol",
-    "sch_astro_sunriseEnd": "fim do nascer do sol",
-    "sch_astro_sunset": "pôr do sol",
-    "sch_astro_sunsetStart": "início do pôr do sol",
-    "sch_at": "às",
-    "sch_desc_atTime": "em %s",
-    "sch_desc_everyDay": "todo dia",
-    "sch_desc_everyHour": "toda hora",
-    "sch_desc_everyMinute": "todo minuto",
-    "sch_desc_everyMonth": "todo mês",
-    "sch_desc_everyNDay": "a cada %s dias",
-    "sch_desc_everyNHours": "a cada %s horas",
-    "sch_desc_everyNMinutes": "a cada %s minutos",
-    "sch_desc_everyNMonths": "a cada %s meses",
-    "sch_desc_everyNWeeks": "a cada %s semanas",
-    "sch_desc_everyNYears": "a cada %s anos",
-    "sch_desc_everyWeek": "toda semana",
-    "sch_desc_everyYear": "todo ano",
-    "sch_desc_intervalFromTo": "de %s para %s",
-    "sch_desc_never": "nunca",
-    "sch_desc_onDate": "em %s de %s",
-    "sch_desc_onDates": "em %s e %s de",
-    "sch_desc_onEveryDate": "em toda data de",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s e %s",
-    "sch_desc_onWeekday": "em %s",
-    "sch_desc_onWeekdays": "em %s e %s",
-    "sch_desc_onWeekends": "nos fins de semana",
-    "sch_desc_onWorkdays": "em dias úteis",
-    "sch_desc_onceInPast": "não será mais executado, porque o começo está no passado",
-    "sch_desc_once_on": "em %s",
-    "sch_desc_validFrom": "de %s",
-    "sch_desc_validFromTo": "Executar de até",
-    "sch_desc_validTo": "até %s",
-    "sch_every": "cada",
-    "sch_exactTime": "tempo específico",
-    "sch_from": "de",
-    "sch_fromTo": "de a´t",
-    "sch_intervalTime": "tempo de intervalo",
-    "sch_invert": "invertido",
-    "sch_no_one": "nenhum",
-    "sch_on": "em",
-    "sch_period": "período",
-    "sch_periodDaily": "diariamente",
-    "sch_periodDates": "datas",
-    "sch_periodDay": "dia",
-    "sch_periodEvery": "todos",
-    "sch_periodEveryDay": "todo dia",
-    "sch_periodEveryMonth": "todo mês",
-    "sch_periodEveryWeek": "toda semana",
-    "sch_periodEveryYear": "todo ano",
-    "sch_periodHours": "horas",
-    "sch_periodMinutes": "minutos",
-    "sch_periodMonth": "mês",
-    "sch_periodMonthly": "por mês",
-    "sch_periodOnce": "uma vez",
-    "sch_periodSpecificMonths": "meses específicos",
-    "sch_periodWeek": "semana",
-    "sch_periodWeekdays": "dias úteis",
-    "sch_periodWeekend": "final de semana",
-    "sch_periodWeekly": "semanal",
-    "sch_periodWorkdays": "dias úteis",
-    "sch_periodYear": "ano",
-    "sch_periodYearly": "anual",
-    "sch_specificTime": "tempo específico",
-    "sch_time": "tempo",
-    "sch_to": "para",
-    "sch_valid": "válido",
-    "sch_validFrom": "de",
-    "sch_validTo": "para",
-    "sch_wholeDay": "dia inteiro",
-    "sch_yearEveryMonth": "todo mês",
-    "ra_Define schedule...": "Definir programação ...",
-    "ra_Repeat": "Repita",
-    "ra_use seconds": "use segundos",
-    "ra_close": "fechar",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Alternar a visualização dos estados",
-    "ra_Add new child object to selected parent": "Adicionar novo objeto filho ao pai selecionado",
-    "ra_Add objects tree from JSON file": "Adicionar árvore de objetos do arquivo JSON",
-    "ra_Save objects tree as JSON file": "Salvar árvore de objetos como arquivo JSON",
-    "ra_Objects": "Objetos",
-    "ra_States": "Estados",
-    "ra_object_changed_by_user": "Objeto alterado pela última vez em",
-    "ra_object_changed_by": "Objeto alterado por",
-    "ra_state_changed_from": "Objeto alterado de",
-    "ra_state_changed_by": "Estado alterado por",
-    "ra_aclOwner_read_object": "O proprietário pode ler o objeto",
-    "ra_aclOwner_read_state": "O proprietário pode ler o estado",
-    "ra_aclOwner_write_object": "O proprietário pode escrever o objeto",
-    "ra_aclOwner_write_state": "O proprietário pode escrever o estado",
-    "ra_aclGroup_read_object": "O grupo pode ler o objeto",
-    "ra_aclGroup_read_state": "O grupo pode ler o estado",
-    "ra_aclGroup_write_object": "O grupo pode escrever o objeto",
-    "ra_aclGroup_write_state": "O grupo pode escrever o estado",
-    "ra_aclEveryone_read_object": "Todos podem ler objetos",
-    "ra_aclEveryone_read_state": "Todos podem ler o estado",
-    "ra_aclEveryone_write_object": "Todos podem escrever objetos",
-    "ra_aclEveryone_write_state": "Todos podem escrever o estado",
-    "ra_Folders always first": "Pastas sempre primeiro",
-    "ra_changedFrom": "Mudou de",
-    "ra_qualityCode": "Código de qualidade",
-    "ra_timestamp": "Timestamp",
-    "ra_lastChange": "Última mudança",
-    "ra_Owner group": "Grupo proprietário",
-    "ra_Owner user": "Usuário proprietário",
-    "ra_Create": "Crio",
-    "ra_Changed from": "Mudou de",
-    "ra_Quality code": "Qualidade",
-    "ra_Timestamp": "Timestamp",
-    "ra_Last change": "Última mudança",
-    "ra_Collapse all nodes": "Recolher todos os nós",
-    "ra_Edit custom config": "Editar configuração personalizada",
-    "ra_Collapse one step node": "Recolher um nível",
-    "ra_Expand one step node": "Expanda um nível",
-    "ra_Refresh tree": "Atualizar árvore",
-    "ra_Expand all nodes": "Expanda todos os nós",
-    "ra_Deselect all": "Desmarque todos",
-    "ra_Select all": "Selecionar tudo",
-    "ra_%s object(s) processed": "%s objeto(s) processado(s)",
-    "ra_Invalid structure": "Estrutura inválida",
-    "ra_%s was imported": "%s foi importado",
-    "ra_Failed to open JSON File": "Falha ao abrir arquivo JSON",
-    "ra_Only following structures of objects are available:": "Apenas as seguintes estruturas de objetos estão disponíveis:",
-    "ra_Folder → State": "Pasta → Estado",
-    "ra_Folder → Channel → State": "Pasta → Canal → Estado",
-    "ra_Folder → Device → Channel → State": "Pasta → Dispositivo → Canal → Estado",
-    "ra_Device → Channel → State": "Dispositivo → Canal → Estado",
-    "ra_Channel → State": "Canal → Estado",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Os não especialistas podem criar novos objetos apenas em \"0_userdata.0\" ou \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Os especialistas podem criar objetos em qualquer lugar, exceto no segundo nível (por exemplo, \"vis.0\" ou \"javascript.0\")."
+  "ra_filter_func": "Função",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Nome",
+  "ra_filter_role": "Papel (Função)",
+  "ra_filter_room": "Quarto",
+  "ra_tooltip_ack": "Confirmado",
+  "ra_tooltip_from": "De",
+  "ra_tooltip_lc": "Última alteração",
+  "ra_tooltip_quality": "Qualidade",
+  "ra_tooltip_ts": "Timestamp",
+  "ra_tooltip_user": "Usuário",
+  "ra_tooltip_value": "Valor",
+  "ra_Are you sure?": "Você tem certeza?",
+  "ra_Cancel": "Cancelar",
+  "ra_Copied": "Copiado",
+  "ra_Copied %s": "\"%s\" copiado",
+  "ra_Define functions": "Definir funções",
+  "ra_Define rooms": "Definir quartos",
+  "ra_Error": "Erro",
+  "ra_Message": "mensagem",
+  "ra_Ok": "Está bem",
+  "ra_Please select object ID...": "Selecione o ID do objeto ...",
+  "ra_Selected": "Selecionado",
+  "ra_Unknown error!": "Erro desconhecido!",
+  "ra_Value": "Valor",
+  "ra_filter_type": "Tipo",
+  "ra_invalidConfig": "Configurações inválidas",
+  "ra_otherConfig": "Configurações de outro adaptador %s",
+  "ra_tooltip_copyState": "Copie o valor do estado",
+  "ra_tooltip_customConfig": "Opções customizadas",
+  "ra_tooltip_deleteObject": "Excluir objeto",
+  "ra_tooltip_editObject": "Editar objeto",
+  "ra_tooltip_editState": "Edite o valor do estado",
+  "ra_filter_customs": "Configurações",
+  "ra_Listen on all IPs": "Ouça em todos os IPs",
+  "ra_dow_Fr": "Fr",
+  "ra_dow_Mo": "Mo",
+  "ra_dow_Sa": "Sa",
+  "ra_dow_Su": "Su",
+  "ra_dow_Th": "º",
+  "ra_Save": "Salve ",
+  "ra_Save and close": "Salvar e fechar",
+  "ra_Close": "Perto",
+  "ra_Auto (no custom columns)": "Auto (sem colunas personalizadas)",
+  "ra_Transparent dialog": "Diálogo transparente",
+  "ra_Width": "Largura",
+  "ra_val": "Valor",
+  "ra_buttons": "Botões",
+  "ra_Configure visible columns": "Configurar colunas visíveis",
+  "ra_Cannot update attribute, because not found in the object": "Não é possível atualizar o atributo, porque não foi encontrado no objeto",
+  "ra_Edit object field": "Editar campo de objeto",
+  "ra_Hide empty folders": "Esconder pastas vazias",
+  "ra_Reload files": "Recarregar arquivos",
+  "ra_Create folder": "Criar pasta",
+  "ra_Upload file": "Subir arquivo",
+  "ra_User files": "Arquivos do usuário",
+  "ra_Confirm deletion of %s": "Confirme a exclusão de %s",
+  "ra_Delete (no confirm for 5 mins)": "Excluir (sem confirmação por 5 minutos)",
+  "ra_Delete": "Excluir",
+  "ra_Toggle expert mode": "Alternar modo especialista",
+  "ra_Toggle view mode": "Alternar modo de visualização",
+  "re_Root": "Raiz",
+  "re_Back to %s": "Voltar para %s",
+  "ra_Place your files here or click here to open the browse dialog": "Coloque seus arquivos aqui ou clique aqui para abrir a janela de navegação",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Se nenhum arquivo for criado na pasta, ele desaparecerá depois que o navegador for fechado",
+  "ra_Folder name": "Nome da pasta",
+  "ra_Create new folder in %s": "Crie uma nova pasta em %s",
+  "ra_Duplicate name": "Nome duplicado",
+  "ra_Invalid parent folder!": "Pasta pai inválida!",
+  "ra_Drop file here": "Solte o arquivo aqui",
+  "ra_Suppress question for next %s minutes": "Suprimir pergunta nos próximos %s minutos",
+  "ra_Clear filter": "Filtro limpo",
+  "ra_Update": "Atualizar",
+  "ra_Load configuration from file": "Carregar configuração do arquivo",
+  "ra_Save configuration to file": "Salvar configuração em arquivo",
+  "sc_cron": "CRON",
+  "sc_date": "Data",
+  "sc_dates": "Dias",
+  "sc_dows": "Dia da semana",
+  "sc_every": "todos",
+  "sc_everyN_dates": "a cada N dias",
+  "sc_everyN_dows": "todos os N dias da semana",
+  "sc_everyN_hours": "a cada N horas",
+  "sc_everyN_minutes": "a cada N minutos",
+  "sc_everyN_months": "a cada N meses",
+  "sc_everyN_seconds": "a cada N segundos",
+  "sc_every_dates": "todo dia",
+  "sc_every_dows": "todos os dias da semana",
+  "sc_every_hours": "toda hora",
+  "sc_every_minutes": "todo minuto",
+  "sc_every_months": "todo mês",
+  "sc_every_seconds": "todo segundo",
+  "sc_from": "de",
+  "sc_hours": "horas",
+  "sc_interval": "intervalo",
+  "sc_intervalBetween": "intervalo entre",
+  "sc_minutes": "minutos",
+  "sc_months": "meses",
+  "sc_once": "uma vez",
+  "sc_period": "período",
+  "sc_seconds": "segundos",
+  "sc_simple": "simples",
+  "sc_specific": "tempo específico",
+  "sc_specific_dates": "datas específicas",
+  "sc_specific_dows": "dia específico de semanas",
+  "sc_specific_hours": "horas específicas",
+  "sc_specific_minutes": "minutos específicos",
+  "sc_specific_months": "meses específicos",
+  "sc_specific_seconds": "segundos específicos",
+  "sc_time": "tempo",
+  "sc_to": "para",
+  "sc_wizard": "assistente",
+  "sch_all": "tudo",
+  "sch_astroDay": "dia astral",
+  "sch_astroNight": "noite astral",
+  "sch_astro_dawn": "amanhecer",
+  "sch_astro_dusk": "anoitecer",
+  "sch_astro_goldenHour": "hora dourada",
+  "sch_astro_goldenHourEnd": "Fim da hora dourada",
+  "sch_astro_nadir": "nadir",
+  "sch_astro_nauticalDawn": "Amanhecer náutico",
+  "sch_astro_nauticalDusk": "Anoitecer náutico",
+  "sch_astro_night": "noite",
+  "sch_astro_nightEnd": "fim da noite",
+  "sch_astro_solarNoon": "meio-dia solar",
+  "sch_astro_sunrise": "nascer do sol",
+  "sch_astro_sunriseEnd": "fim do nascer do sol",
+  "sch_astro_sunset": "pôr do sol",
+  "sch_astro_sunsetStart": "início do pôr do sol",
+  "sch_at": "às",
+  "sch_desc_atTime": "em %s",
+  "sch_desc_everyDay": "todo dia",
+  "sch_desc_everyHour": "toda hora",
+  "sch_desc_everyMinute": "todo minuto",
+  "sch_desc_everyMonth": "todo mês",
+  "sch_desc_everyNDay": "a cada %s dias",
+  "sch_desc_everyNHours": "a cada %s horas",
+  "sch_desc_everyNMinutes": "a cada %s minutos",
+  "sch_desc_everyNMonths": "a cada %s meses",
+  "sch_desc_everyNWeeks": "a cada %s semanas",
+  "sch_desc_everyNYears": "a cada %s anos",
+  "sch_desc_everyWeek": "toda semana",
+  "sch_desc_everyYear": "todo ano",
+  "sch_desc_intervalFromTo": "de %s para %s",
+  "sch_desc_never": "nunca",
+  "sch_desc_onDate": "em %s de %s",
+  "sch_desc_onDates": "em %s e %s de",
+  "sch_desc_onEveryDate": "em toda data de",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s e %s",
+  "sch_desc_onWeekday": "em %s",
+  "sch_desc_onWeekdays": "em %s e %s",
+  "sch_desc_onWeekends": "nos fins de semana",
+  "sch_desc_onWorkdays": "em dias úteis",
+  "sch_desc_onceInPast": "não será mais executado, porque o começo está no passado",
+  "sch_desc_once_on": "em %s",
+  "sch_desc_validFrom": "de %s",
+  "sch_desc_validFromTo": "Executar de até",
+  "sch_desc_validTo": "até %s",
+  "sch_every": "cada",
+  "sch_exactTime": "tempo específico",
+  "sch_from": "de",
+  "sch_fromTo": "de a´t",
+  "sch_intervalTime": "tempo de intervalo",
+  "sch_invert": "invertido",
+  "sch_no_one": "nenhum",
+  "sch_on": "em",
+  "sch_period": "período",
+  "sch_periodDaily": "diariamente",
+  "sch_periodDates": "datas",
+  "sch_periodDay": "dia",
+  "sch_periodEvery": "todos",
+  "sch_periodEveryDay": "todo dia",
+  "sch_periodEveryMonth": "todo mês",
+  "sch_periodEveryWeek": "toda semana",
+  "sch_periodEveryYear": "todo ano",
+  "sch_periodHours": "horas",
+  "sch_periodMinutes": "minutos",
+  "sch_periodMonth": "mês",
+  "sch_periodMonthly": "por mês",
+  "sch_periodOnce": "uma vez",
+  "sch_periodSpecificMonths": "meses específicos",
+  "sch_periodWeek": "semana",
+  "sch_periodWeekdays": "dias úteis",
+  "sch_periodWeekend": "final de semana",
+  "sch_periodWeekly": "semanal",
+  "sch_periodWorkdays": "dias úteis",
+  "sch_periodYear": "ano",
+  "sch_periodYearly": "anual",
+  "sch_specificTime": "tempo específico",
+  "sch_time": "tempo",
+  "sch_to": "para",
+  "sch_valid": "válido",
+  "sch_validFrom": "de",
+  "sch_validTo": "para",
+  "sch_wholeDay": "dia inteiro",
+  "sch_yearEveryMonth": "todo mês",
+  "ra_Define schedule...": "Definir programação ...",
+  "ra_Repeat": "Repita",
+  "ra_use seconds": "use segundos",
+  "ra_close": "fechar",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Alternar a visualização dos estados",
+  "ra_Add new child object to selected parent": "Adicionar novo objeto filho ao pai selecionado",
+  "ra_Add objects tree from JSON file": "Adicionar árvore de objetos do arquivo JSON",
+  "ra_Save objects tree as JSON file": "Salvar árvore de objetos como arquivo JSON",
+  "ra_Objects": "Objetos",
+  "ra_States": "Estados",
+  "ra_object_changed_by_user": "Objeto alterado pela última vez em",
+  "ra_object_changed_by": "Objeto alterado por",
+  "ra_state_changed_from": "Objeto alterado de",
+  "ra_state_changed_by": "Estado alterado por",
+  "ra_aclOwner_read_object": "O proprietário pode ler o objeto",
+  "ra_aclOwner_read_state": "O proprietário pode ler o estado",
+  "ra_aclOwner_write_object": "O proprietário pode escrever o objeto",
+  "ra_aclOwner_write_state": "O proprietário pode escrever o estado",
+  "ra_aclGroup_read_object": "O grupo pode ler o objeto",
+  "ra_aclGroup_read_state": "O grupo pode ler o estado",
+  "ra_aclGroup_write_object": "O grupo pode escrever o objeto",
+  "ra_aclGroup_write_state": "O grupo pode escrever o estado",
+  "ra_aclEveryone_read_object": "Todos podem ler objetos",
+  "ra_aclEveryone_read_state": "Todos podem ler o estado",
+  "ra_aclEveryone_write_object": "Todos podem escrever objetos",
+  "ra_aclEveryone_write_state": "Todos podem escrever o estado",
+  "ra_Folders always first": "Pastas sempre primeiro",
+  "ra_changedFrom": "Mudou de",
+  "ra_qualityCode": "Código de qualidade",
+  "ra_timestamp": "Timestamp",
+  "ra_lastChange": "Última mudança",
+  "ra_Owner group": "Grupo proprietário",
+  "ra_Owner user": "Usuário proprietário",
+  "ra_Create": "Crio",
+  "ra_Changed from": "Mudou de",
+  "ra_Quality code": "Qualidade",
+  "ra_Timestamp": "Timestamp",
+  "ra_Last change": "Última mudança",
+  "ra_Collapse all nodes": "Recolher todos os nós",
+  "ra_Edit custom config": "Editar configuração personalizada",
+  "ra_Collapse one step node": "Recolher um nível",
+  "ra_Expand one step node": "Expanda um nível",
+  "ra_Refresh tree": "Atualizar árvore",
+  "ra_Expand all nodes": "Expanda todos os nós",
+  "ra_Deselect all": "Desmarque todos",
+  "ra_Select all": "Selecionar tudo",
+  "ra_%s object(s) processed": "%s objeto(s) processado(s)",
+  "ra_Invalid structure": "Estrutura inválida",
+  "ra_%s was imported": "%s foi importado",
+  "ra_Failed to open JSON File": "Falha ao abrir arquivo JSON",
+  "ra_Only following structures of objects are available:": "Apenas as seguintes estruturas de objetos estão disponíveis:",
+  "ra_Folder → State": "Pasta → Estado",
+  "ra_Folder → Channel → State": "Pasta → Canal → Estado",
+  "ra_Folder → Device → Channel → State": "Pasta → Dispositivo → Canal → Estado",
+  "ra_Device → Channel → State": "Dispositivo → Canal → Estado",
+  "ra_Channel → State": "Canal → Estado",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Os não especialistas podem criar novos objetos apenas em \"0_userdata.0\" ou \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Os especialistas podem criar objetos em qualquer lugar, exceto no segundo nível (por exemplo, \"vis.0\" ou \"javascript.0\").",
+  "ra_expertMode": "Modo especialista",
+  "ra_On weekdays": "Nos dias úteis",
+  "ra_Drop the files here...": "Solte o arquivo aqui ...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Arraste e solte alguns arquivos aqui ou clique para selecionar arquivos",
+  "ra_Clear": "Excluir",
+  "ra_Clear icon": "Ícone de limpeza",
+  "ra_none": "Nenhum",
+  "ra_Select predefined icon": "Selecione o ícone predefinido",
+  "ra_Show lines between rows": "Mostrar linhas entre as linhas"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/nl.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Functie",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Naam",
-    "ra_filter_role": "Rol",
-    "ra_filter_room": "Kamer",
-    "ra_tooltip_ack": "Erkende vlag",
-    "ra_tooltip_from": "Van",
-    "ra_tooltip_lc": "Laatst gewijzigd",
-    "ra_tooltip_ts": "Tijdstempel",
-    "ra_tooltip_user": "Gebruiker",
-    "ra_tooltip_value": "Waarde",
-    "ra_Are you sure?": "Weet je het zeker?",
-    "ra_Cancel": "Annuleer",
-    "ra_Copied": "Gekopieerd",
-    "ra_Copied %s": "%s gekopieerd",
-    "ra_Define functions": "Definieer functies",
-    "ra_Define rooms": "Definieer kamers",
-    "ra_Error": "Fout",
-    "ra_Message": "Bericht",
-    "ra_Ok": "OK",
-    "ra_Please select object ID...": "Selecteer object-ID ...",
-    "ra_Selected": "Geselecteerd",
-    "ra_Unknown error!": "Onbekende fout!",
-    "ra_Value": "Waarde",
-    "ra_filter_type": "Type",
-    "ra_invalidConfig": "Ongeldige instellingen",
-    "ra_otherConfig": "Instellingen van andere adapter %s",
-    "ra_tooltip_copyState": "Kopieer de statuswaarde",
-    "ra_tooltip_customConfig": "Aangepaste instellingen",
-    "ra_tooltip_deleteObject": "Object verwijderen",
-    "ra_tooltip_editObject": "Object bewerken",
-    "ra_tooltip_editState": "Bewerk de statuswaarde",
-    "ra_filter_customs": "Instellingen",
-    "ra_tooltip_quality": "Kwaliteit",
-    "ra_Listen on all IPs": "Luister op alle IP's",
-    "ra_dow_Fr": "Fr",
-    "ra_dow_Mo": "Mo",
-    "ra_dow_Sa": "Za",
-    "ra_dow_Su": "Zo",
-    "ra_dow_Th": "Th",
-    "ra_Save": "Sparen",
-    "ra_Save and close": "Opslaan en afsluiten",
-    "ra_Close": "Dichtbij",
-    "ra_Auto (no custom columns)": "Auto (geen aangepaste kolommen)",
-    "ra_Transparent dialog": "Transparant dialoogvenster",
-    "ra_Width": "Breedte",
-    "ra_val": "Waarde",
-    "ra_buttons": "Toetsen",
-    "ra_Configure visible columns": "Configureer zichtbare kolommen",
-    "ra_Cannot update attribute, because not found in the object": "Kan kenmerk niet bijwerken, omdat het niet in het object is gevonden",
-    "ra_Edit object field": "Bewerk objectveld",
-    "ra_Hide empty folders": "Verberg lege mappen",
-    "ra_Reload files": "Laad bestanden opnieuw",
-    "ra_Create folder": "Map aanmaken",
-    "ra_Upload file": "Upload bestand",
-    "ra_User files": "Gebruikersbestanden",
-    "ra_Confirm deletion of %s": "Bevestig het verwijderen van %s",
-    "ra_Delete (no confirm for 5 mins)": "Verwijderen (geen bevestiging gedurende 5 minuten)",
-    "ra_Delete": "Verwijderen",
-    "ra_Toggle expert mode": "Schakel tussen expertmodus",
-    "ra_Toggle view mode": "Schakelen tussen weergavemodus",
-    "re_Root": "Wortel",
-    "re_Back to %s": "Terug naar %s",
-    "ra_Place your files here or click here to open the browse dialog": "Plaats uw bestanden hier of klik hier om het bladervenster te openen",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Als er geen bestand in de map wordt gemaakt, verdwijnt het nadat de browser is gesloten",
-    "ra_Folder name": "Naam van de map",
-    "ra_Create new folder in %s": "Maak een nieuwe map in %s",
-    "ra_Duplicate name": "Dubbele naam",
-    "ra_Invalid parent folder!": "Ongeldige bovenliggende map!",
-    "ra_Drop file here": "Zet het bestand hier neer",
-    "ra_Suppress question for next %s minutes": "Vraag de volgende %s minuten onderdrukken",
-    "ra_Clear filter": "Filter wissen",
-    "ra_Update": "Bijwerken",
-    "ra_Load configuration from file": "Laad configuratie uit bestand",
-    "ra_Save configuration to file": "Sla de configuratie op in een bestand",
-    "sc_cron": "CRON",
-    "sc_date": "Datum",
-    "sc_dates": "data",
-    "sc_dows": "Dag van de week",
-    "sc_every": "elk",
-    "sc_everyN_dates": "elke N dagen",
-    "sc_everyN_dows": "elke N dag van de week",
-    "sc_everyN_hours": "elke N uur",
-    "sc_everyN_minutes": "elke N minuten",
-    "sc_everyN_months": "elke N maanden",
-    "sc_everyN_seconds": "elke N seconden",
-    "sc_every_dates": "elke dag",
-    "sc_every_dows": "elke dag van de week",
-    "sc_every_hours": "elk uur",
-    "sc_every_minutes": "elke minuut",
-    "sc_every_months": "elke maand",
-    "sc_every_seconds": "elke seconde",
-    "sc_from": "Van",
-    "sc_hours": "uren",
-    "sc_interval": "Interval",
-    "sc_intervalBetween": "Interval tussen",
-    "sc_minutes": "Notulen",
-    "sc_months": "maanden",
-    "sc_once": "Een keer",
-    "sc_period": "Periode",
-    "sc_seconds": "seconden",
-    "sc_simple": "Gemakkelijk",
-    "sc_specific": "Specifieke tijd",
-    "sc_specific_dates": "specifieke data",
-    "sc_specific_dows": "specifieke dag van weken",
-    "sc_specific_hours": "specifieke uren",
-    "sc_specific_minutes": "specifieke minuten",
-    "sc_specific_months": "specifieke maanden",
-    "sc_specific_seconds": "specifieke seconden",
-    "sc_time": "Tijd",
-    "sc_to": "Naar",
-    "sc_wizard": "tovenaar",
-    "sch_all": "allemaal",
-    "sch_astroDay": "Astro-dag",
-    "sch_astroNight": "Astro-nacht",
-    "sch_astro_dawn": "Dageraad",
-    "sch_astro_dusk": "Schemer",
-    "sch_astro_goldenHour": "gouden uur",
-    "sch_astro_goldenHourEnd": "Gouden uur einde",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Nautische dageraad",
-    "sch_astro_nauticalDusk": "Nautische schemering",
-    "sch_astro_night": "Nacht",
-    "sch_astro_nightEnd": "Nacht einde",
-    "sch_astro_solarNoon": "Zonne middag",
-    "sch_astro_sunrise": "zonsopkomst",
-    "sch_astro_sunriseEnd": "Sunrise einde",
-    "sch_astro_sunset": "Zonsondergang",
-    "sch_astro_sunsetStart": "Zonsondergang start",
-    "sch_at": "Bij",
-    "sch_desc_atTime": "op %s",
-    "sch_desc_everyDay": "elke dag",
-    "sch_desc_everyHour": "elk uur",
-    "sch_desc_everyMinute": "elke minuut",
-    "sch_desc_everyMonth": "elke maand",
-    "sch_desc_everyNDay": "elke %s dag",
-    "sch_desc_everyNHours": "elke %s uur",
-    "sch_desc_everyNMinutes": "elke %s minuten",
-    "sch_desc_everyNMonths": "elke %s maanden",
-    "sch_desc_everyNWeeks": "elke %s weken",
-    "sch_desc_everyNYears": "elke %s jaar",
-    "sch_desc_everyWeek": "elke week",
-    "sch_desc_everyYear": "elk jaar",
-    "sch_desc_intervalFromTo": "van %s tot %s",
-    "sch_desc_never": "nooit",
-    "sch_desc_onDate": "op %s van %s",
-    "sch_desc_onDates": "op %s en %s van",
-    "sch_desc_onEveryDate": "op elke datum van",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s en %s",
-    "sch_desc_onWeekday": "op %s",
-    "sch_desc_onWeekdays": "op %s en %s",
-    "sch_desc_onWeekends": "in het weekend",
-    "sch_desc_onWorkdays": "op werkdagen",
-    "sch_desc_onceInPast": "zal niet meer worden uitgevoerd, omdat start verleden tijd is",
-    "sch_desc_once_on": "op %s",
-    "sch_desc_validFrom": "van %s",
-    "sch_desc_validFromTo": "Uitvoeren van tot",
-    "sch_desc_validTo": "tot %s",
-    "sch_every": "elk",
-    "sch_exactTime": "Specifieke tijd",
-    "sch_from": "van",
-    "sch_fromTo": "Van naar",
-    "sch_intervalTime": "Interval tijd",
-    "sch_invert": "omkeren",
-    "sch_no_one": "geen",
-    "sch_on": "Aan",
-    "sch_period": "Periode",
-    "sch_periodDaily": "Dagelijks",
-    "sch_periodDates": "data",
-    "sch_periodDay": "Dag",
-    "sch_periodEvery": "elk",
-    "sch_periodEveryDay": "Elke dag",
-    "sch_periodEveryMonth": "Elke maand",
-    "sch_periodEveryWeek": "Elke week",
-    "sch_periodEveryYear": "Elk jaar",
-    "sch_periodHours": "uren",
-    "sch_periodMinutes": "Notulen",
-    "sch_periodMonth": "maand",
-    "sch_periodMonthly": "Maandelijks",
-    "sch_periodOnce": "Een keer",
-    "sch_periodSpecificMonths": "Specifieke maanden",
-    "sch_periodWeek": "Week",
-    "sch_periodWeekdays": "Doordeweekse dagen",
-    "sch_periodWeekend": "Weekend",
-    "sch_periodWeekly": "Wekelijks",
-    "sch_periodWorkdays": "werkdagen",
-    "sch_periodYear": "Jaar",
-    "sch_periodYearly": "jaar-",
-    "sch_specificTime": "Specifieke tijd",
-    "sch_time": "Tijd",
-    "sch_to": "naar",
-    "sch_valid": "Geldig",
-    "sch_validFrom": "van",
-    "sch_validTo": "naar",
-    "sch_wholeDay": "Hele dag",
-    "sch_yearEveryMonth": "elke maand",
-    "ra_Define schedule...": "Schema definiëren ...",
-    "ra_Repeat": "Herhaling",
-    "ra_use seconds": "gebruik seconden",
-    "ra_close": "dichtbij",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Schakel de statusweergave in of uit",
-    "ra_Add new child object to selected parent": "Voeg een nieuw kindobject toe aan het geselecteerde bovenliggende object",
-    "ra_Add objects tree from JSON file": "Objectenboom toevoegen vanuit JSON-bestand",
-    "ra_Save objects tree as JSON file": "Sla de objectenboom op als JSON-bestand",
-    "ra_Objects": "Voorwerpen",
-    "ra_States": "Staten",
-    "ra_object_changed_by_user": "Object voor het laatst gewijzigd om",
-    "ra_object_changed_by": "Object veranderd door",
-    "ra_state_changed_from": "Object veranderd van",
-    "ra_state_changed_by": "Staat veranderd door",
-    "ra_aclOwner_read_object": "Eigenaar kan object lezen",
-    "ra_aclOwner_read_state": "Eigenaar kan staat lezen",
-    "ra_aclOwner_write_object": "Eigenaar kan object schrijven",
-    "ra_aclOwner_write_state": "Eigenaar kan staat schrijven",
-    "ra_aclGroup_read_object": "Groep kan object lezen",
-    "ra_aclGroup_read_state": "Groep kan status lezen",
-    "ra_aclGroup_write_object": "Groep kan object schrijven",
-    "ra_aclGroup_write_state": "Groep kan staat schrijven",
-    "ra_aclEveryone_read_object": "Iedereen kan object lezen",
-    "ra_aclEveryone_read_state": "Iedereen kan staat lezen",
-    "ra_aclEveryone_write_object": "Iedereen kan object schrijven",
-    "ra_aclEveryone_write_state": "Iedereen kan staat schrijven",
-    "ra_Folders always first": "Mappen altijd eerst",
-    "ra_changedFrom": "Veranderd van",
-    "ra_qualityCode": "Kwaliteitscode",
-    "ra_timestamp": "Tijdstempel",
-    "ra_lastChange": "Laatste wijziging",
-    "ra_Owner group": "Eigenaarsgroep",
-    "ra_Owner user": "Eigenaar gebruiker",
-    "ra_Create": "Creëer",
-    "ra_Changed from": "Veranderd van",
-    "ra_Quality code": "Kwaliteit",
-    "ra_Timestamp": "Tijdstempel",
-    "ra_Last change": "Laatste wijziging",
-    "ra_Collapse all nodes": "Vouw alle knooppunten samen",
-    "ra_Edit custom config": "Bewerk aangepaste config",
-    "ra_Collapse one step node": "Eén niveau samenvouwen",
-    "ra_Expand one step node": "Vouw een niveau uit",
-    "ra_Refresh tree": "Vernieuw de boom",
-    "ra_Expand all nodes": "Vouw alle knooppunten uit",
-    "ra_Deselect all": "Deselecteer alles",
-    "ra_Select all": "Selecteer alles",
-    "ra_%s object(s) processed": "%s object(en) verwerkt",
-    "ra_Invalid structure": "Ongeldige structuur",
-    "ra_%s was imported": "%s is geïmporteerd",
-    "ra_Failed to open JSON File": "JSON-bestand kan niet worden geopend",
-    "ra_Only following structures of objects are available:": "Alleen de volgende structuren van objecten zijn beschikbaar:",
-    "ra_Folder → State": "Map → Staat",
-    "ra_Folder → Channel → State": "Map → Kanaal → Staat",
-    "ra_Folder → Device → Channel → State": "Map → Apparaat → Kanaal → Staat",
-    "ra_Device → Channel → State": "Apparaat → Kanaal → Staat",
-    "ra_Channel → State": "Kanaal → Staat",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Niet-experts mogen alleen nieuwe objecten maken in \"0_userdata.0\" of \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "De experts kunnen overal objecten maken, behalve vanaf het tweede niveau (bijv. \"Vis.0\" of \"javascript.0\")."
+  "ra_filter_func": "Functie",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Naam",
+  "ra_filter_role": "Rol",
+  "ra_filter_room": "Kamer",
+  "ra_tooltip_ack": "Erkende vlag",
+  "ra_tooltip_from": "Van",
+  "ra_tooltip_lc": "Laatst gewijzigd",
+  "ra_tooltip_ts": "Tijdstempel",
+  "ra_tooltip_user": "Gebruiker",
+  "ra_tooltip_value": "Waarde",
+  "ra_Are you sure?": "Weet je het zeker?",
+  "ra_Cancel": "Annuleer",
+  "ra_Copied": "Gekopieerd",
+  "ra_Copied %s": "\"%s\" gekopieerd",
+  "ra_Define functions": "Definieer functies",
+  "ra_Define rooms": "Definieer kamers",
+  "ra_Error": "Fout",
+  "ra_Message": "Bericht",
+  "ra_Ok": "OK",
+  "ra_Please select object ID...": "Selecteer object-ID ...",
+  "ra_Selected": "Geselecteerd",
+  "ra_Unknown error!": "Onbekende fout!",
+  "ra_Value": "Waarde",
+  "ra_filter_type": "Type",
+  "ra_invalidConfig": "Ongeldige instellingen",
+  "ra_otherConfig": "Instellingen van andere adapter %s",
+  "ra_tooltip_copyState": "Kopieer de statuswaarde",
+  "ra_tooltip_customConfig": "Aangepaste instellingen",
+  "ra_tooltip_deleteObject": "Object verwijderen",
+  "ra_tooltip_editObject": "Object bewerken",
+  "ra_tooltip_editState": "Bewerk de statuswaarde",
+  "ra_filter_customs": "Instellingen",
+  "ra_tooltip_quality": "Kwaliteit",
+  "ra_Listen on all IPs": "Luister op alle IP's",
+  "ra_dow_Fr": "Fr",
+  "ra_dow_Mo": "Mo",
+  "ra_dow_Sa": "Za",
+  "ra_dow_Su": "Zo",
+  "ra_dow_Th": "Th",
+  "ra_Save": "Sparen",
+  "ra_Save and close": "Opslaan en afsluiten",
+  "ra_Close": "Dichtbij",
+  "ra_Auto (no custom columns)": "Auto (geen aangepaste kolommen)",
+  "ra_Transparent dialog": "Transparant dialoogvenster",
+  "ra_Width": "Breedte",
+  "ra_val": "Waarde",
+  "ra_buttons": "Toetsen",
+  "ra_Configure visible columns": "Configureer zichtbare kolommen",
+  "ra_Cannot update attribute, because not found in the object": "Kan kenmerk niet bijwerken, omdat het niet in het object is gevonden",
+  "ra_Edit object field": "Bewerk objectveld",
+  "ra_Hide empty folders": "Verberg lege mappen",
+  "ra_Reload files": "Laad bestanden opnieuw",
+  "ra_Create folder": "Map aanmaken",
+  "ra_Upload file": "Upload bestand",
+  "ra_User files": "Gebruikersbestanden",
+  "ra_Confirm deletion of %s": "Bevestig het verwijderen van %s",
+  "ra_Delete (no confirm for 5 mins)": "Verwijderen (geen bevestiging gedurende 5 minuten)",
+  "ra_Delete": "Verwijderen",
+  "ra_Toggle expert mode": "Schakel tussen expertmodus",
+  "ra_Toggle view mode": "Schakelen tussen weergavemodus",
+  "re_Root": "Wortel",
+  "re_Back to %s": "Terug naar %s",
+  "ra_Place your files here or click here to open the browse dialog": "Plaats uw bestanden hier of klik hier om het bladervenster te openen",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Als er geen bestand in de map wordt gemaakt, verdwijnt het nadat de browser is gesloten",
+  "ra_Folder name": "Naam van de map",
+  "ra_Create new folder in %s": "Maak een nieuwe map in %s",
+  "ra_Duplicate name": "Dubbele naam",
+  "ra_Invalid parent folder!": "Ongeldige bovenliggende map!",
+  "ra_Drop file here": "Zet het bestand hier neer",
+  "ra_Suppress question for next %s minutes": "Vraag de volgende %s minuten onderdrukken",
+  "ra_Clear filter": "Filter wissen",
+  "ra_Update": "Bijwerken",
+  "ra_Load configuration from file": "Laad configuratie uit bestand",
+  "ra_Save configuration to file": "Sla de configuratie op in een bestand",
+  "sc_cron": "CRON",
+  "sc_date": "Datum",
+  "sc_dates": "data",
+  "sc_dows": "Dag van de week",
+  "sc_every": "elk",
+  "sc_everyN_dates": "elke N dagen",
+  "sc_everyN_dows": "elke N dag van de week",
+  "sc_everyN_hours": "elke N uur",
+  "sc_everyN_minutes": "elke N minuten",
+  "sc_everyN_months": "elke N maanden",
+  "sc_everyN_seconds": "elke N seconden",
+  "sc_every_dates": "elke dag",
+  "sc_every_dows": "elke dag van de week",
+  "sc_every_hours": "elk uur",
+  "sc_every_minutes": "elke minuut",
+  "sc_every_months": "elke maand",
+  "sc_every_seconds": "elke seconde",
+  "sc_from": "Van",
+  "sc_hours": "uren",
+  "sc_interval": "Interval",
+  "sc_intervalBetween": "Interval tussen",
+  "sc_minutes": "Notulen",
+  "sc_months": "maanden",
+  "sc_once": "Een keer",
+  "sc_period": "Periode",
+  "sc_seconds": "seconden",
+  "sc_simple": "Gemakkelijk",
+  "sc_specific": "Specifieke tijd",
+  "sc_specific_dates": "specifieke data",
+  "sc_specific_dows": "specifieke dag van weken",
+  "sc_specific_hours": "specifieke uren",
+  "sc_specific_minutes": "specifieke minuten",
+  "sc_specific_months": "specifieke maanden",
+  "sc_specific_seconds": "specifieke seconden",
+  "sc_time": "Tijd",
+  "sc_to": "Naar",
+  "sc_wizard": "tovenaar",
+  "sch_all": "allemaal",
+  "sch_astroDay": "Astro-dag",
+  "sch_astroNight": "Astro-nacht",
+  "sch_astro_dawn": "Dageraad",
+  "sch_astro_dusk": "Schemer",
+  "sch_astro_goldenHour": "gouden uur",
+  "sch_astro_goldenHourEnd": "Gouden uur einde",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Nautische dageraad",
+  "sch_astro_nauticalDusk": "Nautische schemering",
+  "sch_astro_night": "Nacht",
+  "sch_astro_nightEnd": "Nacht einde",
+  "sch_astro_solarNoon": "Zonne middag",
+  "sch_astro_sunrise": "zonsopkomst",
+  "sch_astro_sunriseEnd": "Sunrise einde",
+  "sch_astro_sunset": "Zonsondergang",
+  "sch_astro_sunsetStart": "Zonsondergang start",
+  "sch_at": "Bij",
+  "sch_desc_atTime": "op %s",
+  "sch_desc_everyDay": "elke dag",
+  "sch_desc_everyHour": "elk uur",
+  "sch_desc_everyMinute": "elke minuut",
+  "sch_desc_everyMonth": "elke maand",
+  "sch_desc_everyNDay": "elke %s dag",
+  "sch_desc_everyNHours": "elke %s uur",
+  "sch_desc_everyNMinutes": "elke %s minuten",
+  "sch_desc_everyNMonths": "elke %s maanden",
+  "sch_desc_everyNWeeks": "elke %s weken",
+  "sch_desc_everyNYears": "elke %s jaar",
+  "sch_desc_everyWeek": "elke week",
+  "sch_desc_everyYear": "elk jaar",
+  "sch_desc_intervalFromTo": "van %s tot %s",
+  "sch_desc_never": "nooit",
+  "sch_desc_onDate": "op %s van %s",
+  "sch_desc_onDates": "op %s en %s van",
+  "sch_desc_onEveryDate": "op elke datum van",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s en %s",
+  "sch_desc_onWeekday": "op %s",
+  "sch_desc_onWeekdays": "op %s en %s",
+  "sch_desc_onWeekends": "in het weekend",
+  "sch_desc_onWorkdays": "op werkdagen",
+  "sch_desc_onceInPast": "zal niet meer worden uitgevoerd, omdat start verleden tijd is",
+  "sch_desc_once_on": "op %s",
+  "sch_desc_validFrom": "van %s",
+  "sch_desc_validFromTo": "Uitvoeren van tot",
+  "sch_desc_validTo": "tot %s",
+  "sch_every": "elk",
+  "sch_exactTime": "Specifieke tijd",
+  "sch_from": "van",
+  "sch_fromTo": "Van naar",
+  "sch_intervalTime": "Interval tijd",
+  "sch_invert": "omkeren",
+  "sch_no_one": "geen",
+  "sch_on": "Aan",
+  "sch_period": "Periode",
+  "sch_periodDaily": "Dagelijks",
+  "sch_periodDates": "data",
+  "sch_periodDay": "Dag",
+  "sch_periodEvery": "elk",
+  "sch_periodEveryDay": "Elke dag",
+  "sch_periodEveryMonth": "Elke maand",
+  "sch_periodEveryWeek": "Elke week",
+  "sch_periodEveryYear": "Elk jaar",
+  "sch_periodHours": "uren",
+  "sch_periodMinutes": "Notulen",
+  "sch_periodMonth": "maand",
+  "sch_periodMonthly": "Maandelijks",
+  "sch_periodOnce": "Een keer",
+  "sch_periodSpecificMonths": "Specifieke maanden",
+  "sch_periodWeek": "Week",
+  "sch_periodWeekdays": "Doordeweekse dagen",
+  "sch_periodWeekend": "Weekend",
+  "sch_periodWeekly": "Wekelijks",
+  "sch_periodWorkdays": "werkdagen",
+  "sch_periodYear": "Jaar",
+  "sch_periodYearly": "jaar-",
+  "sch_specificTime": "Specifieke tijd",
+  "sch_time": "Tijd",
+  "sch_to": "naar",
+  "sch_valid": "Geldig",
+  "sch_validFrom": "van",
+  "sch_validTo": "naar",
+  "sch_wholeDay": "Hele dag",
+  "sch_yearEveryMonth": "elke maand",
+  "ra_Define schedule...": "Schema definiëren ...",
+  "ra_Repeat": "Herhaling",
+  "ra_use seconds": "gebruik seconden",
+  "ra_close": "dichtbij",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Schakel de statusweergave in of uit",
+  "ra_Add new child object to selected parent": "Voeg een nieuw kindobject toe aan het geselecteerde bovenliggende object",
+  "ra_Add objects tree from JSON file": "Objectenboom toevoegen vanuit JSON-bestand",
+  "ra_Save objects tree as JSON file": "Sla de objectenboom op als JSON-bestand",
+  "ra_Objects": "Voorwerpen",
+  "ra_States": "Staten",
+  "ra_object_changed_by_user": "Object voor het laatst gewijzigd om",
+  "ra_object_changed_by": "Object veranderd door",
+  "ra_state_changed_from": "Object veranderd van",
+  "ra_state_changed_by": "Staat veranderd door",
+  "ra_aclOwner_read_object": "Eigenaar kan object lezen",
+  "ra_aclOwner_read_state": "Eigenaar kan staat lezen",
+  "ra_aclOwner_write_object": "Eigenaar kan object schrijven",
+  "ra_aclOwner_write_state": "Eigenaar kan staat schrijven",
+  "ra_aclGroup_read_object": "Groep kan object lezen",
+  "ra_aclGroup_read_state": "Groep kan status lezen",
+  "ra_aclGroup_write_object": "Groep kan object schrijven",
+  "ra_aclGroup_write_state": "Groep kan staat schrijven",
+  "ra_aclEveryone_read_object": "Iedereen kan object lezen",
+  "ra_aclEveryone_read_state": "Iedereen kan staat lezen",
+  "ra_aclEveryone_write_object": "Iedereen kan object schrijven",
+  "ra_aclEveryone_write_state": "Iedereen kan staat schrijven",
+  "ra_Folders always first": "Mappen altijd eerst",
+  "ra_changedFrom": "Veranderd van",
+  "ra_qualityCode": "Kwaliteitscode",
+  "ra_timestamp": "Tijdstempel",
+  "ra_lastChange": "Laatste wijziging",
+  "ra_Owner group": "Eigenaarsgroep",
+  "ra_Owner user": "Eigenaar gebruiker",
+  "ra_Create": "Creëer",
+  "ra_Changed from": "Veranderd van",
+  "ra_Quality code": "Kwaliteit",
+  "ra_Timestamp": "Tijdstempel",
+  "ra_Last change": "Laatste wijziging",
+  "ra_Collapse all nodes": "Vouw alle knooppunten samen",
+  "ra_Edit custom config": "Bewerk aangepaste config",
+  "ra_Collapse one step node": "Eén niveau samenvouwen",
+  "ra_Expand one step node": "Vouw een niveau uit",
+  "ra_Refresh tree": "Vernieuw de boom",
+  "ra_Expand all nodes": "Vouw alle knooppunten uit",
+  "ra_Deselect all": "Deselecteer alles",
+  "ra_Select all": "Selecteer alles",
+  "ra_%s object(s) processed": "%s object(en) verwerkt",
+  "ra_Invalid structure": "Ongeldige structuur",
+  "ra_%s was imported": "%s is geïmporteerd",
+  "ra_Failed to open JSON File": "JSON-bestand kan niet worden geopend",
+  "ra_Only following structures of objects are available:": "Alleen de volgende structuren van objecten zijn beschikbaar:",
+  "ra_Folder → State": "Map → Staat",
+  "ra_Folder → Channel → State": "Map → Kanaal → Staat",
+  "ra_Folder → Device → Channel → State": "Map → Apparaat → Kanaal → Staat",
+  "ra_Device → Channel → State": "Apparaat → Kanaal → Staat",
+  "ra_Channel → State": "Kanaal → Staat",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Niet-experts mogen alleen nieuwe objecten maken in \"0_userdata.0\" of \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "De experts kunnen overal objecten maken, behalve vanaf het tweede niveau (bijv. \"Vis.0\" of \"javascript.0\").",
+  "ra_expertMode": "Expert modus",
+  "ra_On weekdays": "Op weekdagen",
+  "ra_Drop the files here...": "Zet het bestand hier neer...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Sleep enkele bestanden hierheen, of klik om bestanden te selecteren",
+  "ra_Clear": "Verwijderen",
+  "ra_Clear icon": "Pictogram wissen",
+  "ra_none": "geen",
+  "ra_Select predefined icon": "Selecteer voorgedefinieerd pictogram",
+  "ra_Show lines between rows": "Toon lijnen tussen rijen"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/fr.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Une fonction",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Prénom",
-    "ra_filter_role": "Rôle",
-    "ra_filter_room": "Pièce",
-    "ra_tooltip_ack": "Drapeau reconnu",
-    "ra_tooltip_from": "De",
-    "ra_tooltip_lc": "Dernière modification",
-    "ra_tooltip_quality": "Qualité",
-    "ra_tooltip_ts": "Horodatage",
-    "ra_tooltip_user": "Utilisateur",
-    "ra_tooltip_value": "Valeur",
-    "ra_Are you sure?": "Êtes-vous sûr?",
-    "ra_Cancel": "Annuler",
-    "ra_Copied": "Copié",
-    "ra_Copied %s": "%s copié",
-    "ra_Define functions": "Définir des fonctions",
-    "ra_Define rooms": "Définir des pièces",
-    "ra_Error": "Erreur",
-    "ra_Message": "Message",
-    "ra_Ok": "D'accord",
-    "ra_Please select object ID...": "Veuillez sélectionner l'ID d'objet ...",
-    "ra_Selected": "Choisi",
-    "ra_Unknown error!": "Erreur inconnue!",
-    "ra_Value": "Valeur",
-    "ra_filter_type": "Type",
-    "ra_invalidConfig": "Paramètres invalides",
-    "ra_otherConfig": "Paramètres d'un autre adaptateur %s",
-    "ra_tooltip_copyState": "Copiez la valeur d'état",
-    "ra_tooltip_customConfig": "Paramètres personnalisés",
-    "ra_tooltip_deleteObject": "Supprimer un objet",
-    "ra_tooltip_editObject": "Modifier l'objet",
-    "ra_tooltip_editState": "Modifier la valeur d'état",
-    "ra_filter_customs": "Paramètres",
-    "ra_Listen on all IPs": "Écoutez sur toutes les adresses IP",
-    "ra_dow_Fr": "Fr",
-    "ra_dow_Mo": "Mo",
-    "ra_dow_Sa": "Sa",
-    "ra_dow_Su": "Su",
-    "ra_dow_Th": "Th",
-    "ra_Save": "sauver",
-    "ra_Save and close": "Sauver et fermer",
-    "ra_Close": "Fermer",
-    "ra_Auto (no custom columns)": "Auto (pas de colonnes personnalisées)",
-    "ra_Transparent dialog": "Dialogue transparent",
-    "ra_Width": "Largeur",
-    "ra_val": "Valeur",
-    "ra_buttons": "Boutons",
-    "ra_Configure visible columns": "Configurer les colonnes visibles",
-    "ra_Cannot update attribute, because not found in the object": "Impossible de mettre à jour l'attribut, car il est introuvable dans l'objet",
-    "ra_Edit object field": "Modifier le champ d'objet",
-    "ra_Hide empty folders": "Masquer les dossiers vides",
-    "ra_Reload files": "Recharger les fichiers",
-    "ra_Create folder": "Créer le dossier",
-    "ra_Upload file": "Téléverser un fichier",
-    "ra_User files": "Fichiers utilisateurs",
-    "ra_Confirm deletion of %s": "Confirmer la suppression de %s",
-    "ra_Delete (no confirm for 5 mins)": "Supprimer (pas de confirmation pendant 5 minutes)",
-    "ra_Delete": "Supprimer",
-    "ra_Toggle expert mode": "Basculer en mode expert",
-    "ra_Toggle view mode": "Basculer le mode d'affichage",
-    "re_Root": "Racine",
-    "re_Back to %s": "Retour à %s",
-    "ra_Place your files here or click here to open the browse dialog": "Placez vos fichiers ici ou cliquez ici pour ouvrir la boîte de dialogue de navigation",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Si aucun fichier ne sera créé dans le dossier, il disparaîtra après la fermeture du navigateur",
-    "ra_Folder name": "Nom de dossier",
-    "ra_Create new folder in %s": "Créer un nouveau dossier dans %s",
-    "ra_Duplicate name": "Nom en double",
-    "ra_Invalid parent folder!": "Dossier parent non valide!",
-    "ra_Drop file here": "Déposer le fichier ici",
-    "ra_Suppress question for next %s minutes": "Supprimer la question pour les %s prochaines minutes",
-    "ra_Clear filter": "Effacer le filtre",
-    "ra_Update": "Mise à jour",
-    "ra_Load configuration from file": "Charger la configuration à partir du fichier",
-    "ra_Save configuration to file": "Enregistrer la configuration dans un fichier",
-    "sc_cron": "CRON",
-    "sc_date": "Date",
-    "sc_dates": "Rendez-vous",
-    "sc_dows": "Jour de la semaine",
-    "sc_every": "Chaque",
-    "sc_everyN_dates": "tous les N jours",
-    "sc_everyN_dows": "tous les N jours de la semaine",
-    "sc_everyN_hours": "toutes les N heures",
-    "sc_everyN_minutes": "toutes les N minutes",
-    "sc_everyN_months": "tous les N mois",
-    "sc_everyN_seconds": "toutes les N secondes",
-    "sc_every_dates": "tous les jours",
-    "sc_every_dows": "Chaque jour de la semaine",
-    "sc_every_hours": "Toutes les heures",
-    "sc_every_minutes": "chaque minute",
-    "sc_every_months": "chaque mois",
-    "sc_every_seconds": "chaque seconde",
-    "sc_from": "De",
-    "sc_hours": "Heures",
-    "sc_interval": "Intervalle",
-    "sc_intervalBetween": "Intervalle entre",
-    "sc_minutes": "Minutes",
-    "sc_months": "mois",
-    "sc_once": "Une fois que",
-    "sc_period": "Période",
-    "sc_seconds": "Secondes",
-    "sc_simple": "Facile",
-    "sc_specific": "Temps spécifique",
-    "sc_specific_dates": "dates spécifiques",
-    "sc_specific_dows": "jour spécifique de semaines",
-    "sc_specific_hours": "heures spécifiques",
-    "sc_specific_minutes": "minutes spécifiques",
-    "sc_specific_months": "mois spécifiques",
-    "sc_specific_seconds": "secondes spécifiques",
-    "sc_time": "Temps",
-    "sc_to": "À",
-    "sc_wizard": "sorcier",
-    "sch_all": "tout",
-    "sch_astroDay": "Journée astronomique",
-    "sch_astroNight": "Nuit astronomique",
-    "sch_astro_dawn": "Aube",
-    "sch_astro_dusk": "Crépuscule",
-    "sch_astro_goldenHour": "Heure d'or",
-    "sch_astro_goldenHourEnd": "Fin de l'heure d'or",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Aube nautique",
-    "sch_astro_nauticalDusk": "Crépuscule nautique",
-    "sch_astro_night": "Nuit",
-    "sch_astro_nightEnd": "Fin de nuit",
-    "sch_astro_solarNoon": "Midi solaire",
-    "sch_astro_sunrise": "lever du soleil",
-    "sch_astro_sunriseEnd": "Fin du lever du soleil",
-    "sch_astro_sunset": "Le coucher du soleil",
-    "sch_astro_sunsetStart": "Coucher du soleil",
-    "sch_at": "à",
-    "sch_desc_atTime": "à %s",
-    "sch_desc_everyDay": "tous les jours",
-    "sch_desc_everyHour": "Toutes les heures",
-    "sch_desc_everyMinute": "chaque minute",
-    "sch_desc_everyMonth": "chaque mois",
-    "sch_desc_everyNDay": "chaque %s jour",
-    "sch_desc_everyNHours": "chaque %s heures",
-    "sch_desc_everyNMinutes": "toutes les %s minutes",
-    "sch_desc_everyNMonths": "tous les %s mois",
-    "sch_desc_everyNWeeks": "chaque %s semaines",
-    "sch_desc_everyNYears": "tous les %s ans",
-    "sch_desc_everyWeek": "toutes les semaines",
-    "sch_desc_everyYear": "chaque année",
-    "sch_desc_intervalFromTo": "de %s à %s",
-    "sch_desc_never": "jamais",
-    "sch_desc_onDate": "sur %s de %s",
-    "sch_desc_onDates": "sur %s et %s de",
-    "sch_desc_onEveryDate": "à chaque date de",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s et %s",
-    "sch_desc_onWeekday": "sur %s",
-    "sch_desc_onWeekdays": "sur %s et %s",
-    "sch_desc_onWeekends": "les weekends",
-    "sch_desc_onWorkdays": "les jours ouvrables",
-    "sch_desc_onceInPast": "ne sera plus exécuté, car start est dans le passé",
-    "sch_desc_once_on": "sur %s",
-    "sch_desc_validFrom": "de %s",
-    "sch_desc_validFromTo": "Exécuter de à",
-    "sch_desc_validTo": "à %s",
-    "sch_every": "chaque",
-    "sch_exactTime": "Temps spécifique",
-    "sch_from": "de",
-    "sch_fromTo": "De à",
-    "sch_intervalTime": "Temps d'interval",
-    "sch_invert": "inverser",
-    "sch_no_one": "aucun",
-    "sch_on": "sur",
-    "sch_period": "Période",
-    "sch_periodDaily": "du quotidien",
-    "sch_periodDates": "Rendez-vous",
-    "sch_periodDay": "journée",
-    "sch_periodEvery": "Chaque",
-    "sch_periodEveryDay": "Tous les jours",
-    "sch_periodEveryMonth": "Chaque mois",
-    "sch_periodEveryWeek": "Toutes les semaines",
-    "sch_periodEveryYear": "Chaque année",
-    "sch_periodHours": "Heures",
-    "sch_periodMinutes": "Minutes",
-    "sch_periodMonth": "mois",
-    "sch_periodMonthly": "Mensuel",
-    "sch_periodOnce": "Une fois que",
-    "sch_periodSpecificMonths": "Mois spécifiques",
-    "sch_periodWeek": "La semaine",
-    "sch_periodWeekdays": "Jours de la semaine",
-    "sch_periodWeekend": "Weekend",
-    "sch_periodWeekly": "Hebdomadaire",
-    "sch_periodWorkdays": "Jours ouvrables",
-    "sch_periodYear": "Année",
-    "sch_periodYearly": "Annuel",
-    "sch_specificTime": "Temps spécifique",
-    "sch_time": "Temps",
-    "sch_to": "à",
-    "sch_valid": "Valide",
-    "sch_validFrom": "de",
-    "sch_validTo": "à",
-    "sch_wholeDay": "Toute la journée",
-    "sch_yearEveryMonth": "chaque mois",
-    "ra_Define schedule...": "Définir le calendrier ...",
-    "ra_Repeat": "Répéter",
-    "ra_use seconds": "utiliser les secondes",
-    "ra_close": "Fermer",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Basculer la vue des états",
-    "ra_Add new child object to selected parent": "Ajouter un nouvel objet enfant au parent sélectionné",
-    "ra_Add objects tree from JSON file": "Ajouter une arborescence d'objets à partir d'un fichier JSON",
-    "ra_Save objects tree as JSON file": "Enregistrer l'arborescence des objets en tant que fichier JSON",
-    "ra_Objects": "Objets",
-    "ra_States": "États",
-    "ra_object_changed_by_user": "Objet modifié pour la dernière fois à",
-    "ra_object_changed_by": "Objet modifié par",
-    "ra_state_changed_from": "Objet changé de",
-    "ra_state_changed_by": "État modifié par",
-    "ra_aclOwner_read_object": "Le propriétaire peut lire l'objet",
-    "ra_aclOwner_read_state": "Le propriétaire peut lire l'état",
-    "ra_aclOwner_write_object": "Le propriétaire peut écrire un objet",
-    "ra_aclOwner_write_state": "Le propriétaire peut écrire l'état",
-    "ra_aclGroup_read_object": "Le groupe peut lire l'objet",
-    "ra_aclGroup_read_state": "Le groupe peut lire l'état",
-    "ra_aclGroup_write_object": "Le groupe peut écrire un objet",
-    "ra_aclGroup_write_state": "Le groupe peut écrire l'état",
-    "ra_aclEveryone_read_object": "Tout le monde peut lire un objet",
-    "ra_aclEveryone_read_state": "Tout le monde peut lire l'état",
-    "ra_aclEveryone_write_object": "Tout le monde peut écrire un objet",
-    "ra_aclEveryone_write_state": "Tout le monde peut écrire l'état",
-    "ra_Folders always first": "Les dossiers toujours en premier",
-    "ra_changedFrom": "Changé de",
-    "ra_qualityCode": "Code de qualité",
-    "ra_timestamp": "Horodatage",
-    "ra_lastChange": "Dernier changement",
-    "ra_Owner group": "Groupe propriétaire",
-    "ra_Owner user": "Utilisateur propriétaire",
-    "ra_Create": "Créer",
-    "ra_Changed from": "Changé de",
-    "ra_Quality code": "Qualité",
-    "ra_Timestamp": "Horodatage",
-    "ra_Last change": "Dernier changement",
-    "ra_Collapse all nodes": "Réduire tous les nœuds",
-    "ra_Edit custom config": "Modifier la configuration personnalisée",
-    "ra_Collapse one step node": "Réduire d'un niveau",
-    "ra_Expand one step node": "Développer un niveau",
-    "ra_Refresh tree": "Rafraîchir l'arborescence",
-    "ra_Expand all nodes": "Développer tous les nœuds",
-    "ra_Deselect all": "Tout déselectionner",
-    "ra_Select all": "Tout sélectionner",
-    "ra_%s object(s) processed": "%s objet(s) traité(s)",
-    "ra_Invalid structure": "Structure invalide",
-    "ra_%s was imported": "%s a été importé",
-    "ra_Failed to open JSON File": "Échec de l'ouverture du fichier JSON",
-    "ra_Only following structures of objects are available:": "Seules les structures d'objets suivantes sont disponibles:",
-    "ra_Folder → State": "Dossier → État",
-    "ra_Folder → Channel → State": "Dossier → Chaîne → État",
-    "ra_Folder → Device → Channel → State": "Dossier → Appareil → Canal → État",
-    "ra_Device → Channel → State": "Appareil → Canal → État",
-    "ra_Channel → State": "Canal → État",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Les non-experts ne peuvent créer de nouveaux objets que dans \"0_userdata.0\" ou \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Les experts peuvent créer des objets partout mais à partir du deuxième niveau (par exemple \"vis.0\" ou \"javascript.0\")."
+  "ra_filter_func": "Une fonction",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Prénom",
+  "ra_filter_role": "Rôle",
+  "ra_filter_room": "Pièce",
+  "ra_tooltip_ack": "Drapeau reconnu",
+  "ra_tooltip_from": "De",
+  "ra_tooltip_lc": "Dernière modification",
+  "ra_tooltip_quality": "Qualité",
+  "ra_tooltip_ts": "Horodatage",
+  "ra_tooltip_user": "Utilisateur",
+  "ra_tooltip_value": "Valeur",
+  "ra_Are you sure?": "Êtes-vous sûr?",
+  "ra_Cancel": "Annuler",
+  "ra_Copied": "Copié",
+  "ra_Copied %s": "\"%s\" copié",
+  "ra_Define functions": "Définir des fonctions",
+  "ra_Define rooms": "Définir des pièces",
+  "ra_Error": "Erreur",
+  "ra_Message": "Message",
+  "ra_Ok": "D'accord",
+  "ra_Please select object ID...": "Veuillez sélectionner l'ID d'objet ...",
+  "ra_Selected": "Choisi",
+  "ra_Unknown error!": "Erreur inconnue!",
+  "ra_Value": "Valeur",
+  "ra_filter_type": "Type",
+  "ra_invalidConfig": "Paramètres invalides",
+  "ra_otherConfig": "Paramètres d'un autre adaptateur %s",
+  "ra_tooltip_copyState": "Copiez la valeur d'état",
+  "ra_tooltip_customConfig": "Paramètres personnalisés",
+  "ra_tooltip_deleteObject": "Supprimer un objet",
+  "ra_tooltip_editObject": "Modifier l'objet",
+  "ra_tooltip_editState": "Modifier la valeur d'état",
+  "ra_filter_customs": "Paramètres",
+  "ra_Listen on all IPs": "Écoutez sur toutes les adresses IP",
+  "ra_dow_Fr": "Fr",
+  "ra_dow_Mo": "Mo",
+  "ra_dow_Sa": "Sa",
+  "ra_dow_Su": "Su",
+  "ra_dow_Th": "Th",
+  "ra_Save": "sauver",
+  "ra_Save and close": "Sauver et fermer",
+  "ra_Close": "Fermer",
+  "ra_Auto (no custom columns)": "Auto (pas de colonnes personnalisées)",
+  "ra_Transparent dialog": "Dialogue transparent",
+  "ra_Width": "Largeur",
+  "ra_val": "Valeur",
+  "ra_buttons": "Boutons",
+  "ra_Configure visible columns": "Configurer les colonnes visibles",
+  "ra_Cannot update attribute, because not found in the object": "Impossible de mettre à jour l'attribut, car il est introuvable dans l'objet",
+  "ra_Edit object field": "Modifier le champ d'objet",
+  "ra_Hide empty folders": "Masquer les dossiers vides",
+  "ra_Reload files": "Recharger les fichiers",
+  "ra_Create folder": "Créer le dossier",
+  "ra_Upload file": "Téléverser un fichier",
+  "ra_User files": "Fichiers utilisateurs",
+  "ra_Confirm deletion of %s": "Confirmer la suppression de %s",
+  "ra_Delete (no confirm for 5 mins)": "Supprimer (pas de confirmation pendant 5 minutes)",
+  "ra_Delete": "Supprimer",
+  "ra_Toggle expert mode": "Basculer en mode expert",
+  "ra_Toggle view mode": "Basculer le mode d'affichage",
+  "re_Root": "Racine",
+  "re_Back to %s": "Retour à %s",
+  "ra_Place your files here or click here to open the browse dialog": "Placez vos fichiers ici ou cliquez ici pour ouvrir la boîte de dialogue de navigation",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Si aucun fichier ne sera créé dans le dossier, il disparaîtra après la fermeture du navigateur",
+  "ra_Folder name": "Nom de dossier",
+  "ra_Create new folder in %s": "Créer un nouveau dossier dans %s",
+  "ra_Duplicate name": "Nom en double",
+  "ra_Invalid parent folder!": "Dossier parent non valide!",
+  "ra_Drop file here": "Déposer le fichier ici",
+  "ra_Suppress question for next %s minutes": "Supprimer la question pour les %s prochaines minutes",
+  "ra_Clear filter": "Effacer le filtre",
+  "ra_Update": "Mise à jour",
+  "ra_Load configuration from file": "Charger la configuration à partir du fichier",
+  "ra_Save configuration to file": "Enregistrer la configuration dans un fichier",
+  "sc_cron": "CRON",
+  "sc_date": "Date",
+  "sc_dates": "Rendez-vous",
+  "sc_dows": "Jour de la semaine",
+  "sc_every": "Chaque",
+  "sc_everyN_dates": "tous les N jours",
+  "sc_everyN_dows": "tous les N jours de la semaine",
+  "sc_everyN_hours": "toutes les N heures",
+  "sc_everyN_minutes": "toutes les N minutes",
+  "sc_everyN_months": "tous les N mois",
+  "sc_everyN_seconds": "toutes les N secondes",
+  "sc_every_dates": "tous les jours",
+  "sc_every_dows": "Chaque jour de la semaine",
+  "sc_every_hours": "Toutes les heures",
+  "sc_every_minutes": "chaque minute",
+  "sc_every_months": "chaque mois",
+  "sc_every_seconds": "chaque seconde",
+  "sc_from": "De",
+  "sc_hours": "Heures",
+  "sc_interval": "Intervalle",
+  "sc_intervalBetween": "Intervalle entre",
+  "sc_minutes": "Minutes",
+  "sc_months": "mois",
+  "sc_once": "Une fois que",
+  "sc_period": "Période",
+  "sc_seconds": "Secondes",
+  "sc_simple": "Facile",
+  "sc_specific": "Temps spécifique",
+  "sc_specific_dates": "dates spécifiques",
+  "sc_specific_dows": "jour spécifique de semaines",
+  "sc_specific_hours": "heures spécifiques",
+  "sc_specific_minutes": "minutes spécifiques",
+  "sc_specific_months": "mois spécifiques",
+  "sc_specific_seconds": "secondes spécifiques",
+  "sc_time": "Temps",
+  "sc_to": "À",
+  "sc_wizard": "sorcier",
+  "sch_all": "tout",
+  "sch_astroDay": "Journée astronomique",
+  "sch_astroNight": "Nuit astronomique",
+  "sch_astro_dawn": "Aube",
+  "sch_astro_dusk": "Crépuscule",
+  "sch_astro_goldenHour": "Heure d'or",
+  "sch_astro_goldenHourEnd": "Fin de l'heure d'or",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Aube nautique",
+  "sch_astro_nauticalDusk": "Crépuscule nautique",
+  "sch_astro_night": "Nuit",
+  "sch_astro_nightEnd": "Fin de nuit",
+  "sch_astro_solarNoon": "Midi solaire",
+  "sch_astro_sunrise": "lever du soleil",
+  "sch_astro_sunriseEnd": "Fin du lever du soleil",
+  "sch_astro_sunset": "Le coucher du soleil",
+  "sch_astro_sunsetStart": "Coucher du soleil",
+  "sch_at": "à",
+  "sch_desc_atTime": "à %s",
+  "sch_desc_everyDay": "tous les jours",
+  "sch_desc_everyHour": "Toutes les heures",
+  "sch_desc_everyMinute": "chaque minute",
+  "sch_desc_everyMonth": "chaque mois",
+  "sch_desc_everyNDay": "chaque %s jour",
+  "sch_desc_everyNHours": "chaque %s heures",
+  "sch_desc_everyNMinutes": "toutes les %s minutes",
+  "sch_desc_everyNMonths": "tous les %s mois",
+  "sch_desc_everyNWeeks": "chaque %s semaines",
+  "sch_desc_everyNYears": "tous les %s ans",
+  "sch_desc_everyWeek": "toutes les semaines",
+  "sch_desc_everyYear": "chaque année",
+  "sch_desc_intervalFromTo": "de %s à %s",
+  "sch_desc_never": "jamais",
+  "sch_desc_onDate": "sur %s de %s",
+  "sch_desc_onDates": "sur %s et %s de",
+  "sch_desc_onEveryDate": "à chaque date de",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s et %s",
+  "sch_desc_onWeekday": "sur %s",
+  "sch_desc_onWeekdays": "sur %s et %s",
+  "sch_desc_onWeekends": "les weekends",
+  "sch_desc_onWorkdays": "les jours ouvrables",
+  "sch_desc_onceInPast": "ne sera plus exécuté, car start est dans le passé",
+  "sch_desc_once_on": "sur %s",
+  "sch_desc_validFrom": "de %s",
+  "sch_desc_validFromTo": "Exécuter de à",
+  "sch_desc_validTo": "à %s",
+  "sch_every": "chaque",
+  "sch_exactTime": "Temps spécifique",
+  "sch_from": "de",
+  "sch_fromTo": "De à",
+  "sch_intervalTime": "Temps d'interval",
+  "sch_invert": "inverser",
+  "sch_no_one": "aucun",
+  "sch_on": "sur",
+  "sch_period": "Période",
+  "sch_periodDaily": "du quotidien",
+  "sch_periodDates": "Rendez-vous",
+  "sch_periodDay": "journée",
+  "sch_periodEvery": "Chaque",
+  "sch_periodEveryDay": "Tous les jours",
+  "sch_periodEveryMonth": "Chaque mois",
+  "sch_periodEveryWeek": "Toutes les semaines",
+  "sch_periodEveryYear": "Chaque année",
+  "sch_periodHours": "Heures",
+  "sch_periodMinutes": "Minutes",
+  "sch_periodMonth": "mois",
+  "sch_periodMonthly": "Mensuel",
+  "sch_periodOnce": "Une fois que",
+  "sch_periodSpecificMonths": "Mois spécifiques",
+  "sch_periodWeek": "La semaine",
+  "sch_periodWeekdays": "Jours de la semaine",
+  "sch_periodWeekend": "Weekend",
+  "sch_periodWeekly": "Hebdomadaire",
+  "sch_periodWorkdays": "Jours ouvrables",
+  "sch_periodYear": "Année",
+  "sch_periodYearly": "Annuel",
+  "sch_specificTime": "Temps spécifique",
+  "sch_time": "Temps",
+  "sch_to": "à",
+  "sch_valid": "Valide",
+  "sch_validFrom": "de",
+  "sch_validTo": "à",
+  "sch_wholeDay": "Toute la journée",
+  "sch_yearEveryMonth": "chaque mois",
+  "ra_Define schedule...": "Définir le calendrier ...",
+  "ra_Repeat": "Répéter",
+  "ra_use seconds": "utiliser les secondes",
+  "ra_close": "Fermer",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Basculer la vue des états",
+  "ra_Add new child object to selected parent": "Ajouter un nouvel objet enfant au parent sélectionné",
+  "ra_Add objects tree from JSON file": "Ajouter une arborescence d'objets à partir d'un fichier JSON",
+  "ra_Save objects tree as JSON file": "Enregistrer l'arborescence des objets en tant que fichier JSON",
+  "ra_Objects": "Objets",
+  "ra_States": "États",
+  "ra_object_changed_by_user": "Objet modifié pour la dernière fois à",
+  "ra_object_changed_by": "Objet modifié par",
+  "ra_state_changed_from": "Objet changé de",
+  "ra_state_changed_by": "État modifié par",
+  "ra_aclOwner_read_object": "Le propriétaire peut lire l'objet",
+  "ra_aclOwner_read_state": "Le propriétaire peut lire l'état",
+  "ra_aclOwner_write_object": "Le propriétaire peut écrire un objet",
+  "ra_aclOwner_write_state": "Le propriétaire peut écrire l'état",
+  "ra_aclGroup_read_object": "Le groupe peut lire l'objet",
+  "ra_aclGroup_read_state": "Le groupe peut lire l'état",
+  "ra_aclGroup_write_object": "Le groupe peut écrire un objet",
+  "ra_aclGroup_write_state": "Le groupe peut écrire l'état",
+  "ra_aclEveryone_read_object": "Tout le monde peut lire un objet",
+  "ra_aclEveryone_read_state": "Tout le monde peut lire l'état",
+  "ra_aclEveryone_write_object": "Tout le monde peut écrire un objet",
+  "ra_aclEveryone_write_state": "Tout le monde peut écrire l'état",
+  "ra_Folders always first": "Les dossiers toujours en premier",
+  "ra_changedFrom": "Changé de",
+  "ra_qualityCode": "Code de qualité",
+  "ra_timestamp": "Horodatage",
+  "ra_lastChange": "Dernier changement",
+  "ra_Owner group": "Groupe propriétaire",
+  "ra_Owner user": "Utilisateur propriétaire",
+  "ra_Create": "Créer",
+  "ra_Changed from": "Changé de",
+  "ra_Quality code": "Qualité",
+  "ra_Timestamp": "Horodatage",
+  "ra_Last change": "Dernier changement",
+  "ra_Collapse all nodes": "Réduire tous les nœuds",
+  "ra_Edit custom config": "Modifier la configuration personnalisée",
+  "ra_Collapse one step node": "Réduire d'un niveau",
+  "ra_Expand one step node": "Développer un niveau",
+  "ra_Refresh tree": "Rafraîchir l'arborescence",
+  "ra_Expand all nodes": "Développer tous les nœuds",
+  "ra_Deselect all": "Tout déselectionner",
+  "ra_Select all": "Tout sélectionner",
+  "ra_%s object(s) processed": "%s objet(s) traité(s)",
+  "ra_Invalid structure": "Structure invalide",
+  "ra_%s was imported": "%s a été importé",
+  "ra_Failed to open JSON File": "Échec de l'ouverture du fichier JSON",
+  "ra_Only following structures of objects are available:": "Seules les structures d'objets suivantes sont disponibles:",
+  "ra_Folder → State": "Dossier → État",
+  "ra_Folder → Channel → State": "Dossier → Chaîne → État",
+  "ra_Folder → Device → Channel → State": "Dossier → Appareil → Canal → État",
+  "ra_Device → Channel → State": "Appareil → Canal → État",
+  "ra_Channel → State": "Canal → État",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Les non-experts ne peuvent créer de nouveaux objets que dans \"0_userdata.0\" ou \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Les experts peuvent créer des objets partout mais à partir du deuxième niveau (par exemple \"vis.0\" ou \"javascript.0\").",
+  "ra_expertMode": "Mode expert",
+  "ra_On weekdays": "En semaine",
+  "ra_Drop the files here...": "Déposez le fichier ici...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Glissez-déposez des fichiers ici, ou cliquez pour sélectionner des fichiers",
+  "ra_Clear": "Effacer",
+  "ra_Clear icon": "Effacer l'icône",
+  "ra_none": "rien",
+  "ra_Select predefined icon": "Sélectionnez l'icône prédéfinie",
+  "ra_Show lines between rows": "Afficher les lignes entre les lignes"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/it.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Funzione",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Nome",
-    "ra_filter_role": "Ruolo",
-    "ra_filter_room": "Camera",
-    "ra_tooltip_ack": "Bandiera riconosciuta",
-    "ra_tooltip_from": "A partire dal",
-    "ra_tooltip_lc": "Ultima modifica",
-    "ra_tooltip_quality": "Qualità",
-    "ra_tooltip_ts": "Data e ora",
-    "ra_tooltip_user": "Utente",
-    "ra_tooltip_value": "Valore",
-    "ra_Are you sure?": "Sei sicuro?",
-    "ra_Cancel": "Annulla",
-    "ra_Copied": "Copiato",
-    "ra_Copied %s": "%s copiato",
-    "ra_Define functions": "Definire le funzioni",
-    "ra_Define rooms": "Definisci le stanze",
-    "ra_Error": "Errore",
-    "ra_Message": "Messaggio",
-    "ra_Ok": "Ok",
-    "ra_Please select object ID...": "Seleziona l'ID oggetto ...",
-    "ra_Selected": "Selezionato",
-    "ra_Unknown error!": "Errore sconosciuto!",
-    "ra_Value": "Valore",
-    "ra_filter_type": "genere",
-    "ra_invalidConfig": "Impostazioni non valide",
-    "ra_otherConfig": "Impostazioni dall'altro adattatore %s",
-    "ra_tooltip_copyState": "Copia il valore dello stato",
-    "ra_tooltip_customConfig": "Impostazioni personalizzate",
-    "ra_tooltip_deleteObject": "Elimina oggetto",
-    "ra_tooltip_editObject": "Modifica oggetto",
-    "ra_tooltip_editState": "Modifica il valore dello stato",
-    "ra_filter_customs": "impostazioni",
-    "ra_Listen on all IPs": "Ascolta su tutti gli IP",
-    "ra_dow_Fr": "fr",
-    "ra_dow_Mo": "momento",
-    "ra_dow_Sa": "Sa",
-    "ra_dow_Su": "su",
-    "ra_dow_Th": "th",
-    "ra_Save": "Salva",
-    "ra_Save and close": "Salva e chiudi",
-    "ra_Close": "Vicino",
-    "ra_Auto (no custom columns)": "Auto (nessuna colonna personalizzata)",
-    "ra_Transparent dialog": "Finestra di dialogo trasparente",
-    "ra_Width": "Larghezza",
-    "ra_val": "Valore",
-    "ra_buttons": "Bottoni",
-    "ra_Configure visible columns": "Configura colonne visibili",
-    "ra_Cannot update attribute, because not found in the object": "Impossibile aggiornare l'attributo, perché non trovato nell'oggetto",
-    "ra_Edit object field": "Modifica campo oggetto",
-    "ra_Hide empty folders": "Nascondi cartelle vuote",
-    "ra_Reload files": "Ricarica i file",
-    "ra_Create folder": "Creare una cartella",
-    "ra_Upload file": "Caricare un file",
-    "ra_User files": "File utente",
-    "ra_Confirm deletion of %s": "Conferma l'eliminazione di %s",
-    "ra_Delete (no confirm for 5 mins)": "Elimina (nessuna conferma per 5 minuti)",
-    "ra_Delete": "Elimina",
-    "ra_Toggle expert mode": "Attiva / disattiva la modalità esperto",
-    "ra_Toggle view mode": "Attiva / disattiva la modalità di visualizzazione",
-    "re_Root": "Radice",
-    "re_Back to %s": "Torna a %s",
-    "ra_Place your files here or click here to open the browse dialog": "Posiziona i file qui o fai clic qui per aprire la finestra di dialogo Sfoglia",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Se nessun file verrà creato nella cartella, scomparirà dopo la chiusura del browser",
-    "ra_Folder name": "Nome della cartella",
-    "ra_Create new folder in %s": "Crea nuova cartella in %s",
-    "ra_Duplicate name": "Nome duplicato",
-    "ra_Invalid parent folder!": "Cartella principale non valida!",
-    "ra_Drop file here": "Trascina il file qui",
-    "ra_Suppress question for next %s minutes": "Sopprimi la domanda per i prossimi %s minuti",
-    "ra_Clear filter": "Filtro pulito",
-    "ra_Update": "Aggiornare",
-    "ra_Load configuration from file": "Carica la configurazione dal file",
-    "ra_Save configuration to file": "Salva la configurazione su file",
-    "sc_cron": "CRON",
-    "sc_date": "Data",
-    "sc_dates": "Date",
-    "sc_dows": "Giorno della settimana",
-    "sc_every": "Ogni",
-    "sc_everyN_dates": "ogni N giorni",
-    "sc_everyN_dows": "ogni N giorno della settimana",
-    "sc_everyN_hours": "ogni N ore",
-    "sc_everyN_minutes": "ogni N minuti",
-    "sc_everyN_months": "ogni N mesi",
-    "sc_everyN_seconds": "ogni N secondi",
-    "sc_every_dates": "ogni giorno",
-    "sc_every_dows": "Tutti i giorni della settimana",
-    "sc_every_hours": "ogni ora",
-    "sc_every_minutes": "ogni minuto",
-    "sc_every_months": "ogni mese",
-    "sc_every_seconds": "ogni secondo",
-    "sc_from": "A partire dal",
-    "sc_hours": "Ore",
-    "sc_interval": "Intervallo",
-    "sc_intervalBetween": "Intervallo tra",
-    "sc_minutes": "Minuti",
-    "sc_months": "mesi",
-    "sc_once": "Una volta",
-    "sc_period": "Periodo",
-    "sc_seconds": "secondi",
-    "sc_simple": "Semplice",
-    "sc_specific": "Orario preciso",
-    "sc_specific_dates": "date specifiche",
-    "sc_specific_dows": "giorno specifico delle settimane",
-    "sc_specific_hours": "orari specifici",
-    "sc_specific_minutes": "minuti specifici",
-    "sc_specific_months": "mesi specifici",
-    "sc_specific_seconds": "secondi specifici",
-    "sc_time": "Tempo",
-    "sc_to": "Per",
-    "sc_wizard": "procedura guidata",
-    "sch_all": "tutti",
-    "sch_astroDay": "Astro day",
-    "sch_astroNight": "Astro night",
-    "sch_astro_dawn": "Alba",
-    "sch_astro_dusk": "Crepuscolo",
-    "sch_astro_goldenHour": "Ora d'oro",
-    "sch_astro_goldenHourEnd": "Fine dell'ora d'oro",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Alba nautica",
-    "sch_astro_nauticalDusk": "Crepuscolo nautico",
-    "sch_astro_night": "Notte",
-    "sch_astro_nightEnd": "Fine della notte",
-    "sch_astro_solarNoon": "Mezzogiorno solare",
-    "sch_astro_sunrise": "Alba",
-    "sch_astro_sunriseEnd": "Fine dell'alba",
-    "sch_astro_sunset": "Tramonto",
-    "sch_astro_sunsetStart": "Inizio del tramonto",
-    "sch_at": "a",
-    "sch_desc_atTime": "a %s",
-    "sch_desc_everyDay": "ogni giorno",
-    "sch_desc_everyHour": "ogni ora",
-    "sch_desc_everyMinute": "ogni minuto",
-    "sch_desc_everyMonth": "ogni mese",
-    "sch_desc_everyNDay": "ogni %s giorno",
-    "sch_desc_everyNHours": "ogni %s ore",
-    "sch_desc_everyNMinutes": "ogni %s minuti",
-    "sch_desc_everyNMonths": "ogni %s mesi",
-    "sch_desc_everyNWeeks": "ogni %s settimane",
-    "sch_desc_everyNYears": "ogni %s anni",
-    "sch_desc_everyWeek": "ogni settimana",
-    "sch_desc_everyYear": "ogni anno",
-    "sch_desc_intervalFromTo": "da %s a %s",
-    "sch_desc_never": "mai",
-    "sch_desc_onDate": "su %s di %s",
-    "sch_desc_onDates": "su %s e %s di",
-    "sch_desc_onEveryDate": "in ogni data di",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s e %s",
-    "sch_desc_onWeekday": "su %s",
-    "sch_desc_onWeekdays": "su %s e %s",
-    "sch_desc_onWeekends": "nei finesettimana",
-    "sch_desc_onWorkdays": "nei giorni lavorativi",
-    "sch_desc_onceInPast": "non verrà più eseguito, perché start è nel passato",
-    "sch_desc_once_on": "su %s",
-    "sch_desc_validFrom": "da %s",
-    "sch_desc_validFromTo": "Eseguire da a",
-    "sch_desc_validTo": "a %s",
-    "sch_every": "ogni",
-    "sch_exactTime": "Orario preciso",
-    "sch_from": "a partire dal",
-    "sch_fromTo": "Da A",
-    "sch_intervalTime": "Intervallo di tempo",
-    "sch_invert": "invertire",
-    "sch_no_one": "nessuna",
-    "sch_on": "sopra",
-    "sch_period": "Periodo",
-    "sch_periodDaily": "Quotidiano",
-    "sch_periodDates": "Date",
-    "sch_periodDay": "Giorno",
-    "sch_periodEvery": "Ogni",
-    "sch_periodEveryDay": "Ogni giorno",
-    "sch_periodEveryMonth": "Ogni mese",
-    "sch_periodEveryWeek": "Ogni settimana",
-    "sch_periodEveryYear": "Ogni anno",
-    "sch_periodHours": "Ore",
-    "sch_periodMinutes": "Minuti",
-    "sch_periodMonth": "mese",
-    "sch_periodMonthly": "Mensile",
-    "sch_periodOnce": "Una volta",
-    "sch_periodSpecificMonths": "Mesi specifici",
-    "sch_periodWeek": "Settimana",
-    "sch_periodWeekdays": "Giorni della settimana",
-    "sch_periodWeekend": "Fine settimana",
-    "sch_periodWeekly": "settimanalmente",
-    "sch_periodWorkdays": "giorni feriali",
-    "sch_periodYear": "Anno",
-    "sch_periodYearly": "Annuale",
-    "sch_specificTime": "Orario preciso",
-    "sch_time": "Tempo",
-    "sch_to": "per",
-    "sch_valid": "Valido",
-    "sch_validFrom": "a partire dal",
-    "sch_validTo": "per",
-    "sch_wholeDay": "Giorno intero",
-    "sch_yearEveryMonth": "ogni mese",
-    "ra_Define schedule...": "Definisci pianificazione ...",
-    "ra_Repeat": "Ripetere",
-    "ra_use seconds": "usa i secondi",
-    "ra_close": "vicino",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Attiva o disattiva la visualizzazione degli stati",
-    "ra_Add new child object to selected parent": "Aggiungi un nuovo oggetto figlio al genitore selezionato",
-    "ra_Add objects tree from JSON file": "Aggiungi l'albero degli oggetti dal file JSON",
-    "ra_Save objects tree as JSON file": "Salva l'albero degli oggetti come file JSON",
-    "ra_Objects": "Oggetti",
-    "ra_States": "stati",
-    "ra_object_changed_by_user": "L'oggetto è stato modificato l'ultima volta alle",
-    "ra_object_changed_by": "Oggetto modificato da",
-    "ra_state_changed_from": "Oggetto cambiato da",
-    "ra_state_changed_by": "Stato cambiato da",
-    "ra_aclOwner_read_object": "Il proprietario può leggere l'oggetto",
-    "ra_aclOwner_read_state": "Il proprietario può leggere lo stato",
-    "ra_aclOwner_write_object": "Il proprietario può scrivere l'oggetto",
-    "ra_aclOwner_write_state": "Il proprietario può scrivere lo stato",
-    "ra_aclGroup_read_object": "Il gruppo può leggere l'oggetto",
-    "ra_aclGroup_read_state": "Il gruppo può leggere lo stato",
-    "ra_aclGroup_write_object": "Il gruppo può scrivere l'oggetto",
-    "ra_aclGroup_write_state": "Il gruppo può scrivere lo stato",
-    "ra_aclEveryone_read_object": "Tutti possono leggere gli oggetti",
-    "ra_aclEveryone_read_state": "Tutti possono leggere lo stato",
-    "ra_aclEveryone_write_object": "Tutti possono scrivere oggetti",
-    "ra_aclEveryone_write_state": "Tutti possono scrivere stato",
-    "ra_Folders always first": "Le cartelle sono sempre al primo posto",
-    "ra_changedFrom": "Cambiato da",
-    "ra_qualityCode": "Codice di qualità",
-    "ra_timestamp": "Timestamp",
-    "ra_lastChange": "Ultima modifica",
-    "ra_Owner group": "Gruppo di proprietari",
-    "ra_Owner user": "Utente proprietario",
-    "ra_Create": "Creare",
-    "ra_Changed from": "Cambiato da",
-    "ra_Quality code": "Qualità",
-    "ra_Timestamp": "Timestamp",
-    "ra_Last change": "Ultima modifica",
-    "ra_Collapse all nodes": "Comprimi tutti i nodi",
-    "ra_Edit custom config": "Modifica configurazione personalizzata",
-    "ra_Collapse one step node": "Comprimi un livello",
-    "ra_Expand one step node": "Espandi un livello",
-    "ra_Refresh tree": "Aggiorna l'albero",
-    "ra_Expand all nodes": "Espandi tutti i nodi",
-    "ra_Deselect all": "Deseleziona tutto",
-    "ra_Select all": "Seleziona tutto",
-    "ra_%s object(s) processed": "%s oggetti elaborati",
-    "ra_Invalid structure": "Struttura non valida",
-    "ra_%s was imported": "%s è stato importato",
-    "ra_Failed to open JSON File": "Impossibile aprire il file JSON",
-    "ra_Only following structures of objects are available:": "Sono disponibili solo le seguenti strutture di oggetti:",
-    "ra_Folder → State": "Cartella → Stato",
-    "ra_Folder → Channel → State": "Cartella → Canale → Stato",
-    "ra_Folder → Device → Channel → State": "Cartella → Dispositivo → Canale → Stato",
-    "ra_Device → Channel → State": "Dispositivo → Canale → Stato",
-    "ra_Channel → State": "Canale → Stato",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "I non esperti possono creare nuovi oggetti solo in \"0_userdata.0\" o \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Gli esperti possono creare oggetti ovunque ma dal secondo livello (es. \"Vis.0\" o \"javascript.0\")."
+  "ra_filter_func": "Funzione",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Nome",
+  "ra_filter_role": "Ruolo",
+  "ra_filter_room": "Camera",
+  "ra_tooltip_ack": "Bandiera riconosciuta",
+  "ra_tooltip_from": "A partire dal",
+  "ra_tooltip_lc": "Ultima modifica",
+  "ra_tooltip_quality": "Qualità",
+  "ra_tooltip_ts": "Data e ora",
+  "ra_tooltip_user": "Utente",
+  "ra_tooltip_value": "Valore",
+  "ra_Are you sure?": "Sei sicuro?",
+  "ra_Cancel": "Annulla",
+  "ra_Copied": "Copiato",
+  "ra_Copied %s": "\"%s\" copiato",
+  "ra_Define functions": "Definire le funzioni",
+  "ra_Define rooms": "Definisci le stanze",
+  "ra_Error": "Errore",
+  "ra_Message": "Messaggio",
+  "ra_Ok": "Ok",
+  "ra_Please select object ID...": "Seleziona l'ID oggetto ...",
+  "ra_Selected": "Selezionato",
+  "ra_Unknown error!": "Errore sconosciuto!",
+  "ra_Value": "Valore",
+  "ra_filter_type": "genere",
+  "ra_invalidConfig": "Impostazioni non valide",
+  "ra_otherConfig": "Impostazioni dall'altro adattatore %s",
+  "ra_tooltip_copyState": "Copia il valore dello stato",
+  "ra_tooltip_customConfig": "Impostazioni personalizzate",
+  "ra_tooltip_deleteObject": "Elimina oggetto",
+  "ra_tooltip_editObject": "Modifica oggetto",
+  "ra_tooltip_editState": "Modifica il valore dello stato",
+  "ra_filter_customs": "impostazioni",
+  "ra_Listen on all IPs": "Ascolta su tutti gli IP",
+  "ra_dow_Fr": "fr",
+  "ra_dow_Mo": "momento",
+  "ra_dow_Sa": "Sa",
+  "ra_dow_Su": "su",
+  "ra_dow_Th": "th",
+  "ra_Save": "Salva",
+  "ra_Save and close": "Salva e chiudi",
+  "ra_Close": "Vicino",
+  "ra_Auto (no custom columns)": "Auto (nessuna colonna personalizzata)",
+  "ra_Transparent dialog": "Finestra di dialogo trasparente",
+  "ra_Width": "Larghezza",
+  "ra_val": "Valore",
+  "ra_buttons": "Bottoni",
+  "ra_Configure visible columns": "Configura colonne visibili",
+  "ra_Cannot update attribute, because not found in the object": "Impossibile aggiornare l'attributo, perché non trovato nell'oggetto",
+  "ra_Edit object field": "Modifica campo oggetto",
+  "ra_Hide empty folders": "Nascondi cartelle vuote",
+  "ra_Reload files": "Ricarica i file",
+  "ra_Create folder": "Creare una cartella",
+  "ra_Upload file": "Caricare un file",
+  "ra_User files": "File utente",
+  "ra_Confirm deletion of %s": "Conferma l'eliminazione di %s",
+  "ra_Delete (no confirm for 5 mins)": "Elimina (nessuna conferma per 5 minuti)",
+  "ra_Delete": "Elimina",
+  "ra_Toggle expert mode": "Attiva / disattiva la modalità esperto",
+  "ra_Toggle view mode": "Attiva / disattiva la modalità di visualizzazione",
+  "re_Root": "Radice",
+  "re_Back to %s": "Torna a %s",
+  "ra_Place your files here or click here to open the browse dialog": "Posiziona i file qui o fai clic qui per aprire la finestra di dialogo Sfoglia",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Se nessun file verrà creato nella cartella, scomparirà dopo la chiusura del browser",
+  "ra_Folder name": "Nome della cartella",
+  "ra_Create new folder in %s": "Crea nuova cartella in %s",
+  "ra_Duplicate name": "Nome duplicato",
+  "ra_Invalid parent folder!": "Cartella principale non valida!",
+  "ra_Drop file here": "Trascina il file qui",
+  "ra_Suppress question for next %s minutes": "Sopprimi la domanda per i prossimi %s minuti",
+  "ra_Clear filter": "Filtro pulito",
+  "ra_Update": "Aggiornare",
+  "ra_Load configuration from file": "Carica la configurazione dal file",
+  "ra_Save configuration to file": "Salva la configurazione su file",
+  "sc_cron": "CRON",
+  "sc_date": "Data",
+  "sc_dates": "Date",
+  "sc_dows": "Giorno della settimana",
+  "sc_every": "Ogni",
+  "sc_everyN_dates": "ogni N giorni",
+  "sc_everyN_dows": "ogni N giorno della settimana",
+  "sc_everyN_hours": "ogni N ore",
+  "sc_everyN_minutes": "ogni N minuti",
+  "sc_everyN_months": "ogni N mesi",
+  "sc_everyN_seconds": "ogni N secondi",
+  "sc_every_dates": "ogni giorno",
+  "sc_every_dows": "Tutti i giorni della settimana",
+  "sc_every_hours": "ogni ora",
+  "sc_every_minutes": "ogni minuto",
+  "sc_every_months": "ogni mese",
+  "sc_every_seconds": "ogni secondo",
+  "sc_from": "A partire dal",
+  "sc_hours": "Ore",
+  "sc_interval": "Intervallo",
+  "sc_intervalBetween": "Intervallo tra",
+  "sc_minutes": "Minuti",
+  "sc_months": "mesi",
+  "sc_once": "Una volta",
+  "sc_period": "Periodo",
+  "sc_seconds": "secondi",
+  "sc_simple": "Semplice",
+  "sc_specific": "Orario preciso",
+  "sc_specific_dates": "date specifiche",
+  "sc_specific_dows": "giorno specifico delle settimane",
+  "sc_specific_hours": "orari specifici",
+  "sc_specific_minutes": "minuti specifici",
+  "sc_specific_months": "mesi specifici",
+  "sc_specific_seconds": "secondi specifici",
+  "sc_time": "Tempo",
+  "sc_to": "Per",
+  "sc_wizard": "procedura guidata",
+  "sch_all": "tutti",
+  "sch_astroDay": "Astro day",
+  "sch_astroNight": "Astro night",
+  "sch_astro_dawn": "Alba",
+  "sch_astro_dusk": "Crepuscolo",
+  "sch_astro_goldenHour": "Ora d'oro",
+  "sch_astro_goldenHourEnd": "Fine dell'ora d'oro",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Alba nautica",
+  "sch_astro_nauticalDusk": "Crepuscolo nautico",
+  "sch_astro_night": "Notte",
+  "sch_astro_nightEnd": "Fine della notte",
+  "sch_astro_solarNoon": "Mezzogiorno solare",
+  "sch_astro_sunrise": "Alba",
+  "sch_astro_sunriseEnd": "Fine dell'alba",
+  "sch_astro_sunset": "Tramonto",
+  "sch_astro_sunsetStart": "Inizio del tramonto",
+  "sch_at": "a",
+  "sch_desc_atTime": "a %s",
+  "sch_desc_everyDay": "ogni giorno",
+  "sch_desc_everyHour": "ogni ora",
+  "sch_desc_everyMinute": "ogni minuto",
+  "sch_desc_everyMonth": "ogni mese",
+  "sch_desc_everyNDay": "ogni %s giorno",
+  "sch_desc_everyNHours": "ogni %s ore",
+  "sch_desc_everyNMinutes": "ogni %s minuti",
+  "sch_desc_everyNMonths": "ogni %s mesi",
+  "sch_desc_everyNWeeks": "ogni %s settimane",
+  "sch_desc_everyNYears": "ogni %s anni",
+  "sch_desc_everyWeek": "ogni settimana",
+  "sch_desc_everyYear": "ogni anno",
+  "sch_desc_intervalFromTo": "da %s a %s",
+  "sch_desc_never": "mai",
+  "sch_desc_onDate": "su %s di %s",
+  "sch_desc_onDates": "su %s e %s di",
+  "sch_desc_onEveryDate": "in ogni data di",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s e %s",
+  "sch_desc_onWeekday": "su %s",
+  "sch_desc_onWeekdays": "su %s e %s",
+  "sch_desc_onWeekends": "nei finesettimana",
+  "sch_desc_onWorkdays": "nei giorni lavorativi",
+  "sch_desc_onceInPast": "non verrà più eseguito, perché start è nel passato",
+  "sch_desc_once_on": "su %s",
+  "sch_desc_validFrom": "da %s",
+  "sch_desc_validFromTo": "Eseguire da a",
+  "sch_desc_validTo": "a %s",
+  "sch_every": "ogni",
+  "sch_exactTime": "Orario preciso",
+  "sch_from": "a partire dal",
+  "sch_fromTo": "Da A",
+  "sch_intervalTime": "Intervallo di tempo",
+  "sch_invert": "invertire",
+  "sch_no_one": "nessuna",
+  "sch_on": "sopra",
+  "sch_period": "Periodo",
+  "sch_periodDaily": "Quotidiano",
+  "sch_periodDates": "Date",
+  "sch_periodDay": "Giorno",
+  "sch_periodEvery": "Ogni",
+  "sch_periodEveryDay": "Ogni giorno",
+  "sch_periodEveryMonth": "Ogni mese",
+  "sch_periodEveryWeek": "Ogni settimana",
+  "sch_periodEveryYear": "Ogni anno",
+  "sch_periodHours": "Ore",
+  "sch_periodMinutes": "Minuti",
+  "sch_periodMonth": "mese",
+  "sch_periodMonthly": "Mensile",
+  "sch_periodOnce": "Una volta",
+  "sch_periodSpecificMonths": "Mesi specifici",
+  "sch_periodWeek": "Settimana",
+  "sch_periodWeekdays": "Giorni della settimana",
+  "sch_periodWeekend": "Fine settimana",
+  "sch_periodWeekly": "settimanalmente",
+  "sch_periodWorkdays": "giorni feriali",
+  "sch_periodYear": "Anno",
+  "sch_periodYearly": "Annuale",
+  "sch_specificTime": "Orario preciso",
+  "sch_time": "Tempo",
+  "sch_to": "per",
+  "sch_valid": "Valido",
+  "sch_validFrom": "a partire dal",
+  "sch_validTo": "per",
+  "sch_wholeDay": "Giorno intero",
+  "sch_yearEveryMonth": "ogni mese",
+  "ra_Define schedule...": "Definisci pianificazione ...",
+  "ra_Repeat": "Ripetere",
+  "ra_use seconds": "usa i secondi",
+  "ra_close": "vicino",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Attiva o disattiva la visualizzazione degli stati",
+  "ra_Add new child object to selected parent": "Aggiungi un nuovo oggetto figlio al genitore selezionato",
+  "ra_Add objects tree from JSON file": "Aggiungi l'albero degli oggetti dal file JSON",
+  "ra_Save objects tree as JSON file": "Salva l'albero degli oggetti come file JSON",
+  "ra_Objects": "Oggetti",
+  "ra_States": "stati",
+  "ra_object_changed_by_user": "L'oggetto è stato modificato l'ultima volta alle",
+  "ra_object_changed_by": "Oggetto modificato da",
+  "ra_state_changed_from": "Oggetto cambiato da",
+  "ra_state_changed_by": "Stato cambiato da",
+  "ra_aclOwner_read_object": "Il proprietario può leggere l'oggetto",
+  "ra_aclOwner_read_state": "Il proprietario può leggere lo stato",
+  "ra_aclOwner_write_object": "Il proprietario può scrivere l'oggetto",
+  "ra_aclOwner_write_state": "Il proprietario può scrivere lo stato",
+  "ra_aclGroup_read_object": "Il gruppo può leggere l'oggetto",
+  "ra_aclGroup_read_state": "Il gruppo può leggere lo stato",
+  "ra_aclGroup_write_object": "Il gruppo può scrivere l'oggetto",
+  "ra_aclGroup_write_state": "Il gruppo può scrivere lo stato",
+  "ra_aclEveryone_read_object": "Tutti possono leggere gli oggetti",
+  "ra_aclEveryone_read_state": "Tutti possono leggere lo stato",
+  "ra_aclEveryone_write_object": "Tutti possono scrivere oggetti",
+  "ra_aclEveryone_write_state": "Tutti possono scrivere stato",
+  "ra_Folders always first": "Le cartelle sono sempre al primo posto",
+  "ra_changedFrom": "Cambiato da",
+  "ra_qualityCode": "Codice di qualità",
+  "ra_timestamp": "Timestamp",
+  "ra_lastChange": "Ultima modifica",
+  "ra_Owner group": "Gruppo di proprietari",
+  "ra_Owner user": "Utente proprietario",
+  "ra_Create": "Creare",
+  "ra_Changed from": "Cambiato da",
+  "ra_Quality code": "Qualità",
+  "ra_Timestamp": "Timestamp",
+  "ra_Last change": "Ultima modifica",
+  "ra_Collapse all nodes": "Comprimi tutti i nodi",
+  "ra_Edit custom config": "Modifica configurazione personalizzata",
+  "ra_Collapse one step node": "Comprimi un livello",
+  "ra_Expand one step node": "Espandi un livello",
+  "ra_Refresh tree": "Aggiorna l'albero",
+  "ra_Expand all nodes": "Espandi tutti i nodi",
+  "ra_Deselect all": "Deseleziona tutto",
+  "ra_Select all": "Seleziona tutto",
+  "ra_%s object(s) processed": "%s oggetti elaborati",
+  "ra_Invalid structure": "Struttura non valida",
+  "ra_%s was imported": "%s è stato importato",
+  "ra_Failed to open JSON File": "Impossibile aprire il file JSON",
+  "ra_Only following structures of objects are available:": "Sono disponibili solo le seguenti strutture di oggetti:",
+  "ra_Folder → State": "Cartella → Stato",
+  "ra_Folder → Channel → State": "Cartella → Canale → Stato",
+  "ra_Folder → Device → Channel → State": "Cartella → Dispositivo → Canale → Stato",
+  "ra_Device → Channel → State": "Dispositivo → Canale → Stato",
+  "ra_Channel → State": "Canale → Stato",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "I non esperti possono creare nuovi oggetti solo in \"0_userdata.0\" o \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Gli esperti possono creare oggetti ovunque ma dal secondo livello (es. \"Vis.0\" o \"javascript.0\").",
+  "ra_expertMode": "Modalità esperto",
+  "ra_On weekdays": "Nei giorni della settimana",
+  "ra_Drop the files here...": "Trascina qui il file...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Trascina e rilascia alcuni file qui o fai clic per selezionare i file",
+  "ra_Clear": "Elimina",
+  "ra_Clear icon": "Cancella icona",
+  "ra_none": "nessuna",
+  "ra_Select predefined icon": "Seleziona l'icona predefinita",
+  "ra_Show lines between rows": "Mostra linee tra le righe"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/es.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Función",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Nombre",
-    "ra_filter_role": "Papel",
-    "ra_filter_room": "Habitación",
-    "ra_tooltip_ack": "Bandera reconocida",
-    "ra_tooltip_from": "Desde",
-    "ra_tooltip_lc": "Último cambio",
-    "ra_tooltip_quality": "Calidad",
-    "ra_tooltip_ts": "Sello de tiempo",
-    "ra_tooltip_user": "Usuario",
-    "ra_tooltip_value": "Valor",
-    "ra_Are you sure?": "¿Estás seguro?",
-    "ra_Cancel": "Cancelar",
-    "ra_Copied": "Copiado",
-    "ra_Copied %s": "Copiado %s",
-    "ra_Define functions": "Definir funciones",
-    "ra_Define rooms": "Definir habitaciones",
-    "ra_Error": "Error",
-    "ra_Message": "Mensaje",
-    "ra_Ok": "Okay",
-    "ra_Please select object ID...": "Por favor seleccione ID de objeto ...",
-    "ra_Selected": "Seleccionado",
-    "ra_Unknown error!": "¡Error desconocido!",
-    "ra_Value": "Valor",
-    "ra_filter_type": "Tipo",
-    "ra_invalidConfig": "Configuraciones inválidas",
-    "ra_otherConfig": "Configuraciones de otro adaptador %s",
-    "ra_tooltip_copyState": "Copie el valor del estado",
-    "ra_tooltip_customConfig": "Ajustes personalizados",
-    "ra_tooltip_deleteObject": "Eliminar objeto",
-    "ra_tooltip_editObject": "Editar objeto",
-    "ra_tooltip_editState": "Edite el valor del estado",
-    "ra_filter_customs": "Configuraciones",
-    "ra_Listen on all IPs": "Escuche en todas las IP",
-    "ra_dow_Fr": "Fr",
-    "ra_dow_Mo": "Mes",
-    "ra_dow_Sa": "Sa",
-    "ra_dow_Su": "Su",
-    "ra_dow_Th": "Th",
-    "ra_Save": "Salvar",
-    "ra_Save and close": "Guardar y cerrar",
-    "ra_Close": "Cerca",
-    "ra_Auto (no custom columns)": "Automático (sin columnas personalizadas)",
-    "ra_Transparent dialog": "Diálogo transparente",
-    "ra_Width": "Anchura",
-    "ra_val": "Valor",
-    "ra_buttons": "Botones",
-    "ra_Configure visible columns": "Configurar columnas visibles",
-    "ra_Cannot update attribute, because not found in the object": "No se puede actualizar el atributo porque no se encuentra en el objeto",
-    "ra_Edit object field": "Editar campo de objeto",
-    "ra_Hide empty folders": "Ocultar carpetas vacías",
-    "ra_Reload files": "Recargar archivos",
-    "ra_Create folder": "Crear carpeta",
-    "ra_Upload file": "Subir archivo",
-    "ra_User files": "Archivos de usuario",
-    "ra_Confirm deletion of %s": "Confirmar la eliminación de %s",
-    "ra_Delete (no confirm for 5 mins)": "Eliminar (sin confirmar durante 5 minutos)",
-    "ra_Delete": "Eliminar",
-    "ra_Toggle expert mode": "Alternar modo experto",
-    "ra_Toggle view mode": "Alternar modo de vista",
-    "re_Root": "Raíz",
-    "re_Back to %s": "Volver a %s",
-    "ra_Place your files here or click here to open the browse dialog": "Coloque sus archivos aquí o haga clic aquí para abrir el cuadro de diálogo de exploración",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Si no se creará ningún archivo en la carpeta, desaparecerá después de que se cierre el navegador.",
-    "ra_Folder name": "Nombre de la carpeta",
-    "ra_Create new folder in %s": "Crear nueva carpeta en %s",
-    "ra_Duplicate name": "Nombre duplicado",
-    "ra_Invalid parent folder!": "Carpeta principal no válida.",
-    "ra_Drop file here": "Suelta el archivo aquí",
-    "ra_Suppress question for next %s minutes": "Suprimir pregunta durante los próximos %s minutos",
-    "ra_Clear filter": "Filtro claro",
-    "ra_Update": "Actualizar",
-    "ra_Load configuration from file": "Cargar configuración desde archivo",
-    "ra_Save configuration to file": "Guardar configuración en archivo",
-    "sc_cron": "CRON",
-    "sc_date": "Fecha",
-    "sc_dates": "fechas",
-    "sc_dows": "Día de la semana",
-    "sc_every": "Cada",
-    "sc_everyN_dates": "cada N días",
-    "sc_everyN_dows": "cada N día de la semana",
-    "sc_everyN_hours": "cada N horas",
-    "sc_everyN_minutes": "cada N minutos",
-    "sc_everyN_months": "cada N meses",
-    "sc_everyN_seconds": "cada N segundos",
-    "sc_every_dates": "cada día",
-    "sc_every_dows": "Cada día de la semana",
-    "sc_every_hours": "cada hora",
-    "sc_every_minutes": "cada minuto",
-    "sc_every_months": "cada mes",
-    "sc_every_seconds": "cada segundo",
-    "sc_from": "De",
-    "sc_hours": "Horas",
-    "sc_interval": "Intervalo",
-    "sc_intervalBetween": "Intervalo entre",
-    "sc_minutes": "Minutos",
-    "sc_months": "meses",
-    "sc_once": "Una vez",
-    "sc_period": "Período",
-    "sc_seconds": "Segundos",
-    "sc_simple": "Sencillo",
-    "sc_specific": "Tiempo específico",
-    "sc_specific_dates": "fechas especificas",
-    "sc_specific_dows": "día específico de semanas",
-    "sc_specific_hours": "horas específicas",
-    "sc_specific_minutes": "minutos específicos",
-    "sc_specific_months": "meses específicos",
-    "sc_specific_seconds": "segundos específicos",
-    "sc_time": "Hora",
-    "sc_to": "A",
-    "sc_wizard": "Mago",
-    "sch_all": "todas",
-    "sch_astroDay": "Día astro",
-    "sch_astroNight": "Noche astro",
-    "sch_astro_dawn": "Amanecer",
-    "sch_astro_dusk": "Oscuridad",
-    "sch_astro_goldenHour": "hora dorada",
-    "sch_astro_goldenHourEnd": "Fin de la hora dorada",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Amanecer náutico",
-    "sch_astro_nauticalDusk": "Anochecer náutico",
-    "sch_astro_night": "Noche",
-    "sch_astro_nightEnd": "Fin de la noche",
-    "sch_astro_solarNoon": "Mediodía solar",
-    "sch_astro_sunrise": "amanecer",
-    "sch_astro_sunriseEnd": "Fin del amanecer",
-    "sch_astro_sunset": "Puesta de sol",
-    "sch_astro_sunsetStart": "Puesta de sol",
-    "sch_at": "a",
-    "sch_desc_atTime": "en %s",
-    "sch_desc_everyDay": "cada día",
-    "sch_desc_everyHour": "cada hora",
-    "sch_desc_everyMinute": "cada minuto",
-    "sch_desc_everyMonth": "cada mes",
-    "sch_desc_everyNDay": "cada %s días",
-    "sch_desc_everyNHours": "cada %s horas",
-    "sch_desc_everyNMinutes": "cada %s minutos",
-    "sch_desc_everyNMonths": "cada %s meses",
-    "sch_desc_everyNWeeks": "cada %s semanas",
-    "sch_desc_everyNYears": "cada %s años",
-    "sch_desc_everyWeek": "cada semana",
-    "sch_desc_everyYear": "todos los años",
-    "sch_desc_intervalFromTo": "de %s a %s",
-    "sch_desc_never": "Nunca",
-    "sch_desc_onDate": "en %s de %s",
-    "sch_desc_onDates": "en %s y %s de",
-    "sch_desc_onEveryDate": "en cada fecha de",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s y %s",
-    "sch_desc_onWeekday": "en %s",
-    "sch_desc_onWeekdays": "en %s y %s",
-    "sch_desc_onWeekends": "en los fines de semana",
-    "sch_desc_onWorkdays": "en días laborables",
-    "sch_desc_onceInPast": "ya no se ejecutará más, porque el inicio está en el pasado",
-    "sch_desc_once_on": "en %s",
-    "sch_desc_validFrom": "de %s",
-    "sch_desc_validFromTo": "Ejecutar desde hasta",
-    "sch_desc_validTo": "a %s",
-    "sch_every": "cada",
-    "sch_exactTime": "Tiempo específico",
-    "sch_from": "de",
-    "sch_fromTo": "De-a",
-    "sch_intervalTime": "Tiempo de intervalo",
-    "sch_invert": "invertir; poner boca abajo o en la posición opuesta, orden o arreglo; Boca abajo",
-    "sch_no_one": "ninguna",
-    "sch_on": "en",
-    "sch_period": "Período",
-    "sch_periodDaily": "Diario",
-    "sch_periodDates": "fechas",
-    "sch_periodDay": "Día",
-    "sch_periodEvery": "Cada",
-    "sch_periodEveryDay": "Cada día",
-    "sch_periodEveryMonth": "Cada mes",
-    "sch_periodEveryWeek": "Cada semana",
-    "sch_periodEveryYear": "Todos los años",
-    "sch_periodHours": "Horas",
-    "sch_periodMinutes": "Minutos",
-    "sch_periodMonth": "mes",
-    "sch_periodMonthly": "Mensual",
-    "sch_periodOnce": "Una vez",
-    "sch_periodSpecificMonths": "Meses específicos",
-    "sch_periodWeek": "Semana",
-    "sch_periodWeekdays": "Días laborables",
-    "sch_periodWeekend": "Fin de semana",
-    "sch_periodWeekly": "Semanal",
-    "sch_periodWorkdays": "Días laborables",
-    "sch_periodYear": "Año",
-    "sch_periodYearly": "Anual",
-    "sch_specificTime": "Tiempo específico",
-    "sch_time": "Hora",
-    "sch_to": "a",
-    "sch_valid": "Válido",
-    "sch_validFrom": "de",
-    "sch_validTo": "a",
-    "sch_wholeDay": "Todo el dia",
-    "sch_yearEveryMonth": "cada mes",
-    "ra_Define schedule...": "Definir horario ...",
-    "ra_Repeat": "Repetir",
-    "ra_use seconds": "usar segundos",
-    "ra_close": "cerrar",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Alternar la vista de estados",
-    "ra_Add new child object to selected parent": "Agregar nuevo objeto hijo al padre seleccionado",
-    "ra_Add objects tree from JSON file": "Agregar árbol de objetos desde el archivo JSON",
-    "ra_Save objects tree as JSON file": "Guardar el árbol de objetos como archivo JSON",
-    "ra_Objects": "Objetos",
-    "ra_States": "Estados",
-    "ra_object_changed_by_user": "Objeto cambiado por última vez a las",
-    "ra_object_changed_by": "Objeto cambiado por",
-    "ra_state_changed_from": "Objeto cambiado de",
-    "ra_state_changed_by": "Estado cambiado por",
-    "ra_aclOwner_read_object": "El propietario puede leer el objeto",
-    "ra_aclOwner_read_state": "El propietario puede leer el estado",
-    "ra_aclOwner_write_object": "El propietario puede escribir el objeto",
-    "ra_aclOwner_write_state": "El propietario puede escribir el estado",
-    "ra_aclGroup_read_object": "El grupo puede leer el objeto",
-    "ra_aclGroup_read_state": "El grupo puede leer el estado",
-    "ra_aclGroup_write_object": "El grupo puede escribir un objeto",
-    "ra_aclGroup_write_state": "El grupo puede escribir el estado",
-    "ra_aclEveryone_read_object": "Todo el mundo puede leer el objeto",
-    "ra_aclEveryone_read_state": "Todos pueden leer el estado",
-    "ra_aclEveryone_write_object": "Todos pueden escribir objetos",
-    "ra_aclEveryone_write_state": "Todos pueden escribir el estado",
-    "ra_Folders always first": "Carpetas siempre primero",
-    "ra_changedFrom": "Cambiaron desde",
-    "ra_qualityCode": "Código de calidad",
-    "ra_timestamp": "Marca de tiempo",
-    "ra_lastChange": "Ultimo cambio",
-    "ra_Owner group": "Grupo propietario",
-    "ra_Owner user": "Usuario propietario",
-    "ra_Create": "Crear",
-    "ra_Changed from": "Cambiaron desde",
-    "ra_Quality code": "Calidad",
-    "ra_Timestamp": "Marca de tiempo",
-    "ra_Last change": "Ultimo cambio",
-    "ra_Collapse all nodes": "Contraer todos los nodos",
-    "ra_Edit custom config": "Editar configuración personalizada",
-    "ra_Collapse one step node": "Contraer un nivel",
-    "ra_Expand one step node": "Expandir un nivel",
-    "ra_Refresh tree": "Actualizar árbol",
-    "ra_Expand all nodes": "Expandir todos los nodos",
-    "ra_Deselect all": "Deselecciona todo",
-    "ra_Select all": "Seleccionar todo",
-    "ra_%s object(s) processed": "%s objeto(s) procesados",
-    "ra_Invalid structure": "Estructura inválida",
-    "ra_%s was imported": "%s fue importado",
-    "ra_Failed to open JSON File": "No se pudo abrir el archivo JSON",
-    "ra_Only following structures of objects are available:": "Solo están disponibles las siguientes estructuras de objetos:",
-    "ra_Folder → State": "Carpeta → Estado",
-    "ra_Folder → Channel → State": "Carpeta → Canal → Estado",
-    "ra_Folder → Device → Channel → State": "Carpeta → Dispositivo → Canal → Estado",
-    "ra_Device → Channel → State": "Dispositivo → Canal → Estado",
-    "ra_Channel → State": "Canal → Estado",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Los no expertos pueden crear nuevos objetos solo en \"0_userdata.0\" o \"alias.0\".",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Los expertos pueden crear objetos en todas partes excepto desde el segundo nivel (por ejemplo, \"vis.0\" o \"javascript.0\")."
+  "ra_filter_func": "Función",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Nombre",
+  "ra_filter_role": "Papel",
+  "ra_filter_room": "Habitación",
+  "ra_tooltip_ack": "Bandera reconocida",
+  "ra_tooltip_from": "Desde",
+  "ra_tooltip_lc": "Último cambio",
+  "ra_tooltip_quality": "Calidad",
+  "ra_tooltip_ts": "Sello de tiempo",
+  "ra_tooltip_user": "Usuario",
+  "ra_tooltip_value": "Valor",
+  "ra_Are you sure?": "¿Estás seguro?",
+  "ra_Cancel": "Cancelar",
+  "ra_Copied": "Copiado",
+  "ra_Copied %s": "Copiado \"%s\"",
+  "ra_Define functions": "Definir funciones",
+  "ra_Define rooms": "Definir habitaciones",
+  "ra_Error": "Error",
+  "ra_Message": "Mensaje",
+  "ra_Ok": "Okay",
+  "ra_Please select object ID...": "Por favor seleccione ID de objeto ...",
+  "ra_Selected": "Seleccionado",
+  "ra_Unknown error!": "¡Error desconocido!",
+  "ra_Value": "Valor",
+  "ra_filter_type": "Tipo",
+  "ra_invalidConfig": "Configuraciones inválidas",
+  "ra_otherConfig": "Configuraciones de otro adaptador %s",
+  "ra_tooltip_copyState": "Copie el valor del estado",
+  "ra_tooltip_customConfig": "Ajustes personalizados",
+  "ra_tooltip_deleteObject": "Eliminar objeto",
+  "ra_tooltip_editObject": "Editar objeto",
+  "ra_tooltip_editState": "Edite el valor del estado",
+  "ra_filter_customs": "Configuraciones",
+  "ra_Listen on all IPs": "Escuche en todas las IP",
+  "ra_dow_Fr": "Fr",
+  "ra_dow_Mo": "Mes",
+  "ra_dow_Sa": "Sa",
+  "ra_dow_Su": "Su",
+  "ra_dow_Th": "Th",
+  "ra_Save": "Salvar",
+  "ra_Save and close": "Guardar y cerrar",
+  "ra_Close": "Cerca",
+  "ra_Auto (no custom columns)": "Automático (sin columnas personalizadas)",
+  "ra_Transparent dialog": "Diálogo transparente",
+  "ra_Width": "Anchura",
+  "ra_val": "Valor",
+  "ra_buttons": "Botones",
+  "ra_Configure visible columns": "Configurar columnas visibles",
+  "ra_Cannot update attribute, because not found in the object": "No se puede actualizar el atributo porque no se encuentra en el objeto",
+  "ra_Edit object field": "Editar campo de objeto",
+  "ra_Hide empty folders": "Ocultar carpetas vacías",
+  "ra_Reload files": "Recargar archivos",
+  "ra_Create folder": "Crear carpeta",
+  "ra_Upload file": "Subir archivo",
+  "ra_User files": "Archivos de usuario",
+  "ra_Confirm deletion of %s": "Confirmar la eliminación de %s",
+  "ra_Delete (no confirm for 5 mins)": "Eliminar (sin confirmar durante 5 minutos)",
+  "ra_Delete": "Eliminar",
+  "ra_Toggle expert mode": "Alternar modo experto",
+  "ra_Toggle view mode": "Alternar modo de vista",
+  "re_Root": "Raíz",
+  "re_Back to %s": "Volver a %s",
+  "ra_Place your files here or click here to open the browse dialog": "Coloque sus archivos aquí o haga clic aquí para abrir el cuadro de diálogo de exploración",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Si no se creará ningún archivo en la carpeta, desaparecerá después de que se cierre el navegador.",
+  "ra_Folder name": "Nombre de la carpeta",
+  "ra_Create new folder in %s": "Crear nueva carpeta en %s",
+  "ra_Duplicate name": "Nombre duplicado",
+  "ra_Invalid parent folder!": "Carpeta principal no válida.",
+  "ra_Drop file here": "Suelta el archivo aquí",
+  "ra_Suppress question for next %s minutes": "Suprimir pregunta durante los próximos %s minutos",
+  "ra_Clear filter": "Filtro claro",
+  "ra_Update": "Actualizar",
+  "ra_Load configuration from file": "Cargar configuración desde archivo",
+  "ra_Save configuration to file": "Guardar configuración en archivo",
+  "sc_cron": "CRON",
+  "sc_date": "Fecha",
+  "sc_dates": "fechas",
+  "sc_dows": "Día de la semana",
+  "sc_every": "Cada",
+  "sc_everyN_dates": "cada N días",
+  "sc_everyN_dows": "cada N día de la semana",
+  "sc_everyN_hours": "cada N horas",
+  "sc_everyN_minutes": "cada N minutos",
+  "sc_everyN_months": "cada N meses",
+  "sc_everyN_seconds": "cada N segundos",
+  "sc_every_dates": "cada día",
+  "sc_every_dows": "Cada día de la semana",
+  "sc_every_hours": "cada hora",
+  "sc_every_minutes": "cada minuto",
+  "sc_every_months": "cada mes",
+  "sc_every_seconds": "cada segundo",
+  "sc_from": "De",
+  "sc_hours": "Horas",
+  "sc_interval": "Intervalo",
+  "sc_intervalBetween": "Intervalo entre",
+  "sc_minutes": "Minutos",
+  "sc_months": "meses",
+  "sc_once": "Una vez",
+  "sc_period": "Período",
+  "sc_seconds": "Segundos",
+  "sc_simple": "Sencillo",
+  "sc_specific": "Tiempo específico",
+  "sc_specific_dates": "fechas especificas",
+  "sc_specific_dows": "día específico de semanas",
+  "sc_specific_hours": "horas específicas",
+  "sc_specific_minutes": "minutos específicos",
+  "sc_specific_months": "meses específicos",
+  "sc_specific_seconds": "segundos específicos",
+  "sc_time": "Hora",
+  "sc_to": "A",
+  "sc_wizard": "Mago",
+  "sch_all": "todas",
+  "sch_astroDay": "Día astro",
+  "sch_astroNight": "Noche astro",
+  "sch_astro_dawn": "Amanecer",
+  "sch_astro_dusk": "Oscuridad",
+  "sch_astro_goldenHour": "hora dorada",
+  "sch_astro_goldenHourEnd": "Fin de la hora dorada",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Amanecer náutico",
+  "sch_astro_nauticalDusk": "Anochecer náutico",
+  "sch_astro_night": "Noche",
+  "sch_astro_nightEnd": "Fin de la noche",
+  "sch_astro_solarNoon": "Mediodía solar",
+  "sch_astro_sunrise": "amanecer",
+  "sch_astro_sunriseEnd": "Fin del amanecer",
+  "sch_astro_sunset": "Puesta de sol",
+  "sch_astro_sunsetStart": "Puesta de sol",
+  "sch_at": "a",
+  "sch_desc_atTime": "en %s",
+  "sch_desc_everyDay": "cada día",
+  "sch_desc_everyHour": "cada hora",
+  "sch_desc_everyMinute": "cada minuto",
+  "sch_desc_everyMonth": "cada mes",
+  "sch_desc_everyNDay": "cada %s días",
+  "sch_desc_everyNHours": "cada %s horas",
+  "sch_desc_everyNMinutes": "cada %s minutos",
+  "sch_desc_everyNMonths": "cada %s meses",
+  "sch_desc_everyNWeeks": "cada %s semanas",
+  "sch_desc_everyNYears": "cada %s años",
+  "sch_desc_everyWeek": "cada semana",
+  "sch_desc_everyYear": "todos los años",
+  "sch_desc_intervalFromTo": "de %s a %s",
+  "sch_desc_never": "Nunca",
+  "sch_desc_onDate": "en %s de %s",
+  "sch_desc_onDates": "en %s y %s de",
+  "sch_desc_onEveryDate": "en cada fecha de",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s y %s",
+  "sch_desc_onWeekday": "en %s",
+  "sch_desc_onWeekdays": "en %s y %s",
+  "sch_desc_onWeekends": "en los fines de semana",
+  "sch_desc_onWorkdays": "en días laborables",
+  "sch_desc_onceInPast": "ya no se ejecutará más, porque el inicio está en el pasado",
+  "sch_desc_once_on": "en %s",
+  "sch_desc_validFrom": "de %s",
+  "sch_desc_validFromTo": "Ejecutar desde hasta",
+  "sch_desc_validTo": "a %s",
+  "sch_every": "cada",
+  "sch_exactTime": "Tiempo específico",
+  "sch_from": "de",
+  "sch_fromTo": "De-a",
+  "sch_intervalTime": "Tiempo de intervalo",
+  "sch_invert": "invertir; poner boca abajo o en la posición opuesta, orden o arreglo; Boca abajo",
+  "sch_no_one": "ninguna",
+  "sch_on": "en",
+  "sch_period": "Período",
+  "sch_periodDaily": "Diario",
+  "sch_periodDates": "fechas",
+  "sch_periodDay": "Día",
+  "sch_periodEvery": "Cada",
+  "sch_periodEveryDay": "Cada día",
+  "sch_periodEveryMonth": "Cada mes",
+  "sch_periodEveryWeek": "Cada semana",
+  "sch_periodEveryYear": "Todos los años",
+  "sch_periodHours": "Horas",
+  "sch_periodMinutes": "Minutos",
+  "sch_periodMonth": "mes",
+  "sch_periodMonthly": "Mensual",
+  "sch_periodOnce": "Una vez",
+  "sch_periodSpecificMonths": "Meses específicos",
+  "sch_periodWeek": "Semana",
+  "sch_periodWeekdays": "Días laborables",
+  "sch_periodWeekend": "Fin de semana",
+  "sch_periodWeekly": "Semanal",
+  "sch_periodWorkdays": "Días laborables",
+  "sch_periodYear": "Año",
+  "sch_periodYearly": "Anual",
+  "sch_specificTime": "Tiempo específico",
+  "sch_time": "Hora",
+  "sch_to": "a",
+  "sch_valid": "Válido",
+  "sch_validFrom": "de",
+  "sch_validTo": "a",
+  "sch_wholeDay": "Todo el dia",
+  "sch_yearEveryMonth": "cada mes",
+  "ra_Define schedule...": "Definir horario ...",
+  "ra_Repeat": "Repetir",
+  "ra_use seconds": "usar segundos",
+  "ra_close": "cerrar",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Alternar la vista de estados",
+  "ra_Add new child object to selected parent": "Agregar nuevo objeto hijo al padre seleccionado",
+  "ra_Add objects tree from JSON file": "Agregar árbol de objetos desde el archivo JSON",
+  "ra_Save objects tree as JSON file": "Guardar el árbol de objetos como archivo JSON",
+  "ra_Objects": "Objetos",
+  "ra_States": "Estados",
+  "ra_object_changed_by_user": "Objeto cambiado por última vez a las",
+  "ra_object_changed_by": "Objeto cambiado por",
+  "ra_state_changed_from": "Objeto cambiado de",
+  "ra_state_changed_by": "Estado cambiado por",
+  "ra_aclOwner_read_object": "El propietario puede leer el objeto",
+  "ra_aclOwner_read_state": "El propietario puede leer el estado",
+  "ra_aclOwner_write_object": "El propietario puede escribir el objeto",
+  "ra_aclOwner_write_state": "El propietario puede escribir el estado",
+  "ra_aclGroup_read_object": "El grupo puede leer el objeto",
+  "ra_aclGroup_read_state": "El grupo puede leer el estado",
+  "ra_aclGroup_write_object": "El grupo puede escribir un objeto",
+  "ra_aclGroup_write_state": "El grupo puede escribir el estado",
+  "ra_aclEveryone_read_object": "Todo el mundo puede leer el objeto",
+  "ra_aclEveryone_read_state": "Todos pueden leer el estado",
+  "ra_aclEveryone_write_object": "Todos pueden escribir objetos",
+  "ra_aclEveryone_write_state": "Todos pueden escribir el estado",
+  "ra_Folders always first": "Carpetas siempre primero",
+  "ra_changedFrom": "Cambiaron desde",
+  "ra_qualityCode": "Código de calidad",
+  "ra_timestamp": "Marca de tiempo",
+  "ra_lastChange": "Ultimo cambio",
+  "ra_Owner group": "Grupo propietario",
+  "ra_Owner user": "Usuario propietario",
+  "ra_Create": "Crear",
+  "ra_Changed from": "Cambiaron desde",
+  "ra_Quality code": "Calidad",
+  "ra_Timestamp": "Marca de tiempo",
+  "ra_Last change": "Ultimo cambio",
+  "ra_Collapse all nodes": "Contraer todos los nodos",
+  "ra_Edit custom config": "Editar configuración personalizada",
+  "ra_Collapse one step node": "Contraer un nivel",
+  "ra_Expand one step node": "Expandir un nivel",
+  "ra_Refresh tree": "Actualizar árbol",
+  "ra_Expand all nodes": "Expandir todos los nodos",
+  "ra_Deselect all": "Deselecciona todo",
+  "ra_Select all": "Seleccionar todo",
+  "ra_%s object(s) processed": "%s objeto(s) procesados",
+  "ra_Invalid structure": "Estructura inválida",
+  "ra_%s was imported": "%s fue importado",
+  "ra_Failed to open JSON File": "No se pudo abrir el archivo JSON",
+  "ra_Only following structures of objects are available:": "Solo están disponibles las siguientes estructuras de objetos:",
+  "ra_Folder → State": "Carpeta → Estado",
+  "ra_Folder → Channel → State": "Carpeta → Canal → Estado",
+  "ra_Folder → Device → Channel → State": "Carpeta → Dispositivo → Canal → Estado",
+  "ra_Device → Channel → State": "Dispositivo → Canal → Estado",
+  "ra_Channel → State": "Canal → Estado",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Los no expertos pueden crear nuevos objetos solo en \"0_userdata.0\" o \"alias.0\".",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Los expertos pueden crear objetos en todas partes excepto desde el segundo nivel (por ejemplo, \"vis.0\" o \"javascript.0\").",
+  "ra_expertMode": "Modo experto",
+  "ra_On weekdays": "De lunes a viernes",
+  "ra_Drop the files here...": "Suelta el archivo aquí ...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Arrastre y suelte algunos archivos aquí, o haga clic para seleccionar archivos",
+  "ra_Clear": "Borrar",
+  "ra_Clear icon": "Icono claro",
+  "ra_none": "ninguno",
+  "ra_Select predefined icon": "Seleccionar icono predefinido",
+  "ra_Show lines between rows": "Mostrar líneas entre filas"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/pl.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "Funkcjonować",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "Imię",
-    "ra_filter_role": "Rola",
-    "ra_filter_room": "Sala",
-    "ra_tooltip_ack": "Potwierdzon",
-    "ra_tooltip_from": "Z",
-    "ra_tooltip_lc": "Ostatnia zmiana",
-    "ra_tooltip_quality": "Jakość",
-    "ra_tooltip_ts": "Znak czasu",
-    "ra_tooltip_user": "Użytkownik",
-    "ra_tooltip_value": "Wartość",
-    "ra_Are you sure?": "Jesteś pewny?",
-    "ra_Cancel": "Anuluj",
-    "ra_Copied": "Skopiowano",
-    "ra_Copied %s": "Skopiowano %s",
-    "ra_Define functions": "Zdefiniuj funkcje",
-    "ra_Define rooms": "Zdefiniuj pokoje",
-    "ra_Error": "Błąd",
-    "ra_Message": "Wiadomość",
-    "ra_Ok": "Dobrze",
-    "ra_Please select object ID...": "Wybierz identyfikator obiektu ...",
-    "ra_Selected": "Wybrany",
-    "ra_Unknown error!": "Nieznany błąd!",
-    "ra_Value": "Wartość",
-    "ra_filter_type": "Rodzaj",
-    "ra_invalidConfig": "Nieprawidłowe ustawienia",
-    "ra_otherConfig": "Ustawienia z innego adaptera %s",
-    "ra_tooltip_copyState": "Skopiuj wartość stanu",
-    "ra_tooltip_customConfig": "Własne ustawienia",
-    "ra_tooltip_deleteObject": "Usuń obiekt",
-    "ra_tooltip_editObject": "Edytuj obiekt",
-    "ra_tooltip_editState": "Edytuj wartość stanu",
-    "ra_filter_customs": "Ustawienia",
-    "ra_Listen on all IPs": "Słuchaj na wszystkich adresach IP",
-    "ra_dow_Fr": "Ks",
-    "ra_dow_Mo": "Mo",
-    "ra_dow_Sa": "Sa",
-    "ra_dow_Su": "Su",
-    "ra_dow_Th": "Th",
-    "ra_Save": "Zapisać",
-    "ra_Save and close": "Zapisz i zamknij",
-    "ra_Close": "Blisko",
-    "ra_Auto (no custom columns)": "Auto (bez kolumn niestandardowych)",
-    "ra_Transparent dialog": "Przejrzyste okno dialogowe",
-    "ra_Width": "Szerokość",
-    "ra_val": "Wartość",
-    "ra_buttons": "guziki",
-    "ra_Configure visible columns": "Skonfiguruj widoczne kolumny",
-    "ra_Cannot update attribute, because not found in the object": "Nie można zaktualizować atrybutu, ponieważ nie znaleziono go w obiekcie",
-    "ra_Edit object field": "Edytuj pole obiektu",
-    "ra_Hide empty folders": "Ukryj puste foldery",
-    "ra_Reload files": "Załaduj ponownie pliki",
-    "ra_Create folder": "Utwórz folder",
-    "ra_Upload file": "Przesyłanie pliku",
-    "ra_User files": "Pliki użytkownika",
-    "ra_Confirm deletion of %s": "Potwierdź usunięcie %s",
-    "ra_Delete (no confirm for 5 mins)": "Usuń (bez potwierdzenia przez 5 minut)",
-    "ra_Delete": "Usunąć",
-    "ra_Toggle expert mode": "Przełącz tryb eksperta",
-    "ra_Toggle view mode": "Przełącz tryb widoku",
-    "re_Root": "Korzeń",
-    "re_Back to %s": "Powrót do %s",
-    "ra_Place your files here or click here to open the browse dialog": "Umieść swoje pliki tutaj lub kliknij tutaj, aby otworzyć okno dialogowe przeglądania",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "Jeśli w folderze nie zostanie utworzony żaden plik, zniknie on po zamknięciu przeglądarki",
-    "ra_Folder name": "Nazwa folderu",
-    "ra_Create new folder in %s": "Utwórz nowy folder w %s",
-    "ra_Duplicate name": "Zduplikowana nazwa",
-    "ra_Invalid parent folder!": "Nieprawidłowy folder nadrzędny!",
-    "ra_Drop file here": "Upuść plik tutaj",
-    "ra_Suppress question for next %s minutes": "Ukryj pytanie przez następne %s minut",
-    "ra_Clear filter": "Czysty filtr",
-    "ra_Update": "Aktualizacja",
-    "ra_Load configuration from file": "Załaduj konfigurację z pliku",
-    "ra_Save configuration to file": "Zapisz konfigurację do pliku",
-    "sc_cron": "CRON",
-    "sc_date": "Data",
-    "sc_dates": "Daktyle",
-    "sc_dows": "Dzień tygodnia",
-    "sc_every": "Każdy",
-    "sc_everyN_dates": "co N dni",
-    "sc_everyN_dows": "co N dnia tygodnia",
-    "sc_everyN_hours": "co N godzin",
-    "sc_everyN_minutes": "co N minut",
-    "sc_everyN_months": "co N miesięcy",
-    "sc_everyN_seconds": "co N sekund",
-    "sc_every_dates": "codziennie",
-    "sc_every_dows": "każdy dzień tygodnia",
-    "sc_every_hours": "co godzinę",
-    "sc_every_minutes": "każda minuta",
-    "sc_every_months": "każdego miesiąca",
-    "sc_every_seconds": "każda sekunda",
-    "sc_from": "Od",
-    "sc_hours": "godziny",
-    "sc_interval": "Interwał",
-    "sc_intervalBetween": "Interwał między",
-    "sc_minutes": "Minuty",
-    "sc_months": "miesięcy",
-    "sc_once": "Pewnego razu",
-    "sc_period": "Kropka",
-    "sc_seconds": "sekundy",
-    "sc_simple": "Prosty",
-    "sc_specific": "Określony czas",
-    "sc_specific_dates": "konkretne daty",
-    "sc_specific_dows": "określony dzień tygodni",
-    "sc_specific_hours": "określone godziny",
-    "sc_specific_minutes": "określone minuty",
-    "sc_specific_months": "określone miesiące",
-    "sc_specific_seconds": "określone sekundy",
-    "sc_time": "Czas",
-    "sc_to": "Do",
-    "sc_wizard": "Czarodziej",
-    "sch_all": "wszystko",
-    "sch_astroDay": "Dzień Astro",
-    "sch_astroNight": "Noc Astro",
-    "sch_astro_dawn": "Świt",
-    "sch_astro_dusk": "Zmierzch",
-    "sch_astro_goldenHour": "złota godzina",
-    "sch_astro_goldenHourEnd": "Koniec złotej godziny",
-    "sch_astro_nadir": "Nadir",
-    "sch_astro_nauticalDawn": "Morski świt",
-    "sch_astro_nauticalDusk": "Morski zmierzch",
-    "sch_astro_night": "Noc",
-    "sch_astro_nightEnd": "Koniec nocy",
-    "sch_astro_solarNoon": "Południe słoneczne",
-    "sch_astro_sunrise": "wschód słońca",
-    "sch_astro_sunriseEnd": "Koniec wschodu słońca",
-    "sch_astro_sunset": "Zachód słońca",
-    "sch_astro_sunsetStart": "Początek zachodu słońca",
-    "sch_at": "w",
-    "sch_desc_atTime": "na %s",
-    "sch_desc_everyDay": "codziennie",
-    "sch_desc_everyHour": "co godzinę",
-    "sch_desc_everyMinute": "każda minuta",
-    "sch_desc_everyMonth": "każdego miesiąca",
-    "sch_desc_everyNDay": "każdego dnia %s",
-    "sch_desc_everyNHours": "co %s godzin",
-    "sch_desc_everyNMinutes": "co %s minut",
-    "sch_desc_everyNMonths": "co %s miesięcy",
-    "sch_desc_everyNWeeks": "co %s tygodni",
-    "sch_desc_everyNYears": "co %s lat",
-    "sch_desc_everyWeek": "co tydzień",
-    "sch_desc_everyYear": "każdego roku",
-    "sch_desc_intervalFromTo": "od %s do %s",
-    "sch_desc_never": "nigdy",
-    "sch_desc_onDate": "na %s z %s",
-    "sch_desc_onDates": "na %s i %s z",
-    "sch_desc_onEveryDate": "w każdą datę",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s i %s",
-    "sch_desc_onWeekday": "na %s",
-    "sch_desc_onWeekdays": "na %s i %s",
-    "sch_desc_onWeekends": "w weekendy",
-    "sch_desc_onWorkdays": "w dni robocze",
-    "sch_desc_onceInPast": "nie będzie już wykonywany, ponieważ start jest w przeszłości",
-    "sch_desc_once_on": "na %s",
-    "sch_desc_validFrom": "z %s",
-    "sch_desc_validFromTo": "Wykonaj od do",
-    "sch_desc_validTo": "do %s",
-    "sch_every": "każdy",
-    "sch_exactTime": "Określony czas",
-    "sch_from": "od",
-    "sch_fromTo": "Od-do",
-    "sch_intervalTime": "Czas przerwy",
-    "sch_invert": "odwracać",
-    "sch_no_one": "Żaden",
-    "sch_on": "na",
-    "sch_period": "Kropka",
-    "sch_periodDaily": "Codziennie",
-    "sch_periodDates": "Daktyle",
-    "sch_periodDay": "Dzień",
-    "sch_periodEvery": "Każdy",
-    "sch_periodEveryDay": "Codziennie",
-    "sch_periodEveryMonth": "Każdego miesiąca",
-    "sch_periodEveryWeek": "Co tydzień",
-    "sch_periodEveryYear": "Każdego roku",
-    "sch_periodHours": "godziny",
-    "sch_periodMinutes": "Minuty",
-    "sch_periodMonth": "miesiąc",
-    "sch_periodMonthly": "Miesięczny",
-    "sch_periodOnce": "Pewnego razu",
-    "sch_periodSpecificMonths": "Określone miesiące",
-    "sch_periodWeek": "Tydzień",
-    "sch_periodWeekdays": "Dni powszednie",
-    "sch_periodWeekend": "Weekend",
-    "sch_periodWeekly": "Co tydzień",
-    "sch_periodWorkdays": "Dni robocze",
-    "sch_periodYear": "Rok",
-    "sch_periodYearly": "Rocznie",
-    "sch_specificTime": "Określony czas",
-    "sch_time": "Czas",
-    "sch_to": "do",
-    "sch_valid": "Ważny",
-    "sch_validFrom": "od",
-    "sch_validTo": "do",
-    "sch_wholeDay": "Cały dzień",
-    "sch_yearEveryMonth": "każdego miesiąca",
-    "ra_Define schedule...": "Zdefiniuj harmonogram ...",
-    "ra_Repeat": "Powtarzać",
-    "ra_use seconds": "użyj sekund",
-    "ra_close": "blisko",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "Przełącz widok stanów",
-    "ra_Add new child object to selected parent": "Dodaj nowy obiekt potomny do wybranego rodzica",
-    "ra_Add objects tree from JSON file": "Dodaj drzewo obiektów z pliku JSON",
-    "ra_Save objects tree as JSON file": "Zapisz drzewo obiektów jako plik JSON",
-    "ra_Objects": "Obiekty",
-    "ra_States": "Stany",
-    "ra_object_changed_by_user": "Obiekt ostatnio zmieniony o godz",
-    "ra_object_changed_by": "Obiekt zmieniony przez",
-    "ra_state_changed_from": "Obiekt zmieniony z",
-    "ra_state_changed_by": "Stan zmieniony przez",
-    "ra_aclOwner_read_object": "Właściciel może czytać obiekt",
-    "ra_aclOwner_read_state": "Właściciel może odczytać stan",
-    "ra_aclOwner_write_object": "Właściciel może napisać obiekt",
-    "ra_aclOwner_write_state": "Właściciel może pisać stan",
-    "ra_aclGroup_read_object": "Grupa może odczytać obiekt",
-    "ra_aclGroup_read_state": "Grupa może odczytać stan",
-    "ra_aclGroup_write_object": "Grupa może pisać obiekt",
-    "ra_aclGroup_write_state": "Grupa może pisać stan",
-    "ra_aclEveryone_read_object": "Każdy może czytać obiekt",
-    "ra_aclEveryone_read_state": "Każdy może czytać stan",
-    "ra_aclEveryone_write_object": "Każdy może pisać przedmiot",
-    "ra_aclEveryone_write_state": "Każdy może pisać stan",
-    "ra_Folders always first": "Foldery zawsze na pierwszym miejscu",
-    "ra_changedFrom": "Zmieniony z",
-    "ra_qualityCode": "Kod jakości",
-    "ra_timestamp": "Znak czasu",
-    "ra_lastChange": "Ostatnia zmiana",
-    "ra_Owner group": "Grupa właścicieli",
-    "ra_Owner user": "Właściciel użytkownika",
-    "ra_Create": "Stwórz",
-    "ra_Changed from": "Zmieniony z",
-    "ra_Quality code": "Jakości",
-    "ra_Timestamp": "Znak czasu",
-    "ra_Last change": "Ostatnia zmiana",
-    "ra_Collapse all nodes": "Zwiń wszystkie węzły",
-    "ra_Edit custom config": "Edytuj konfigurację niestandardową",
-    "ra_Collapse one step node": "Zwiń o jeden poziom",
-    "ra_Expand one step node": "Rozwiń o jeden poziom",
-    "ra_Refresh tree": "Odśwież drzewo",
-    "ra_Expand all nodes": "Rozwiń wszystkie węzły",
-    "ra_Deselect all": "Odznacz wszystko",
-    "ra_Select all": "Zaznacz wszystko",
-    "ra_%s object(s) processed": "Przetworzono %s obiektów",
-    "ra_Invalid structure": "Nieprawidłowa struktura",
-    "ra_%s was imported": "%s został zaimportowany",
-    "ra_Failed to open JSON File": "Nie udało się otworzyć pliku JSON",
-    "ra_Only following structures of objects are available:": "Dostępne są tylko następujące struktury obiektów:",
-    "ra_Folder → State": "Folder → Stan",
-    "ra_Folder → Channel → State": "Folder → Kanał → Stan",
-    "ra_Folder → Device → Channel → State": "Folder → Urządzenie → Kanał → Stan",
-    "ra_Device → Channel → State": "Urządzenie → Kanał → Stan",
-    "ra_Channel → State": "Kanał → Stan",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Osoby nie będące ekspertami mogą tworzyć nowe obiekty tylko w „0_userdata.0” lub „alias.0”.",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Eksperci mogą tworzyć obiekty wszędzie poza drugim poziomem (np. „Vis.0” lub „javascript.0”)."
+  "ra_filter_func": "Funkcjonować",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "Imię",
+  "ra_filter_role": "Rola",
+  "ra_filter_room": "Sala",
+  "ra_tooltip_ack": "Potwierdzon",
+  "ra_tooltip_from": "Z",
+  "ra_tooltip_lc": "Ostatnia zmiana",
+  "ra_tooltip_quality": "Jakość",
+  "ra_tooltip_ts": "Znak czasu",
+  "ra_tooltip_user": "Użytkownik",
+  "ra_tooltip_value": "Wartość",
+  "ra_Are you sure?": "Jesteś pewny?",
+  "ra_Cancel": "Anuluj",
+  "ra_Copied": "Skopiowano",
+  "ra_Copied %s": "Skopiowano \"%s\"",
+  "ra_Define functions": "Zdefiniuj funkcje",
+  "ra_Define rooms": "Zdefiniuj pokoje",
+  "ra_Error": "Błąd",
+  "ra_Message": "Wiadomość",
+  "ra_Ok": "Dobrze",
+  "ra_Please select object ID...": "Wybierz identyfikator obiektu ...",
+  "ra_Selected": "Wybrany",
+  "ra_Unknown error!": "Nieznany błąd!",
+  "ra_Value": "Wartość",
+  "ra_filter_type": "Rodzaj",
+  "ra_invalidConfig": "Nieprawidłowe ustawienia",
+  "ra_otherConfig": "Ustawienia z innego adaptera %s",
+  "ra_tooltip_copyState": "Skopiuj wartość stanu",
+  "ra_tooltip_customConfig": "Własne ustawienia",
+  "ra_tooltip_deleteObject": "Usuń obiekt",
+  "ra_tooltip_editObject": "Edytuj obiekt",
+  "ra_tooltip_editState": "Edytuj wartość stanu",
+  "ra_filter_customs": "Ustawienia",
+  "ra_Listen on all IPs": "Słuchaj na wszystkich adresach IP",
+  "ra_dow_Fr": "Ks",
+  "ra_dow_Mo": "Mo",
+  "ra_dow_Sa": "Sa",
+  "ra_dow_Su": "Su",
+  "ra_dow_Th": "Th",
+  "ra_Save": "Zapisać",
+  "ra_Save and close": "Zapisz i zamknij",
+  "ra_Close": "Blisko",
+  "ra_Auto (no custom columns)": "Auto (bez kolumn niestandardowych)",
+  "ra_Transparent dialog": "Przejrzyste okno dialogowe",
+  "ra_Width": "Szerokość",
+  "ra_val": "Wartość",
+  "ra_buttons": "guziki",
+  "ra_Configure visible columns": "Skonfiguruj widoczne kolumny",
+  "ra_Cannot update attribute, because not found in the object": "Nie można zaktualizować atrybutu, ponieważ nie znaleziono go w obiekcie",
+  "ra_Edit object field": "Edytuj pole obiektu",
+  "ra_Hide empty folders": "Ukryj puste foldery",
+  "ra_Reload files": "Załaduj ponownie pliki",
+  "ra_Create folder": "Utwórz folder",
+  "ra_Upload file": "Przesyłanie pliku",
+  "ra_User files": "Pliki użytkownika",
+  "ra_Confirm deletion of %s": "Potwierdź usunięcie %s",
+  "ra_Delete (no confirm for 5 mins)": "Usuń (bez potwierdzenia przez 5 minut)",
+  "ra_Delete": "Usunąć",
+  "ra_Toggle expert mode": "Przełącz tryb eksperta",
+  "ra_Toggle view mode": "Przełącz tryb widoku",
+  "re_Root": "Korzeń",
+  "re_Back to %s": "Powrót do %s",
+  "ra_Place your files here or click here to open the browse dialog": "Umieść swoje pliki tutaj lub kliknij tutaj, aby otworzyć okno dialogowe przeglądania",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "Jeśli w folderze nie zostanie utworzony żaden plik, zniknie on po zamknięciu przeglądarki",
+  "ra_Folder name": "Nazwa folderu",
+  "ra_Create new folder in %s": "Utwórz nowy folder w %s",
+  "ra_Duplicate name": "Zduplikowana nazwa",
+  "ra_Invalid parent folder!": "Nieprawidłowy folder nadrzędny!",
+  "ra_Drop file here": "Upuść plik tutaj",
+  "ra_Suppress question for next %s minutes": "Ukryj pytanie przez następne %s minut",
+  "ra_Clear filter": "Czysty filtr",
+  "ra_Update": "Aktualizacja",
+  "ra_Load configuration from file": "Załaduj konfigurację z pliku",
+  "ra_Save configuration to file": "Zapisz konfigurację do pliku",
+  "sc_cron": "CRON",
+  "sc_date": "Data",
+  "sc_dates": "Daktyle",
+  "sc_dows": "Dzień tygodnia",
+  "sc_every": "Każdy",
+  "sc_everyN_dates": "co N dni",
+  "sc_everyN_dows": "co N dnia tygodnia",
+  "sc_everyN_hours": "co N godzin",
+  "sc_everyN_minutes": "co N minut",
+  "sc_everyN_months": "co N miesięcy",
+  "sc_everyN_seconds": "co N sekund",
+  "sc_every_dates": "codziennie",
+  "sc_every_dows": "każdy dzień tygodnia",
+  "sc_every_hours": "co godzinę",
+  "sc_every_minutes": "każda minuta",
+  "sc_every_months": "każdego miesiąca",
+  "sc_every_seconds": "każda sekunda",
+  "sc_from": "Od",
+  "sc_hours": "godziny",
+  "sc_interval": "Interwał",
+  "sc_intervalBetween": "Interwał między",
+  "sc_minutes": "Minuty",
+  "sc_months": "miesięcy",
+  "sc_once": "Pewnego razu",
+  "sc_period": "Kropka",
+  "sc_seconds": "sekundy",
+  "sc_simple": "Prosty",
+  "sc_specific": "Określony czas",
+  "sc_specific_dates": "konkretne daty",
+  "sc_specific_dows": "określony dzień tygodni",
+  "sc_specific_hours": "określone godziny",
+  "sc_specific_minutes": "określone minuty",
+  "sc_specific_months": "określone miesiące",
+  "sc_specific_seconds": "określone sekundy",
+  "sc_time": "Czas",
+  "sc_to": "Do",
+  "sc_wizard": "Czarodziej",
+  "sch_all": "wszystko",
+  "sch_astroDay": "Dzień Astro",
+  "sch_astroNight": "Noc Astro",
+  "sch_astro_dawn": "Świt",
+  "sch_astro_dusk": "Zmierzch",
+  "sch_astro_goldenHour": "złota godzina",
+  "sch_astro_goldenHourEnd": "Koniec złotej godziny",
+  "sch_astro_nadir": "Nadir",
+  "sch_astro_nauticalDawn": "Morski świt",
+  "sch_astro_nauticalDusk": "Morski zmierzch",
+  "sch_astro_night": "Noc",
+  "sch_astro_nightEnd": "Koniec nocy",
+  "sch_astro_solarNoon": "Południe słoneczne",
+  "sch_astro_sunrise": "wschód słońca",
+  "sch_astro_sunriseEnd": "Koniec wschodu słońca",
+  "sch_astro_sunset": "Zachód słońca",
+  "sch_astro_sunsetStart": "Początek zachodu słońca",
+  "sch_at": "w",
+  "sch_desc_atTime": "na %s",
+  "sch_desc_everyDay": "codziennie",
+  "sch_desc_everyHour": "co godzinę",
+  "sch_desc_everyMinute": "każda minuta",
+  "sch_desc_everyMonth": "każdego miesiąca",
+  "sch_desc_everyNDay": "każdego dnia %s",
+  "sch_desc_everyNHours": "co %s godzin",
+  "sch_desc_everyNMinutes": "co %s minut",
+  "sch_desc_everyNMonths": "co %s miesięcy",
+  "sch_desc_everyNWeeks": "co %s tygodni",
+  "sch_desc_everyNYears": "co %s lat",
+  "sch_desc_everyWeek": "co tydzień",
+  "sch_desc_everyYear": "każdego roku",
+  "sch_desc_intervalFromTo": "od %s do %s",
+  "sch_desc_never": "nigdy",
+  "sch_desc_onDate": "na %s z %s",
+  "sch_desc_onDates": "na %s i %s z",
+  "sch_desc_onEveryDate": "w każdą datę",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s i %s",
+  "sch_desc_onWeekday": "na %s",
+  "sch_desc_onWeekdays": "na %s i %s",
+  "sch_desc_onWeekends": "w weekendy",
+  "sch_desc_onWorkdays": "w dni robocze",
+  "sch_desc_onceInPast": "nie będzie już wykonywany, ponieważ start jest w przeszłości",
+  "sch_desc_once_on": "na %s",
+  "sch_desc_validFrom": "z %s",
+  "sch_desc_validFromTo": "Wykonaj od do",
+  "sch_desc_validTo": "do %s",
+  "sch_every": "każdy",
+  "sch_exactTime": "Określony czas",
+  "sch_from": "od",
+  "sch_fromTo": "Od-do",
+  "sch_intervalTime": "Czas przerwy",
+  "sch_invert": "odwracać",
+  "sch_no_one": "Żaden",
+  "sch_on": "na",
+  "sch_period": "Kropka",
+  "sch_periodDaily": "Codziennie",
+  "sch_periodDates": "Daktyle",
+  "sch_periodDay": "Dzień",
+  "sch_periodEvery": "Każdy",
+  "sch_periodEveryDay": "Codziennie",
+  "sch_periodEveryMonth": "Każdego miesiąca",
+  "sch_periodEveryWeek": "Co tydzień",
+  "sch_periodEveryYear": "Każdego roku",
+  "sch_periodHours": "godziny",
+  "sch_periodMinutes": "Minuty",
+  "sch_periodMonth": "miesiąc",
+  "sch_periodMonthly": "Miesięczny",
+  "sch_periodOnce": "Pewnego razu",
+  "sch_periodSpecificMonths": "Określone miesiące",
+  "sch_periodWeek": "Tydzień",
+  "sch_periodWeekdays": "Dni powszednie",
+  "sch_periodWeekend": "Weekend",
+  "sch_periodWeekly": "Co tydzień",
+  "sch_periodWorkdays": "Dni robocze",
+  "sch_periodYear": "Rok",
+  "sch_periodYearly": "Rocznie",
+  "sch_specificTime": "Określony czas",
+  "sch_time": "Czas",
+  "sch_to": "do",
+  "sch_valid": "Ważny",
+  "sch_validFrom": "od",
+  "sch_validTo": "do",
+  "sch_wholeDay": "Cały dzień",
+  "sch_yearEveryMonth": "każdego miesiąca",
+  "ra_Define schedule...": "Zdefiniuj harmonogram ...",
+  "ra_Repeat": "Powtarzać",
+  "ra_use seconds": "użyj sekund",
+  "ra_close": "blisko",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "Przełącz widok stanów",
+  "ra_Add new child object to selected parent": "Dodaj nowy obiekt potomny do wybranego rodzica",
+  "ra_Add objects tree from JSON file": "Dodaj drzewo obiektów z pliku JSON",
+  "ra_Save objects tree as JSON file": "Zapisz drzewo obiektów jako plik JSON",
+  "ra_Objects": "Obiekty",
+  "ra_States": "Stany",
+  "ra_object_changed_by_user": "Obiekt ostatnio zmieniony o godz",
+  "ra_object_changed_by": "Obiekt zmieniony przez",
+  "ra_state_changed_from": "Obiekt zmieniony z",
+  "ra_state_changed_by": "Stan zmieniony przez",
+  "ra_aclOwner_read_object": "Właściciel może czytać obiekt",
+  "ra_aclOwner_read_state": "Właściciel może odczytać stan",
+  "ra_aclOwner_write_object": "Właściciel może napisać obiekt",
+  "ra_aclOwner_write_state": "Właściciel może pisać stan",
+  "ra_aclGroup_read_object": "Grupa może odczytać obiekt",
+  "ra_aclGroup_read_state": "Grupa może odczytać stan",
+  "ra_aclGroup_write_object": "Grupa może pisać obiekt",
+  "ra_aclGroup_write_state": "Grupa może pisać stan",
+  "ra_aclEveryone_read_object": "Każdy może czytać obiekt",
+  "ra_aclEveryone_read_state": "Każdy może czytać stan",
+  "ra_aclEveryone_write_object": "Każdy może pisać przedmiot",
+  "ra_aclEveryone_write_state": "Każdy może pisać stan",
+  "ra_Folders always first": "Foldery zawsze na pierwszym miejscu",
+  "ra_changedFrom": "Zmieniony z",
+  "ra_qualityCode": "Kod jakości",
+  "ra_timestamp": "Znak czasu",
+  "ra_lastChange": "Ostatnia zmiana",
+  "ra_Owner group": "Grupa właścicieli",
+  "ra_Owner user": "Właściciel użytkownika",
+  "ra_Create": "Stwórz",
+  "ra_Changed from": "Zmieniony z",
+  "ra_Quality code": "Jakości",
+  "ra_Timestamp": "Znak czasu",
+  "ra_Last change": "Ostatnia zmiana",
+  "ra_Collapse all nodes": "Zwiń wszystkie węzły",
+  "ra_Edit custom config": "Edytuj konfigurację niestandardową",
+  "ra_Collapse one step node": "Zwiń o jeden poziom",
+  "ra_Expand one step node": "Rozwiń o jeden poziom",
+  "ra_Refresh tree": "Odśwież drzewo",
+  "ra_Expand all nodes": "Rozwiń wszystkie węzły",
+  "ra_Deselect all": "Odznacz wszystko",
+  "ra_Select all": "Zaznacz wszystko",
+  "ra_%s object(s) processed": "Przetworzono %s obiektów",
+  "ra_Invalid structure": "Nieprawidłowa struktura",
+  "ra_%s was imported": "%s został zaimportowany",
+  "ra_Failed to open JSON File": "Nie udało się otworzyć pliku JSON",
+  "ra_Only following structures of objects are available:": "Dostępne są tylko następujące struktury obiektów:",
+  "ra_Folder → State": "Folder → Stan",
+  "ra_Folder → Channel → State": "Folder → Kanał → Stan",
+  "ra_Folder → Device → Channel → State": "Folder → Urządzenie → Kanał → Stan",
+  "ra_Device → Channel → State": "Urządzenie → Kanał → Stan",
+  "ra_Channel → State": "Kanał → Stan",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "Osoby nie będące ekspertami mogą tworzyć nowe obiekty tylko w „0_userdata.0” lub „alias.0”.",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "Eksperci mogą tworzyć obiekty wszędzie poza drugim poziomem (np. „Vis.0” lub „javascript.0”).",
+  "ra_expertMode": "Tryb ekspercki",
+  "ra_On weekdays": "W dni powszednie",
+  "ra_Drop the files here...": "Upuść plik tutaj...",
+  "ra_Drag 'n' drop some files here, or click to select files": "Przeciągnij i upuść kilka plików tutaj lub kliknij, aby wybrać pliki",
+  "ra_Clear": "Kasować",
+  "ra_Clear icon": "Wyczyść ikonę",
+  "ra_none": "Żaden",
+  "ra_Select predefined icon": "Wybierz predefiniowaną ikonę",
+  "ra_Show lines between rows": "Pokaż linie między rzędami"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/i18n/zh-cn.json":[function(require,module,exports) {
 module.exports = {
-    "ra_filter_func": "功能",
-    "ra_filter_id": "ID",
-    "ra_filter_name": "名称",
-    "ra_filter_role": "角色",
-    "ra_filter_room": "房间",
-    "ra_tooltip_ack": "致谢国旗",
-    "ra_tooltip_from": "从",
-    "ra_tooltip_lc": "最后改变了",
-    "ra_tooltip_quality": "质量",
-    "ra_tooltip_ts": "时间戳",
-    "ra_tooltip_user": "用户",
-    "ra_tooltip_value": "值",
-    "ra_Are you sure?": "你确定吗？",
-    "ra_Cancel": "取消",
-    "ra_Copied": "复制的",
-    "ra_Copied %s": "复制的%s",
-    "ra_Define functions": "定义功能",
-    "ra_Define rooms": "定义房间",
-    "ra_Error": "错误",
-    "ra_Message": "信息",
-    "ra_Ok": "好",
-    "ra_Please select object ID...": "请选择对象ID ...",
-    "ra_Selected": "已选",
-    "ra_Unknown error!": "未知错误！",
-    "ra_Value": "值",
-    "ra_filter_type": "类型",
-    "ra_invalidConfig": "无效的设定",
-    "ra_otherConfig": "来自其他适配器%s的设置",
-    "ra_tooltip_copyState": "复制状态值",
-    "ra_tooltip_customConfig": "自定义设置",
-    "ra_tooltip_deleteObject": "删除物件",
-    "ra_tooltip_editObject": "编辑物件",
-    "ra_tooltip_editState": "编辑状态值",
-    "ra_filter_customs": "设定值",
-    "ra_Listen on all IPs": "监听所有IP",
-    "ra_dow_Fr": "r",
-    "ra_dow_Mo": "莫",
-    "ra_dow_Sa": "萨",
-    "ra_dow_Su": "苏",
-    "ra_Save": "保存",
-    "ra_Save and close": "保存并关闭",
-    "ra_Close": "关",
-    "ra_Auto (no custom columns)": "自动（无自定义列）",
-    "ra_Transparent dialog": "透明对话框",
-    "ra_Width": "宽度",
-    "ra_val": "值",
-    "ra_buttons": "纽扣",
-    "ra_Configure visible columns": "配置可见列",
-    "ra_Cannot update attribute, because not found in the object": "无法更新属性，因为在对象中找不到",
-    "ra_Edit object field": "编辑对象字段",
-    "ra_Hide empty folders": "隐藏空文件夹",
-    "ra_Reload files": "重新载入文件",
-    "ra_Create folder": "创建文件夹",
-    "ra_Upload file": "上传文件",
-    "ra_User files": "用户档案",
-    "ra_Confirm deletion of %s": "确认删除%s",
-    "ra_Delete (no confirm for 5 mins)": "删除（5分钟内未确认）",
-    "ra_Delete": "删除",
-    "ra_Toggle expert mode": "切换专家模式",
-    "ra_Toggle view mode": "切换检视模式",
-    "re_Root": "根",
-    "re_Back to %s": "返回%s",
-    "ra_Place your files here or click here to open the browse dialog": "将文件放在此处或单击此处打开浏览对话框",
-    "ra_If no file will be created in the folder, it will disappear after the browser closed": "如果在该文件夹中未创建任何文件，则该文件将在浏览器关闭后消失",
-    "ra_Folder name": "文件夹名称",
-    "ra_Create new folder in %s": "在%s中创建新文件夹",
-    "ra_Duplicate name": "名称重复",
-    "ra_Invalid parent folder!": "父文件夹无效！",
-    "ra_Drop file here": "将档案放在这里",
-    "ra_Suppress question for next %s minutes": "在接下来的%s分钟内取消提问",
-    "ra_Clear filter": "清除筛选",
-    "ra_Update": "更新资料",
-    "ra_Load configuration from file": "从文件加载配置",
-    "ra_Save configuration to file": "将配置保存到文件",
-    "sc_cron": "周期任务",
-    "sc_date": "日期",
-    "sc_dates": "日",
-    "sc_dows": "星期",
-    "sc_every": "每",
-    "sc_everyN_dates": "每N天",
-    "sc_everyN_dows": "每周N天",
-    "sc_everyN_hours": "每N小时一次",
-    "sc_everyN_minutes": "每N分钟",
-    "sc_everyN_months": "每N个月",
-    "sc_everyN_seconds": "每N秒",
-    "sc_every_dates": "每天",
-    "sc_every_dows": "一周的每一天",
-    "sc_every_hours": "每小时",
-    "sc_every_minutes": "每分钟",
-    "sc_every_months": "每月",
-    "sc_every_seconds": "每秒",
-    "sc_from": "从",
-    "sc_hours": "小时",
-    "sc_interval": "间隔",
-    "sc_intervalBetween": "间隔时间",
-    "sc_minutes": "分钟",
-    "sc_months": "月",
-    "sc_once": "一次",
-    "sc_period": "周期",
-    "sc_seconds": "秒",
-    "sc_simple": "简单模式",
-    "sc_specific": "特定的时间",
-    "sc_specific_dates": "特定的日子",
-    "sc_specific_dows": "特定的一周",
-    "sc_specific_hours": "特定的小时",
-    "sc_specific_minutes": "特定的分钟",
-    "sc_specific_months": "特定的月份",
-    "sc_specific_seconds": "特定的描述",
-    "sc_time": "时间",
-    "sc_to": "至",
-    "sc_wizard": "向导模式",
-    "sch_all": "全选",
-    "sch_astroDay": "天文白天",
-    "sch_astroNight": "天文夜晚",
-    "sch_astro_dawn": "黎明",
-    "sch_astro_dusk": "黄昏",
-    "sch_astro_goldenHour": "黄金时段",
-    "sch_astro_goldenHourEnd": "黄金时段结束",
-    "sch_astro_nadir": "天底",
-    "sch_astro_nauticalDawn": "航海黎明",
-    "sch_astro_nauticalDusk": "航海黄昏",
-    "sch_astro_night": "夜晚",
-    "sch_astro_nightEnd": "夜晚结束",
-    "sch_astro_solarNoon": "正午",
-    "sch_astro_sunrise": "日出",
-    "sch_astro_sunriseEnd": "日出结束",
-    "sch_astro_sunset": "日落",
-    "sch_astro_sunsetStart": "日落开始",
-    "sch_at": "在",
-    "sch_desc_atTime": "的%s",
-    "sch_desc_everyDay": "每天",
-    "sch_desc_everyHour": "每小时",
-    "sch_desc_everyMinute": "每分钟",
-    "sch_desc_everyMonth": "每月",
-    "sch_desc_everyNDay": "每%s天",
-    "sch_desc_everyNHours": "每%s小时",
-    "sch_desc_everyNMinutes": "每%s分钟",
-    "sch_desc_everyNMonths": "每%s月",
-    "sch_desc_everyNWeeks": "每%s周",
-    "sch_desc_everyNYears": "每%s年",
-    "sch_desc_everyWeek": "每周",
-    "sch_desc_everyYear": "每年",
-    "sch_desc_intervalFromTo": "从%s到%s",
-    "sch_desc_never": "决不",
-    "sch_desc_onDate": "在%s的%s上",
-    "sch_desc_onDates": "在%s和%s上",
-    "sch_desc_onEveryDate": "在每天",
-    "sch_desc_onMonth": "%s",
-    "sch_desc_onMonths": "%s和%s",
-    "sch_desc_onWeekday": "在%s上",
-    "sch_desc_onWeekdays": "在%s和%s上",
-    "sch_desc_onWeekends": "在周末",
-    "sch_desc_onWorkdays": "在工作日",
-    "sch_desc_onceInPast": "将不再执行，因为起始时间已经是过去的时间了。",
-    "sch_desc_once_on": "在%s上",
-    "sch_desc_validFrom": "来自%s",
-    "sch_desc_validFromTo": "从执行到",
-    "sch_desc_validTo": "到%s",
-    "sch_every": "每",
-    "sch_exactTime": "特定的时间",
-    "sch_from": "从",
-    "sch_fromTo": "从到",
-    "sch_intervalTime": "间隔时间",
-    "sch_invert": "倒置",
-    "sch_no_one": "取消全选",
-    "sch_on": "的",
-    "sch_period": "周期",
-    "sch_periodDaily": "每天",
-    "sch_periodDates": "日期",
-    "sch_periodDay": "天",
-    "sch_periodEvery": "每",
-    "sch_periodEveryDay": "每天",
-    "sch_periodEveryMonth": "每月",
-    "sch_periodEveryWeek": "每周",
-    "sch_periodEveryYear": "每年",
-    "sch_periodHours": "小时",
-    "sch_periodMinutes": "分钟",
-    "sch_periodMonth": "月",
-    "sch_periodMonthly": "每月一次",
-    "sch_periodOnce": "一次",
-    "sch_periodSpecificMonths": "特定的月份",
-    "sch_periodWeek": "周",
-    "sch_periodWeekdays": "工作日",
-    "sch_periodWeekend": "周末",
-    "sch_periodWeekly": "每周",
-    "sch_periodWorkdays": "工作日",
-    "sch_periodYear": "年",
-    "sch_periodYearly": "每年",
-    "sch_specificTime": "特定的时间",
-    "sch_time": "时间",
-    "sch_to": "至",
-    "sch_valid": "生效",
-    "sch_validFrom": "从",
-    "sch_validTo": "至",
-    "sch_wholeDay": "一整天",
-    "sch_yearEveryMonth": "每月",
-    "ra_Define schedule...": "定义时间表...",
-    "ra_Repeat": "重复",
-    "ra_use seconds": "用秒",
-    "ra_close": "关闭",
-    "ra_dow_Th": "Th",
-    "ra_dow_Tu": "Tu",
-    "ra_Toggle the states view": "切换状态视图",
-    "ra_Add new child object to selected parent": "将新的子对象添加到选定的父对象",
-    "ra_Add objects tree from JSON file": "从JSON文件添加对象树",
-    "ra_Save objects tree as JSON file": "将对象树另存为JSON文件",
-    "ra_Objects": "对象",
-    "ra_States": "状态",
-    "ra_object_changed_by_user": "对象上次更改时间为",
-    "ra_object_changed_by": "物件变更者",
-    "ra_state_changed_from": "对象已从更改",
-    "ra_state_changed_by": "状态由",
-    "ra_aclOwner_read_object": "所有者可以读取对象",
-    "ra_aclOwner_read_state": "所有者可以读取状态",
-    "ra_aclOwner_write_object": "所有者可以写对象",
-    "ra_aclOwner_write_state": "所有者可以写状态",
-    "ra_aclGroup_read_object": "组可以读取对象",
-    "ra_aclGroup_read_state": "群组可以读取状态",
-    "ra_aclGroup_write_object": "组可以写对象",
-    "ra_aclGroup_write_state": "组可以写状态",
-    "ra_aclEveryone_read_object": "每个人都可以阅读对象",
-    "ra_aclEveryone_read_state": "每个人都可以阅读状态",
-    "ra_aclEveryone_write_object": "每个人都可以写对象",
-    "ra_aclEveryone_write_state": "每个人都可以写状态",
-    "ra_Folders always first": "资料夹永远优先",
-    "ra_changedFrom": "更改为",
-    "ra_qualityCode": "质量代码",
-    "ra_timestamp": "时间戳记",
-    "ra_lastChange": "最后一次变更",
-    "ra_Owner group": "所有者组",
-    "ra_Owner user": "所有者用户",
-    "ra_Create": "创建",
-    "ra_Changed from": "更改为",
-    "ra_Quality code": "质量代码",
-    "ra_Timestamp": "时间戳记",
-    "ra_Last change": "最后一次变更",
-    "ra_Collapse all nodes": "收合所有节点",
-    "ra_Edit custom config": "编辑自定义配置",
-    "ra_Collapse one step node": "折叠一级",
-    "ra_Expand one step node": "扩大一级",
-    "ra_Refresh tree": "刷新树",
-    "ra_Expand all nodes": "展开所有节点",
-    "ra_Deselect all": "全部取消选择",
-    "ra_Select all": "全选",
-    "ra_%s object(s) processed": "已处理%s个对象",
-    "ra_Invalid structure": "结构无效",
-    "ra_%s was imported": "对象已导入",
-    "ra_Failed to open JSON File": "无法打开JSON文件",
-    "ra_Only following structures of objects are available:": "仅以下对象结构可用：",
-    "ra_Folder → State": "文件夹→状态",
-    "ra_Folder → Channel → State": "文件夹→频道→状态",
-    "ra_Folder → Device → Channel → State": "文件夹→设备→频道→状态",
-    "ra_Device → Channel → State": "设备→频道→状态",
-    "ra_Channel → State": "频道→状态",
-    "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "非专家只能在“ 0_userdata.0”或“ alias.0”中创建新对象。",
-    "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "专家可以在任何地方创建对象，但要从第二层开始（例如“ vis.0”或“ javascript.0”）。"
+  "ra_filter_func": "功能",
+  "ra_filter_id": "ID",
+  "ra_filter_name": "名称",
+  "ra_filter_role": "角色",
+  "ra_filter_room": "房间",
+  "ra_tooltip_ack": "致谢国旗",
+  "ra_tooltip_from": "从",
+  "ra_tooltip_lc": "最后改变了",
+  "ra_tooltip_quality": "质量",
+  "ra_tooltip_ts": "时间戳",
+  "ra_tooltip_user": "用户",
+  "ra_tooltip_value": "值",
+  "ra_Are you sure?": "你确定吗？",
+  "ra_Cancel": "取消",
+  "ra_Copied": "复制的",
+  "ra_Copied %s": "复制的\"%s\"",
+  "ra_Define functions": "定义功能",
+  "ra_Define rooms": "定义房间",
+  "ra_Error": "错误",
+  "ra_Message": "信息",
+  "ra_Ok": "好",
+  "ra_Please select object ID...": "请选择对象ID ...",
+  "ra_Selected": "已选",
+  "ra_Unknown error!": "未知错误！",
+  "ra_Value": "值",
+  "ra_filter_type": "类型",
+  "ra_invalidConfig": "无效的设定",
+  "ra_otherConfig": "来自其他适配器%s的设置",
+  "ra_tooltip_copyState": "复制状态值",
+  "ra_tooltip_customConfig": "自定义设置",
+  "ra_tooltip_deleteObject": "删除物件",
+  "ra_tooltip_editObject": "编辑物件",
+  "ra_tooltip_editState": "编辑状态值",
+  "ra_filter_customs": "设定值",
+  "ra_Listen on all IPs": "监听所有IP",
+  "ra_dow_Fr": "r",
+  "ra_dow_Mo": "莫",
+  "ra_dow_Sa": "萨",
+  "ra_dow_Su": "苏",
+  "ra_Save": "保存",
+  "ra_Save and close": "保存并关闭",
+  "ra_Close": "关",
+  "ra_Auto (no custom columns)": "自动（无自定义列）",
+  "ra_Transparent dialog": "透明对话框",
+  "ra_Width": "宽度",
+  "ra_val": "值",
+  "ra_buttons": "纽扣",
+  "ra_Configure visible columns": "配置可见列",
+  "ra_Cannot update attribute, because not found in the object": "无法更新属性，因为在对象中找不到",
+  "ra_Edit object field": "编辑对象字段",
+  "ra_Hide empty folders": "隐藏空文件夹",
+  "ra_Reload files": "重新载入文件",
+  "ra_Create folder": "创建文件夹",
+  "ra_Upload file": "上传文件",
+  "ra_User files": "用户档案",
+  "ra_Confirm deletion of %s": "确认删除%s",
+  "ra_Delete (no confirm for 5 mins)": "删除（5分钟内未确认）",
+  "ra_Delete": "删除",
+  "ra_Toggle expert mode": "切换专家模式",
+  "ra_Toggle view mode": "切换检视模式",
+  "re_Root": "根",
+  "re_Back to %s": "返回%s",
+  "ra_Place your files here or click here to open the browse dialog": "将文件放在此处或单击此处打开浏览对话框",
+  "ra_If no file will be created in the folder, it will disappear after the browser closed": "如果在该文件夹中未创建任何文件，则该文件将在浏览器关闭后消失",
+  "ra_Folder name": "文件夹名称",
+  "ra_Create new folder in %s": "在%s中创建新文件夹",
+  "ra_Duplicate name": "名称重复",
+  "ra_Invalid parent folder!": "父文件夹无效！",
+  "ra_Drop file here": "将档案放在这里",
+  "ra_Suppress question for next %s minutes": "在接下来的%s分钟内取消提问",
+  "ra_Clear filter": "清除筛选",
+  "ra_Update": "更新资料",
+  "ra_Load configuration from file": "从文件加载配置",
+  "ra_Save configuration to file": "将配置保存到文件",
+  "sc_cron": "周期任务",
+  "sc_date": "日期",
+  "sc_dates": "日",
+  "sc_dows": "星期",
+  "sc_every": "每",
+  "sc_everyN_dates": "每N天",
+  "sc_everyN_dows": "每周N天",
+  "sc_everyN_hours": "每N小时一次",
+  "sc_everyN_minutes": "每N分钟",
+  "sc_everyN_months": "每N个月",
+  "sc_everyN_seconds": "每N秒",
+  "sc_every_dates": "每天",
+  "sc_every_dows": "一周的每一天",
+  "sc_every_hours": "每小时",
+  "sc_every_minutes": "每分钟",
+  "sc_every_months": "每月",
+  "sc_every_seconds": "每秒",
+  "sc_from": "从",
+  "sc_hours": "小时",
+  "sc_interval": "间隔",
+  "sc_intervalBetween": "间隔时间",
+  "sc_minutes": "分钟",
+  "sc_months": "月",
+  "sc_once": "一次",
+  "sc_period": "周期",
+  "sc_seconds": "秒",
+  "sc_simple": "简单模式",
+  "sc_specific": "特定的时间",
+  "sc_specific_dates": "特定的日子",
+  "sc_specific_dows": "特定的一周",
+  "sc_specific_hours": "特定的小时",
+  "sc_specific_minutes": "特定的分钟",
+  "sc_specific_months": "特定的月份",
+  "sc_specific_seconds": "特定的描述",
+  "sc_time": "时间",
+  "sc_to": "至",
+  "sc_wizard": "向导模式",
+  "sch_all": "全选",
+  "sch_astroDay": "天文白天",
+  "sch_astroNight": "天文夜晚",
+  "sch_astro_dawn": "黎明",
+  "sch_astro_dusk": "黄昏",
+  "sch_astro_goldenHour": "黄金时段",
+  "sch_astro_goldenHourEnd": "黄金时段结束",
+  "sch_astro_nadir": "天底",
+  "sch_astro_nauticalDawn": "航海黎明",
+  "sch_astro_nauticalDusk": "航海黄昏",
+  "sch_astro_night": "夜晚",
+  "sch_astro_nightEnd": "夜晚结束",
+  "sch_astro_solarNoon": "正午",
+  "sch_astro_sunrise": "日出",
+  "sch_astro_sunriseEnd": "日出结束",
+  "sch_astro_sunset": "日落",
+  "sch_astro_sunsetStart": "日落开始",
+  "sch_at": "在",
+  "sch_desc_atTime": "的%s",
+  "sch_desc_everyDay": "每天",
+  "sch_desc_everyHour": "每小时",
+  "sch_desc_everyMinute": "每分钟",
+  "sch_desc_everyMonth": "每月",
+  "sch_desc_everyNDay": "每%s天",
+  "sch_desc_everyNHours": "每%s小时",
+  "sch_desc_everyNMinutes": "每%s分钟",
+  "sch_desc_everyNMonths": "每%s月",
+  "sch_desc_everyNWeeks": "每%s周",
+  "sch_desc_everyNYears": "每%s年",
+  "sch_desc_everyWeek": "每周",
+  "sch_desc_everyYear": "每年",
+  "sch_desc_intervalFromTo": "从%s到%s",
+  "sch_desc_never": "决不",
+  "sch_desc_onDate": "在%s的%s上",
+  "sch_desc_onDates": "在%s和%s上",
+  "sch_desc_onEveryDate": "在每天",
+  "sch_desc_onMonth": "%s",
+  "sch_desc_onMonths": "%s和%s",
+  "sch_desc_onWeekday": "在%s上",
+  "sch_desc_onWeekdays": "在%s和%s上",
+  "sch_desc_onWeekends": "在周末",
+  "sch_desc_onWorkdays": "在工作日",
+  "sch_desc_onceInPast": "将不再执行，因为起始时间已经是过去的时间了。",
+  "sch_desc_once_on": "在%s上",
+  "sch_desc_validFrom": "来自%s",
+  "sch_desc_validFromTo": "从执行到",
+  "sch_desc_validTo": "到%s",
+  "sch_every": "每",
+  "sch_exactTime": "特定的时间",
+  "sch_from": "从",
+  "sch_fromTo": "从到",
+  "sch_intervalTime": "间隔时间",
+  "sch_invert": "倒置",
+  "sch_no_one": "取消全选",
+  "sch_on": "的",
+  "sch_period": "周期",
+  "sch_periodDaily": "每天",
+  "sch_periodDates": "日期",
+  "sch_periodDay": "天",
+  "sch_periodEvery": "每",
+  "sch_periodEveryDay": "每天",
+  "sch_periodEveryMonth": "每月",
+  "sch_periodEveryWeek": "每周",
+  "sch_periodEveryYear": "每年",
+  "sch_periodHours": "小时",
+  "sch_periodMinutes": "分钟",
+  "sch_periodMonth": "月",
+  "sch_periodMonthly": "每月一次",
+  "sch_periodOnce": "一次",
+  "sch_periodSpecificMonths": "特定的月份",
+  "sch_periodWeek": "周",
+  "sch_periodWeekdays": "工作日",
+  "sch_periodWeekend": "周末",
+  "sch_periodWeekly": "每周",
+  "sch_periodWorkdays": "工作日",
+  "sch_periodYear": "年",
+  "sch_periodYearly": "每年",
+  "sch_specificTime": "特定的时间",
+  "sch_time": "时间",
+  "sch_to": "至",
+  "sch_valid": "生效",
+  "sch_validFrom": "从",
+  "sch_validTo": "至",
+  "sch_wholeDay": "一整天",
+  "sch_yearEveryMonth": "每月",
+  "ra_Define schedule...": "定义时间表...",
+  "ra_Repeat": "重复",
+  "ra_use seconds": "用秒",
+  "ra_close": "关闭",
+  "ra_dow_Th": "Th",
+  "ra_dow_Tu": "Tu",
+  "ra_Toggle the states view": "切换状态视图",
+  "ra_Add new child object to selected parent": "将新的子对象添加到选定的父对象",
+  "ra_Add objects tree from JSON file": "从JSON文件添加对象树",
+  "ra_Save objects tree as JSON file": "将对象树另存为JSON文件",
+  "ra_Objects": "对象",
+  "ra_States": "状态",
+  "ra_object_changed_by_user": "对象上次更改时间为",
+  "ra_object_changed_by": "物件变更者",
+  "ra_state_changed_from": "对象已从更改",
+  "ra_state_changed_by": "状态由",
+  "ra_aclOwner_read_object": "所有者可以读取对象",
+  "ra_aclOwner_read_state": "所有者可以读取状态",
+  "ra_aclOwner_write_object": "所有者可以写对象",
+  "ra_aclOwner_write_state": "所有者可以写状态",
+  "ra_aclGroup_read_object": "组可以读取对象",
+  "ra_aclGroup_read_state": "群组可以读取状态",
+  "ra_aclGroup_write_object": "组可以写对象",
+  "ra_aclGroup_write_state": "组可以写状态",
+  "ra_aclEveryone_read_object": "每个人都可以阅读对象",
+  "ra_aclEveryone_read_state": "每个人都可以阅读状态",
+  "ra_aclEveryone_write_object": "每个人都可以写对象",
+  "ra_aclEveryone_write_state": "每个人都可以写状态",
+  "ra_Folders always first": "资料夹永远优先",
+  "ra_changedFrom": "更改为",
+  "ra_qualityCode": "质量代码",
+  "ra_timestamp": "时间戳记",
+  "ra_lastChange": "最后一次变更",
+  "ra_Owner group": "所有者组",
+  "ra_Owner user": "所有者用户",
+  "ra_Create": "创建",
+  "ra_Changed from": "更改为",
+  "ra_Quality code": "质量代码",
+  "ra_Timestamp": "时间戳记",
+  "ra_Last change": "最后一次变更",
+  "ra_Collapse all nodes": "收合所有节点",
+  "ra_Edit custom config": "编辑自定义配置",
+  "ra_Collapse one step node": "折叠一级",
+  "ra_Expand one step node": "扩大一级",
+  "ra_Refresh tree": "刷新树",
+  "ra_Expand all nodes": "展开所有节点",
+  "ra_Deselect all": "全部取消选择",
+  "ra_Select all": "全选",
+  "ra_%s object(s) processed": "已处理%s个对象",
+  "ra_Invalid structure": "结构无效",
+  "ra_%s was imported": "对象已导入",
+  "ra_Failed to open JSON File": "无法打开JSON文件",
+  "ra_Only following structures of objects are available:": "仅以下对象结构可用：",
+  "ra_Folder → State": "文件夹→状态",
+  "ra_Folder → Channel → State": "文件夹→频道→状态",
+  "ra_Folder → Device → Channel → State": "文件夹→设备→频道→状态",
+  "ra_Device → Channel → State": "设备→频道→状态",
+  "ra_Channel → State": "频道→状态",
+  "ra_Non-experts may create new objects only in \"0_userdata.0\" or \"alias.0\".": "非专家只能在“ 0_userdata.0”或“ alias.0”中创建新对象。",
+  "ra_The experts may create objects everywhere but from second level (e.g. \"vis.0\" or \"javascript.0\").": "专家可以在任何地方创建对象，但要从第二层开始（例如“ vis.0”或“ javascript.0”）。",
+  "ra_expertMode": "专家模式",
+  "ra_On weekdays": "在工作日",
+  "ra_Drop the files here...": "把文件放在这里...",
+  "ra_Drag 'n' drop some files here, or click to select files": "将一些文件拖放到此处，或单击以选择文件",
+  "ra_Clear": "删除",
+  "ra_Clear icon": "清除图标",
+  "ra_none": "没有任何",
+  "ra_Select predefined icon": "选择预定义图标",
+  "ra_Show lines between rows": "显示行之间的线"
 };
 },{}],"../../node_modules/@iobroker/adapter-react/GenericApp.js":[function(require,module,exports) {
 "use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof3 = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+
+var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _Connection = _interopRequireWildcard(require("./Connection"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var Sentry = _interopRequireWildcard(require("@sentry/browser"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var SentryIntegrations = _interopRequireWildcard(require("@sentry/integrations"));
 
 var _Error = _interopRequireDefault(require("./Dialogs/Error"));
 
@@ -71432,41 +76767,15 @@ require("./index.css");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof3(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
-
-function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 if (!window.localStorage) {
   window.localStorage = {
@@ -71484,7 +76793,7 @@ if (!window.localStorage) {
 
 
 var GenericApp = /*#__PURE__*/function (_Router) {
-  _inherits(GenericApp, _Router);
+  (0, _inherits2["default"])(GenericApp, _Router);
 
   var _super = _createSuper(GenericApp);
 
@@ -71495,11 +76804,20 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   function GenericApp(props, settings) {
     var _this;
 
-    _classCallCheck(this, GenericApp);
+    (0, _classCallCheck2["default"])(this, GenericApp);
+
+    // Remove `!Connection.isWeb() && window.adapterName !== 'material'` when iobroker.socket will support native ws
+    if (!_Connection["default"].isWeb() && window.io && window.location.port === '3000') {
+      try {
+        var io = new window.SocketClient();
+        delete window.io;
+        window.io = io;
+      } catch (e) {// ignore
+      }
+    }
 
     _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "onSystemConfigChanged", function (id, obj) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onSystemConfigChanged", function (id, obj) {
       if (obj && id === 'system.config') {
         var _obj$common;
 
@@ -71520,8 +76838,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         }
       }
     });
-
-    _defineProperty(_assertThisInitialized(_this), "onReceiveMessage", function (message) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onReceiveMessage", function (message) {
       if (message !== null && message !== void 0 && message.data) {
         if (message.data === 'updateTheme') {
           var newThemeName = _Utils["default"].getThemeName();
@@ -71545,8 +76862,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         }
       }
     });
-
-    _defineProperty(_assertThisInitialized(_this), "onResize", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onResize", function () {
       _this.resizeTimer && clearTimeout(_this.resizeTimer);
       _this.resizeTimer = setTimeout(function () {
         _this.resizeTimer = null;
@@ -71556,7 +76872,6 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         });
       }, 200);
     });
-
     (0, _Prompt["default"])();
     var query = (window.location.search || '').replace(/^\?/, '').replace(/#.*$/, '');
     var args = {};
@@ -71565,13 +76880,20 @@ var GenericApp = /*#__PURE__*/function (_Router) {
     }).forEach(function (b) {
       var parts = b.split('=');
       args[parts[0]] = parts.length === 2 ? parts[1] : true;
+
+      if (args[parts[0]] === 'true') {
+        args[parts[0]] = true;
+      } else if (args[parts[0]] === 'false') {
+        args[parts[0]] = false;
+      }
     }); // extract instance from URL
 
     _this.instance = args.instance !== undefined ? parseInt(args.instance, 10) || 0 : parseInt(window.location.search.slice(1), 10) || 0; // extract adapter name from URL
 
     var tmp = window.location.pathname.split('/');
     _this.adapterName = (settings === null || settings === void 0 ? void 0 : settings.adapterName) || props.adapterName || window.adapterName || tmp[tmp.length - 2] || 'iot';
-    _this.instanceId = 'system.adapter.' + _this.adapterName + '.' + _this.instance;
+    _this.instanceId = "system.adapter.".concat(_this.adapterName, ".").concat(_this.instance);
+    _this.newReact = args.newReact === true; // it is admin5
 
     var location = _Router2["default"].getLocation();
 
@@ -71625,6 +76947,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
     _this.savedNative = {}; // to detect if the config changed
 
     _this.encryptedFields = props.encryptedFields || (settings === null || settings === void 0 ? void 0 : settings.encryptedFields) || [];
+    _this.sentryDSN = settings && settings.sentryDSN || props.sentryDSN;
     _this.socket = new _Connection["default"](_objectSpread(_objectSpread({}, (props === null || props === void 0 ? void 0 : props.socket) || (settings === null || settings === void 0 ? void 0 : settings.socket)), {}, {
       name: _this.adapterName,
       doNotLoadAllObjects: settings === null || settings === void 0 ? void 0 : settings.doNotLoadAllObjects,
@@ -71653,37 +76976,46 @@ var GenericApp = /*#__PURE__*/function (_Router) {
           _this._secret = typeof obj !== 'undefined' && obj["native"] && obj["native"].secret || 'Zgfr56gFe87jJOM';
           _this._systemConfig = (obj === null || obj === void 0 ? void 0 : obj.common) || {};
           return _this.socket.getObject(_this.instanceId);
-        }).then(function (obj) {
-          var waitPromise; // read UUID and init sentry with it.
+        }).then(function (instanceObj) {
+          var waitPromise;
+          var sentryEnabled = _this._systemConfig.diag !== 'none' && instanceObj && instanceObj.common && instanceObj.common.name && instanceObj.common.version && !instanceObj.common.disableDataReporting && window.location.host !== 'localhost:3000'; // activate sentry plugin
 
-          if (!_this.sentryInited) {
+          if (!_this.sentryStarted && _this.sentryDSN && sentryEnabled) {
+            _this.sentryStarted = true;
+            Sentry.init({
+              dsn: _this.sentryDSN,
+              release: "iobroker.".concat(instanceObj.common.name, "@").concat(instanceObj.common.version),
+              integrations: [new SentryIntegrations.Dedupe()]
+            });
+          } // read UUID and init sentry with it.
+          // for backward compatibility it will be processed separately from above logic: some adapters could still have this.sentryDSN as undefined
+
+
+          if (!_this.sentryInited && sentryEnabled) {
             _this.sentryInited = true;
-
-            if (window.location.host !== 'localhost:3000') {
-              waitPromise = _this.socket.getObject('system.meta.uuid').then(function (uuidObj) {
-                if (uuidObj && uuidObj["native"] && uuidObj["native"].uuid) {
-                  Sentry.configureScope(function (scope) {
-                    return scope.setUser({
-                      id: uuidObj["native"].uuid
-                    });
+            waitPromise = _this.socket.getObject('system.meta.uuid').then(function (uuidObj) {
+              if (uuidObj && uuidObj["native"] && uuidObj["native"].uuid) {
+                Sentry.configureScope(function (scope) {
+                  return scope.setUser({
+                    id: uuidObj["native"].uuid
                   });
-                }
-              });
-            }
+                });
+              }
+            });
           }
 
           waitPromise = waitPromise || Promise.resolve();
           waitPromise.then(function () {
-            if (obj) {
-              _this.common = obj && obj.common;
+            if (instanceObj) {
+              _this.common = instanceObj === null || instanceObj === void 0 ? void 0 : instanceObj.common;
 
-              _this.onPrepareLoad(obj["native"]); // decode all secrets
+              _this.onPrepareLoad(instanceObj["native"], instanceObj.encryptedNative); // decode all secrets
 
 
-              _this.savedNative = JSON.parse(JSON.stringify(obj["native"]));
+              _this.savedNative = JSON.parse(JSON.stringify(instanceObj["native"]));
 
               _this.setState({
-                "native": obj["native"],
+                "native": instanceObj["native"],
                 loaded: true,
                 expertMode: _this.getExpertMode()
               }, function () {
@@ -71712,7 +77044,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
     return _this;
   }
 
-  _createClass(GenericApp, [{
+  (0, _createClass2["default"])(GenericApp, [{
     key: "componentDidMount",
     value:
     /**
@@ -71721,8 +77053,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
     function componentDidMount() {
       window.addEventListener('resize', this.onResize, true);
       window.addEventListener('message', this.onReceiveMessage, false);
-
-      _get(_getPrototypeOf(GenericApp.prototype), "componentDidMount", this).call(this);
+      (0, _get2["default"])((0, _getPrototypeOf2["default"])(GenericApp.prototype), "componentDidMount", this).call(this);
     }
     /**
      * Called immediately before a component is destroyed.
@@ -71733,8 +77064,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
     value: function componentWillUnmount() {
       window.removeEventListener('resize', this.onResize, true);
       window.removeEventListener('message', this.onReceiveMessage, false);
-
-      _get(_getPrototypeOf(GenericApp.prototype), "componentWillUnmount", this).call(this);
+      (0, _get2["default"])((0, _getPrototypeOf2["default"])(GenericApp.prototype), "componentWillUnmount", this).call(this);
     }
   }, {
     key: "createTheme",
@@ -71777,6 +77107,8 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "toggleTheme",
     value: function toggleTheme() {
+      var _this2 = this;
+
       var themeName = this.state.themeName; // dark => blue => colored => light => dark
 
       var newThemeName = themeName === 'dark' ? 'blue' : themeName === 'blue' ? 'colored' : themeName === 'colored' ? 'light' : 'dark';
@@ -71788,6 +77120,9 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         theme: theme,
         themeName: this.getThemeName(theme),
         themeType: this.getThemeType(theme)
+      }, function () {
+        _this2.props.onThemeChange && _this2.props.onThemeChange(newThemeName);
+        _this2.onThemeChanged && _this2.onThemeChanged(newThemeName);
       });
     }
     /**
@@ -71798,18 +77133,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "getSystemConfig",
     value: function getSystemConfig() {
-      if (this._systemConfig) {
-        return Promise.resolve(this._systemConfig);
-      }
-
-      if (this.socket.objects && this.socket.objects['system.config']) {
-        return Promise.resolve(this.socket.objects['system.config']);
-      } else {
-        // @ts-ignore
-        return this.socket.getObject('system.config').then(function (obj) {
-          return (obj === null || obj === void 0 ? void 0 : obj.common) || {};
-        });
-      }
+      return this.socket.getSystemConfig();
     }
     /**
      * Get current expert mode
@@ -71901,12 +77225,12 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "onPrepareSave",
     value: function onPrepareSave(settings) {
-      var _this2 = this;
+      var _this3 = this;
 
       // here you can encode values
       this.encryptedFields && this.encryptedFields.forEach(function (attr) {
         if (settings[attr]) {
-          settings[attr] = _this2.encrypt(settings[attr]);
+          settings[attr] = _this3.encrypt(settings[attr]);
         }
       });
       return true;
@@ -71915,17 +77239,26 @@ var GenericApp = /*#__PURE__*/function (_Router) {
      * Gets called after the settings are loaded.
      * You may override this if needed.
      * @param {Record<string, any>} settings
+     * @param {string[]} encryptedNative optional list of fields to be decrypted
      */
 
   }, {
     key: "onPrepareLoad",
-    value: function onPrepareLoad(settings) {
-      var _this3 = this;
+    value: function onPrepareLoad(settings, encryptedNative) {
+      var _this4 = this;
 
       // here you can encode values
       this.encryptedFields && this.encryptedFields.forEach(function (attr) {
         if (settings[attr]) {
-          settings[attr] = _this3.decrypt(settings[attr]);
+          settings[attr] = _this4.decrypt(settings[attr]);
+        }
+      });
+      encryptedNative && encryptedNative.forEach(function (attr) {
+        _this4.encryptedFields = _this4.encryptedFields || [];
+        !_this4.encryptedFields.includes(attr) && _this4.encryptedFields.push(attr);
+
+        if (settings[attr]) {
+          settings[attr] = _this4.decrypt(settings[attr]);
         }
       });
     }
@@ -71937,10 +77270,10 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "getExtendableInstances",
     value: function getExtendableInstances() {
-      var _this4 = this;
+      var _this5 = this;
 
       return new Promise(function (resolve) {
-        _this4.socket._socket.emit('getObjectView', 'system', 'instance', null, function (err, doc) {
+        _this5.socket._socket.emit('getObjectView', 'system', 'instance', null, function (err, doc) {
           if (err) {
             resolve([]);
           } else {
@@ -71961,10 +77294,10 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "getIpAddresses",
     value: function getIpAddresses(host) {
-      var _this5 = this;
+      var _this6 = this;
 
       return new Promise(function (resolve, reject) {
-        _this5.socket._socket.emit('getHostByIp', host || _this5.common.host, function (ip, _host) {
+        _this6.socket._socket.emit('getHostByIp', host || _this6.common.host, function (ip, _host) {
           var IPs4 = [{
             name: '[IPv4] 0.0.0.0 - ' + _i18n["default"].t('ra_Listen on all IPs'),
             address: '0.0.0.0',
@@ -72016,7 +77349,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "onSave",
     value: function onSave(isClose) {
-      var _this6 = this;
+      var _this7 = this;
 
       var oldObj;
 
@@ -72030,30 +77363,40 @@ var GenericApp = /*#__PURE__*/function (_Router) {
       this.socket.getObject(this.instanceId).then(function (_oldObj) {
         oldObj = _oldObj || {};
 
-        for (var a in _this6.state["native"]) {
-          if (_this6.state["native"].hasOwnProperty(a)) {
-            oldObj["native"][a] = _this6.state["native"][a];
-          }
-        }
-
-        if (_this6.state.common) {
-          for (var b in _this6.state.common) {
-            if (_this6.state.common.hasOwnProperty(b)) {
-              oldObj.common[b] = _this6.state.common[b];
+        for (var a in _this7.state["native"]) {
+          if (_this7.state["native"].hasOwnProperty(a)) {
+            if (_this7.state["native"][a] === null) {
+              oldObj["native"][a] = null;
+            } else if (_this7.state["native"][a] !== undefined) {
+              oldObj["native"][a] = JSON.parse(JSON.stringify(_this7.state["native"][a]));
+            } else {
+              delete oldObj["native"][a];
             }
           }
         }
 
-        if (_this6.onPrepareSave(oldObj["native"]) !== false) {
-          return _this6.socket.setObject(_this6.instanceId, oldObj);
+        if (_this7.state.common) {
+          for (var b in _this7.state.common) {
+            if (_this7.state.common[b] === null) {
+              oldObj.common[b] = null;
+            } else if (_this7.state.common[b] !== undefined) {
+              oldObj.common[b] = JSON.parse(JSON.stringify(_this7.state.common[b]));
+            } else {
+              delete oldObj.common[b];
+            }
+          }
+        }
+
+        if (_this7.onPrepareSave(oldObj["native"]) !== false) {
+          return _this7.socket.setObject(_this7.instanceId, oldObj);
         } else {
           return Promise.reject('Invalid configuration');
         }
       }).then(function () {
-        _this6.savedNative = oldObj["native"];
+        _this7.savedNative = oldObj["native"];
         globalThis.changed = false;
 
-        _this6.setState({
+        _this7.setState({
           changed: false
         });
 
@@ -72070,7 +77413,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "renderToast",
     value: function renderToast() {
-      var _this7 = this;
+      var _this8 = this;
 
       if (!this.state.toast) return null;
       return /*#__PURE__*/_react["default"].createElement(_Snackbar["default"], {
@@ -72081,7 +77424,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         open: true,
         autoHideDuration: 6000,
         onClose: function onClose() {
-          return _this7.setState({
+          return _this8.setState({
             toast: ''
           });
         },
@@ -72097,7 +77440,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
           color: "inherit",
           className: this.props.classes.close,
           onClick: function onClick() {
-            return _this7.setState({
+            return _this8.setState({
               toast: ''
             });
           }
@@ -72117,7 +77460,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
      * @returns {JSX.Element | null} The JSX element.
      */
     function renderError() {
-      var _this8 = this;
+      var _this9 = this;
 
       if (!this.state.errorText) {
         return null;
@@ -72125,7 +77468,7 @@ var GenericApp = /*#__PURE__*/function (_Router) {
         return /*#__PURE__*/_react["default"].createElement(_Error["default"], {
           text: this.state.errorText,
           onClose: function onClose() {
-            return _this8.setState({
+            return _this9.setState({
               errorText: ''
             });
           }
@@ -72188,15 +77531,16 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "renderSaveCloseButtons",
     value: function renderSaveCloseButtons() {
-      var _this9 = this;
+      var _this10 = this;
 
       if (this.state.bottomButtons) {
         return /*#__PURE__*/_react["default"].createElement(_SaveCloseButtons["default"], {
           theme: this.state.theme,
+          newReact: this.newReact,
           noTextOnButtons: this.state.width === 'xs' || this.state.width === 'sm' || this.state.width === 'md',
           changed: this.state.changed,
           onSave: function onSave(isClose) {
-            return _this9.onSave(isClose);
+            return _this10.onSave(isClose);
           },
           onClose: function onClose() {
             return GenericApp.onClose();
@@ -72217,14 +77561,14 @@ var GenericApp = /*#__PURE__*/function (_Router) {
   }, {
     key: "_updateNativeValue",
     value: function _updateNativeValue(obj, attrs, value) {
-      if (_typeof(attrs) !== 'object') {
+      if ((0, _typeof2["default"])(attrs) !== 'object') {
         attrs = attrs.split('.');
       }
 
       var attr = attrs.shift();
 
       if (!attrs.length) {
-        if (value && _typeof(value) === 'object') {
+        if (value && (0, _typeof2["default"])(value) === 'object') {
           if (JSON.stringify(obj[attr]) !== JSON.stringify(value)) {
             obj[attr] = value;
             return true;
@@ -72238,8 +77582,8 @@ var GenericApp = /*#__PURE__*/function (_Router) {
       } else {
         obj[attr] = obj[attr] || {};
 
-        if (_typeof(obj[attr]) !== 'object') {
-          throw new Error('attribute ' + attr + ' is no object, but ' + _typeof(obj[attr]));
+        if ((0, _typeof2["default"])(obj[attr]) !== 'object') {
+          throw new Error('attribute ' + attr + ' is no object, but ' + (0, _typeof2["default"])(obj[attr]));
         }
 
         return this._updateNativeValue(obj[attr], attrs, value);
@@ -72350,7 +77694,6 @@ var GenericApp = /*#__PURE__*/function (_Router) {
       }
     }
   }]);
-
   return GenericApp;
 }(_Router2["default"]);
 
@@ -72370,7 +77713,7 @@ var _default = GenericApp;
 exports["default"] = _default;
 
 
-},{"react":"../../node_modules/react/index.js","./Connection":"../../node_modules/@iobroker/adapter-react/Connection.js","@sentry/browser":"../../node_modules/@sentry/browser/esm/index.js","prop-types":"../../node_modules/prop-types/index.js","./Dialogs/Error":"../../node_modules/@iobroker/adapter-react/Dialogs/Error.js","@material-ui/core/Snackbar":"../../node_modules/@material-ui/core/esm/Snackbar/index.js","@material-ui/core/IconButton":"../../node_modules/@material-ui/core/esm/IconButton/index.js","@material-ui/icons/Close":"../../node_modules/@material-ui/icons/Close.js","./Prompt":"../../node_modules/@iobroker/adapter-react/Prompt.js","./Theme":"../../node_modules/@iobroker/adapter-react/Theme.js","./Components/Loader":"../../node_modules/@iobroker/adapter-react/Components/Loader.js","./Components/Router":"../../node_modules/@iobroker/adapter-react/Components/Router.js","./Components/Utils":"../../node_modules/@iobroker/adapter-react/Components/Utils.js","./Components/SaveCloseButtons":"../../node_modules/@iobroker/adapter-react/Components/SaveCloseButtons.js","./i18n":"../../node_modules/@iobroker/adapter-react/i18n.js","./index.css":"../../node_modules/@iobroker/adapter-react/index.css","./i18n/en.json":"../../node_modules/@iobroker/adapter-react/i18n/en.json","./i18n/de.json":"../../node_modules/@iobroker/adapter-react/i18n/de.json","./i18n/ru.json":"../../node_modules/@iobroker/adapter-react/i18n/ru.json","./i18n/pt.json":"../../node_modules/@iobroker/adapter-react/i18n/pt.json","./i18n/nl.json":"../../node_modules/@iobroker/adapter-react/i18n/nl.json","./i18n/fr.json":"../../node_modules/@iobroker/adapter-react/i18n/fr.json","./i18n/it.json":"../../node_modules/@iobroker/adapter-react/i18n/it.json","./i18n/es.json":"../../node_modules/@iobroker/adapter-react/i18n/es.json","./i18n/pl.json":"../../node_modules/@iobroker/adapter-react/i18n/pl.json","./i18n/zh-cn.json":"../../node_modules/@iobroker/adapter-react/i18n/zh-cn.json"}],"../../node_modules/@material-ui/core/esm/FormControl/formControlState.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","@babel/runtime/helpers/typeof":"../../node_modules/@babel/runtime/helpers/typeof.js","@babel/runtime/helpers/classCallCheck":"../../node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"../../node_modules/@babel/runtime/helpers/createClass.js","@babel/runtime/helpers/assertThisInitialized":"../../node_modules/@babel/runtime/helpers/assertThisInitialized.js","@babel/runtime/helpers/get":"../../node_modules/@babel/runtime/helpers/get.js","@babel/runtime/helpers/inherits":"../../node_modules/@babel/runtime/helpers/inherits.js","@babel/runtime/helpers/possibleConstructorReturn":"../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js","@babel/runtime/helpers/getPrototypeOf":"../../node_modules/@babel/runtime/helpers/getPrototypeOf.js","@babel/runtime/helpers/defineProperty":"../../node_modules/@babel/runtime/helpers/defineProperty.js","react":"../../node_modules/react/index.js","./Connection":"../../node_modules/@iobroker/adapter-react/Connection.js","prop-types":"../../node_modules/prop-types/index.js","@sentry/browser":"../../node_modules/@sentry/browser/esm/index.js","@sentry/integrations":"../../node_modules/@sentry/integrations/esm/index.js","./Dialogs/Error":"../../node_modules/@iobroker/adapter-react/Dialogs/Error.js","@material-ui/core/Snackbar":"../../node_modules/@material-ui/core/esm/Snackbar/index.js","@material-ui/core/IconButton":"../../node_modules/@material-ui/core/esm/IconButton/index.js","@material-ui/icons/Close":"../../node_modules/@material-ui/icons/Close.js","./Prompt":"../../node_modules/@iobroker/adapter-react/Prompt.js","./Theme":"../../node_modules/@iobroker/adapter-react/Theme.js","./Components/Loader":"../../node_modules/@iobroker/adapter-react/Components/Loader.js","./Components/Router":"../../node_modules/@iobroker/adapter-react/Components/Router.js","./Components/Utils":"../../node_modules/@iobroker/adapter-react/Components/Utils.js","./Components/SaveCloseButtons":"../../node_modules/@iobroker/adapter-react/Components/SaveCloseButtons.js","./i18n":"../../node_modules/@iobroker/adapter-react/i18n.js","./index.css":"../../node_modules/@iobroker/adapter-react/index.css","./i18n/en.json":"../../node_modules/@iobroker/adapter-react/i18n/en.json","./i18n/de.json":"../../node_modules/@iobroker/adapter-react/i18n/de.json","./i18n/ru.json":"../../node_modules/@iobroker/adapter-react/i18n/ru.json","./i18n/pt.json":"../../node_modules/@iobroker/adapter-react/i18n/pt.json","./i18n/nl.json":"../../node_modules/@iobroker/adapter-react/i18n/nl.json","./i18n/fr.json":"../../node_modules/@iobroker/adapter-react/i18n/fr.json","./i18n/it.json":"../../node_modules/@iobroker/adapter-react/i18n/it.json","./i18n/es.json":"../../node_modules/@iobroker/adapter-react/i18n/es.json","./i18n/pl.json":"../../node_modules/@iobroker/adapter-react/i18n/pl.json","./i18n/zh-cn.json":"../../node_modules/@iobroker/adapter-react/i18n/zh-cn.json"}],"../../node_modules/@material-ui/core/esm/FormControl/formControlState.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

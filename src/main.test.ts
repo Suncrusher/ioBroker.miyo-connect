@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * This is a dummy TypeScript test file using chai and mocha
  *

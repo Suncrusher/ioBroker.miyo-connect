@@ -1,7 +1,12 @@
 "use strict";
+/* eslint-disable prettier/prettier */
 /*
  * Created with @iobroker/create-adapter v1.34.1
  */
+/*
+ TODO: Aktualisierungen einbauen
+ TODO: Datentypen korrigieren, borderTop ist anders (z.B.)
+*/
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -26,15 +31,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MiyoConnect = void 0;
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = __importStar(require("@iobroker/adapter-core"));
-const Devices = require("./lib/services/devices");
-const Circuits = require("./lib/services/circuits");
+const miyoConnection_1 = require("./miyoConnection");
+const miyoStructureHandler_1 = require("./miyoStructureHandler");
+//import Devices = require("./lib/services/devices");
+//import Circuits = require("./lib/services/circuits");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const axios = require("axios").default;
+//const axios = require("axios").default;
 // Load your modules here, e.g.:
 // import * as fs from "fs";
+//let lastEvent: 0;
+//let eventInterval: NodeJS.Timer | null;
+//let connInterval: NodeJS.Timer | null;
+//let connTimeout: NodeJS.Timeout | null;
+let reconnectInterval;
+let miyoConnection;
+let miyoStructureHandler;
 class MiyoConnect extends utils.Adapter {
     constructor(options = {}) {
         super({
@@ -52,12 +67,23 @@ class MiyoConnect extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
+        //this.cleanData();
         // Reset the connection indicator during startup
         this.setState("info.connection", false, true);
         // The adapters config (in the instance object everything under the attribute "native") is accessible via
         // this.config:
-        this.log.info("config host: " + this.config.host);
-        this.log.info("config apiKey: " + this.config.apiKey);
+        //this.log.info("config host: " + this.config.host);
+        //this.log.info("config apiKey: " + this.config.apiKey);
+        this.log.info(`MiyoStructureHandler is creating the base data structure`);
+        miyoStructureHandler = new miyoStructureHandler_1.MiyoStructureHandler(this);
+        miyoStructureHandler.createInitialDataStructure();
+        this.log.info(`Miyo Connect is trying to connect to ${this.config.host} with apiKey ${this.config.apiKey}`);
+        //this.deleteData();
+        //const devices = new Devices(this.config.host);
+        const skipHttpRequests = false; //for testing
+        miyoConnection = new miyoConnection_1.MiyoConnection(this);
+        await miyoConnection.connect(skipHttpRequests, reconnectInterval);
+        //this.connect(true);
         /*
         For every state in the system there has to be also an object of type state
         Here a simple template for a boolean variable named "testVariable"
@@ -74,39 +100,6 @@ class MiyoConnect extends utils.Adapter {
             },
             native: {},
         });*/
-        await this.setObjectNotExistsAsync("miyo", {
-            type: "state",
-            common: {
-                name: "miyo",
-                type: "number",
-                role: "indicator",
-                read: true,
-                write: true,
-            },
-            native: {},
-        });
-        await this.setObjectNotExistsAsync("devices", {
-            type: "folder",
-            common: {
-                name: "devices",
-                type: "device",
-                role: "meta",
-                read: true,
-                write: true,
-            },
-            native: {},
-        });
-        await this.setObjectNotExistsAsync("circuits", {
-            type: "folder",
-            common: {
-                name: "circuits",
-                type: "device",
-                role: "meta",
-                read: true,
-                write: true,
-            },
-            native: {},
-        });
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
         ///this.subscribeStates("testVariable");
         // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
@@ -118,233 +111,83 @@ class MiyoConnect extends utils.Adapter {
             you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
         */
         // the variable testVariable is set to true as command (ack=false)
-        await this.setStateAsync("testVariable", true);
+        //await this.setStateAsync("testVariable", true);
         // same thing, but the value is flagged "ack"
         // ack should be always set to true if the value is received from or acknowledged from the target system
-        await this.setStateAsync("testVariable", { val: true, ack: true });
+        //await this.setStateAsync("testVariable", { val: true, ack: true });
         // same thing, but the state is deleted after 30s (getState will return null afterwards)
         //await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
         // examples for the checkPassword/checkGroup functions
-        let result = await this.checkPasswordAsync("admin", "iobroker");
-        this.log.info("check user admin pw iobroker: " + result);
-        result = await this.checkGroupAsync("admin", "admin");
-        this.log.info("check group user admin group admin: " + result);
-        await this.getDeviceList();
-        await this.getCircuitList();
+        //let result = await this.checkPasswordAsync("admin", "iobroker");
+        //this.log.info("check user admin pw iobroker: " + result);
+        //result = await this.checkGroupAsync("admin", "admin");
+        //this.log.info("check group user admin group admin: " + result);
+        //await this.getDeviceList();
+        //await this.getCircuitList();
     }
-    async getDeviceList() {
-        // The adapters config (in the instance object everything under the attribute "native") is accessible via
-        // this.config:
-        const url = this.config.host + "/api/device/all?apiKey=" + this.config.apiKey;
-        this.log.info("Miyo devices URL: " + url);
-        axios
-            .get(url)
-            .then(async (response) => {
-            // handle success
-            //console.log(response.data);
-            //console.log(response.status);
-            //console.log(response.statusText);
-            //console.log(response.headers);
-            //console.log(response.config);
-            this.log.info("All devices data: " + JSON.stringify(response.data, null, "  "));
-            this.setStateAsync("miyo", response.status);
-            const devices = new Devices(this.config.host);
-            devices.data = response.data;
-            for (const deviceId in response.data.params.devices) {
-                const device = response.data.params.devices[deviceId];
-                const id = device.id || "unknown";
-                this.log.info("Device id = " + id);
-                try {
-                    await this.setObjectNotExistsAsync("devices." + id, {
-                        type: "device",
-                        common: {
-                            name: device.deviceTypeId + "_" + id,
-                        },
-                        native: {},
-                    });
-                    await this.setObjectNotExistsAsync("devices." + id + ".status", {
-                        type: "channel",
-                        common: {
-                            name: "Status info",
-                        },
-                        native: {},
-                    });
-                    const keys = Object.keys(device);
-                    for (let i = 0; i < keys.length; i++) {
-                        const key = keys[i];
-                        console.log("Key : " + key + ", Value : " + device[key]);
-                        if (key != "stateTypes") {
-                            this.setObjectNotExists("devices." + id + "." + key, {
-                                type: "state",
-                                common: {
-                                    name: key,
-                                    type: "string",
-                                    role: "meta",
-                                    write: true,
-                                    read: true,
-                                },
-                                native: {},
-                            });
-                            try {
-                                await this.setStateAsync("devices." + id + "." + key, {
-                                    val: device[key],
-                                    ack: true,
-                                });
-                            }
-                            catch (error) {
-                                console.log("error" + error);
-                                this.setStateAsync("miyo", false);
-                            }
-                        }
-                    }
-                    for (const stateTypesId in device.stateTypes) {
-                        const stateType = device.stateTypes[stateTypesId];
-                        this.setObjectNotExists("devices." + id + ".status." + stateType.type, {
-                            type: "state",
-                            common: {
-                                name: stateType.type,
-                                type: "string",
-                                role: "meta",
-                                write: true,
-                                read: true,
-                            },
-                            native: {},
-                        });
-                        try {
-                            await this.setStateAsync("devices." + id + ".status." + stateType.type, {
-                                val: stateType.value,
-                                ack: true,
-                            });
-                        }
-                        catch (error) {
-                            console.log("error" + error);
-                            this.setStateAsync("miyo", false);
-                        }
-                    }
+    /*cleanData(): void {
+        this.getForeignObject("system.config", (errFO, obj) => {
+            this.config.objUpdate = this.config.objUpdate || {};
+            const id = `${this.name}.${this.instance}.miyo`;
+            this.log.info("Types: " + this.checkTypes(id));
+            this.delObject(id);
+            this.log.info(`deleted: ${id}`);
+            */
+    /*
+            this.getStates(`${this.name}.${this.instance}.*`, (errGS, states) => {
+                this.log.info("states: " + JSON.stringify(states));
+                Object.keys(states.key).forEach(id => {
                 }
-                catch (error) {
-                    console.log("error" + error);
-                    this.setStateAsync("miyo", false);
-                }
-            }
-        })
-            .catch((error) => {
-            // handle error
-            console.log("error" + error);
-            this.setStateAsync("miyo", false);
-        })
-            .then(function () {
-            // always executed
-        });
-    }
-    async getCircuitList() {
-        const url = this.config.host + "/api/circuit/all?apiKey=" + this.config.apiKey;
-        this.log.info("Miyo circuits URL: " + url);
-        axios
-            .get(url)
-            .then(async (response) => {
-            // handle success
-            this.log.info("All circuits data: " + JSON.stringify(response.data, null, "  "));
-            this.setStateAsync("miyo", response.status);
-            const circuits = new Circuits(this.config.host);
-            circuits.data = response.data;
-            for (const circuitId in response.data.params.circuits) {
-                const circuit = response.data.params.circuits[circuitId];
-                const id = circuit.id || "unknown";
-                this.log.info("Circuit id = " + id);
-                try {
-                    await this.setObjectNotExistsAsync("circuits." + id, {
-                        type: "device",
-                        common: {
-                            name: circuit.name + "_" + id,
-                        },
-                        native: {},
-                    });
-                    const keys = Object.keys(circuit);
-                    for (let i = 0; i < keys.length; i++) {
-                        const key = keys[i];
-                        console.log("Key : " + key + ", Value : " + circuit[key]);
-                        if (key == "name" || key == "id" || key == "sensor") {
-                            this.setObjectNotExists("circuits." + id + "." + key, {
-                                type: "state",
-                                common: {
-                                    name: key,
-                                    type: "string",
-                                    role: "meta",
-                                    write: true,
-                                    read: true,
-                                },
-                                native: {},
-                            });
-                            try {
-                                await this.setStateAsync("circuits." + id + "." + key, {
-                                    val: circuit[key],
-                                    ack: true,
-                                });
-                            }
-                            catch (error) {
-                                console.log("error" + error);
-                                this.setStateAsync("miyo", false);
-                            }
-                        }
-                        if (key == "params" || key == "sensorValve") {
-                            const cKeys = Object.keys(circuit[key]);
-                            for (let i = 0; i < cKeys.length; i++) {
-                                const cKey = cKeys[i];
-                                console.log("Key : " + cKey + ", Value : " + circuit[key][cKey]);
-                                this.setObjectNotExists("circuits." + id + "." + key + "." + cKey, {
-                                    type: "state",
-                                    common: {
-                                        name: cKey,
-                                        type: "string",
-                                        role: "meta",
-                                        write: true,
-                                        read: true,
-                                    },
-                                    native: {},
-                                });
-                                try {
-                                    await this.setStateAsync("circuits." + id + "." + key + "." + cKey, {
-                                        val: circuit[key][cKey],
-                                        ack: true,
-                                    });
-                                }
-                                catch (error) {
-                                    console.log("error" + error);
-                                    this.setStateAsync("miyo", false);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (error) {
-                    console.log("error" + error);
-                    this.setStateAsync("miyo", false);
-                }
-            }
-        })
-            .catch((error) => {
-            // handle error
-            console.log("error" + error);
-            this.setStateAsync("miyo", false);
-        })
-            .then(function () {
-            // always executed
-        });
-    }
+                const ebene = id.toString().split('.');
+                ebene.shift();
+                ebene.shift();
+                if (ebene[0] !== 'info' && ebene.length > 1) {
+                  const ownID = ebene.join('.');
+                  const ownIDsearch = ownID.toLowerCase();
+                  if (this.config.objUpdate[ownIDsearch] && this.config.objUpdate[ownIDsearch].action === 'delete') {
+                    this.delObject(ownID);
+                    this.log.info(`deleted: ${ownID}`);
+                  } else if (
+                    (!this.config.weather && ebene.length > 1 && ebene[1].toLowerCase() === 'weather') ||
+                    (!this.config.totalData && ebene.length > 3 && ebene[3].toLowerCase() === 'totaldata') ||
+                    (!this.config.statusData && ebene.length > 3 && ebene[3].toLowerCase() === 'statusdata') ||
+                    (!this.config.plantData && ebene.length > 1 && ebene[1].toLowerCase() === 'plantdata') ||
+                    (!this.config.deviceData && ebene.length > 3 && ebene[3].toLowerCase() === 'devicedata') ||
+                    (!this.config.historyLast && ebene.length > 3 && ebene[3].toLowerCase() === 'historylast') ||
+                    (!this.config.chartLast && ebene.length > 3 && ebene[3].toLowerCase() === 'chart')
+                  ) {
+                    this.delObject(ownID);
+                    this.log.info(`deleted: ${ownID}`);
+                  } else if (this.objNames[ownIDsearch]) {
+                    this.log.warn(`${this.objNames[ownIDsearch]} exists twice: ${ownID}`);
+                  } else if (
+                    ebene.length > 5 &&
+                    ebene[3].toLowerCase() === 'historylast' &&
+                    (ebene[4] === 'calendar' || ebene[4] === 'time') &&
+                    (ebene[5] === 'year' ||
+                      ebene[5] === 'month' ||
+                      ebene[5] === 'dayOfMonth' ||
+                      ebene[5] === 'hourOfDay' ||
+                      ebene[5] === 'minute' ||
+                      ebene[5] === 'second')
+                  ) {
+                    this.delObject(ownID);
+                    this.log.info(`deleted: ${ownID}`);
+                  } else {
+                    this.objNames[ownIDsearch] = ownID;
+                  }
+                });
+            }*/
+    /*		});
+    }*/
     /**
      * Is called when adapter shuts down - callback has to be called under any circumstances!
      */
     onUnload(callback) {
-        try {
-            // Here you must clear all timeouts or intervals that may still be active
-            // clearTimeout(timeout1);
-            // clearTimeout(timeout2);
-            // ...
-            // clearInterval(interval1);
-            callback();
+        if (miyoConnection) {
+            miyoConnection.onUnload(callback);
         }
-        catch (e) {
+        else {
             callback();
         }
     }
@@ -376,6 +219,7 @@ class MiyoConnect extends utils.Adapter {
         }
     }
 }
+exports.MiyoConnect = MiyoConnect;
 if (require.main !== module) {
     // Export the constructor in compact mode
     module.exports = (options) => new MiyoConnect(options);

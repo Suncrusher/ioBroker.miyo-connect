@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 import AbstractService = require("./abstractService");
 
 class Devices extends AbstractService {
-	data = {};
+	data: any = {};
 
-	constructor(host: string) {
-		super(host);
+	constructor() {
+		super();
 	}
 }
 export = Devices;

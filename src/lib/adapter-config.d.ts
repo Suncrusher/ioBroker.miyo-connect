@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // This file extends the AdapterConfig type from "@types/iobroker"
 
 // Augment the globally declared type ioBroker.AdapterConfig
@@ -6,6 +7,7 @@ declare global {
 		interface AdapterConfig {
 			host: string;
 			apiKey: string;
+			objUpdate: any;
 		}
 	}
 }

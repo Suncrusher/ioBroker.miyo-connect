@@ -1,8 +1,8 @@
 "use strict";
+/* eslint-disable prettier/prettier */
 class AbstractService {
-    constructor(host) {
+    constructor() {
         this.apiPath = "/api/";
-        this.host = host;
     }
 }
 module.exports = AbstractService;
